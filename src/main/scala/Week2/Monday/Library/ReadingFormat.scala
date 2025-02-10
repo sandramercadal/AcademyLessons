@@ -1,8 +1,9 @@
 package Week2.Monday.Library
 
 //{
-//delete here as don't have any parameters
-}//
+//delete the curly brackets here as we don't have any parameters
+//}//
+
 //ReadingFormat is a superclass
 class ReadingFormat
 

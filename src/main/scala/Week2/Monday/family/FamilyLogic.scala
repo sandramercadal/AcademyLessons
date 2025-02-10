@@ -1,5 +1,5 @@
 package Week2.Monday.family
-
+/**
 //Keep all our logic seperatley to the class
 //We want to run it so extends App
 object FamilyLogic extends App {
@@ -32,3 +32,4 @@ object FamilyLogic extends App {
   println(adult1.forename.name) //accessing inside the Forename class to get the string
 
 }
+*/

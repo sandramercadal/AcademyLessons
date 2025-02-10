@@ -1,5 +1,5 @@
 package Week2.Monday.Library
-
+/**
 import Week2.Monday.family.Adult
 
 //Let's create a class
@@ -11,12 +11,13 @@ import Week2.Monday.family.Adult
 //Extending ReadingFormat within class
 //Now genre needs to be a trait. Create a new scala class
 //add with Genre to extend to genre
-class Book (val title: String, val author:Adult) extends ReadingFormat with Genre {
+/**class Book (val title: String, val author:Adult) extends ReadingFormat with Genre {
   def read: String = "Enjoy reading!"
 
 }
-
+*/
 //Companion
-object Book {
-  def apply (title: String, author: Adult): Book = new Book (title, author)
-}
+//object Book {
+//  def apply (title: String, author: Adult): Book = new Book (title, author)
+//}
+*/

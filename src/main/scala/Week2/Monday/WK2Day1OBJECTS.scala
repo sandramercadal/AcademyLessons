@@ -2,8 +2,7 @@ package Week2.Monday
 
 /** OBJECTS
  If something needs to be used again and again we make it in a class.
- sometimes we only need one copy of something.
- In this case we can just make a new object
+ sometimes we only need one copy of something, in which case we can just make a new object
  */
 
 object Objects extends App {
