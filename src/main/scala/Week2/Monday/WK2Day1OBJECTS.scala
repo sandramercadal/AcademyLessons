@@ -31,7 +31,7 @@ println (mathsConcepts.euler) //returns 0.57721
   println(PrimaryColours.red.toUpperCase) //returns RED
 
 /**
- TASK - Create an object fof the days of the week.
+ TASK - Create an object for the days of the week.
  Populate the object with a value for each day.
  prove you can access these values by calling them.
  */
