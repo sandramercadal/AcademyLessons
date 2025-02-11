@@ -1,6 +1,8 @@
 package Week2.Monday.family
+//TASK  Where is the code ask April.
 
 //Q1 - Create a class so you can build your dogs
+
 //Blueprint
 //Check your brackets
 //The class name you give it starts with a CAPS
@@ -49,7 +51,9 @@ println (rufus.speak)
 
 //}
 
-//Q4
+//Q4 Create your dogs
+//Q5 Call each of your vals and methods
+
 
 //INHERITANCE -
 // How does it get passed down??
