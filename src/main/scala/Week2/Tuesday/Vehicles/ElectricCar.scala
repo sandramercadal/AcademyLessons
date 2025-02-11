@@ -14,6 +14,8 @@ package Week2.Tuesday.Vehicles
 //We have to implemnent time tocharge now as we didnt do it before but now itis time.
 //  override val TimeToCharge: Int = 8
 //car and electruc are seperated as i many have a car with diesle or elctricr or may have a bus wioth electric
+/**
+
 
 case class ElectricCar (brand: String, override val FuelType: String)  //you could put timetocharge here and happy to chage each time
   extends Car (brand, "Electric") with Electric {
@@ -22,3 +24,4 @@ case class ElectricCar (brand: String, override val FuelType: String)  //you cou
 }
 
 //makes Lans change in here
+ */

@@ -16,19 +16,19 @@ package Week2.Tuesday.Vehicles
 //out on all the bult in functionality. Make a new scala class called Electric car
 
 
-
+/**
 
 
 
 class Car ( brand: String, val FuelType: String) extends Vehicle (brand){
 override def drive: String = s"This $brand car is using $FuelType"
+ }
+*/
 
 
 
 
 
 
-
-}
 
 

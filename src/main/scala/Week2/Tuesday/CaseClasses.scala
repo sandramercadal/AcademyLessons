@@ -1,49 +1,125 @@
 package Week2.Tuesday
 
 object CaseClasses extends App{
+/**
+  //Standard Class. Starts with word Class.
+  //no apply method built in (no boilerplate code) so need to add the syntax 'new'
 
-  //Standard Class. Starts with word Class. A really simple class:
-  //no apply method built in so need to add new
-  //class SuperHero (realName: String, heroName: String, weakness: String)
- //new SuperHero ("Clark Kent", "Superman", "Kyrptonite") //(instantiated) made a new superHerp object from the SuperHero class .
-//if I want to acces these I need to put val in from of realName + heroName + weakness
+ */
 
+// A really simple class:
+class SuperHeroWoman (realName: String, heroName: String, weakness: String)
 
+  //OBJECT FROM A CLASS (instantiated)
+ new SuperHeroWoman ("Mary Kent", "Superwomen", "Kyrptonite")
+// (instantiated) made a new superHeroWoman object from the SuperHeroWoman class above.
+//If I want to access this I need to put val in from of realName + heroName + weakness.
+
+//CASE CLASS
 //let's make this again using a case Class
-  //starts with the word case
-  //each paramenter is a Val bu deafult
+  //starts with the word case also
+  //each parameter is a val by default in a case class
 
 case class SuperHero (realName: String, heroName: String, weakness: String)
 val superMan= SuperHero.apply ("Clark Kent", "Superman", "Kyrptonite")
   //Object made using the SuperHero case class.
-  //casecases dont look at the ref /value they look at the memory
+  //cases don't look at the ref /value they look at the memory
 
   val superMan2= SuperHero.apply ("Clark Kent", "Superman", "Kyrptonite")
   println(superMan == superMan2)  //returns True, compares field values after the equals ("Clark Kent", "Superman", "Kyrptonite")
   //not the object reference/memory locations like classes. They are 2 instances of superHero.
+//q) what is .apply here??
 
   /**
    Q1 Create a dog case class with parameter of name, breed and age
-   don't need val as built into case classes
+   don't need val as vals are built into case classes
+   e.g .
+   case class SuperHero (realName: String, heroName: String, weakness: String)
+   Created a class called Doggy
    */
-  //Dog list from yesterday:
-      // val dog1 = Dog =Dog.apply (new Name ("Mabel"), newAge (2))
-      //val dog2 = Dog =Dog.apply (new Name ("Ruby"), newAge (12))
+  case class Doggy (name: String, breed: String, age: String)
 
-  //class Doggy (Name: String, Breed: String, age: String)
-  //new Doggy ("Rufus", "Poodle", "4")
+  /**
+   Q2 Create 4 dog objects:
 
-  //case class Doggy (Name: String, Breed: String, age: String)
-  //val Doggy= Doggy.apply ("Rufus", "Poodle", "4")
+   val superMan= SuperHero.apply ("Clark Kent", "Superman", "Kyrptonite")
+   (not sure why this has.appply in this example...)
+   */
 
-  /**q2 Create 4 dog objects from the dog case class*/
+  val max = Doggy ("Max", "Greyhound", "6")
+  val mabel = Doggy ("Mabel", "Dalmatian", "4")
+  val ruby = Doggy ("Ruby", "Poodle", "6")
+  val padeen = Doggy ("Padeen", "Whippet", "2")
 
-  //case class Doggy2 (Name: String, Breed: String, age: String)   etc
+  /**
+   Q3 Create 4 dog objects:
+   Then create a kennel case class with parameters of name and then a list of the dog case class.
+   */
+  //ATTEMPT: case class myKennel (name: String, Doggy: List)
 
-  // val Doggy1= Doggy1.apply ("Max", "Greyhound", "6")
-  //val Doggy2= Doggy2.apply ("Mabel", "Damlamtian", "6")
-  //val Doggy3= Doggy3.apply ("Ruby", "Poodle", "6")
-  //val Doggy4= Doggy4.apply ("Padeen", "Whippet", "6")
+  case class myKennel (name: String, dogs: List [Doggy])
+//Need to call the list I made called Doggy
+  /**
+   Q4:
+  Make a new kennel object and add your dogs from (Q.2).
+  */
+    //ATTEMPT didn't work
+
+  val dogs: List[Doggy] = List(max, mabel, ruby, padeen)
+
+  val newKennel = myKennel("New Kennel", dogs)
+  println(newKennel)
+
+  //val dogs: List[Doggy] = List(max, mabel, ruby, padeen)
+  //val createAKennel = myKennel("My Kennel", dogs)
+  //println(createAKennel)
+
+
+
+  /**
+   Q5:
+   The kennel that you have set up wants to change its name but keep the dogs. Use the case class copy method.
+   */
+  val renamedNewKennel = newKennel.copy(name = "Brand New Kennel")
+  println(renamedNewKennel)
+//Above seems to work here is APRILS CODE:
+//val renamedSydneyKennel = sydneyKennel.copy(name = "Loki & friends")
+  //println(renamedSydneyKennel)
+/**
+  Extension:
+  A)
+ The kennel wants to expand to accept cats and birds as well.
+  Update the kennel case class.
+  Create a bird and cat case class using some creative parameters.
+B)The kennel often gets a new dog/cat/bird joining. Add one of each to the kennel.
+ (Go back to the collections lesson where we were adding to the list!!)
+
+ //Extension A and B. APRILS CODE
+ case class Cat(name: String, breed: String, age: Int)
+ val cats: List[Cat] = List()
+ case class Bird(name: String, species: String, wingSpan: Int)
+ val birds: List[Bird] = List()
+ case class updatedKennel(name: String, dogs: List[Dog], cats: List[Cat], birds: List[Bird]) {
+ def addDog (dog: Dog) : updatedKennel = {
+ updatedKennel(name, dogs:+ dog, cats, birds)
+ }
+ def addCat(cat: Cat): updatedKennel = {
+ updatedKennel(name, dogs, cats :+ cat, birds)
+ }
+ def addBird(bird: Bird): updatedKennel = {
+ updatedKennel(name, dogs, cats, birds :+ bird)
+ }
+ }
+ val sydneyKennel1 = updatedKennel("Sydney Kennel", dogs, cats, birds)
+ println(sydneyKennel)
+ val renamedSydneyKennel1 = sydneyKennel1.copy(name = "Loki & friends")
+ println(renamedSydneyKennel)
+ val addDogCatBird = renamedSydneyKennel1.addDog(Dog ("Toto", "Cairn Terrier", 10)).addCat(Cat("Garfield", "Persian", 5)).addBird(Bird("Hedwig","Snowy", 60))
+ println(addDogCatBird)
+
+ }
+
+*/
 
   //COPYING A CASE CLASS
   // WE MAKE A SHALLOW COPY you cant do this was cases
@@ -65,8 +141,6 @@ val updatedName = superMan.copy (realName= "Andy Probert", weakness = "pints")
 
  //TASK
  println("\nTask\n")
-
-
 
 
 }

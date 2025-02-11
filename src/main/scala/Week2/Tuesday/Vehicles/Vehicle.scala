@@ -8,6 +8,7 @@ package Week2.Tuesday.Vehicles
 //SO
 //I want paramenters (brand)
 //I can use abstract
+/**
 class Vehicle (val brand: String) {
        def drive: String // abstract method
        //if i want to say something like waris anmimals alwyas saying their name I can here
@@ -18,3 +19,6 @@ class Vehicle (val brand: String) {
 
 
 }
+
+
+*/

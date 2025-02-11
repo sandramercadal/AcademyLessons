@@ -1,7 +1,7 @@
 package Week2.Tuesday.Vehicles
 
 //extends App so it runs
-
+/**
 object VehicleLogic extends App{
 
 
@@ -20,7 +20,7 @@ println ("\n---------ElectricCar--------")
 
   //we need to make an electric car and this is a case class so no need for word "new"
   //It requires a brand and a fuel type
-  val electricFord = ElectricCar ("Ford", )
+  //val electricFord = ElectricCar ("Ford", )
 
 //override val fuel Lan suggested a change ??
 
@@ -35,3 +35,5 @@ val electricFord = ElectricCar("Ford")//new ElectricCar object
   println (electricFord.charge) //coming from Electric trait
 
 }
+
+*/
