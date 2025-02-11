@@ -1,11 +1,5 @@
 package Week2.Monday.family
 
-
-
-
-
-
-
 //Q1 - Create a class so you can build your dogs
 //Blueprint
 //Check your brackets
@@ -20,9 +14,9 @@ package Week2.Monday.family
     //val numberOfLegs: String = "4"
     //def vetCheck: String = "When was the dog's last vet appointment?"
   //}
+
+
 /**
-
-
 val dog1 = Dog =Dog.apply (new Name ("Mabel"), newAge (2))
 val dog2 = Dog =Dog.apply (new Name ("Ruby"), newAge (12))
 

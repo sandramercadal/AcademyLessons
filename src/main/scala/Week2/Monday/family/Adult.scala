@@ -1,6 +1,6 @@
 package Week2.Monday.family
-
-//going togove it a forename and a surname so ouput will be two strings together
+/**
+//going to give it a forename and a surname so the output will be two strings together
 // Forename and Surname starts with CAPS
 
 class Forename (val name: String)
@@ -18,3 +18,4 @@ object Adult {
 
 
 }
+*/
