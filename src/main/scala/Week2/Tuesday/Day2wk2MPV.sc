@@ -49,10 +49,11 @@ case class Person (name: String, age: Int, nationality: String, isStudent: Boole
 
  val firstPerson = new Person("Carlos", 23, "Spanish", true)
 //GUESS: Is a class has 'new'
+//Looks runnable
 
  val secondPerson = Person("Carlos", 23, "Spanish", true)
 //GUESS:
-//This is the opposite, it does not contain 'new' I would expect anothr outcome though maybe?
+//This is the opposite to above, it does not contain 'new' I would expect another outcome though maybe?
 
  val thirdPerson = Person("Chloe", 25, "British", false)
 //GUESS: Looks runnable
@@ -76,7 +77,7 @@ case class Muffin(flavour: String, price: Double, storeBoughtFrom: String)
 //GUESS: Looks runnable in right structure as we have been learning
 //Case Class
 
-//ALl of these are like we did for DOG?
+//ALl of these are like we did for DOG...?
 val chocolateMuffin = Muffin("chocolate", 3.50, "Mercator Bakery")
 //GUESS:Looks runnable
 
