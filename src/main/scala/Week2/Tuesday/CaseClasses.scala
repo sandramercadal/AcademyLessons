@@ -95,6 +95,13 @@ B)The kennel often gets a new dog/cat/bird joining. Add one of each to the kenne
  (Go back to the collections lesson where we were adding to the list!!)
 
  //Extension A and B. APRILS CODE
+
+Created a cat case and bird case.
+New case called updated Kennel. add cats and birds to that and dog to that.
+Updated the kennel.
+Append like we did in the collections exercise.
+() this has to be empty so that cats and birds can go in there.
+
  case class Cat(name: String, breed: String, age: Int)
  val cats: List[Cat] = List()
  case class Bird(name: String, species: String, wingSpan: Int)
@@ -116,8 +123,13 @@ B)The kennel often gets a new dog/cat/bird joining. Add one of each to the kenne
  println(renamedSydneyKennel)
  val addDogCatBird = renamedSydneyKennel1.addDog(Dog ("Toto", "Cairn Terrier", 10)).addCat(Cat("Garfield", "Persian", 5)).addBird(Bird("Hedwig","Snowy", 60))
  println(addDogCatBird)
-
+//or  println(addDog)
+//or  println(addCat)
+//or  println(addBird)
+The updated kennel has 3 separate lists in there of cat, dog & bird
  }
+
+ command and / forward slash to comment out code
 
 */
 
