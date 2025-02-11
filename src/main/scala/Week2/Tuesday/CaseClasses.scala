@@ -70,11 +70,6 @@ val superMan= SuperHero.apply ("Clark Kent", "Superman", "Kyrptonite")
   val newKennel = myKennel("New Kennel", dogs)
   println(newKennel)
 
-  //val dogs: List[Doggy] = List(max, mabel, ruby, padeen)
-  //val createAKennel = myKennel("My Kennel", dogs)
-  //println(createAKennel)
-
-
 
   /**
    Q5:

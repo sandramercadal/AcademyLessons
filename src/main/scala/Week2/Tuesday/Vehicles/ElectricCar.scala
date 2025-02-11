@@ -1,6 +1,6 @@
 package Week2.Tuesday.Vehicles
 
-//electric car will extend car (we have extended to the max of 1 now) so now we need to use a trait. Lets make a trai so we have to make the trait first then come back to this...trait scala class to be created
+//Electric car will extend car (we have extended to the max of 1 now) so now we need to use a trait. Lets make a trai so we have to make the trait first then come back to this...trait scala class to be created
 //We have made our tarit called electric so we come back to here
 //I need brand and fuel type to be in here
 //dont need a val befor efuekltype and
@@ -14,14 +14,8 @@ package Week2.Tuesday.Vehicles
 //We have to implemnent time tocharge now as we didnt do it before but now itis time.
 //  override val TimeToCharge: Int = 8
 //car and electruc are seperated as i many have a car with diesle or elctricr or may have a bus wioth electric
-/**
 
-
-case class ElectricCar (brand: String, override val FuelType: String)  //you could put timetocharge here and happy to chage each time
-  extends Car (brand, "Electric") with Electric {
-  override val TimeToCharge: Int = 8 //leaving it here for now
-  val noisyToDrive: Boolean = false //maybe I want a new method which is only in electric this is specific to electricCar only noy just electric
+case class ElectricCar (override val brand: String) extends Car(brand, "Electric") with Electric {
+  override val timeToCharge: Int = 8
+  val noisyToDrive: Boolean = false //specific to ElectricCar. Maybe I want a new method which is only in electric this is specific to electricCar only noy just electric.
 }
-
-//makes Lans change in here
- */

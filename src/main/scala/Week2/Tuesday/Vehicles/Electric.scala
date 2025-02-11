@@ -1,12 +1,9 @@
 package Week2.Tuesday.Vehicles
 
-//can give Traits some methods def and val
+//can give Traits, some methods are def or val
+
 
 trait Electric {
-     val TimeToCharge: Int //can leave this as a abstract filed like car but must decalre at sub level (as soon as I extend it)
-     def charge: String = s"Charge me for $TimeToCharge hours"
-
-
-
-
+     val timeToCharge: Int //can leave this as abstract field like car, but must declare it at sub-level (as soon as I extend it)
+     def charge: String = s"Charge me for $timeToCharge hours"
 }
