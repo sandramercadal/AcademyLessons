@@ -1,4 +1,8 @@
 package Week2.Tuesday.Vehicles
+class Car (brand: String, val fuelType: String) extends Vehicle(brand) {
+  override def drive: String = s"This $brand car is using $fuelType"
+}
+
 /**
 //What is VEHICLE?  It is going to extend to Car, Lorry, motorbike etc so the class as it is a vehicle so I don't want it to be a class, therefore
  Will it be a case class or a trait?? (look at Aprils chart)
@@ -20,15 +24,12 @@ DRIVE
 //I need to add the override of drive and use an s interpolation
 
 //It's going to end on type of petrol so can use a case class now. This is the lowest level and they are final by default.
- You could choose a class and choose to make that final but you miss out on all the built in functionality.
+ You could choose a class and choose to make that final but you miss out on all the built-in functionality.
 
- Make a new scala class called Electric car
+ Make a new scala class called Electric car now...
+
  */
 
-
-class Car (brand: String, val fuelType: String) extends Vehicle(brand) {
-  override def drive: String = s"This $brand car is using $fuelType"
-}
 
 
 

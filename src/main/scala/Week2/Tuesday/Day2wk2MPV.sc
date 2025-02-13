@@ -7,12 +7,11 @@ This makes it more convenient for developers.
 
 THE USE OF "CASE" at the beginning of a case class:
 There is different syntax to begin with:
- To create a case use the words "case class" (no " required)
-A class begins with "class"  (no " required)
+ To create a case use the words "case class" (no " required) vs a class begins with "class"  (no " required)
 
 THE USE OF "NEW" when creating a class:
-To create a class we need to use the words 'new' with a Class:
- e.g. new Car
+To create a class we need to use the words 'new' with a Class: e.g. new Car
+A CLASS CASE does not ned the word "new"
 
 INHERITED BEHAVIOURS
 A CASE CLASS compares based on values
@@ -73,13 +72,19 @@ case class Person (name: String, age: Int, nationality: String, isStudent: Boole
 //Q3) After reviewing all combinations, which ones are true when compared using the “==“ operator?
 // Once decided, code it and check!
 
-case class Muffin(flavour: String, price: Double, storeBoughtFrom: String)
-//GUESS: Looks runnable in right structure as we have been learning
+
 //Case Class
+case class Muffin(flavour: String, price: Double, storeBoughtFrom: String)
+//GUESS: The muffin flavours need to match so chocolate needs to match to blueberry //false
+//chocolate == vanilla //false
+
+//oneMoreChocolate muffin  is fasle as case sensitive
+
 
 //ALl of these are like we did for DOG...?
+
 val chocolateMuffin = Muffin("chocolate", 3.50, "Mercator Bakery")
-//GUESS:Looks runnable
+//GUESS:Looks runnable both have chocolate in them
 
 val blueberryMuffin = Muffin("blueberry", 3.50, "Mercator Bakery")
 //GUESS:Looks runnable
@@ -88,10 +93,10 @@ val vanillaMuffin = Muffin("vanilla", 3.50, "Mercator Bakery")
 //GUESS:Looks runnable
 
 val anotherChocolateMuffin = Muffin("chocolate", 3.50, "Mercator Bakery")
-//GUESS:Looks runnable
+//GUESS:
 
 val oneMoreChocolateMuffin = Muffin("Chocolate", 3.50, "Mercator Bakery")
-//GUESS:Looks runnable
+//GUESS:
 
 val finalChocolateMuffin = Muffin("choocolate", 2.50, "MercatorBakery")
-//GUESS:Looks runnable
+//GUESS:
