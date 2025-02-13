@@ -2,10 +2,10 @@ print("hello world")
 
 //How do we print each word on a separate line - Research
 
-//val = value that cannot be re-assigned / is immutable
+//VAL = value that cannot be re-assigned / is immutable
 //e.g
 //val cake = 10 * 2
 
-//Var can be re-assigned
+//VAR can be re-assigned
 
-//Int - looking for whole numbers
+//INT - looking for whole numbers
