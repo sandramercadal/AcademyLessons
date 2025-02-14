@@ -84,6 +84,20 @@ false || false
 
 //d) Eight is even (modulus)
 8 % 2 == 0
+//Modulus (%) will give the remainder after 2 numbers are divided.
+//Even numbers, when divided by 2, will have 0 as the remainder as even numbers will go perfectly into 2.
+//Odd numbers, when divided by 2, will give a remainder of 1. We just care that it isn't zero. That is the important part.
+//val isOdd: boolean = 17 % 2 !=  0
+//
+//17 % 2 = 1  (Note: this is saying, what is the remainder when 2 goes into 17, well, 2 goes into 17 8 times and then there is 1 left over)
+//
+//We are left with 1 != 0 (1 is not 0) which is true. So...
+//
+//isOdd = true
+//
+//If we wanted to check for something being even, we could check that the remainder was 0. e.g. 6 % 2 == 0
+//
+//Hope this helps! FROM APRIL
 
 //e) One-hundred and fifty-six divided by eight
 // is less than twenty

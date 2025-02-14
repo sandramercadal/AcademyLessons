@@ -1,6 +1,6 @@
 package Wk2Wednesday
 
-
+/**
 import Week2.Weds.Username
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
@@ -54,3 +54,4 @@ class UsernameSpec extends AnyWordSpec with Matchers {
   }
 }
 
+*/

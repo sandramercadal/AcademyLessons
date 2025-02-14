@@ -1,5 +1,6 @@
 
-//The username must be equal to or more than 8 letters long.
+/**
+ * //The username must be equal to or more than 8 letters long.
 //It must be all lowercase.
 //Both of the above need to be met to be true.
 //Anything else at all will return a false, even if there is a Caps in there etc
@@ -26,4 +27,4 @@ class Username {
 }
 
 
-
+*/
