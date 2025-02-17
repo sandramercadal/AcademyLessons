@@ -17,7 +17,8 @@ val total = melons + apples + fizzyDrinks
 //Store a val
 val mysterySolvingDog = "Scooby-doo"
 //Re-assign a val
-mysterySolvingDog = "Scrappy-doo" //see the error - reassignment to val
+//mysterySolvingDog = "Scrappy-doo" //see the error - reassignment to val
+//Line above is Commented out so that the rest of the code will run
 //mysterySolvingDog = "Scrappy-doo"
 
 //Store a var

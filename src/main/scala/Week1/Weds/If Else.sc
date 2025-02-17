@@ -92,3 +92,5 @@ if (givenAge >= 18){
 } else {
   println(s"$givenAge is too young to attend the cinema")
 }
+
+////A double backslash should work in your string to get a single backslash e.g \\ - Question asked in class.
