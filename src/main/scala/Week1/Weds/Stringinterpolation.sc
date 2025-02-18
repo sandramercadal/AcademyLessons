@@ -1,36 +1,46 @@
-/** string interpolation */
+/** STRING interpolation
+ s Interpolation
+ f Interpolation &
+ raw Interpolation
+ * */
 
 //s INTERPOLATION
 //References variables using $ symbol
+ // s" (    ...
+
+            //TYPE is string
 val name : String = "Sandra"
 println (s" My name is $name.")//Scala will look for the val called name
 
 //Arbitrary expressions can also be embedded using ${ } e.g
 println (s" 3 * 3 = ${3 * 3}")
 
-val a: Int = 19764 // given it the name of a
-val b: Int = 67// given it the name of b
+      //TYPE
+val a: Int    = 19764 // giving 19764 the value of a and it is an INT
+val b: Int    = 67// giving 67 the value of b and it is an INT
 println (s" a x b = ${a * b}")
 //Helpful when debugging code. Println the result at certain points in a method.
 
-//f INTERPOLATION
-//Allows the creation of simple formatted strings.
-// common format specifiers e.g typesafe.
-// Typesafe - you must pass in the same type as the compiler is expecting or it will error
 
-//f Common format specifiers (type safety):
+//f INTERPOLATION
+// Typesafe - you must pass in the same type as the compiler is expecting or it will error
+// common format specifiers e.g typesafe.
+//Allows the creation of simple formatted strings.
+
+//f Common format specifiers (type safety): Syntax to print is % then f, d or s
 // %f - float, Double
 // %d - Int, Long
 // %s - String
 
 val height: Double = 1.9
-//with f:
-println (f" $name%s is $height% .2f meters tall")
+//with f: we have declared the name of Sandra previously and we have just declared the height
+println (f" $name%s is$height% .2f meters tall")
 //.2f is to 2 decimal places
 
 //The same thing with s instead of f:
-//s doesn't recognise formatting
-println (s" $name%s is $height% .2f meters tall")
+//With s interpolation it won't recognise formatting so will print 2f
+println(s"$name%s is $height%.2f metres tall")
+
 
 math.Pi //built in library. Some libraries you import some you do not.
 //Pi is case sensitive
@@ -81,7 +91,7 @@ val person1: String = "Molly"
 val person2: String = "Mary"
 val age1: Int =22
 val age2: Int = 16
-println (s "")
+//println (s "")
 printf ("%s  Molly is 1 year older than $Mary.")
 
 //Change your Int to doubles
