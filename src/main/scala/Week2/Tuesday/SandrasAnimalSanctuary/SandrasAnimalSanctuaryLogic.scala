@@ -1,4 +1,4 @@
-package Week2.Tuesday.SandrasAnimalSanctuary
+/** package Week2.Tuesday.SandrasAnimalSanctuary
 
 //Keep all our logic separate to the class
 //We want to run it so extends App
@@ -27,3 +27,5 @@ object SandrasAnimalSanctuaryLogic extends App{
 
 
 //If lost - Command + hover turns things blue
+
+*/
