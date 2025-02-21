@@ -78,6 +78,19 @@ object CountryMPV extends App {
   case class Person(fullName: String, dob: String, occupation: String,
                     lastCountryLivedIn: String, age: Int, starSign: String, ageAtDeath: Int)
 
+  //TBC     case class inputAboutPerson ()
+
+ //TBC       def createPerson
+
+  //INPUT about a PERSON case class holds input data
+  // PERSON case class gives the output
+  // CREATEPERSON method responsible for taking an INPUT about a PERSON instance & calculating any missing values like age
+  //and returning a fully populated PERSON instance
+ //Also need a function to get the gae based on  the DOB.
+
+
+
+
 
 }
 
