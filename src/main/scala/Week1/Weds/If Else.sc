@@ -1,83 +1,100 @@
 /**
  * If Else
  * Depending on the weather tell me what to wear
+
+ If true it hits the first string inside the 'if'
+ if false it hits the 2nd string inside the 'else'
+
  */
-//If true it hits the first string inside the 'if'
-  //if false it hits the 2nd string inside the 'else'
-val weather : String = "hot"
+
+
+val weather: String = "hot" //will return it is hot
 
 if
-(weather == "hot")
-{
-s"It is $weather, grab your sunglasses!"
-
-}else{
-s"It isn't hot today $weather"
-}
-
-
-val weather : String = "cold"
-
-if
-(weather == "hot")
-{
+(weather == "hot") {
   s"It is $weather, grab your sunglasses!"
 
-}else{
-  s"It isn't hot today it is $weather"
+} else {
+  s"It isn't hot today its $weather"
 }
 
-if (weather.toLowerCase() == "hot" ) {
-  s"It is $weather, no coat needed!"
-} else if (weather.toLowerCase =="raining") {
+
+val weather: String = "cold" //will return it is cold
+
+if
+(weather == "hot") {
+  s"It is $weather, grab your sunglasses!"
+
+} else {
+  s"It isn't hot today its $weather"
+}
+
+// if true --> hits the first string inside the 'if'
+// if false --> hits the second string inside the 'else'
+if (weather.toLowerCase == "hot") {
+  s"It is $weather, no coat needed."
+} else if (weather.toLowerCase == "raining") {
   s"It is $weather, take a coat with a hood."
 } else {
-  s" $weather is not valid, please enter raining or hot"
+  s"$weather is not valid, please enter raining or hot"
 }
 
+
 //Multiple options
-val season : String: "winter"
-if (weather.toLowerCase == "cold" || season.toLowerCase ==
-  "winter") {
+val season: String = "summer"
+if (weather.toLowerCase == "cold" || season.toLowerCase == "winter") {
   s"It is $weather, take a coat"
-} else{
+} else {
   "A light jacket is fine"
 }
 
-//Challenge 2
-val ageRating : Int = 18
+//Task 1
+//Use conditions to calculate somebody's grade given the percentage they scored.
 
-if (ageRating >= 18) {
-  s"Your $ageRating means you can see a film rated 18"
-} else if (ageRating>= 15) {
-  s"Your $ageRating can see a film rated 15"
-} else if (ageRating >= 12) {
-  s"Your $ageRating can see a film rated 12A"
-} else if (ageRating >= 8) {
-  s"Your $ageRating  can see a film rated PG"
-} else if (ageRating >= 4) {
-  s"Your $ageRating can see a film rated U"
+//90%+ = "A"
+//80%+ = "B"
+//70%+ = "C"
+//60%+ = "D"
+//50%+ = "E"
+//49%- = “F”
+
+//CODE FROM APRIL
+val studentGrade: Int = -59
+
+if (studentGrade >= 90 && studentGrade <= 100) {
+  "A! Well done!"
+} else if (studentGrade >=80 && studentGrade <= 89){
+  "B"
+}else if (studentGrade >=70 && studentGrade <= 79){
+  "C"
+}else if (studentGrade >=60 && studentGrade <= 69){
+  "D"
+}else if (studentGrade >=50 && studentGrade <= 59){
+  "E"
+} else if (studentGrade >=40 && studentGrade <= 49) {
+  "F"
+} else if (studentGrade >=0 && studentGrade <= 39){
+  s"$studentGrade is a U grade"
 } else {
-  s"Your $ageRating mean are too young  - sorry"
+  s"$studentGrade is not valid"
 }
 
-//Challenge 1
-val calculatedScore : Int 90
-  if (calculatedScore >= 90) {
-    s"Your $calculatedScore is A"
-  } else if (calculatedScore == 80 || calculatedScore > 80) {
-    s"Your $calculatedScore is B"
-  } else if (calculatedScore == 70 | calculatedScore > 70) {
-    s"Your $calculatedScore is C"
-  } else if (calculatedScore == 60 | calculatedScore > 60) {
-    s"Your $calculatedScore is D"
-  } else if (calculatedScore == 50 | calculatedScore > 50) {
-    s"Your $calculatedScore is E"
-  } else {
-    s"Your $calculatedScore is F"
-}
- //CODE FROM APRIL
- val givenAge: Int = 3
+
+//CODE FROM APRIL
+//TASK 2
+//Use conditions to work out for a given age,
+// what film ratings they can see.
+// Make sure your conditions are exhaustive,
+// and any age will get a response (what if they're younger than 4,
+//what if they're exactly 8).
+
+//4+ = "U"
+//8+ = "PG"
+//12+ = "12A"
+//15+ = "15"
+//18+ = "18"
+
+val givenAge: Int = 3
 
 if (givenAge >= 18){
   println("Films ratings: U, PG, 12A, 15 or 18")
@@ -93,4 +110,20 @@ if (givenAge >= 18){
   println(s"$givenAge is too young to attend the cinema")
 }
 
+//Challenge 2 MY CODE
+val ageRating: Int = 3
+
+if (ageRating >= 18) {
+  s"Your $ageRating means you can see a film rated 18"
+} else if (ageRating >= 15) {
+  s"Your $ageRating can see a film rated 15"
+} else if (ageRating >= 12) {
+  s"Your $ageRating can see a film rated 12A"
+} else if (ageRating >= 8) {
+  s"Your $ageRating  can see a film rated PG"
+} else if (ageRating >= 4) {
+  s"Your $ageRating can see a film rated U"
+} else {
+  s"Your $ageRating mean are too young  - sorry"
+}
 ////A double backslash should work in your string to get a single backslash e.g \\ - Question asked in class.
