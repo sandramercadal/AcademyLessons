@@ -1,4 +1,4 @@
-package Week2.Tuesday.SandrasAnimalSanctuary
+/**package Week2.Tuesday.SandrasAnimalSanctuary
 
 //Bird inherits name and age from Animal and has the extras of can fly and colourOfFeather. It can extend into BirdsTraits.
 //BirdTraits has TRAITS
@@ -48,4 +48,4 @@ object Bird {
 }
 
 
-
+*/

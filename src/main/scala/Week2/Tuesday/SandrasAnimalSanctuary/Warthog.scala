@@ -1,4 +1,4 @@
-package Week2.Tuesday.SandrasAnimalSanctuary
+/** package Week2.Tuesday.SandrasAnimalSanctuary
 
 //Warthog extends Mammal
 //I took out the vals here before name, age etc but kept it in for new ones for a Warthog
@@ -24,3 +24,5 @@ object Warthog {
   Warthog =
     new Warthog (name, age, hasFourTusks)
 }
+
+*/
