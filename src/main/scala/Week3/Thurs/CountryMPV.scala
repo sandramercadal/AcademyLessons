@@ -25,6 +25,7 @@ object CountryMPV extends App {
       case _ => "Unknown capital sorry!"
     }
   }
+
   println(getCapital("France")) //returns Paris
   println(getCapital("england")) //returns London even though I called it using a lowercase
   println(getCapital("             Italy")) //accounts for blank spaces too :) //returns Rome
@@ -54,7 +55,7 @@ object CountryMPV extends App {
 
   case object Cow extends Animal
 
- //I'm calling my method aboutAnimal
+  //I'm calling my method aboutAnimal
   def aboutAnimal(animal: Animal): String = animal match {
     case Pig => "I am a pink pig"
     case Sheep => "I am a cute sheep"
@@ -63,25 +64,19 @@ object CountryMPV extends App {
     case Donkey => "I am a big donkey"
     case Cow => "I am a small cow"
   }
-  println (aboutAnimal (Rabbit)) //I am a happy bunny
-  println (aboutAnimal (Cow)) //I am a small cow
-  println (aboutAnimal (Goat)) //I am a clever goat
 
-//Q3a) a PERSON case class requires fields in the table.
+  println(aboutAnimal(Rabbit)) //I am a happy bunny
+  println(aboutAnimal(Cow)) //I am a small cow
+  println(aboutAnimal(Goat)) //I am a clever goat
+
+  //Q3a) a PERSON case class requires fields in the table.
   //Write a method called createPerson which returns a type Person.
   // PERSON method accepts an InputPerson case class.
   // InputPerson case class will contain Given at inout = true method which calculaes the missing fields and returns a Person.
   // Only some of the table data is given at input. Given at input = true.
 
-case class Person (fullName: String, dob: String, occupation: String,
-                   lastCountryLivedIn: String, age: Int, starSign: String, ageAtDeath: Int)
-
-
-
-
-
-
-
+  case class Person(fullName: String, dob: String, occupation: String,
+                    lastCountryLivedIn: String, age: Int, starSign: String, ageAtDeath: Int)
 
 
 }
