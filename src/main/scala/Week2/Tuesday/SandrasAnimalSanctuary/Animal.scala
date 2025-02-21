@@ -13,6 +13,11 @@ class Animal (val name: String, val age: Int) {
 //Now create your COMPANION OBJECT, syntax is "object Animal" { enter def here }
 //We can access the companion classes private methods
 //Notice I have used the word "new" so this is a class?
+//In Scala, a companion object is defined with the same name as the class or a trait and appears in the same file source.
+//The companion object can access the private members of the class and trait and it serves as a factory for creating instances of that class.
+
+
+
 
   object Animal {
     def putItAllTogether (name: String, age: Int): Animal = new Animal (name, age)
