@@ -1,4 +1,6 @@
 
+/**
+
 //case classes come by default with the apply method already defined which basically allows you to instantiate a Letter for example like this: Letter(add parameters in here )
 // instead of using the "new" keyword e.g. new Letter(add parameters in here)
 
@@ -85,8 +87,7 @@ object EitherLogic extends App {
  //The companion object can access the private members of the class and trait and it serves as a factory for creating instances of that class.
 
 
-
-
+*/
 
 
 

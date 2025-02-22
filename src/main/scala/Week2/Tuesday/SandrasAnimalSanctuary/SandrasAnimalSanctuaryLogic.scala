@@ -1,8 +1,7 @@
-/** package Week2.Tuesday.SandrasAnimalSanctuary
+package Week2.Tuesday.SandrasAnimalSanctuary
 
 //Keep all our logic separate to the class
 //We want to run it so extends App
-//Everytime we make a new instance of a class using the keyword new, we are making an object.This is an object
 
 
 object SandrasAnimalSanctuaryLogic extends App{
@@ -17,15 +16,13 @@ object SandrasAnimalSanctuaryLogic extends App{
   //LIST TO STORE MY ANIMALS THIS IS NOT AN OBJECT - Let's create some animals
   //An Ostrich & Penguin cant fly
 
-  val ostrich = Bird ("Ostrich, 6, false, "Pink")
-  val penguin = Bird ("Percy, 2, false, "black")
-  val warthog = Mammal ("Pumba, 16, true, "grey")
-  val tiger = Mammal ("Mufasa, 21, true, "orange")
-  val eagle = bird ("Eagle, 3, true, "black")
+  //val ostrich = Bird ("Ostrich, 6, false, "Pink")
+  //val penguin = Bird ("Percy, 2, false, "black")
+  //val warthog = Mammal ("Pumba, 16, true, "grey")
+  //val tiger = Mammal ("Mufasa, 21, true, "orange")
+  //val eagle = bird ("Eagle, 3, true, "black")
 
 }
 
 
 //If lost - Command + hover turns things blue
-
-*/

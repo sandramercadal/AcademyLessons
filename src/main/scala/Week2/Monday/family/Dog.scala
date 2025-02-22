@@ -1,58 +1,39 @@
 package Week2.Monday.family
-//TASK  Where is the code ask April.
-
-//Q1 - Create a class so you can build your dogs
-
-//Blueprint
-//Check your brackets
-//The class name you give it starts with a CAPS
-//Add val to the name you give it
-
-  //class Dog (val givenName: String) { // in (enter classparameters in brackets), in {curlies enter body of the class}.
-    // All the logic goes in the body.
-
-    //val isItADog: Boolean = true
-    //val DoesitHaveOwner: Boolean = true
-    //val numberOfLegs: String = "4"
-    //def vetCheck: String = "When was the dog's last vet appointment?"
-  //}
-
-
+//TASK DOGS
 /**
-val dog1 = Dog =Dog.apply (new Name ("Mabel"), newAge (2))
-val dog2 = Dog =Dog.apply (new Name ("Ruby"), newAge (12))
+This family have many dogs.
 
-println (dog1.name.name)
-println (dog2.newAge.newAge)
+1. Create a class so you can build your dogs, being sure to include class parameters that will help us build the dog.
 
-class Dog (val name: String, val age: Int, val IsAGoodDog: Boolean) {
+2. Add in some simple methods.
 
-  def speak : String = s"$name wants a treat!"
-  def giveAge: Int = age
-  def areyouGoodDog: String = if  ...goodDog
-  //then go to family logic and paste your dog data?
-  val rufus: Dog = Dog ("rufus", 5, false)
+3. Create a companion object for easy object creation.
 
-println (rufus.name)
-println (rufus.speak)
-}
+4. Create your dogs.
+
+5. Call each of your vals and methods.
+
+EXT: Add a Boolean type into you class parameters. Add a method to the class body which uses this Boolean in an if else statement.
 */
-//Q2 - Add in some simple methods
+//1
+class Dog (val name: String, val age: Int, val goodDog: Boolean) {
+//2
+  def speak: String = s"$name wants a treat!"
 
-//Q3 Create a companion Object
+  def giveAge: Int = age
 
-//object Dog {
+  def areYouAGoodDog: String = if (goodDog) "Such a good dog!!" else "You are not on the santa paws list..."
+}
+//3
+object Dog {
+  //4
+  def apply(name: String, age: Int, goodDog: Boolean) : Dog = new Dog(name, age, goodDog)
 
-  //def apply (forename: String): Dog = new Dog(givenName)
+//4
+//HOW to call?
+}
 
-  //APPLY METHOD
-  //val rufus = Dog.apply ("Rufus")
-  //println (rufus.isItADog)
 
-//}
-
-//Q4 Create your dogs
-//Q5 Call each of your vals and methods
 
 
 //INHERITANCE -
@@ -69,5 +50,4 @@ println (rufus.speak)
 //We can only extend 1 thing
 
 //TRAITS
-//see course notes
 //We can incorporate multiple traits

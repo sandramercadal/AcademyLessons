@@ -1,28 +1,24 @@
 package Week2.Tuesday.SandrasAnimalSanctuary
 
 
-//Here Mammal extends from the Animal class and is given further properties of BlueWhaleIsBiggestMammal, legColour & isNotWarmBlooded
-//Step 1 class Mammal with val's9
+//Here Mammal extends from the Animal class and is given further properties of val hasTinyEyes & val colourOfFur
 class Mammal (name: String, age: Int,  val hasTinyEars: Boolean,  val colourOfFur: String) extends Animal (name, age) {
-
-//Step 3
-  //A lower class of Mammal, a sublass
-  //Override here
   //Mammal overrides aboutAnimal from Animal
 
 
 
   //I want to say something using my val hasTinyEars and my colourOfFur
   //() empty so it can accept the properties
+  //Override keyword is used to modify or extend the behavior of a method that is inherited from a parent class
 override def aboutAnimal(): String = {
   super.aboutAnimal ()+ s" I am an animal, and I have $colourOfFur fur"}
 }
 
 
-//Step 2
- object Mammal {
+//An instance of a Mammal (object) - use "new" keyword
+ object Mammal1 {
 
-def putItAllTogether (name: String, age: Int,  hasTinyEars: Boolean,  colourOfFur: String) :
+def createAnimal (name: String, age: Int, hasTinyEars: Boolean,  colourOfFur: String) :
 Mammal =
   new Mammal(name, age, hasTinyEars, colourOfFur)
  }

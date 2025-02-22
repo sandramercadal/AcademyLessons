@@ -1,4 +1,4 @@
-package Week2.Tuesday.SandrasAnimalSanctuary
+/**package Week2.Tuesday.SandrasAnimalSanctuary
 
 trait BirdTraits {
 
@@ -12,3 +12,5 @@ trait BirdTraits {
 
 
 //Use the extends keyword to extend a trait. T
+
+*/

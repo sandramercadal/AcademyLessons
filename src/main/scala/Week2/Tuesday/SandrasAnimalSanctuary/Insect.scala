@@ -1,8 +1,20 @@
 package Week2.Tuesday.SandrasAnimalSanctuary
 
-class Insect {
+class Insect (name: String, age: Int, val wingSpan: Double) extends Animal(name, age) {
+  //Insect overides aboutAnimal from Animal
 
+
+  override def aboutAnimal(): String = {
+    super.aboutAnimal ()+ s" I am an Insect, and I have a wingspan of $wingSpan meters. Nice to meet you!!"}
 }
 
-//What is my insect fact eg how many wings????
-//Insect gets bits from animals as well as
+//An instance of an Insect (object) - use "new" keyword
+object Insect1 {
+
+  def createAnimal (name: String, age: Int, wingSpan: Double) :
+  Insect = new Insect(name, age, wingSpan)
+}
+
+
+
+

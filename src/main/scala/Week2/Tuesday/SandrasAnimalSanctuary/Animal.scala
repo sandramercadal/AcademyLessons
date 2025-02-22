@@ -4,22 +4,22 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 //Class is a combination of things. A Mammal is also an animal!
 //Everything an animal has is also what a Monkey and Warthog and Owl have....
 
-class Animal (val name: String, val age: Int) {
+class Animal(val name: String, val age: Int) {
 
-  def aboutAnimal (): String = s"I am an animal, my name is $name and I am $age years old!"  //will print the name and age parameters
-
+  def aboutAnimal(): String = s"Hello!! I am an animal, my name is $name and I am $age years old. Nice to meet you!!" //will print the name and age parameters
 }
 
-//Now create your COMPANION OBJECT, syntax is "object Animal" { enter def here }
-//We can access the companion classes private methods
-//Notice I have used the word "new" so this is a class?
-//In Scala, a companion object is defined with the same name as the class or a trait and appears in the same file source.
-//The companion object can access the private members of the class and trait and it serves as a factory for creating instances of that class.
 
 
-
-
-  object Animal {
-    def putItAllTogether (name: String, age: Int): Animal = new Animal (name, age)
+//Now create your COMPANION OBJECT, syntax is "object Animal" plus function
+//Serves as a factory for creating instances of that class.
+//"new" is used to create a new object of a class.
+//We can access the private methods of class Animal now
+object Animal {
+  def createAnimal(name: String, age: Int): Animal = {
+    new Animal(name, age)
   }
+}
 
+//val Rufus = Animal.createAnimal("Rufus", 4)
+//println(Rufus.aboutAnimal())

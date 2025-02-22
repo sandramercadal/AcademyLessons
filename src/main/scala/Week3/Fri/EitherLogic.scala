@@ -1,3 +1,6 @@
+/**
+
+
 package Week3.Fri
 
 import Week3.Fri.EitherLetter.{InvalidNameError, Letter, Name, Postcode}
@@ -31,7 +34,9 @@ object EitherLogic extends App {
     }
 
   }
+ }
 
 
+*/
 
-}
+

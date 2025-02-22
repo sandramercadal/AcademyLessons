@@ -3,26 +3,36 @@
  Functions, Methods, Referential transparancy, For comprehensions
  IMMUTABLE - Think of this as read - only / cannot be ressaigned
  */
-// Method step by step instructions on how to do something e.g make a cup of Tea
+// Method is step by step instructions on how to do something e.g make a cup of Tea
 //Functions and methods both define specific steps. Can be reused in multiples places
 //Logic is identical so hard to see if it's a method or a function!! Methods contain 'def' or start with 'def'
 
-//1 of 4 ANONYMOUS FUNCTION
+//Functions:
+  //A way to group code that can be executed 0 or more times
+//def functionName () : Unit = {
+  //do something
+//}
+//if i type def functions () {} and enter return in the curlies it created the skeleton below:
+//def function(): Unit = {
+//}
+
+//1 of 4 = ANONYMOUS FUNCTION
 //Use a rocket symbol => when you want it to do something
 //number is not declared/has no name/not assigned to anything
 (number: Int) => number +1
 
-//2 of 4 NAMED FUNCTION:
+//2 of 4 = NAMED FUNCTION:
 //As a val now
 // Named Val (addition) as we want to reuse. We cannot override. Immutable.
 //Given an int which is called number, I'm taking this Int and adding 1
-
 val addition = (number: Int) => number +1
+
+
 //3 of 4 METHOD (also a type of function) has "DEF"
 //DEF starts with the words def and syntax changes I need to tell it what I want within my name
 // Named so can be reused.
 def addition (number:Int): Int = number +1
-//notice no - sign after you name your function
+//notice no = sign after you name your function
 
 
 //4 of 4 OVERRIDE METHOD
@@ -69,7 +79,7 @@ def makeATea(sugar:Int, splashesOfMilk: Int): String = {
   s"Add boiling water to your cup with a teabag, add $sugar spoons of sugar and $splashesOfMilk splashes of milk, stir and enjoy!"
 }
 makeATea(4, 6)
-makeATea(sugar = 7, splashesOfMilk = 4)
+makeATea(sugar = 4, splashesOfMilk = 6)
 //Calling it with diff amounts of sugars and splashes of milk
 
 //VAT
@@ -95,15 +105,15 @@ def getBigVal (input1: Int, input2: Int): String = {
   } else if (input1 < input2) {
     "second"
   } else if (input1 == input2) {
-    "equal"
+    "same"
   } else {
     "oops we have an issue..."
   }
 }
 //run it
-getBigVal(3,7)
+getBigVal(6,4)
+getBigVal(2,4)
 getBigVal(4,4)
-getBigVal(10,20)
 getBigVal(50,100)
 
 //OR the way I coded it, I didn't seem to use {before the strings or after:
@@ -126,7 +136,7 @@ getBigVal(100,200)
 
 //The result of the method should return the length/size of the name (not surname) which is greater.
 // If both names are the same length return 0.
-//Here is some test data eg First name: Peter Last name: Pan, Result: 6,
+//Here is some test data eg First name: Peter Last name: Pan, Result: 5,
 // First name: Mickey Last name: Mouse, Result: 9, etc
 
 def nameLength(firstName: String, surname: String): Int = {
@@ -143,6 +153,7 @@ def nameLength(firstName: String, surname: String): Int = {
 nameLength("Peter", "Pan")
 nameLength("Mickey", "Mouse")
 nameLength("Bigdonald", "Duck")
+nameLength("Mary", "Duck")
 
 //OR coded by colleague:
 def nameLength(firstName: String, surname: String): Int = {

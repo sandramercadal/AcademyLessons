@@ -23,10 +23,15 @@
 for (numbers <- 1 to 10) yield numbers
 //Gives me a list of numbers from 1 to 10
 
-//This example has a classic and a function in front of it??
+//This example has a classic and a function in front of it
 def retrieveNumbers: Seq[Int] = for (number <- 1  to 10) yield number
 retrieveNumbers
+//retrieveNumbers is the function
+//Seq means a list of things in order and will return an Int
+//for (number <- 1  to 10) is the LOOP
+//yield number is take each number and add it to our list or
 //(1 to 10 ).foreach (number => println (number))
+//retrieveNumbers to call it
 
 //use operators
 //Simple USE OPERATORS example
@@ -46,14 +51,23 @@ useIfGuard
 
 
 
-//FUN WITH ANIMALS
+//A STRING of animals made into a METHOD
 
-val animals: List [String] = List ("Peacock", "Dog", "Hamster", "Cat")
+val animals: List [String] = List ("Moose", "Peacock", "Dog", "Hamster", "Cat")
+
+//Convert a STRING to a METHOD
+def animalList (): List [String] = {
+  List ("Moose", "Peacock", "Dog", "Hamster", "Cat")
+}
+//VAl to call
+val animals = animalList ()
+println (animals)
+
 
 //manipulate this list using a method (TIP: Methods start with 'def')
 //add and 'S' to the end of every animal
-//lower case map here not Map
-
+//the word map is lower case here not Map
+//MAKE A PLURAL LIST OF ANIMALS
 def addS (animalList:List [String]): List [String] = animalList.map(animal => animal + "s")
 addS (animals)
 
@@ -89,8 +103,10 @@ def upperCaseAnimals (animalList: List [String]): List [String] = animalList.map
 upperCaseAnimals(animals)
 
 
+//TASK FROM LESSON
 //Task 1a - Write a simple method that will take in a list of names and return them all in lowercase
-//Step 1 - make a list, Step 2: Use a method to lowercase it
+//Step 1 - make a list
+// Step 2: Use a method to lowercase it
 //TIP: Rocket => means we want you to do something, map in lowercase
 val animals: List [String] = List ("Peacock", "Dog", "Hamster", "Cat")
 
@@ -99,7 +115,8 @@ lowerCaseAnimals(animals)
 
 //Task 1b - Write a simple method that will take in list of names and return them with only the first letter capitalised.
 //Run both methods using this list: val names: List [String] = List ("aRia", "BaRT", "ChUCk")
-//Step 1 - make a list (already given), Step 2: Use a method to capitalise the first word only.
+//Step 1 - make a list (already given above)
+// Step 2: Use a method to capitalise the first word only.
 //TIP: Rocket => means we want you to do something, map in lowercase
 
 val names: List[String] = List("aRIa", "BaRT", "ChUCk")
@@ -107,12 +124,17 @@ val names: List[String] = List("aRIa", "BaRT", "ChUCk")
 def lowercaseNames(nameInput: List[String]):List[String] = nameInput.map(name => name.toLowerCase)
 def capitaliseNames(nameInput: List[String]):List[String] = nameInput.map(name => name.capitalize)
 //result is Aria! Bart! Chuck!
+println (names)
 
+val lowercasedNames = lowercaseNames(names)
+println (lowercasedNames)
 
 // TASK 2 - NOT CALLING 2 METHODS JUST 1 - FOR COMPREHENSIONS
 // I want to be able to do task 1 in a single method, so I don't always have to call 2 methods
 //A possible start
 //def capitaliseList(nameInput: List[String]): List[String] =
+
+val names: List[String] = List("aRIa", "BaRT", "ChUCk")
 
 def capitaliseList(nameInput: List[String]): List[String] =
   for {
@@ -120,5 +142,7 @@ def capitaliseList(nameInput: List[String]): List[String] =
     capital <- capitaliseNames(List(lower)) //apply the capitalize method
   } yield capital
 
+//RUN IT??:
+//capitaliseList
 
-//capitaliseList(names).map(name => name + "!").mkString(" ")
+capitaliseList(names).map(name => name + "!").mkString(" ") //String = Aria! Bart! Chuck!

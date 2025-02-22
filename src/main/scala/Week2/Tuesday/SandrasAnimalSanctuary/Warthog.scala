@@ -1,28 +1,18 @@
-/** package Week2.Tuesday.SandrasAnimalSanctuary
+package Week2.Tuesday.SandrasAnimalSanctuary
 
 //Warthog extends Mammal
 //I took out the vals here before name, age etc but kept it in for new ones for a Warthog
 
-class Warthog (name: String, age: Int, val hasFourTusks: Boolean) {
-  extends Animal (name, age)
+class Warthog(name: String, age: Int, val hasFourTusks: Boolean)
+  extends Animal(name, age) {
+  def aboutWarthog(): String = s"Hello I am a warthog. Do I have Four tusks?$hasFourTusks!" //will print the val parameters
 }
 
 
-//warthog extends Animal so Warthog cant extend Mammal (extend only once).
+//Create the new object of Watrhog:
+object Warthog1 {
 
-//We are going to create something from it so we make it a class.
-//If lost - Command + hover turns things blue
-
-// A TRAIT :  We are checking something against it but not creating something from it.
-
-
-//Step 2
-//Create the object and specify that a Warthog hasFourTusks:
-object Warthog {
-
-  def putItAllTogether (name: String, age: Int, hasFourTusks: Boolean) :
-  Warthog =
-    new Warthog (name, age, hasFourTusks)
+  def createAnimal(name: String, age: Int, hasFourTusks: Boolean):
+  Warthog = new Warthog(name, age, hasFourTusks)
 }
 
-*/

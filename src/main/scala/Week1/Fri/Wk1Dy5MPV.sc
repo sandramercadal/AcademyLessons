@@ -1,5 +1,7 @@
+import scala.io.Codec
+
 /**
- Functions, Methods, & For comprehensions MPV
+ * Functions, Methods, & For comprehensions MPV
  */
 
 //Q1 COMPLETED Write a method to calculate the square of an Int. It should have an input parameter, Int and return type Int.
@@ -24,24 +26,24 @@ isOdd(2)
 // For comparison is a lightweight notation for expression of sequence comprehension/simplified way of writing a function.
 //TYPES: Classic, Use operators or Use if guards.
 // SYNTAX: Uses backward symbol e.g. for (numbers <- 1 to <-10) yield numbers  - and 2 symbols will appear between 'to'.
+          //MPV:
           //It will iterate over a List of Ints
           //Will square each Int in the List
           //WIll filter and keep only the odd squared values
           //Then, return the sum of these odd squared numbers.
           //It needs to have List [Int] and return type INT.
-//def squareOfAnInt (number:Int): Int = number * number
-//def isOdd (number:Int): Boolean = number % 2 == 1
 
-//def sumOfOddNumbers (List: Int): Int = {
-  //numbers
-//}
-
-//def useIfGuard: Seq [Int] = for (number <-1 to 10 if number % 2 == 0 ) yield number
-//useIfGuard
-//runs if the numbers are odd
-//def squaredNumbers: Seq[Int] = for (number <- 1 to 5) yield number * number
-//squaredNumbers
-
+//APRILS CODE Q3
+val numbers:List[Int] = List(1,2,3,4,5,6,7,8,9,10)
+def sumOfOddNumbers(numbers: List[Int]): Int = {
+  val oddSquares = for {
+    number <- numbers //iterate over the list
+    square = squareOfAnInt(number) //calculate square (each value). Need to use = as the newSquared method returns an Int.
+    if isOdd(square) //use an if guard, filter and keep only the odd values of square
+  } yield square //collect all the odd squares
+  oddSquares.sum //sum filtered odd squares by calling your val
+}
+sumOfOddNumbers(numbers)
 
 //Q4 COMPLETED Write a Grading system
 //Save each method as a Val, each method does one thing.
@@ -73,7 +75,28 @@ val studentIndividualGrades = (scienceResult + mathResult + historyResult) / 3.0
 
 val finalStudentScore = studentGradeCalculation (studentIndividualGrades)
 
-println (s"Your average score is $studentIndividualGrades and your grade is $grade")
+println (s"Your average score is $studentIndividualGrades and your grade is $finalStudentScore")
+
+//APRILS CODE
+val studentScore: List[Int] = List(97, 75, 89)
+
+def calculateAverage(scores: List[Int]): Double = {
+  scores.sum / scores.length
+}
+
+def determineGrade(average: Double): String = {
+  if (average >= 90) "A"
+  else if (average >=80) "B"
+  else if (average >=70) "C"
+  else if (average >=60) "D"
+  else "E"
+}
+
+def studentFinalGrade(scores:List[Int]): String = determineGrade(calculateAverage(scores))
+
+studentFinalGrade(studentScore)
+
+
 
 /** Research Pure & Impure
 Scala is a functional language so functional programming is a way of writing computer programs as
@@ -94,6 +117,39 @@ lenth
  An IMPURE function can give different output every time it is called and the output of the funtion
  is not dependant only on the input parameters.
   */
+//APRILS Code
+
+/** Pure and Impure Functions */
+//Pure: Given the same input(s) the output will always be the same.
+//Impure: Given the same input(s) the output will be different if passed in multiple times.
+//Bit of a spot the difference - val/var.
+
+//Pure: Given the same input(s) the output will always be the same.
+//Impure: Given the same input(s) the output will be different if passed in multiple times.
+
+///**Example of pure: */
+val sentence: String = ""
+
+def append(sentence:String, word: String): String =
+  sentence + " " + word.trim()
+
+val a = append(sentence, "Allo") // "Allo"
+val b = append(sentence, "Allo") // "Allo"
+
+/** Example of impure: */
+var sentence: String = ""
+
+def append(word: String): String = {
+  sentence = sentence + " " + word
+  sentence.trim()
+}
+
+val a = append("Allo") // "Allo"
+val b = append("Allo") // "Allo Allo"
+
+////WHY? val and var. Immutable vs mutable.
+//// passing in empty string as sentence for the pure.
+//// Aim for pure! We want safe code!
 
 
 
