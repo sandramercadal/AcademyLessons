@@ -1,102 +1,115 @@
-/**
-Q1) Main differences between a CLASS and a CASE CLASS?
+//1. What are three main differences between a class and a case class?
+//Case classes have built in features
+//No need to use val with case classes
+//We can pattern match with case classes
+//Case classes are immutable only.
 
- BUILT_IN FEATURES:
- In Scala, Class and Case Class are used to define blueprints for objects but Case Class has several built-in features.
-This makes it more convenient for developers.
-
-THE USE OF "CASE" at the beginning of a case class:
-There is different syntax to begin with:
- To create a case use the words "case class" (no " required) vs a class begins with "class"  (no " required)
-
-THE USE OF "NEW" when creating a class:
-To create a class we need to use the words 'new' with a Class: e.g. new Car
-A CLASS CASE does not ned the word "new"
-
-INHERITED BEHAVIOURS
-A CASE CLASS compares based on values
-We saw this with the Superhero example:
-*/
- case class SuperHero (realName: String, heroName: String, weakness: String)
- val superMan= SuperHero.apply ("Clark Kent", "Superman", "Kyrptonite")
-
- val superMan2= SuperHero.apply ("Clark Kent", "Superman", "Kyrptonite")
- println(superMan == superMan2)  //returns True, matches ("Clark Kent", "Superman", "Kyrptonite")
-
-//This returns true because it compares the values even though they are different objects.
-//They are considered equal in values, not memory addresses.
-
-/**
- VAL
-Val is an automatic constructor parameter with Case Class.
-With Class it is not. You have to explicitly declare "val"
-
-MUTABILITY
-With Class, we can define "var" making it mutable.
-With Case class, Fields are immutable by default, but you can use "var"
-
-PATTERN MATCHING
-With a CLass this is not supported. It is with Case Class.
-
-*/
 //Q2) Without coding it, which of the following lines of code is runnable and which will produce an error?
 // Then, code it and check!
-/**
-case class Person (name: String, age: Int, nationality: String, isStudent: Boolean)
-//GUESS: Structure looks fine, but parameters of name, age etc are not defined in a subsequent val
-//It won't return much maybe just class = Person.
 
- val firstPerson = new Person("Carlos", 23, "Spanish", true)
-//GUESS: Is a class has 'new'
-//Looks runnable
+case class Person(name: String, age: Int, nationality: String, isStudent: Boolean)
 
- val secondPerson = Person("Carlos", 23, "Spanish", true)
-//GUESS:
-//This is the opposite to above, it does not contain 'new' I would expect another outcome though maybe?
+val firstPerson = new Person("Carlos", 23, "Spanish", true) //notice the new here
+println(firstPerson)
 
- val thirdPerson = Person("Chloe", 25, "British", false)
-//GUESS: Looks runnable
+val secondPerson = Person("Carlos", 23, "Spanish", true) //You don't need new here as built into case classes
+println(secondPerson)
 
- class Animal (name: String, colour: String, pet: Boolean)
-//GUESS: Parameters of name, pet etc are not defined in a subsequent val
-
- val cat = Animal("cat", "black", true)
-//GUESS: This one doesn't look right. cat vs Animal
-
- val dog = new Animal("dog", "white", true)
-//GUESS:
-//Is a class has 'new'
-//Looks runnable.
-
-*/
-//Q3) After reviewing all combinations, which ones are true when compared using the “==“ operator?
-// Once decided, code it and check!
+val thirdPerson = Person("Chloe", 25, "British", false) //same as secondPerson but not a student
+println(thirdPerson)
 
 
-//Case Class
+class Animal(name: String, colour: String, pet: Boolean)
+
+//val cat = Animal("cat", "black", true) //This won't run as it doesnt have 'new' and thats  needed when it is a class to
+//make a new object so cat wont be made. Remember classes need ‘new’ to give them the additional functionality that we get built in with case classes.
+
+val dog = new Animal("dog", "white", true) //this will run as has 'new'
+println (dog)
+
+
+// MVP Exercise 3
+//Case class called Muffin with 3 parameters.
 case class Muffin(flavour: String, price: Double, storeBoughtFrom: String)
-//GUESS: The muffin flavours need to match so chocolate needs to match to blueberry //false
-//chocolate == vanilla //false
 
-//oneMoreChocolate muffin  is fasle as case sensitive
-
-
-//ALl of these are like we did for DOG...?
-
+//Instance of the Muffin case class with its parameters:
 val chocolateMuffin = Muffin("chocolate", 3.50, "Mercator Bakery")
-//GUESS:Looks runnable both have chocolate in them
+println(chocolateMuffin)
 
 val blueberryMuffin = Muffin("blueberry", 3.50, "Mercator Bakery")
-//GUESS:Looks runnable
+println(blueberryMuffin)
 
 val vanillaMuffin = Muffin("vanilla", 3.50, "Mercator Bakery")
-//GUESS:Looks runnable
+println(vanillaMuffin)
 
 val anotherChocolateMuffin = Muffin("chocolate", 3.50, "Mercator Bakery")
-//GUESS:
+println(anotherChocolateMuffin)
 
 val oneMoreChocolateMuffin = Muffin("Chocolate", 3.50, "Mercator Bakery")
-//GUESS:
+println(oneMoreChocolateMuffin)
 
-val finalChocolateMuffin = Muffin("choocolate", 2.50, "MercatorBakery")
-//GUESS:
+val finalChocolateMuffin = Muffin("chocolate", 2.50, "MercatorBakery")
+println(finalChocolateMuffin)
+
+chocolateMuffin == anotherChocolateMuffin  //True
+chocolateMuffin == oneMoreChocolateMuffin //Case sensitive so false
+chocolateMuffin == finalChocolateMuffin //why doesn't this run?
+
+// Extension Exercise 1
+//1. Construct a case class that takes in a minimum of 3 parameters, each of a different type,
+//and a case object.
+
+case class Car(manufacturer: String, colour: String, price: BigDecimal, ukManufacturer: Boolean, noOfSeats: Int)
+
+case object Mazda
+
+
+// Extension Exercise 2
+//2. Create 3 instances of the case class.
+
+val bmw = Car("BMW", "blue", 65000.00, ukManufacturer = false, 2)
+val mini = Car("Mini", "red", 40000.50, ukManufacturer = true, 5)
+val ford = Car("Ford", "grey", 30000.00, ukManufacturer = false, 5)
+
+// Extension Exercise 3
+//Use the “.copy” method to create a further 3 instances, each time modifying a different class parameter
+
+val bmwX5 = bmw.copy(price = 85000, noOfSeats = 5)
+val blueMini = mini.copy(colour = "blue")
+val ukFord = ford.copy(ukManufacturer = true)
+
+// Extension Exercise 4
+//4. Use the “.toString” method to print all parameters of the instance you have already
+//created for exercise 3.
+
+println(bmwX5.price.toString)
+println(firstPerson.age.toString)
+
+// Extension Exercise 5
+//5. Use the “.equals” method to compare case class instances you have already created as
+//part of the exercises so far.
+bmw.equals(ford)
+bmwX5.equals(firstPerson)
+bmw.equals(bmw)
+firstPerson.equals(secondPerson)
+
+
+// Research
+//1.We discussed about “.copy”, “.toString” and “.equals” methods but there are a lot more
+//available, such as “.getClass”, “canEqual” etc. Find as many as you can, what do they
+//do? Try to apply them the case classes you’ve created.
+//2. Is there difference between “.equals” and “.==” methods and why?
+
+//1.
+val displayClass = bmw.getClass
+val notEquals = firstPerson.!=(secondPerson)
+val canEqual = mini.canEqual(ford)
+val hashcode = ford.hashCode()
+val doubleEqualsSymbolSameCaseClass = thirdPerson == firstPerson
+val doubleEqualsSymbolDifferentCaseClass = bmwX5 == (firstPerson)
+
+//2.
+//At face value there seems to be no difference between “.==“ and “.equals” because they both check structural equality, but there are a few.
+//",equals" is inherited from Java’s Object class, ".==" is defined as a method on the Any class.
+//Main purpose of “.==“ is that it handles internally nulls, as “.equals” doesn’t and need to do it manually.
+//“.equals” is sometimes overriden by developers for custom equality checks.
