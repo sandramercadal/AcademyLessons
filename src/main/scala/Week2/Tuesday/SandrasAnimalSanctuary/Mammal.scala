@@ -2,7 +2,7 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 
 
 //Here Mammal extends from the Animal class and is given further properties of val hasTinyEyes & val colourOfFur
-class Mammal (name: String, age: Int,  val hasTinyEars: Boolean,  val colourOfFur: String) extends Animal (name, age) {
+class Mammal (name: String, age: Int,  val hasLongEars: Boolean,  val colourOfFur: String) extends Animal (name, age) {
   //Mammal overrides aboutAnimal from Animal
 
 

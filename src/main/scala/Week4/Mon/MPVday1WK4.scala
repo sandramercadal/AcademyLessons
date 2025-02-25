@@ -8,21 +8,43 @@ object MPVday1WK4 extends App {
   //1) Start by looking up the teams that played in the 2024 Euros.
   //a) Create an object called Euro2024 that extends Enumeration. Provide all the
   //teams who participated in the 2024 Euros.
+//notice the use of Value here
 
-  object euro2024Teams extends Enumeration { //grouping
-  //type euro2024Team = String
-  val England: String = "England"
-  val Spain: String = "Spain"
-  val France: String = "France"
-}
+  object Euro2024 extends Enumeration {
+    val albania = Value("Albania")
+    val austria = Value("Austria")
+    val belgium = Value("Belgium")
+    val czechia = Value("Czechia")
+    val croatia = Value("Croatia")
+    val denmark = Value("Denmark")
+    val england = Value("England")
+    val france = Value("France")
+    val georgia = Value("Georgia")
+    val germany = Value("Germany")
+    val hungary = Value("Hungary")
+    val italy = Value("Italy")
+    val netherlands = Value("Netherlands")
+    val poland = Value("Poland")
+    val portugal = Value("Portugal")
+    val romania = Value("Romania")
+    val scotland = Value("Scotland")
+    val serbia = Value("Serbia")
+    val slovakia = Value("Slovakia")
+    val slovenia = Value("Slovenia")
+    val spain = Value("Spain")
+    val switzerland = Value("Switzerland")
+    val turkey = Value("Turkey")
+    val ukraine = Value("Ukraine")
+
+  }
 
 
-  //}
-//}
-  println(euro2024Teams)
-  println(euro2024Teams.England.toLowerCase) //returns england in lower case
+  //println(euro2024Teams)
+  //println(euro2024Teams.England.toLowerCase) //returns england in lower case
 
   //Tail recursive method to print all the teams:
+
+
   //TRY THIS
 
  // def printTheTeams () : unit = {
@@ -63,6 +85,14 @@ object MPVday1WK4 extends App {
   //Up the ladder:  n = 5 : factorialAddition 5 =  5+ 4, factorialAddition 4 = 4+ 3,
   // factorialAddition 3 = 3+3, factorialAddition 2 = 2+2, 1+ 1, 0=0
   //back up the ladder: 1+0 =2  2+1 = 3, 3+ 3=6, 4+6 = 10, 5+10 = 15
+
+
+  //PM case from dorothea
+  //def addNumbers1 (N: Int) : Int =
+    //n match {
+      //case x if x <=
+    //}
+
 
 
 }

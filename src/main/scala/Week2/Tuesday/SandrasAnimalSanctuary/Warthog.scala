@@ -4,7 +4,7 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 //I took out the vals here before name, age etc but kept it in for new ones for a Warthog
 
 class Warthog(name: String, age: Int, val hasFourTusks: Boolean)
-  extends Animal(name, age) {
+  extends Mammal (name, age, hasLongEars, colourOfFur) {
   def aboutWarthog(): String = s"Hello I am a warthog. Do I have Four tusks?$hasFourTusks!" //will print the val parameters
 }
 
