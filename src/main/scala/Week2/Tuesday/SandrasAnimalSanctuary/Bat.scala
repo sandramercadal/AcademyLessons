@@ -4,8 +4,8 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 //Bat cant extend Mammal.
 
 //Carry over the logic from Animal and add in the new ones for Bat - isNocturnal & hasLongEars
-class Bat(name: String, age: Int, val isNocturnal: Boolean, val hasLongEars: Boolean)
-  extends Animal (name, age) {
+class Bat(name: String, age: Int, val isNocturnal: Boolean, hasLongEars: Boolean, colourOfFur: String)
+  extends Mammal (name, age, hasLongEars, colourOfFur) {
 
   def aboutBat(): String = s"Hello!! I am a Bat, I have $hasLongEars. Nice to meet you!!" //will print the val parameters
 }
@@ -16,8 +16,8 @@ class Bat(name: String, age: Int, val isNocturnal: Boolean, val hasLongEars: Boo
 //Create the object and specify that an Owl is nocturnal:
 object Bat1 {
 
-  def createAnimal(name: String, age: Int, isNocturnal: Boolean, hasLongEars: Boolean):
+  def createAnimal(name: String, age: Int, isNocturnal: Boolean, hasLongEars: Boolean, colourOfFur: String):
   Bat = {
-    new Bat(name, age, isNocturnal, hasLongEars)
+    new Bat(name, age, isNocturnal, hasLongEars, colourOfFur)
   }
 }
