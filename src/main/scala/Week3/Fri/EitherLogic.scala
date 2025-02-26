@@ -1,12 +1,11 @@
 /**
 
-
 package Week3.Fri
 
 import Week3.Fri.EitherLetter.{InvalidNameError, Letter, Name, Postcode}
 //do we need to import it ??
 
-case class Name (value: String)
+case class Name (value: String) //Q1
 
 object EitherLogic extends App {
 
