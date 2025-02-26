@@ -32,7 +32,7 @@ object EitherLogic extends App {
 //Create two case classes, `Name` and `Postcode`
   //• Both can take `value: String`
 
-  //case class Postcode (value: String)
+  //case class Postcode (value: String) //Q1
 
   //2. Create a case class called `Letter` that contains a `name` and `postcode`
   //• The `name` should have the type `Name`
