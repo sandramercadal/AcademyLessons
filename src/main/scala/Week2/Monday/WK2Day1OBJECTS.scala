@@ -76,5 +76,11 @@ println (mathsConcepts.euler) //returns 0.57721
 
   println(daysOfTheWeek.Tuesday)  //returns Tuesday
   println(daysOfTheWeek.Tuesday.toLowerCase) //returns tuesday
+
+
+
+
+
+
 }
 

@@ -73,8 +73,8 @@ object Recursion extends App {
   def smarterFactorial(n: Int): Int = {  //acc not added here just in factorialHelper
     @tailrec
     def factorialHelper(x: Int, acc: Int): Int = { //pass our int again but we cant call it int so change the name so x. Now pass in the acc that will aslo be a int as it matches
-      //write our methjod here inside the factorial helper
-      //Helper method means we dont need to chage the top method on line above
+      //write our method here inside the factorial helper
+      //Helper method means we don't need to chage the top method on line above
       if (x <= 1) acc //return the acc. Superstar doing all the work here - stores the intermediate value. Dont need to have a large memory as call stack is being updated each time
       else {
         println(s"Current X inside else: $x") // stay here util we get to our 1 . this can be anything until we leave the loop

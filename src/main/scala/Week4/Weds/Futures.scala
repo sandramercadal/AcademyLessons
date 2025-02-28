@@ -137,11 +137,12 @@ object Futures extends App {
   //TASK1
 
 //1. Create two Futures: One returning "Hello" and the other "World". Combine them into "Hello World".
-  //Need to use Await. here
+  //Need to use Await. here!!!!!!!!
 
-  val futureOne: Future [String] = Future {
+  //both Vals can complete in parallel
+  val futureOne: Future [String] = Future {  //The future will eventually gold a result of Tsring
     //Thread.sleep (2000)
- "Hello"
+ "Hello"  //code I want to run in parallel
   }
 
   val futureTwo: Future [String] = Future {
@@ -149,14 +150,13 @@ object Futures extends App {
  "World"
   }
 
-
 //val futureHelloWorldMessage .onComplete {
   //  case Success (result) => println (s"Using onComplete: $result")
     //I clicked on success like bfore and it imported import scala.util.Success
     //case Failure (exception) => println(s" Failure with OnComplete: ${exception.getMessage}")
     //clicked again as before this time on Failure and i imported import scala.util.{Failure, Success}
 
-
+  //FOR COMP
   val combinedFutureOneAndTwo: Future[String] = for {
     hello <- futureOne
     world <- futureTwo
@@ -164,7 +164,7 @@ object Futures extends App {
 //or yield word1 + " " + word2 + "!"
 
   println(Await.result(combinedFutureOneAndTwo, waitTime))
-
+//Await.result is used to block the main thread until the combined Future completes, and retrieves its result which it then prints.
 
 //Q2
   /** TASK 2 */
@@ -195,7 +195,6 @@ object Futures extends App {
 
   // Print the final result
   combinedResult.foreach(println)
-
 
   Thread.sleep(3000) //set on later than the object above - This ensures the object thread doesn't finish before the future has completed
   }
