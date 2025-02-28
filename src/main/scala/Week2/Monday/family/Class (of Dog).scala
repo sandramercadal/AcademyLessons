@@ -15,13 +15,27 @@ This family have many dogs.
 
 EXT: Add a Boolean type into you class parameters. Add a method to the class body which uses this Boolean in an if else statement.
 */
+//Q1 Create a class to build your dogs
+class Dog (val name: String, val age: Int, val breed: String, val jumpsUp: Boolean, val likesToLick: Boolean) {
+  //Q2 Add in some simple methods.
+  def lickingBehaviour: String = s"$name wants to lick me"
+
+  def JumpsUp: String = if (jumpsUp) "Don't jump up!!" else "You didn't jump up good doggy"
+
+  def giveAge: Int = age
+  //3. Create a companion object for easy object creation. (Remb has same name)
+ object Dog
+
+
+
+
+}
+/**APRILS CODE
 //1
 class Dog (val name: String, val age: Int, val goodDog: Boolean) {
 //2
   def speak: String = s"$name wants a treat!"
-
   def giveAge: Int = age
-
   def areYouAGoodDog: String = if (goodDog) "Such a good dog!!" else "You are not on the santa paws list..."
 }
 //3
@@ -33,7 +47,7 @@ object Dog {
 //HOW to call?
 }
 
-
+*/
 
 
 //INHERITANCE -
