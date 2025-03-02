@@ -19,7 +19,7 @@
 //1 of 4 = ANONYMOUS FUNCTION
 //Use a rocket symbol => when you want it to do something
 //number is not declared/has no name/not assigned to anything
-(number: Int) => number +1
+(number: Int) => number +1 //Takes a number and makes it bigger
 
 //2 of 4 = NAMED FUNCTION:
 //As a val now
@@ -39,7 +39,8 @@ def addition (number:Int): Int = number +1
 // key word is "override" so start with "override".
 // You expect an Int which is a number below (number:Int) & take that number and add 10
 def addition (number:Int): Int = number + 10
-
+//When we say this is an "override method," it usually means this special instruction
+// takes the place of another one that was already there before. It’s like saying, "I've got a new, better way to do this!"
 
 //name should be unique def nameOfMethod. To run need to have a parameter: then needs ReturnType
 //then { in here is the expressions if multiple } see Task 2 below

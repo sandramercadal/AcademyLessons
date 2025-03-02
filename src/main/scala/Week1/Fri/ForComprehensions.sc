@@ -24,7 +24,7 @@ for (numbers <- 1 to 10) yield numbers
 //Gives me a list of numbers from 1 to 10
 
 //This example has a classic and a function in front of it
-def retrieveNumbers: Seq[Int] = for (number <- 1  to 10) yield number
+def retrieveNumbers: Seq[Int] = for (number <- 1  to 10) yield number //Seq[Int} wil return a sequence of Ints
 retrieveNumbers
 //retrieveNumbers is the function
 //Seq means a list of things in order and will return an Int

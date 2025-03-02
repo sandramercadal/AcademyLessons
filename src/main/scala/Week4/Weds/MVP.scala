@@ -5,7 +5,7 @@ import scala.concurrent.{Await, ExecutionContext, Future}
 import scala.util.{Failure, Success}
 
 object MVP extends App {
-  implicit val ec: ExecutionContext = ExecutionContext.global
+  implicit val ec: ExecutionContext = ExecutionContext.global //Q1MPV2
 
   case class Name(value: String) //Q1
 
@@ -18,13 +18,13 @@ object MVP extends App {
         Right(Name(maybeName))
   }
 
-  def fetchLetter: Future [Letter] = Future {
-   // Thread.sleep (10000000)  //It times out
+  def fetchLetter: Future [Letter] = Future {  //Q2MPV2
+   // Thread.sleep (10000000)  //It times out   //Q7MPV2
   Thread.sleep(2) //sleep for 2mil
     Letter (Name("Simon"), Postcode("SE219DA"))
   }
 
-  val eventualLetter: Future [Letter] = fetchLetter
+  val eventualLetter: Future [Letter] = fetchLetter //Q3MPV2
 
 
   case class Postcode(value: String) //Q1
@@ -90,7 +90,7 @@ object MVP extends App {
   }
 
 
-  val result = eventualLetter.value match {
+  val result = eventualLetter.value match {  //Q5MPV2
 
     case Some (Success(foundLetter)) => s"successful $foundLetter"
 
@@ -101,7 +101,7 @@ object MVP extends App {
   }
   println (result)
 
-  Await.ready (eventualLetter, 2.seconds)
+  Await.ready (eventualLetter, 2.seconds) //Q4MPV2
 
 }
   //RESEARCH - Explore error handling with Either compared to two other approaches; Try and Option.

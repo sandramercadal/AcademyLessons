@@ -9,7 +9,7 @@ import scala.io.Codec
 //Methods have 'def' in them or start with 'def'
   //TIP: Must be given a unique name e.g squareOfAnInt
 
-def squareOfAnInt (number:Int): Int = number * number
+def squareOfAnInt (number:Int): Int = number * number //: Int: indicates that the function will return an integer.
 squareOfAnInt(6)
 squareOfAnInt(64)
 
@@ -63,7 +63,8 @@ val scienceResult = 50
 val mathResult = 85
 val historyResult =59
 
-def studentGradeCalculation (averageScore : Double): String = {
+def studentGradeCalculation (averageScore : Double): String = {  //method takes one parameter named averageScore,
+  // which is of type Double. This means it is expected to be a decimal number (like 85.5).
  if (averageScore >=90) "Grade A"
  else if (averageScore >=80) "Grade B" //scale is 80-89
  else if (averageScore >=70) "Grade C" //scale is 70-79
@@ -78,10 +79,11 @@ val finalStudentScore = studentGradeCalculation (studentIndividualGrades)
 println (s"Your average score is $studentIndividualGrades and your grade is $finalStudentScore")
 
 //APRILS CODE
-val studentScore: List[Int] = List(97, 75, 89)
+val studentScore: List[Int] = List(97, 75, 89) //Contains a list of INTS
 
 def calculateAverage(scores: List[Int]): Double = {
-  scores.sum / scores.length
+  scores.sum / scores.length  //calculates the total of all the scores in the list, and scores.length gives the number of scores in the list.
+  //The method returns the average score as a Double using the formula: total scores / number of scores. However, note that this will perform integer division because both sum and length are integers, so it's better to convert them to Double to avoid losing decimal values.
 }
 
 def determineGrade(average: Double): String = {
