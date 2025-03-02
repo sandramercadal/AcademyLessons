@@ -12,37 +12,17 @@ object PatternMatching extends App {
   } else {
     println(s"$weather is not valid")
   }
- //How do we change the above into PM? we swap around (weather == "cold") and use the  syntax match
+ //How do we change the above into PM? we swap around (weather == "cold") and use the syntax "match"
   //our if statement is case number 1
   //if else is case number 2
   //case of everything else is case number 3
-  //if the weather matches thecase of cole i want you to print (s"It is $weather! Take a coat.").
+  //if the weather matches the case of cold I want you to print (s"It is $weather! Take a coat.").
   weather.toLowerCase match {
     case "cold"  => println (s"It is $weather! Take a coat.")  //cold is not valid
     case "raining"  => println (s"It is $weather! Take an umbrella")//cold is not valid
     case _  => println  (s"$weather is not valid")    //_ is wildcard, will catch anything else but wont give you much info just is not valid
 
   }
-//If else statement vs PM
-  //
-
-  //PATTERN MATCHING
-  //WE can PM off vals, tarits, objects, enums and more.
-
-  //Now we add .toLowerCase
-  //weather.toLowerCase match
-   //if (weather.toLowerCase == "cold") {
-  //we get :
-  //It is Cold! Take a coat.
-    //It is Cold! Take a coat.
-
-
-  //Horoscope
-  //day and mpnth you were born
-  //if case is more than this, less than this,
-  //all the star signs
-  // if case is equal or more than this you can do this
-
 
 //MATCHING with OR
 
@@ -52,7 +32,7 @@ object PatternMatching extends App {
     case 4 | 5 => println ("he needs a bag")
     case x => println(s"$x is invalid") //if you want to use interpolation with an Int you have to assign it to something so it can call eg X
   }
-  //RETURNS It is Cold! Take a coat.
+  //RETURNS he can carry them without a bag
 
   val numbOfWatermelons2 : Int =4
   numbOfWatermelons2 match  {  //call you val and it lights up with first case
@@ -60,7 +40,7 @@ object PatternMatching extends App {
     case 4 | 5 => println ("he needs a bag")
     case x => println(s"$x is invalid") //if you want to use interpolation with an Int you have to assign it to something so it can call eg X
   }
-  //RETURNS he can carry them without a bag
+  //RETURNS he needs a bag
 
   val numbOfWatermelons3 : Int =9
   numbOfWatermelons3 match  {  //call you val and it lights up with first case
@@ -68,8 +48,8 @@ object PatternMatching extends App {
     case 4 | 5 => println ("he needs a bag")
     case x => println(s"$x is invalid") //if you want to use interpolation with an Int you have to assign it to something so it can call eg X
   }
+//Returns 9 is invalid
 
-  //RETURNS he needs a bag
 
 
 //Mix PM and EMUM

@@ -19,9 +19,8 @@ val under18: Boolean = true
 //Private means the code is only for what is in those curley brackets, cannot access in Child class.
 // Private reduces the scope of where it is accessible.
 
-
  //COMPANION OBJECT
- //There is an easy way top make a child without using the word new as in new Child("Alice")
+ //There is an easy way to make a child without using the word new as in new Child("Alice")
  //Uses an apply method so don't need to use the key word (what did I mean by this??)
  //object enterANameAsChild
  //A blue semicircle will appear so you can jump to the corresponding one
@@ -32,7 +31,6 @@ val under18: Boolean = true
 
   object Child {
    def apply(forename: String): Child = new Child(forename) //short hand to make new instances of you class.
-
 
   //Access the companion classes private methods
   //APPLY METHOD

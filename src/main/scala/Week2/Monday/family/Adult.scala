@@ -17,4 +17,6 @@ class Adult (val forename: Forename, val surname: Surname) { //type safe because
 //This is the companion object
 object Adult {
   def apply(forename:Forename, surname: Surname): Adult = new Adult(forename, surname)
+
+
 }

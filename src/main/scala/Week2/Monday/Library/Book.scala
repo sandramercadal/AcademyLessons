@@ -19,7 +19,7 @@ object Book {
 
 //import anything we are using that ....
 
-//This has been extended now to include the ReadingFormat  within class
+//This has been extended now to include the ReadingFormat within class
 
 //Now Genre needs to be a trait = ass "with Genre". Create a new scala class of genre for this
 

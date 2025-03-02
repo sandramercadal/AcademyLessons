@@ -73,7 +73,8 @@ object CaseClasses extends App {
   /** Q4: Make a new kennel object and add your dogs from (Q.2).
    */
 
-  val dogs: List[Dog] = List(ruby, mabel, padeen, fern)
+  val dogs: List[Dog] = List(ruby, mabel, padeen, fern) //List[Dog] means have a list that holds elements of the type Dog.
+  // So, List[Dog] is essentially a collection of Dog objects.
   val yourLocalKennel = Kennel("Your Local Kennel", dogs)
 
   println(yourLocalKennel)
@@ -90,33 +91,58 @@ object CaseClasses extends App {
    * Update the kennel case class.
    *
    * Create a bird and cat case class using some creative parameters.
-   * The kennel often gets a new dog/cat/bird joining. Add one of each to the kennel. (Go back to the collections lesson where we were adding to the list!!)
-   *
+   * The kennel often gets a new dog/cat/bird joining.
+   * Add one of each to the kennel. (Go back to the collections lesson where we were adding to the list!!)
    */
+  case class Cat(name: String, breed: String, age: Int)
+  case class Bird(name: String, breed: String, age: Int)
+
+  val cats: List[Cat] = List() // starts off empty
+  val birds: List[Cat] = List() // starts off empty
+
+  case class updatedKennel(name: String, dogs: List[Dog], cats: List[Cat], birds: List[Bird]) {
+    def addDog (dog: Dog) : updatedKennel = {
+      updatedKennel(name, dogs:+ dog, cats, birds)
+    }
+    def addCat(cat: Cat): updatedKennel = {
+      updatedKennel(name, dogs, cats :+ cat, birds)
+    }
+    def addBird(bird: Bird): updatedKennel = {
+      updatedKennel(name, dogs, cats, birds :+ bird)
+    }
+  }
+//val sydneyKennel1 = updatedKennel("Sydney Kennel", dogs, cats, birds)
+  //  println(sydneyKennel)
+  //  val renamedSydneyKennel1 = sydneyKennel1.copy(name = "Loki & friends")
+  //  println(renamedSydneyKennel)
+  //  val addDogCatBird = renamedSydneyKennel1.addDog(Dog ("Toto", "Cairn Terrier", 10)).addCat(Cat("Garfield", "Persian", 5)).addBird(Bird("Hedwig","Snowy", 60))
+  //  println(addDogCatBird)
+
+
   //APRILS CODE
   //She used sydneyKennel renamed to Loki & friends
   // Update the kennel case class.
 
-  case class Cat(name: String, breed: String, age: Int)
+  //case class Cat(name: String, breed: String, age: Int)
 
-  val cats: List[Cat] = List()
+  //val cats: List[Cat] = List()
 
 
-  case class Bird(name: String, species: String, wingSpan: Int)
+  //case class Bird(name: String, species: String, wingSpan: Int)
 
-  val birds: List[Bird] = List()
+  //val birds: List[Bird] = List()
 
 
   //case class updatedKennel(name: String, dogs: List[Dog], cats: List[Cat], birds: List[Bird]) {
-    //def addDog (dog: Dog) : updatedKennel = {
-      //updatedKennel(name, dogs:+ dog, cats, birds)
-    //}
-    //def addCat(cat: Cat): updatedKennel = {
-      //updatedKennel(name, dogs, cats :+ cat, birds)
-    //}
-    //def addBird(bird: Bird): updatedKennel = {
-      //updatedKennel(name, dogs, cats, birds :+ bird)
-    //}
+  //def addDog (dog: Dog) : updatedKennel = {
+  //updatedKennel(name, dogs:+ dog, cats, birds)
+  //}
+  //def addCat(cat: Cat): updatedKennel = {
+  //updatedKennel(name, dogs, cats :+ cat, birds)
+  //}
+  //def addBird(bird: Bird): updatedKennel = {
+  //updatedKennel(name, dogs, cats, birds :+ bird)
+  //}
   //}
   //val sydneyKennel1 = updatedKennel("Sydney Kennel", dogs, cats, birds)
   //println(sydneyKennel)
@@ -124,10 +150,6 @@ object CaseClasses extends App {
   //println(renamedSydneyKennel)
   //val addDogCatBird = renamedSydneyKennel1.addDog(Dog ("Toto", "Cairn Terrier", 10)).addCat(Cat("Garfield", "Persian", 5)).addBird(Bird("Hedwig","Snowy", 60))
   //println(addDogCatBird)
-
-
-
-
 
 
 }
