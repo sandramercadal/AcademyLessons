@@ -13,7 +13,7 @@ case class Person(name: String, age: Int, nationality: String, isStudent: Boolea
 
 // Notice the "new" here, You don't need "new" here as built into case classes
 //println(firstPerson)
-val firstPerson = Person("Carlos", 23, "Spanish", true) //Incorrect syntax for case class.
+val firstPerson = Person("Carlos", 23, "Spanish", true) //Correct syntax for case class.
 //c
 val secondPerson = Person("Carlos", 23, "Spanish", true) //Will run as does not have new
 println(secondPerson)
