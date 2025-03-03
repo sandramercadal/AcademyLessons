@@ -4,6 +4,7 @@
 //This case class allows for useful built-in methods like .copy which I may need later on.
 //This case class allows for Pattern Matching which again I may need later on.
 //Fields are val by default so perfect for each menu item.
+//This case class allows for comparisons and debugging.
 
 /** Manage the menu
  * Q1 - See Menu.scala and MenuData.scala
@@ -15,12 +16,8 @@
 
  *Q2//This is like the kennel example where we added on cats and birds to the kennel :+
  //that I also did last weekend
-//Where does this go ?
-
- * Add Premium Specials
- *Remove Premium Specials
-
-
+ * Add Premium Specials - see CafeLogic
+ *Remove Premium Specials - see CafeLogic
 
  *Q3
 *Track inventory/Stock count of menu items
@@ -33,7 +30,7 @@
  * */
 
 
-/** manage the Service Charge
+/** manage the Service Charge - TUES??
  * Do not apply it
  * Add 10% to cold food orders
  * Add 20% to hot food orders
