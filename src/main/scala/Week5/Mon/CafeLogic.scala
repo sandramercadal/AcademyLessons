@@ -25,7 +25,8 @@ class CafeLogic {
 
 
   /**DEF to STOCK COUNT. (if item is at stock count = 0 you cannot order it).
-   * Also when an item is bought it needs to reduce the stock by -1*/
+   * Also when an item is bought it needs to reduce the stock by -1
+   * I found .stock on net */
 //Could use some and none match cases? OPTIONS here
  //Could add stock : Int = 10 to the case class (Menu.scala) and then use ite.copy stock -1 each time as case items
   //

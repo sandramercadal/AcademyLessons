@@ -101,7 +101,7 @@ Research:
  3. Are there any other words that you cannot use?
 */
     //Name you give it      Type
-            val New:       String = "I am a new string!"
+            val new:       String = "I am a new string!"
 // new is a keyword - this means it is protected.
 // Use backticks if calling a val a keyword is unavoidable. lots of keywords, just look them up.
 

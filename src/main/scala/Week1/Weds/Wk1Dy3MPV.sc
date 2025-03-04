@@ -22,7 +22,7 @@ Consider how you will handle invalid numbers.
 
 
 // MVP Task 1 - Create a value to store a number of watermelons.
-val numWatermelons: Int = 4 // Change as necessary. Lets Try out 4 watermelons
+val numWatermelons: Int = 4 // Change as necessary. Let's Try out 4 watermelons
 
 // MVP Task 2 and Task 3
 if (numWatermelons >0 && numWatermelons <= 3) {
@@ -40,6 +40,10 @@ if (numWatermelons >0 && numWatermelons <= 3) {
 val hasBag: Boolean = false // Try out both true and false to make sure the if statement works as intended
 
 // MVP Task 5
+//Use an if statement and this boolean value to tell John whether he can or cannot buy the desired
+//number of watermelons in Task 1. Can this be done without using "else if"?
+
+//%.1f specifies that you want to format a floating-point number to one decimal place.
 if (numWatermelons <= 3 || numWatermelons <= 5 && hasBag) {
   println(s"John can buy $numWatermelons watermelons")
 } else {
@@ -47,6 +51,11 @@ if (numWatermelons <= 3 || numWatermelons <= 5 && hasBag) {
 }
 
 // MVP Task 6
+//The store puts their prices in a foreign currency, so the conversion rate to £ means one
+//watermelon is £1.397. Calculate and use string interpolation to display the total cost of John's
+//purchase to 2 decimal places - which type is most appropriate here?
+//%2.2f is a formatting specifier that formats the resulting number as a floating-point number with 2 digits after the decimal point.
+//The 2 before the . specifies the minimum width of the integer part of the number.
 println(f"The total cost of the watermelons is £${numWatermelons * 1.397}%2.2f")
 
 

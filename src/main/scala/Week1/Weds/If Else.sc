@@ -8,8 +8,8 @@
  */
 
 
-val weather: String = "hot" //will return it is hot
-
+val weather: String = "hot" //will return it is hot (You can set weather to any string you want, or if you want to start with an empty value, you can use:
+                            //val weather: String = ""
 if
 (weather == "hot") {
   s"It is $weather, grab your sunglasses!"
@@ -20,7 +20,6 @@ if
 
 
 val weather: String = "cold" //will return it is cold
-
 if
 (weather == "hot") {
   s"It is $weather, grab your sunglasses!"
@@ -31,6 +30,10 @@ if
 
 // if true --> hits the first string inside the 'if'
 // if false --> hits the second string inside the 'else'
+
+//toLowerCase on a string converts all the characters in that string to lowercase.
+//Useful when you want to compare strings without worrying about their case (uppercase or lowercase).
+
 if (weather.toLowerCase == "hot") {
   s"It is $weather, no coat needed."
 } else if (weather.toLowerCase == "raining") {
@@ -39,6 +42,16 @@ if (weather.toLowerCase == "hot") {
   s"$weather is not valid, please enter raining or hot"
 }
 
+//Now with a println to see output changed to anotherWeather //String = It is hot, no coat needed.
+val anotherWeather: String = "hot"
+if (anotherWeather.toLowerCase == "hot") {
+  s"It is $anotherWeather, no coat needed."
+} else if (anotherWeather.toLowerCase == "raining") {
+  s"It is $anotherWeather, take a coat with a hood."
+} else {
+  s"$anotherWeather is not valid, please enter raining or hot"
+}
+println(anotherWeather)
 
 //Multiple options
 val season: String = "summer"

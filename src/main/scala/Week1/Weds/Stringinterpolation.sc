@@ -92,13 +92,15 @@ val person2: String = "Mary"
 val age1: Int = 22
 val age2: Int = 16
 //println (s "")
-println ("%s  Molly is 1 year older than $Mary.")
+println (s"$person1 is 1 year older than $person2.")
 
 val name1 : String = "Sue"
 val name2 : String = "Sarah"
 println(s"$name1 is older than $name2")
 
 println (f" $person1 is ${age1 - age2}%.1f years older than $person2") //Molly is 6.0 years older than Mary
+//%.1f specifies that you want to format a floating-point number to one decimal place.
+
 
 //Change your Int to doubles
 
@@ -111,8 +113,8 @@ println (f" $secondName%s is $height% .2f meters tall")
 
 //TASK - APRIL CODE
 //Create 2 strings for two peoples names. Then using those names use string interpolation to print “A is older than B”
-val personA:String = "Arnold"
-val personB:String = "Bart"
+val personA: String = "Arnold"
+val personB: String = "Bart"
 println(s"$personA is older than $personB")
 
 //Create 2 integers for the age of each person. Then use string interpolation to calculate how much older the first person is and print “A is X years older than B”
