@@ -1,9 +1,9 @@
 package Week5.Mon
 
-class CafeLogicSpec extends AnyWordSpec with Matchers {
+//class CafeLogicSpec extends AnyWordSpec with Matchers {
 
 
-}
+//}
 
 
 /**

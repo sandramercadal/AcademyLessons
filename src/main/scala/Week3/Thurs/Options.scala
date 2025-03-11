@@ -1,22 +1,30 @@
 
-
 //OPTIONS
-//Option of a string for married person have the option to fill it in or not
-//use the syntax Option
+//in HMRC - Option of a string eg for married person have the option to fill it in or not
+//use the syntax "Option[type]"
 
+//PIZZA TASK
+//Lets think about our pizza restaurant again.
+//If the customer doesn’t specify their preferred crust, the restaurant will just give a classic crust by default.
+//This is how we would change our case class:
+//How to change a case clas to include and Option // case class Pizza (size: Int, crust: Option[String])
+
+//This code uses a trait to define a common structure for different types of pizzas,
+// while utilizing Scala's Option type to handle cases where a crust might or might
+// not be specified.
 
 package Week3.Thurs
 
 object Options extends App {
 
-  //make a trait so it is consumed in this file
-  //if they dont specify the crust they get the default, I wrap it in the option of a string
+  //make a trait so it is consumed in this file. Defines 2 properties
+  //if they don't specify the crust they get the default, I wrap it in the option of a string
 
   trait Pizza {
     val size: Int
     val crust: Option[String]
   }
-
+//4 diff pizza objects that extend the pizza trait
   object Personal extends Pizza {
     override val size: Int = 7
     override val crust: Option[String] = Some("classic") //Must wrap in a Some if we are giving it 'SOMEthing'
@@ -54,7 +62,7 @@ object Options extends App {
   //method for crust only
   def whatCrust(pizza: Pizza): String = {
     //pizza has a size and a crust
-    //tab onto match extahustive
+    //tab onto match exhaustive
     pizza.crust match {
       case Some("classic") => "classic crust"
       case Some("italien") => "Italian crust"

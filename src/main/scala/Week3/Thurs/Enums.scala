@@ -6,7 +6,7 @@ object Enums extends App {
 
   //Finite sets of data.
 
-  // Extends enumeration
+  // Enumeration (syntax is "extends Enumeration" and "value")
   object Weekday extends Enumeration {
     val Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday = Value
   }
@@ -26,10 +26,11 @@ object Enums extends App {
   }
 
   println(BetterWeekday.values)
-  println(BetterWeekday.Sunday)
+  println(BetterWeekday.Sunday) //
 
   //Pattern matching example
-  def matchWithEnum(weekdays: BetterWeekday.Value) = {
+  def matchWithEnum(weekdays: BetterWeekday.Value) = {  //takes a single parameter called weekdays, which is of the type BetterWeekday.Value.
+                                                              // BetterWeekday is an enum that defines days of the week.
     weekdays match {
       case BetterWeekday.Monday => println(s"Oh, it's ${BetterWeekday.Monday}")
       case BetterWeekday.Tuesday => println(s"Oh, it's ${BetterWeekday.Tuesday}")
@@ -40,8 +41,8 @@ object Enums extends App {
       case BetterWeekday.Sunday => println(s"Oh, it's ${BetterWeekday.Sunday}")
     }
   }
+  matchWithEnum(BetterWeekday.Saturday) //Oh, it's Sat
 
-  matchWithEnum(BetterWeekday.Saturday)
 
   //We want an exhaustive match - all enums are assigned a match case.
   //We don't see an error message/warning if it isn't. (We could miss values)
@@ -91,7 +92,7 @@ object Enums extends App {
   //I still want to print the values, what can I do?
   //need a def method
 
-  //I'm calling my method aboutAnimal
+  //I'm calling my method aboutCohort
   def aboutCohort(cohortCaseObject: CohortCaseObject): String = cohortCaseObject match {
     case Sandra => "I am Sandra"
     case Ash => "I am Ash"

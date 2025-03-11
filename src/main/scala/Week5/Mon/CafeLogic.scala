@@ -5,22 +5,22 @@ import Week5.Mon.MenuData.menuItems
 class CafeLogic {
 
   /**DEF function to ADD SPECIAL ITEM e.g Luxury Hot Chocolate*/
-  def addSpecial (name: String, price: Double) : Unit = {
-  val newSpecial = MenuItem (name, price, category: String, isSpecial = true, stock: Int)  //a new menuItem object is created
-  menuItems = newSpecial +: menuItems     //Like we did with cats and Birds in Kennel
+ // def addSpecial (name: String, price: Double) : Unit = {
+  //val newSpecial = MenuItem (name, price, category: String, isSpecial = true, stock: Int)  //a new menuItem object is created
+  //menuItems = newSpecial +: menuItems     //Like we did with cats and Birds in Kennel
 
   /**Test a special to the list of all the other cafe Items*/
-   MenuData.addSpecial ("Luxury Hot Chocolate", 4.25, "Beverages")
-    addSpecial("Luxury Chai Latte", 4.25, "Beverages")
+  // MenuData.addSpecial ("Luxury Hot Chocolate", 4.25, "Beverages")
+    //addSpecial("Luxury Chai Latte", 4.25, "Beverages")
 
 
 
 /**DEF function to REMOVE SPECIAL ITEM. I have to match the lower case names and make sure it is marked as special*/
-    def removeSpecial (name: String) : Unit = {  //I  just want to call it by it's name to remove it so don't have to type all in
-  menuItems = menuItems.filter (menuItem=>menuItem.name.toLowerCase || !menuItem.isSpecial )   //Initially started with filterNot
-    }
-  }
-  MenuData.removeSpecial ("Luxury Hot Chocolate")
+  //  def removeSpecial (name: String) : Unit = {  //I  just want to call it by it's name to remove it so don't have to type all in
+  //menuItems = menuItems.filter (menuItem=>menuItem.name.toLowerCase || !menuItem.isSpecial )   //Initially started with filterNot
+    //}
+  //}
+  //MenuData.removeSpecial ("Luxury Hot Chocolate")
 
 
 
@@ -34,7 +34,7 @@ class CafeLogic {
 
 
   /**DEF to TAKE CUSTOMER ORDER, GIVE ITEMISED BILL with a TOTAL*/
-  def customerBill (     )
+ // def customerBill (     )
 
 
 

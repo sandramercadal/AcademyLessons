@@ -11,7 +11,7 @@ package Week3.Thurs
 //uppercase or mixed?
 //- Think about how you account for unneeded white spaces entered (e.g. " England ")?
 
-object CountryMPV extends App {
+object ThursMPV extends App {
 
   //my method is: def getCapital and use this to call the println
   def getCapital(country: String): String = {

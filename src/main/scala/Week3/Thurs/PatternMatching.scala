@@ -2,7 +2,7 @@ package Week3.Thurs
 
 object PatternMatching extends App {
 
-//MATCHING STRINGS
+//IF ELSE MATCHING STRINGS
   val weather: String = "Cold"
 
   if (weather.toLowerCase == "cold") {
@@ -11,8 +11,10 @@ object PatternMatching extends App {
     println(s"It is $weather! Take an umbrella.")
   } else {
     println(s"$weather is not valid")
-  }
- //How do we change the above into PM? we swap around (weather == "cold") and use the syntax "match"
+  } //It is Cold! Take a coat.
+
+
+ //How do we CHANGE the above INTO PM? we swap around (weather == "cold") and use the syntax "match"
   //our if statement is case number 1
   //if else is case number 2
   //case of everything else is case number 3
@@ -22,11 +24,11 @@ object PatternMatching extends App {
     case "raining"  => println (s"It is $weather! Take an umbrella")//cold is not valid
     case _  => println  (s"$weather is not valid")    //_ is wildcard, will catch anything else but wont give you much info just is not valid
 
-  }
+  } //It is Cold! Take a coat.
 
 //MATCHING with OR
 
-  val numbOfWatermelons : Int =2
+  val numbOfWatermelons : Int = 2
   numbOfWatermelons match  {  //call you val and it lights up with first case
     case 1 | 2| 3 => println ("he can carry them without a bag") //with PM you only need one line
     case 4 | 5 => println ("he needs a bag")
@@ -97,7 +99,7 @@ object PatternMatching extends App {
 //will return Text from mum
 
 
- //TASK 1 PIZZA SHOP
+ //TASK 1 PIZZA SHOP (VAL -MATCH - CASE)
   //Accept a string for a flavour/topping and return  a different type of pizza for each one.
  //E.g. Spicy -> American Hot
  //What are going doing to do about unknown flavours?
@@ -108,7 +110,7 @@ object PatternMatching extends App {
     case "veggie" => println("Veggie")
     case "sweet" => println("Hawaiian")
     case _ => println("Not valid.")
-  }
+  }  //BBQ chicken
 
   //TASK 2a
   //Accept pizza measurements for sizes:
@@ -121,7 +123,7 @@ object PatternMatching extends App {
     case 14 => "large"
     case _ => "Enter a valid size"
   }
-  println(pizzaSizeMatch)
+  println(pizzaSizeMatch) //large
 
   //2b
   //Make a Pizza case class that accept size and crust parameters. Now match off all the possible options and return the price of the pizza.
@@ -144,7 +146,7 @@ object PatternMatching extends App {
     case Pizza(14, "stuffed") => 17.98
     case _ => "Enter a valid pizza"
   }
-  println(getPrice)
+  println(getPrice) //Enter a valid pizza (as we have said the pizza size is 10)
 
 
   //TASK
