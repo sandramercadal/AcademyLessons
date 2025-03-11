@@ -18,9 +18,8 @@ override def aboutAnimal(): String = {
 //An instance of a Mammal (object) - use "new" keyword
  object Mammal1 {
 
-def createAnimal (name: String, age: Int, hasTinyEars: Boolean,  colourOfFur: String) :
-Mammal =
-  new Mammal(name, age, hasTinyEars, colourOfFur)
+def createAnimal (name: String, age: Int, hasLongEars: Boolean,  colourOfFur: String) :
+Mammal = new Mammal(name, age, hasLongEars, colourOfFur)
  }
 
 

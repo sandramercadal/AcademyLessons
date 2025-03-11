@@ -30,8 +30,7 @@ val seqOfMyNames: Seq[String] = Seq("Mary", "Molly", "Milly", "Mandy", "Marie")
  * MAP
  * We can link two things together using MAP
  * syntax is val giveItAName: Map [e.g String, Int] = Map (
- * "Key" -> Value,   if string will have "" comma
- * )
+ * Key -> Value,   if string will have "" comma
  * TIP:  Notice Map is in capital letters each time
  */
 
@@ -55,8 +54,8 @@ val myColours: Map[Int, String] = Map(
   3 -> "blue",
   4 -> "green"
 )
-val filteredForColourBlue: Map[Int, String] = myColours.filter(num => num._1 == 3)
-val filteredForColourBlueV2: Map[Int, String] = myColours.filter(num => num._2 == "blue")
+val filteredForColourBlue: Map[Int, String] = myColours.filter(num => num._1 == 3) //_1 is searching in key
+val filteredForColourBlueV2: Map[Int, String] = myColours.filter(num => num._2 == "blue") //_2 is searching in Value
 
 /** HOW DO WE ACCESS THE DATA?
  *
@@ -81,6 +80,7 @@ val getSequenceTail: Seq[Int] = firstSeq.tail //Gives everything except head whi
 //3. Add 1 to all numbers in a collection of Ints.
 val firstList: List[Int] = List(1, 2, 3, 4, 5)
 val addOneSeq = firstList.map { number => number + 1 }
+
 //4.Remove all even numbers from a collection.
 val oddNumbersOnly = firstList.filter {
   number => number % 2 != 0
