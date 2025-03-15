@@ -4,7 +4,6 @@ import java.time.LocalDate
 
 object EithersLesson extends App {
 
-
   //This takes a left (ERROR) and Right [Success] parameter.
   //If we have String & String we don't use this, needs to be 2 diff parameters
   //Tends to favour the right (success) it is right bias
@@ -13,8 +12,10 @@ object EithersLesson extends App {
   //write a method to check if something is odd or even
   // if number is odd get success case else return a boolean
   //def isOdd (x: Int): Either [Boolean, String]  = if (x % 2 !=0)  Right (s"$x is odd") else Left (false)
-  //println (isOdd(4)) //LEFT
-  //println (isOdd(7))  //RIGHT
+  //println (isOdd(4)) //LEFT 4 is even
+  //println (isOdd(7))  //RIGHT 7 is odd
+//Helps manage results in a clear way
+
 
   //The point of eithers is to get a good error message
   //Let's make it better!
@@ -22,18 +23,23 @@ object EithersLesson extends App {
   //lets make a class of NewError
 
   //1. Error handle using extends Exception --> custom errors but have to make sure we use a val to make params reachable
-  //by extending exception this hsould hit our left?
+  //by extending exception this should hit our left?
+
+  //a custom exception class (NewError) and a case object (IsOddError) to represent specific error states.
+  // The function isOdd provides either a success message or an error message wrapped in an Either type,
+  // which makes it clear whether the operation was successful or if an error occurred.
+  // When you call isOdd(4), it identifies the input as even and returns the associated error.
   class NewError(val errorCode: Int, val errorMessage: String) extends Exception
 
   //custom error
   //easiest way to use enums
-  //cab use case
+  //can use case
   case object IsOddError extends NewError(400, "Input is not odd, it is even.") //newError is an int as specified in the class NewError above
 
   def isOdd(x: Int): Either[NewError, String] = if (x % 2 != 0) Right(s"$x is odd") else Left(IsOddError)
 
-  println(isOdd(4)) //4 is an even number not odd so correct so LEFT. Where it was written: Left(Week3.Fri.Eithers$IsOddError$)
-  println(isOdd(7)) //7 is an odd number so correct so Right(7 is odd)
+  println(isOdd(4)) //LEFT 4 is an even number not odd so correct so LEFT. Where it was written: Left(Week3.Fri.Eithers$IsOddError$)
+  println(isOdd(7)) //RIGHT 7 is an odd number so correct so Right(7 is odd)
 
   //2nd way
   //2. Error handling using Try/Catch - gives more inbuilt information
@@ -81,8 +87,8 @@ object EithersLesson extends App {
   //obj trait class needs a CAPS
   case class User(username: String, password: String, dateOfBirth: LocalDate)
 
-
   case class ValidatedUser(username: String, password: String, dateOfBirth: LocalDate) //return type at the end
+
 
   case object UsernameError extends NewError(400, "username is less than 12 characters long")
 
@@ -161,21 +167,10 @@ object EithersLesson extends App {
   println("\nValidateUser - bad date of birth: " + validateUser(dateOfBirthBad)) //DOB error
   println("\nValidateUser - everything ok: " + validateUser(validUser)) // Right - ValidatedUser case class
 
-
-
   //Mortgage
   // case class PersonApplyingForMortage (salary: Double,......deposit.....creditScore )
 //case class Property (salary: Double,......deposit.....creditScore )
 //case class MortageEligibility (salary: Double,......deposit.....creditScore )
-
-
-
-
-
-
-
-
-
 
 
 }

@@ -76,7 +76,7 @@ addS (animals)
 def lowerCaseAnimals (animalList: List [String]): List [String] = animalList.map(animal => animal.toLowerCase)
 lowerCaseAnimals(animals)
 
-//What if I want lowercase and add an 'S'?? - full comprehensions allows us to do this
+//What if I want lowercase and add an 'S'?? - full comp allows us to do this
 //{ if doing a number of things } use curlies
 //TIP: need 'for' and 'yield' and <-
 def lowerCaseAndAddS (animalList:List [String]): List [String] = for {
@@ -142,7 +142,57 @@ def capitaliseList(nameInput: List[String]): List[String] =
     capital <- capitaliseNames(List(lower)) //apply the capitalize method
   } yield capital
 
-//RUN IT??:
-//capitaliseList
+println(capitaliseList(names))
 
 capitaliseList(names).map(name => name + "!").mkString(" ") //String = Aria! Bart! Chuck!
+
+//Write for-comprehension that takes a list of numbers and creates
+//a new list containing the squares of the even numbers from that list.
+//You'll want to filter for even numbers and then square each of them.
+
+val numbers: List [Int] = List (1,2,3,4,5,6,7,8,9,10)
+val squaredEvens: List [Int] =
+  for {
+  number <- numbers if number % 2 == 0 // Filter for even numbers
+} yield number * number // Square each even number
+
+// Print the result
+println(squaredEvens) //List(4, 16, 36, 64, 100)
+
+//Write a Scala for-comprehension that takes a list of integers
+//filters out the odd numbers, squares the even numbers,
+// and then adds 5 to each squared value.
+val numbersList: List [Int] = List (1,2,3,4,5,6,7,8,9,10)
+val squared: List [Int] =
+for {
+    number <- numbersList if number % 2 == 0 // Filter for even numbers
+  } yield (number * number)+ 5// Square each even number
+
+// Print the result
+println(squared) //List(9, 21, 41, 69, 105)
+
+//Write for-comprehension that takes a list of integers
+// filters out the numbers that are divisible by 3,
+// then double the remaining numbers, and finally subtracts 1 from each of those doubled values.
+val sandraNumbers: List[Int] = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+val result: List[Int] = for {
+  number <- sandraNumbers if number % 3 != 0    // Filter out numbers that are divisible by 3
+} yield (number * 2) - 1                     // Double the remaining numbers and subtract 1
+
+// Print the result
+println(result) //List(1, 3, 7, 9, 13, 15, 19)
+
+//Write a for-comprehension that processes a list of pairs of integers (tuples).
+//Filter for pairs where the first number is greater than 3.
+//For the remaining pairs, compute the sum of the numbers in each pair.
+//Create a new list that consists of tuples where each tuple contains the
+// original pair and the sum computed in the previous step.
+//Requirements: Use a nested for-comp.
+
+val pairs: List[(Int, Int)] = List((1, 2), (3, 4), (5, 6), (7, 8))
+val result : List [((Int, Int), Int)] =
+  for {
+    (num1, num2) <- pairs if num1 >3
+  } yield ((num1, num2), num1 + num2)
+println(result) //List(((5,6),11), ((7,8),15))

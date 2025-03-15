@@ -19,7 +19,7 @@ val firstSeq: Seq[Int] = Seq(1, 2, 3, 4, 5) //Seq[Int] =List(1,2,3,4,5)
 val firstList: List[Int] = List(1, 2, 3, 4, 5) //List[Int] =List(1,2,3,4,5)
 //The index position of above is 1=0, 2=1, 3=2 etc like an array in JScript
 //Anything we can do to a List we can do to a Seq!
-//What is diff between Seq and List?? They are two diff types of collections?
+//What is diff between Seq and List?? They are two diff types of collections
 //A list is immutable.
 
 /** TASK 1 */
@@ -54,6 +54,7 @@ val myColours: Map[Int, String] = Map(
   3 -> "blue",
   4 -> "green"
 )
+//use a rocket =>
 val filteredForColourBlue: Map[Int, String] = myColours.filter(num => num._1 == 3) //_1 is searching in key
 val filteredForColourBlueV2: Map[Int, String] = myColours.filter(num => num._2 == "blue") //_2 is searching in Value
 
@@ -61,25 +62,26 @@ val filteredForColourBlueV2: Map[Int, String] = myColours.filter(num => num._2 =
  *
  * Accessing data from within a sequence use firstSeq
  */
-val getSequenceData: Int = firstSeq(0) //gives the index position 1=0, 2=1, 3=2 etc like an array in JScript
+  //Int type is a primitive data type that represents a single integer value not a collection of integers
+// When you see Int in the code, it is not wrapped in [].
+val getSequenceData: Int = firstSeq(0) //gives the index position 1=0, 2=1, etc. Calling the seq firstSeq
 
 //another val
 val getSequence2Data: Int = firstSeq(2)
 //These have different grammar, maybe because you don't declare Int[Int]? Ask April
 
 //Head and Tail use firstSeq.head and firstSeq.tail
-
 val getSequenceHead: Int = firstSeq.head //index position 0 because 1=0
 //This one different grammar, maybe because you don't declare Int[Int]?
 val getSequenceTail: Seq[Int] = firstSeq.tail //Gives everything except head which the index position 0)
 
 //val getTooMuchData: Int = firstSeq (12)//we don't have any data in the 12th index position
-//error is IndexOutofbounds exception
+//errors out with IndexOutofbounds exception
 
 /** TASK 1 */
 //3. Add 1 to all numbers in a collection of Ints.
-val firstList: List[Int] = List(1, 2, 3, 4, 5)
-val addOneSeq = firstList.map { number => number + 1 }
+val firstList: List[Int] = List(1, 2, 3, 4, 5)  //here is our list
+val addOneSeq = firstList.map { number => number + 1 }   //+1
 
 //4.Remove all even numbers from a collection.
 val oddNumbersOnly = firstList.filter {
@@ -113,15 +115,15 @@ val getMapData = firstMap("three") //enter the key to get the value
 //"Four"         -> 4,
 //"Five"         -> 5
 
-/** Manipulating data - using .map lowercase */
+/** Manipulating data - using .map lowercase and rocket => */
 //Mapping though my list called firstList :
-//val firstList: List [Int] = List (1,2,3,4,5)
+val firstList: List [Int] = List (1,2,3,4,5)
 val tripledList: List[Int] = firstList.map {
   number => number * 3
 }
 
 //Mapping though my sequence called firstSeq:
-// val firstSeq: Seq [Int] = Seq (1,2,3,4,5)
+val firstSeq: Seq [Int] = Seq (1,2,3,4,5)
 val tripledSeq: Seq[Int] = firstSeq.map {
   _ * 3
 }

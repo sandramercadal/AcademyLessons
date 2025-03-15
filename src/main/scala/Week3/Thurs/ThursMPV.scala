@@ -14,7 +14,7 @@ package Week3.Thurs
 object ThursMPV extends App {
 
   //my method is: def getCapital and use this to call the println
-  def getCapital(country: String): String = { //takes a single parameter, country & will return a String representing the capital of the specified country.
+  def getCapital(country: String): String = { //takes a single parameter country, & will return a String representing the capital of the specified country.
 
     country.trim.toLowerCase match {
       case "france" => "Paris"
@@ -180,6 +180,51 @@ object ThursMPV extends App {
 //      case (11, d) if d >= 22 && d <= 30 || (month == 12 && d <= 21) => ("Sagittarius", "You will see an old friend today")
 //      case (12, d) if d >= 22 && d <= 31 || (month == 1 && d <= 19) => ("Capricorn", "You will find fame today")
 //      case _ => ("No horoscope found", "Sorry!")
+
+
+ //ANOTHER POSSIBLE WAY
+  import java.time.LocalDate
+//
+//  sealed trait Horoscope {
+//    def sign: String
+//    def message: String
+//  }
+//
+//  case object Aquarius extends Horoscope {
+//    val sign = "Aquarius"
+//    val message = "You will be full of creative energy!"
+//  }
+//
+//  case object Pisces extends Horoscope {
+//    val sign = "Pisces"
+//    val message = "Trust your intuition today."
+//  }
+//
+//  case object Aries extends Horoscope {
+//    val sign = "Aries"
+//    val message = "A new opportunity is coming!"
+//  }
+//
+//  case object Taurus extends Horoscope {
+//    val sign = "Taurus"
+//    val message = "Patience is key to your success."
+//  }
+//
+//  case object Gemini extends Horoscope {
+//    val sign = "Gemini"
+//    val message = "Your communication skills will shine!"
+  //ETC
+//def horoscope(date: LocalDate): Horoscope = {
+//  val day = date.getDayOfMonth
+//  val month = date.getMonthValue
+//
+//  (month, day) match {
+//    case (1, d) if d >= 20 || d <= 19 => Aquarius
+//    case (2, d) if d >= 20 || d <= 18 => Pisces
+//  ETC
+//    case _ => UnknownHoroscope
+//  }
+//}
 
 }
 

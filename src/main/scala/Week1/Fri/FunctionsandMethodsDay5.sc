@@ -48,6 +48,8 @@ def addition (number:Int): Int = number + 10
 //Task 1:
 //We never see the last expression a println (). Why?
 //clear out this code, not for prod.
+//Using println as the last expression does not return a meaningful value since println returns Unit (similar to void in other languages).
+//If you put println at the end, the method will effectively return the result of println, which is not useful.
 
 //Task 2: What does the below return??
 val aValue = 6<3
@@ -56,10 +58,12 @@ def aDifferentValue: Int = {
   42
 }
   //last expression must match the methods return type
-//aValue is asking if this is true we are calling this method by its
-//name to be evaluated
-aDifferentValue
+//the expression 6 < 3 is a comparison that evaluates to false, so aValue is assigned the value false.
+//In the method aDifferentValue, the if statement checks the value of aValue. Since aValue is false, it will return the value 865 from the else clause.
+//However, the last line in the method, which is 42, becomes the actual return value of the method because in Scala, the last expression in a block is what gets returned.
+// So, if you call aDifferentValue, it will return 42 despite the if statement.
 aValue
+aDifferentValue
 
   //How to make a cup of coffee
 //TIP - If you have an empty parameter there's no need to use {} brackets
@@ -177,9 +181,11 @@ nameLength("Bigdonald", "Duck")
 //We say something has referential transparency when a functions return value is based solely on the inputs
 //e.g. addition (1,2) always = 3
   //what is simpler for our brains?
-def addTwoInts (x:Int, y:Int): Int = x + y
-3 + 3
-3 + addTwoInts (1,2)
-addTwoInts (1,2) + addTwoInts (1,2)
+def addTwoInts (x:Int, y:Int): Int = x + y //function addTwoInts that takes two integers x and y and returns their sum.
+3 + 3 //6. But, it's just an expression & not assigned to any variable, so it won't be stored or used later.
+3 + addTwoInts (1,2) //addTwoInts(1, 2) will be called first, which returns 3. 3+3 =6.
+//both 3 + 3 and 3 + addTwoInts(1, 2) are computed but aren't assigned to any variable or utilized in any way.
+addTwoInts (1,2) + addTwoInts (1,2) //Calls addTwoInts(1, 2) twice. Each call returns 3, so the expression becomes 3 + 3=6
 //just something to think about when writing more complex code. what is simpler for our brains.
 
+//The expressions 3 + 3 and 3 + addTwoInts(1, 2) may have been included in the code snippet for illustrative purposes, but they serve no functional purpose in the given context since they don’t produce any output or result.

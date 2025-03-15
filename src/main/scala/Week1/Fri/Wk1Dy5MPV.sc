@@ -21,7 +21,8 @@ isOdd(7)
 isOdd(2)
 
 //Q3 NOT COMPLETED
-// Use a For Comparison and the two methods I created above (squareOfAnInt & isOdd) to write a method sumOfOddNumbers.
+// Use a For Comparison and the two methods I created above (squareOfAnInt & isOdd)
+// to write a method sumOfOddNumbers.
 //TIP: For comparison doesn't work with Int.
 // For comparison is a lightweight notation for expression of sequence comprehension/simplified way of writing a function.
 //TYPES: Classic, Use operators or Use if guards.
@@ -32,6 +33,7 @@ isOdd(2)
           //WIll filter and keep only the odd squared values
           //Then, return the sum of these odd squared numbers.
           //It needs to have List [Int] and return type INT.
+
 
 //APRILS CODE Q3
 val numbers:List[Int] = List(1,2,3,4,5,6,7,8,9,10)
