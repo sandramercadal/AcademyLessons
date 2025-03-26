@@ -6,13 +6,13 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 
 object SandraAnimalSanctuaryLogic extends App{
 
-  // I create my function to print animal details
+  /** I create my function to print animal details */
 
   def printAboutAnimals (animal: Animal): Unit = {
     println (animal.aboutAnimal())
   }
 
-  //List of all my animals in my sanctuary
+  /**List of all my animals in my sanctuary */
   val sandraAnimalSanctuary: List[Animal]= List (robin, warthog, ladybird, ostrich)
 
 
@@ -21,8 +21,8 @@ object SandraAnimalSanctuaryLogic extends App{
   //}
 
 
-  //LIST TO STORE MY ANIMALS THIS IS NOT AN OBJECT - Let's create some animals!
-
+  /**LIST TO STORE MY ANIMALS THIS IS NOT AN OBJECT - Let's create some animals!
+*/
   val robin = new Robin ("Elvis", 3, true, "white", true) //can fly
   val ostrich = new Bird ("Jenny", 5, false, "pink") //An Ostrich can't fly
 
@@ -32,17 +32,18 @@ object SandraAnimalSanctuaryLogic extends App{
   //val penguin = Bird ("Percy, 2, false, "black")
   //val bat = Mammal ("Mufasa, 21, true, "orange")
 
-//sandraAnimalSanctuary.foreach(printAboutAnimals())
+
 printAboutAnimals(robin) //Elvis
 printAboutAnimals(warthog) //Pumbaa
 printAboutAnimals(ladybird) //Dobby
 printAboutAnimals(ostrich) //Jenny
 
-//Test the trait
+/**Test the trait */
 println(robin.canFly) //True - Robins can fly!
 println(robin.fly()) //True - Robins can fly!
+println(s" Can robins fly? ${robin.canFly}") //Can robins fly? true
 
 }
-
+//sandraAnimalSanctuary.foreach(printAboutAnimals())
 
 //If lost - Command + hover turns things blue
