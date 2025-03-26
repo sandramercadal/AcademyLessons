@@ -129,39 +129,11 @@ object ThursMPV extends App {
       case (12, d) if d >= 22 || (month == 1 && d <= 19) => ("Capricorn", "You will find fame today")
       // Default: no horoscope found
       case _ => ("No horoscope found", "Sorry!")
-
-
-//      case (1, d) if d >= 20 && d <= 31 => ("Aquarius", "You will shine bright today")
-//      case (2, d) if d <= 18 => ("Aquarius", "You will shine bright today")
-//      case (2, d) if d >= 19 && d <= 29 => ("Pisces", "You will prosper today")
-//      case (3, d) if d <= 20 => ("Pisces", "You will prosper today")
-//      case (3, d) if d >= 21 && d <= 31 => ("Aries", "You will be limitless today")
-//      case (4, d) if d <= 19 => ("Aries", "You will be limitless today")
-//      case (4, d) if d >= 20 && d <= 30 => ("Taurus", "You will grow today")
-//      case (5, d) if d <= 20 => ("Taurus", "You will grow today")
-//      case (5, d) if d >= 21 && d <= 31 => ("Gemini", "You will find fun today")
-//      case (6, d) if d <= 20 => ("Gemini", "You will find fun today")
-//      case (6, d) if d >= 21 && d <= 30 => ("Cancer", "You will find fortune today")
-//      case (7, d) if d <= 22 => ("Cancer", "You will find fortune today")
-//      case (7, d) if d >= 23 && d <= 31 => ("Leo", "You will rest and recover today")
-//      case (8, d) if d <= 22 => ("Leo", "You will rest and recover today")
-//      case (8, d) if d >= 23 && d <= 31 => ("Virgo", "You will cook something new today")
-//      case (9, d) if d <= 22 => ("Virgo", "You will cook something new today")
-//      case (9, d) if d >= 23 && d <= 30 => ("Libra", "You will laugh today")
-//      case (10, d) if d <= 22 => ("Libra", "You will laugh today")
-//      case (10, d) if d >= 23 && d <= 31 => ("Scorpio", "You will sparkle today")
-//      case (11, d) if d <= 22 => ("Scorpio", "You will sparkle today")
-//      case (11, d) if d >= 23 && d <= 30 => ("Sagittarius", "You will see an old friend today")
-//      case (12, d) if d <= 23 => ("Sagittarius", "You will see an old friend today")
-//      case (12, d) if d >= 22 && d <= 31 => ("Capricorn", "You will find fame today")
-//      case (1, d) if d <= 19 => ("Capricorn", "You will find fame today")
-//      case _ => ("No horoscope found", "Sorry!")
-
     }
     horoscopeResult
   }
 
-  val date = LocalDate.of(2019, 3, 29)
+  val date = LocalDate.of(2019, 7, 29)
   val horoscopeResult = horoscope(date)
 
   println(s"Your star sign is: ${horoscopeResult._1}. Today's horoscope: ${horoscopeResult._2}")
@@ -181,6 +153,31 @@ object ThursMPV extends App {
 //      case (12, d) if d >= 22 && d <= 31 || (month == 1 && d <= 19) => ("Capricorn", "You will find fame today")
 //      case _ => ("No horoscope found", "Sorry!")
 
+  //      case (1, d) if d >= 20 && d <= 31 => ("Aquarius", "You will shine bright today")
+  //      case (2, d) if d <= 18 => ("Aquarius", "You will shine bright today")
+  //      case (2, d) if d >= 19 && d <= 29 => ("Pisces", "You will prosper today")
+  //      case (3, d) if d <= 20 => ("Pisces", "You will prosper today")
+  //      case (3, d) if d >= 21 && d <= 31 => ("Aries", "You will be limitless today")
+  //      case (4, d) if d <= 19 => ("Aries", "You will be limitless today")
+  //      case (4, d) if d >= 20 && d <= 30 => ("Taurus", "You will grow today")
+  //      case (5, d) if d <= 20 => ("Taurus", "You will grow today")
+  //      case (5, d) if d >= 21 && d <= 31 => ("Gemini", "You will find fun today")
+  //      case (6, d) if d <= 20 => ("Gemini", "You will find fun today")
+  //      case (6, d) if d >= 21 && d <= 30 => ("Cancer", "You will find fortune today")
+  //      case (7, d) if d <= 22 => ("Cancer", "You will find fortune today")
+  //      case (7, d) if d >= 23 && d <= 31 => ("Leo", "You will rest and recover today")
+  //      case (8, d) if d <= 22 => ("Leo", "You will rest and recover today")
+  //      case (8, d) if d >= 23 && d <= 31 => ("Virgo", "You will cook something new today")
+  //      case (9, d) if d <= 22 => ("Virgo", "You will cook something new today")
+  //      case (9, d) if d >= 23 && d <= 30 => ("Libra", "You will laugh today")
+  //      case (10, d) if d <= 22 => ("Libra", "You will laugh today")
+  //      case (10, d) if d >= 23 && d <= 31 => ("Scorpio", "You will sparkle today")
+  //      case (11, d) if d <= 22 => ("Scorpio", "You will sparkle today")
+  //      case (11, d) if d >= 23 && d <= 30 => ("Sagittarius", "You will see an old friend today")
+  //      case (12, d) if d <= 23 => ("Sagittarius", "You will see an old friend today")
+  //      case (12, d) if d >= 22 && d <= 31 => ("Capricorn", "You will find fame today")
+  //      case (1, d) if d <= 19 => ("Capricorn", "You will find fame today")
+  //      case _ => ("No horoscope found", "Sorry!")
 
  //ANOTHER POSSIBLE WAY
   import java.time.LocalDate

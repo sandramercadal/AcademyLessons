@@ -1,6 +1,6 @@
 package Week4.Weds
 
-import Week3.Fri.EithersLesson.{NewError, isOdd}
+import Week3.Fri.EithersLesson.{NewError, isOdd} //importing 2 functions we made before
 
 import java.util.concurrent.TimeUnit
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -36,10 +36,15 @@ object Futures extends App {
   println("Standard print line: " + futureHelloWorld) //Future not complete. This is printing the futures itself rather than the value.
 
   //1st Way to Print - use .foreach as a callback
-  futureHelloWorld.foreach(result => println(s"Using .foreach: $result")) //result is what we are storing it in temporarily. can call it anything.
+  //Can use .foreach to execute a function once the future completes successfully.
+  // It's like saying "when you finish this task, do this".
+
+    futureHelloWorld.foreach(result => println(s"Using .foreach: $result")) //result is what we are storing it in temporarily. can call it anything.
   //Hello Future World!
 
   //2nd Way to print - use onComplete (use this when we want to handle success and failure)
+  //This method lets you handle both success and failure cases.
+  // You can specify what happens when the future completes, whether it was successful or not.
   futureHelloWorld.onComplete {
     case Success(result) => println(s"Using onComplete: $result")
     //I clicked on success like bfore and it imported import scala.util.Success
@@ -52,6 +57,7 @@ object Futures extends App {
 
 
   //3rd way - using a wait time using Await.result
+  //This method allows you to block the current thread until the future completes. It’s useful when you need the result immediately.
   val waitTime: FiniteDuration = Duration(5, TimeUnit.SECONDS) //Wait 5 seconds, if you don't receive the value in 5 seconds, time out.
   println("Using await: " + Await.result(futureHelloWorld, waitTime)) //collect it, print it after you have waited for the time stated.
   //THIS WILL BLOCK THE THREAD (and therefore future cannot be used in parallel)
@@ -74,20 +80,20 @@ object Futures extends App {
   //TASK 1
   //write a method called additionInTheFuture that takes in two ints and returns the addition of the ints in the futures.
 
-  //def additionInTheFuture (a: Int, b:Int): Future [Int] = Future {
-  //Thread.sleep(1000)
-  //a + b
-  //}
-
-  //additionInTheFuture(4,6).foreach(result => println (s"Using .foreach: $result"))
-
-  //get the method and do it in the future
-  def fecthIsOddOrErrorInTheFuture(num: Int): Future[Either[NewError, String]] = Future { //in the future you are going to get an either, ew error or a new string
-    Thread.sleep(1000) //always starts by poppint it to sleep
-    isOdd(num) //got and get it from week 3 fri but before you do that go to sleep for a bit
+  def additionInTheFuture(x: Int, y: Int): Future[Int] =   //asynchronous addition of two integers x and y
+    Future {               //This Future block means code will be executed asynchronously in a diff thread
+    Thread.sleep(1000)   //pause for 1 second
+    x + y    //after pause adds x + y and returns the Future [Int] after the delay but not immediatley
   }
 
-  //This is a val instead of using a def even though this is a future, I want it to  use the default Thread.sleep(1000) otherwise will have lots of futures I dont need to make a new one
+
+  def fecthIsOddOrErrorInTheFuture(num: Int): Future[Either[NewError, String]] = Future { //in the future you are going to get an either, new error or a new string
+    Thread.sleep(1000) //always starts by pop it it to sleep
+    isOdd(num) //go and get it from week 3 fri lesson but before you do that, go to sleep for a bit
+  }
+
+  //This is a val instead of using a def even though this is a future, I want it to  use the default Thread.sleep(1000) otherwise will have lots of futures
+  // I dont need to make a new one
   val eventualIsOddError: Future[Either[NewError, String]] = fecthIsOddOrErrorInTheFuture(5) //right is odd?
 
   //val eventualIsOddError: Future [Either[NewError, String]] = fecthIsOddOrErrorInTheFuture(3) //Left

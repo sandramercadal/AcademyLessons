@@ -100,10 +100,11 @@ object EithersLesson extends App {
   val usernameBad = User("user", "Password", LocalDate.of(1960, 6, 5))  //WE want everything to be fine except the username
   val passwordBad = User("validusername", "Password", LocalDate.of(1960, 6, 5)) //WE want everything to be fine except the pswd
   val dateOfBirthBad = User("validusername", "Password", LocalDate.of(2022, 6, 5)) //WE want everything to be fine except the dob
+
   val validUser = User("validusername", "Password", LocalDate.of(1960, 6, 5)) //everything fine
 
   //1. we could PM, use if else statement ..if we are happy we will hit our right otherwise left
-  //Let's write oyr first method for username
+  //Let's write our first method for username
   // best practise is to hit unhappy case first LEFT then RIGHT
   def validateUsername(username: String): Either[NewError, String] = {
     if (username.length < 12) Left(UsernameError)
