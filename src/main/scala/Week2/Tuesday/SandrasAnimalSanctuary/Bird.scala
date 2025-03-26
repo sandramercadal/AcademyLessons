@@ -16,7 +16,7 @@ class Bird (name: String,
   override def canFly: Boolean = hasWings
 
   override def aboutAnimal(): String = {
-    super.aboutAnimal() + s"I am a bird, and do I have wings? $hasWings and the colour of my feathers are $beakColour!"
+    super.aboutAnimal() + s"I'm a bird, and the colour of my feathers are $beakColour!"
   }
 }
   //Need to describe a bird here and add trait canFly
