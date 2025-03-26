@@ -19,9 +19,15 @@ class Robin (name: String,
 override val canFly: Boolean = true
 
   override def aboutAnimal(): String = {
-    super.aboutAnimal() + s"I am a Robin, and I have a $hasRedBreast!"
+    super.aboutAnimal()+
+      s"I'm actually a Robin, and I have a ${colourOfFeathers.toLowerCase} feathers."
+    //+
+      //s""+s"{if (hasWings) I can fly 🪰 else I can't fly}.
+
+
+      }
   }
-}
+
 
 object Robin {
 
