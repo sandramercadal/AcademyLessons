@@ -1,5 +1,7 @@
 package Week2.Monday
 
+import Week2.Monday.Objects.mathsConcepts.pi
+
 /**See book notes
  * *trait Numbers {
  * val one = 1
@@ -39,15 +41,21 @@ package Week2.Monday
 
 object Objects extends App {
 
-object mathsConcepts { //grouping
-  val pi: Double = 3.1415926535
-  val e: Double = 2.718
-  val goldenRation: Double = 1.6180339
-  val euler: Double =0.57721
-}
+  object mathsConcepts { //grouping / identity
+    val pi: Double = 3.1415926535 //state
+    val e: Double = 2.718 //state
+    val goldenRation: Double = 1.6180339 //state
+    val euler: Double = 0.57721 //state
+  }
 
-println (mathsConcepts) // returns Week2.Monday.Objects$mathsConcepts$@4e04a765
-println (mathsConcepts.euler) //returns 0.57721
+  println(mathsConcepts) // returns Week2.Monday.Objects$mathsConcepts$@4e04a765
+  println(mathsConcepts.euler) //returns 0.57721
+
+  //If you want to add behavior to this object, an example in Scala:
+  // Behavior: method to calculate the circumference of a circle
+  def circumference(radius: Double): Double = {
+    2 * pi * radius
+  }
 
 
   object PrimaryColours { //grouping
@@ -61,11 +69,11 @@ println (mathsConcepts.euler) //returns 0.57721
   println(PrimaryColours.red) //returns red
   println(PrimaryColours.red.toUpperCase) //returns RED
 
-/**
- TASK - Create an object for the days of the week.
- Populate the object with a value for each day.
- prove you can access these values by calling them.
- */
+  /**
+   * TASK - Create an object for the days of the week.
+   * Populate the object with a value for each day.
+   * prove you can access these values by calling them.
+//   */
   object daysOfTheWeek { //grouping
     val Monday: String = "Monday"
     val Tuesday: String = "Tuesday"
@@ -76,13 +84,25 @@ println (mathsConcepts.euler) //returns 0.57721
     val Sunday: String = "Sunday"
   }
 
-  println(daysOfTheWeek.Tuesday)  //returns Tuesday
+  println(daysOfTheWeek.Tuesday) //returns Tuesday
   println(daysOfTheWeek.Tuesday.toLowerCase) //returns tuesday
 
 
-
-
+  //Create a case class for days of the week and call the days
+//  case class DaysOfTheWeek(day: String)
+//
+//  object DaysOfTheWeek {
+//    val Mon = DaysOfTheWeek("Mon")
+//    val Tues = DaysOfTheWeek("Tues")
+//    val Weds = DaysOfTheWeek("Weds")
+//    val Thurs = DaysOfTheWeek("Thurs")
+//    val Fri = DaysOfTheWeek("Fri")
+//    val Sat = DaysOfTheWeek("Sat")
+//    val Sun = DaysOfTheWeek("Sun")
+//
+//  }
+//  val today = DaysOfTheWeek.Mon
+//  println(today.day) // Output: Mon
 
 
 }
-
