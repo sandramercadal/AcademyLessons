@@ -25,7 +25,6 @@ object SandraAnimalSanctuaryLogic extends App{
 */
   val robin = new Robin ("Elvis", 3, true, "white", true) //can fly
   val ostrich = new Bird ("Jenny", 5, false, "pink") //An Ostrich can't fly
-
   val warthog = new Mammal ("Pumbaa", 16, true, "black")
   val ladybird = new Insect ("Dobby", 3, 3.5)
 
@@ -42,6 +41,12 @@ printAboutAnimals(ostrich) //Jenny
 println(robin.canFly) //True - Robins can fly!
 println(robin.fly()) //True - Robins can fly!
 println(s" Can robins fly? ${robin.canFly}") //Can robins fly? true
+
+println(s"${ostrich.name} is an Ostrich: ")
+println(ostrich.fly())
+
+  println(s"${ostrich.name} is an Ostrich, " + ostrich.fly())
+  println(s"${robin.name} is a Robin, " + robin.fly())
 
 }
 //sandraAnimalSanctuary.foreach(printAboutAnimals())

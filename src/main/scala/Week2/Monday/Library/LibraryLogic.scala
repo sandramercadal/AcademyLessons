@@ -17,9 +17,11 @@ import Week2.Monday.family.{Adult, Forename, Surname}
 
     println(harryPotter.author.forename.name) //J.K
     println(harryPotter.title) //Harry Potter
-    println(harryPotter.read) //Enjoy reading!
-    println(harryPotter.enjoy) //Enjoy your fantasy book!
-    println(goneGirl.enjoy) //Enjoy your thriller book!
+    println(harryPotter.read) //Enjoy reading!  see read
+    println(harryPotter.enjoy) //Enjoy your fantasy book!  see enjoy
+    println(goneGirl.enjoy) //Enjoy your thriller book!  see enjoy
+
+
 
 
 

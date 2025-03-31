@@ -16,13 +16,12 @@ class Robin (name: String,
 
   //example override val (something new)
   //canFly is already implemented in the parent Bird class
-override val canFly: Boolean = true
+  //override def not val to match the trait definition
+override def canFly: Boolean = true
 
   override def aboutAnimal(): String = {
     super.aboutAnimal()+
-      s"I'm actually a Robin, and I have a ${colourOfFeathers.toLowerCase} feathers."
-    //+
-      //s""+s"{if (hasWings) I can fly 🪰 else I can't fly}.
+      s"I'm actually a Robin, and I have a ${colourOfFeathers.toLowerCase} feathers." + (if (hasWings) "I can fly 🪰"  else "I can't fly")
 
 
       }
