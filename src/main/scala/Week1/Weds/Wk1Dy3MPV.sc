@@ -75,7 +75,6 @@ else if (watermelontotal <= 3) {
     println (s"Please enter at least 1 watermelon")
 }
 
-//Watermelon exercise to be continued...
 */
 
 

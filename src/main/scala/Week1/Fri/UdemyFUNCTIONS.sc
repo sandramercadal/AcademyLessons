@@ -48,6 +48,8 @@ def functions(): Unit = {
 //askUserInfo()
 
 //NOW WITH PARAMETERS
+
+//Define a function that iterates through a list and performs an action (in this case, printing a greeting) for each element in the list. It effectively greets each person in the clients list!
     //List of strings
 
     def sayHello(people: List[String]): Unit = {
@@ -60,7 +62,7 @@ def functions(): Unit = {
 
 
 //FUNCTION RETURN
-//Personal greeing
+//Personal greeting
 //val clients = List ("Anna", "Will", "Michelle")
 //for (client <- clients) {
 //  val greeting = personalisedGreeting(clients)
@@ -73,8 +75,13 @@ def functions(): Unit = {
 //    case 'W' => s"Are you here $person"
 //    case _ => s"Hi $person"
 //
-
-//get price iwth tax for these items
+/**create a map of products and their prices, and then you're trying to calculate the final price of each product after adding tax.
+ *
+ *
+ * @param price
+ * @return
+ */
+//get price with tax for these items
 def addTax (price: Double) = price * 1.2
 
 val products = Map("Shoes" -> 9.99, "Socks" -> 5.99, "Jeans" -> 39.99)
@@ -83,6 +90,12 @@ for (item <- products.keySet) {
   val finalPrice = addTax(products(item))
   println (s"$item costs $finalPrice")
 }
+// loops through each item in the set of product keys. For each item, it retrieves the price from the map, applies the addTax function to calculate the final price (including tax), and then prints out the product name and its final price.
+//
+//So overall, this code calculates the price of each product after tax and prints it out.
+
+//In Scala, .keySet is a method used with a map to retrieve a set of all the keys in that map.
+
 
 def addition (p1: Int, p2: Int) = p1 + p2
 

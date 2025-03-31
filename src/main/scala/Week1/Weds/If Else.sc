@@ -72,7 +72,7 @@ if (weather.toLowerCase == "cold" || season.toLowerCase == "winter") {
 //49%- = “F”
 
 //CODE FROM APRIL
-val studentGrade: Int = -59
+val studentGrade: Int = 59
 
 if (studentGrade >= 90 && studentGrade <= 100) {
   "A! Well done!"
@@ -137,6 +137,6 @@ if (ageRating >= 18) {
 } else if (ageRating >= 4) {
   s"Your $ageRating can see a film rated U"
 } else {
-  s"Your $ageRating mean are too young  - sorry"
+  s"Your $ageRating which means you are too young  - sorry"
 }
 ////A double backslash should work in your string to get a single backslash e.g \\ - Question asked in class.

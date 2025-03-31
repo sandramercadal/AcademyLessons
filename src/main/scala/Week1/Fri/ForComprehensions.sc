@@ -16,17 +16,16 @@
  Does it match xyz, does it have an uppercase etc so lots of methods).
 */
 
-//CLASSIC
-//wrap in methods so we can call them. Key word is 'for'
+//CLASSIC/Simple CLASSIC example
+//need to wrap in methods so we can call them. Key word is 'for' (see below)
 
-//Simple CLASSIC example
 for (numbers <- 1 to 10) yield numbers
 //Gives me a list of numbers from 1 to 10
+//The yield keyword is used to create a new collection from the results of the loop.
 
 //This example has a classic and a function in front of it
-def retrieveNumbers: Seq[Int] = for (number <- 1  to 10) yield number //Seq[Int} wil return a sequence of Ints
-retrieveNumbers
-//retrieveNumbers is the function
+def retrieveNumbers: Seq[Int] = for (number <- 1  to 10) yield number
+retrieveNumbers //Seq[Int] = Vector(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 //Seq means a list of things in order and will return an Int
 //for (number <- 1  to 10) is the LOOP
 //yield number is take each number and add it to our list or
@@ -34,7 +33,7 @@ retrieveNumbers
 //retrieveNumbers to call it
 
 //use operators
-//Simple USE OPERATORS example
+//Simple use of an OPERATOR example
 for (numbers <- 1 to 5) yield numbers * numbers
 
 //squaring it
@@ -42,6 +41,8 @@ def squaredNumbers: Seq[Int] = for (number <- 1 to 5) yield number * number
 squaredNumbers
 
  //if guards
+//An if guard is a powerful feature in Scala that allows you to filter elements during iteration, making your code concise and expressive. It helps you create new collections based on specific conditions while traversing existing collections or ranges.
+
 //list of numbers from 1 to 10 but if odd I don't want this printed
 //best way is to use modulars of 2
 //if statement within the parenthesis.
@@ -68,12 +69,12 @@ println (animals)
 //add and 'S' to the end of every animal
 //the word map is lower case here not Map
 //MAKE A PLURAL LIST OF ANIMALS
-def addS (animalList:List [String]): List [String] = animalList.map(animal => animal + "s")
+def addS (animalList :List [String]): List [String] = animalList.map(animal => animal + "s")
 addS (animals)
 
 //Lets lowercase them now
 //TIP: Rocket => means we want you to do something
-def lowerCaseAnimals (animalList: List [String]): List [String] = animalList.map(animal => animal.toLowerCase)
+def lowerCaseAnimals (animalList : List [String]): List [String] = animalList.map(animal => animal.toLowerCase)
 lowerCaseAnimals(animals)
 
 //What if I want lowercase and add an 'S'?? - full comp allows us to do this

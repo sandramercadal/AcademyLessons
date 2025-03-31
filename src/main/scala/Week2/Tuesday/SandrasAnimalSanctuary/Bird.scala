@@ -5,16 +5,17 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 //Traits are something lots of things can have e.g. insect and bird can both fly also species
 
 
-class Bird (name: String,
-            age: Int,
-            val hasWings: Boolean,
-            val beakColour: String)
+class Bird (name: String,  //regular constructor parameter
+            age: Int,    //regular constructor parameter
+            val hasWings: Boolean, //constructor parameter with val (creates public, immutable field)
+            val beakColour: String) //constructor parameter with val becomes a class property that persist after object creation
   extends Animal(name, age) with AbleToFly {
   //could extend further with BirdTraits - Think about this later!
 
   //override def canFly: Boolean = false
   override def canFly: Boolean = hasWings
 
+  //call super.aboutAnimal () to first call the parents class methods
   override def aboutAnimal(): String = {
     super.aboutAnimal() + s"I'm a bird, and the colour of my feathers are $beakColour!"
   }

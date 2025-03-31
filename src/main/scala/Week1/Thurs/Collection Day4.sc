@@ -54,21 +54,23 @@ val myColours: Map[Int, String] = Map(
   3 -> "blue",
   4 -> "green"
 )
-//use a rocket =>
+//use a rocket => and the previous myColours val we declared
 val filteredForColourBlue: Map[Int, String] = myColours.filter(num => num._1 == 3) //_1 is searching in key
 val filteredForColourBlueV2: Map[Int, String] = myColours.filter(num => num._2 == "blue") //_2 is searching in Value
 
 /** HOW DO WE ACCESS THE DATA?
  *
  * Accessing data from within a sequence use firstSeq
+ * val firstSeq: Seq[Int] = Seq(1, 2, 3, 4, 5) //Seq[Int] =List(1,2,3,4,5)
  */
   //Int type is a primitive data type that represents a single integer value not a collection of integers
 // When you see Int in the code, it is not wrapped in [].
 val getSequenceData: Int = firstSeq(0) //gives the index position 1=0, 2=1, etc. Calling the seq firstSeq
+//When you use firstSeq(0), it actually calls the apply method of the Seq class to retrieve the element at index 0. This is similar to a function call, where you're telling Scala to "apply" the method to retrieve a specific item.
 
 //another val
 val getSequence2Data: Int = firstSeq(2)
-//These have different grammar, maybe because you don't declare Int[Int]? Ask April
+//These have different grammar, it is not wrapped in [].?
 
 //Head and Tail use firstSeq.head and firstSeq.tail
 val getSequenceHead: Int = firstSeq.head //index position 0 because 1=0
@@ -78,10 +80,14 @@ val getSequenceTail: Seq[Int] = firstSeq.tail //Gives everything except head whi
 //val getTooMuchData: Int = firstSeq (12)//we don't have any data in the 12th index position
 //errors out with IndexOutofbounds exception
 
-/** TASK 1 */
+/** TASK 1
+ * val firstList: List[Int] = List(1, 2, 3, 4, 5)*/
 //3. Add 1 to all numbers in a collection of Ints.
+
 val firstList: List[Int] = List(1, 2, 3, 4, 5)  //here is our list
-val addOneSeq = firstList.map { number => number + 1 }   //+1
+val addOneSeq = firstList.map { number => number + 1 }   //+1 to each number
+
+//Here { number => number + 1 }  is a lambda/anonymous function. lambda functions help you write functions quickly and flexibly without needing to formally define and name them. Allows for short, quick functions on the fly, making code more concise and expressive. Syntax generally looks like (parameters) => expression
 
 //4.Remove all even numbers from a collection.
 val oddNumbersOnly = firstList.filter {
@@ -94,19 +100,26 @@ val oddNumbersOnlyFilterNot = firstList.filterNot {
 //5. Return true if a Seq has a String that contains the letter “r”.
 val seqOfMyNames: Seq[String] = Seq("Mary", "Molly", "Milly", "Mandy", "Marie")
 val containsLetterR = seqOfMyNames.exists(name => name.contains("r"))
-
+//the part name => name.contains("r") is a lambda expression
 
 /** LISTS
- * Syntax is firstList
+ * val firstList: List[Int] = List(1, 2, 3, 4, 5)
+ *
+ * Use parentheses () when you are accessing elements from a collection (like firstList(1)) or when you have a method that takes parameters.
+ * Omit parentheses when calling methods that don't take parameters (like firstList.tail and firstList.last), making the code cleaner and easier to read.
  * */
 
 val getList1Data: Int = firstList(1)
-val getListTail: List[Int] = firstList.tail
-val getLastInList: Int = firstList.last
+//Here, firstList(1) uses parentheses because you're calling the apply method on the firstList to get the element at index 1. In Scala, this is the standard way to access elements in collections.
 
+val getListTail: List[Int] = firstList.tail
+//n this case, firstList.tail does not use parentheses because tail is a method that does not require parameters. In Scala, it's common to call methods without parentheses when they don't take any arguments, which improves readability and they are often considered "getter" methods.
+
+val getLastInList: Int = firstList.last
+//Similar to tail, last is a method without parameters, so it does not use parentheses.
 
 //MAP
-val getMapData = firstMap("three") //enter the key to get the value
+val getMapData = firstMap("three") // val getMapData: Int = 3 (three matches to 3)
 //String        //Int
 //Key           //Value
 //"one"          -> 1,
@@ -115,7 +128,7 @@ val getMapData = firstMap("three") //enter the key to get the value
 //"Four"         -> 4,
 //"Five"         -> 5
 
-/** Manipulating data - using .map lowercase and rocket => */
+/** Manipulating data - using .map in lowercase and rocket => */
 //Mapping though my list called firstList :
 val firstList: List [Int] = List (1,2,3,4,5)
 val tripledList: List[Int] = firstList.map {

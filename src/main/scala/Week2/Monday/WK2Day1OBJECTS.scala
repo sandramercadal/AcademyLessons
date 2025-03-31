@@ -33,7 +33,9 @@ package Week2.Monday
  If something needs to be used again and again we make it in a class.
  sometimes we only need one copy of something, in which case we can just make a new object
  */
-//add extends App to be able to run it and get a green arrow o the left
+//add extends App to be able to run it and get a green arrow to the left
+
+//in the typical sense in object-oriented programming, an object consists of a state, behaviour and identity.
 
 object Objects extends App {
 

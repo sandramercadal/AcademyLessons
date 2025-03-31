@@ -50,6 +50,7 @@ c>=c
  * Logical Operators
  */
 //AND &&
+//FALSE seems to trump true with &&
 true && true //true
 true && false //false  - false && anything always returns false
 false && true //false

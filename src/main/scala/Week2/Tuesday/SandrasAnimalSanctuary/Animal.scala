@@ -6,7 +6,7 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 
 class Animal(val name: String, val age: Int) {
 
-  def aboutAnimal(): String = s"Hi!! I'm an animal, I'm $name and I'm $age yrs old!"
+  def aboutAnimal(): String = s"Hi!! I'm an animal, I'm $name and I'm $age yrs old! "
 }
 
 

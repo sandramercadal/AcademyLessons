@@ -28,7 +28,7 @@ val tripleList: List[Int] = numberList.map{
 
 //APRIL'S CODE FOR Q1b
 primaryColours.filter( col => col != "Blue") //List(blue, yellow, red)
-
+//The term col in the lambda expression col => col != "Blue"
 
 
 //Q1d Write a function that returns true if my 'primaryColours' contains Orange
@@ -56,6 +56,8 @@ val animalMap: Map[String, String] = Map(
   "Flossy" -> "cat"
 )
 //APRILS ANSWER:
+//The keys are of type string (dog, cat, fish)
+//The values are of type List [String] so SPot, Marvin etc
 val davidsPets: Map[String, List[String]] = Map(
   "Dog" -> List("Spot", "Marvin"),
   "Fish" -> List("Deborah"),
