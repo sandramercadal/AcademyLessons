@@ -1,10 +1,8 @@
 package Week2.Tuesday.SandrasAnimalSanctuary
 
-//Bird inherits name and age from Animal and has the extras of can fly and colourOfFeather. It can extend into BirdsTraits.
-//BirdTraits has TRAITS
+//Bird inherits name and age from Animal
 
 //Traits are something lots of things can have e.g. insect and bird can both fly also species
-//Bird extends Animal and adds canFly and ColourOfFeathers plus it extends to BirdTraits (traits)
 
 class Robin (name: String,
              age: Int,
@@ -40,26 +38,6 @@ object Robin {
     new Robin (name, age, hasWings, colourOfFeathers, hasRedBreast)
 }
 
-//  //TO DO
-//  //Create an object for Robins and one for birds in general
-//
-//  object Robins extends App {
-//    val infoOnRobins = new
-//    override val xyz: Boolean = false
-//    override val xyz: Boolean = true
-//  }
-//
-//  //Cuckoo facts
-//  override def CuckooLikeToMakeABurrow: String = ???
-//  override def CuckoosInEngland: String = ???
-//
-//  //Robin facts
-//  override def RobinsInCirculation: String = ???
-//  override def lengthOfARobin: Int = ???
-//
-//
-//
-//}
 
 
 

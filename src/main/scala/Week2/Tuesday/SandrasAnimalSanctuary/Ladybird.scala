@@ -18,7 +18,6 @@ class Ladybird(
 
 }
 
-
 //Create the new object of ladybird:
 object Ladybird {
 

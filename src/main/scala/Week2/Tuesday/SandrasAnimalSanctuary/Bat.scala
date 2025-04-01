@@ -6,10 +6,9 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 class Bat(name: String, age: Int, hasLongEars: Boolean, colourOfFur: String, val isNocturnal: Boolean)
   extends Mammal (name, age, hasLongEars, colourOfFur) with AbleToFly {
 
-  //user override instead of just def to extend via polymorphism
+  //use override instead of just def to extend via polymorphism
   override def aboutAnimal(): String = {
     super.aboutAnimal()+ s" I'm a Bat, it's $isNocturnal I'm nocturnal. " + fly() + "Nice to meet you!!"
-
   } //will print the val parameters
 
   //add the abstract method from AbleToFly trait. Make it override

@@ -16,8 +16,6 @@ extends Animal (name, age)  {
 override def aboutAnimal(): String = {
   super.aboutAnimal() + s" I am a mammal, and I have $colourOfFur fur"
 }
-
-
 }
 
 

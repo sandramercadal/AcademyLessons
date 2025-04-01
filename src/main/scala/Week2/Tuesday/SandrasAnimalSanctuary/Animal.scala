@@ -21,8 +21,5 @@ object Animal {
   }
 }
 
-//val Rufus = Animal.createAnimal("Rufus", 4)
-//println(Rufus.aboutAnimal())
-
 //This is just like we did with Book from Library
 

@@ -16,11 +16,6 @@ object SandraAnimalSanctuaryLogic extends App{
   val sandraAnimalSanctuary: List[Animal]= List (robin, warthog, ladybird, ostrich, bat)
 
 
-  //def printBirdWhoflies(bird: AbleToFly): Unit = {
-    //println(bird.canFly)
-  //}
-
-
   /**LIST TO STORE MY ANIMALS THIS IS NOT AN OBJECT - Let's create some animals!
 use key word 'new'
    */
@@ -33,9 +28,8 @@ use key word 'new'
 printAboutAnimals(robin) //Elvis
 printAboutAnimals(warthog) //Pumbaa
 printAboutAnimals(ladybird) //Dobby
-printAboutAnimals(ostrich) //Jenny
 printAboutAnimals(bat) //Blake
-
+  printAboutAnimals(ostrich) //Jenny
 /**Test the trait */
 println(robin.canFly) //True - Robins can fly!
 println(robin.fly()) //True - Robins can fly!
@@ -48,6 +42,6 @@ println(ostrich.fly())
   println(s"${robin.name} is a Robin, " + robin.fly())
 
 }
-//sandraAnimalSanctuary.foreach(printAboutAnimals())
+//  sandraAnimalSanctuary.foreach(printAboutAnimals())
 
 //If lost - Command + hover turns things blue

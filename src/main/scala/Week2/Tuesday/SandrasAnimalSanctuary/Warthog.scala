@@ -22,5 +22,3 @@ object Warthog {
     new Warthog(name, age, hasLongEars, colourOfFur,hasFourTusks)
 }
 
-//val Warthog = Warthog.createAnimal("Monty", 5, true, false, "brown")
-//println(Warthog)

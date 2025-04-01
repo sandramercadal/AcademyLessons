@@ -47,23 +47,7 @@ object Bird {
 }
 
 
-//  //TO DO
-//  //Create an object for Robins and one for birds in general
 
-//  object Robins extends App {
-//    val infoOnRobins = new
-//    override val xyz: Boolean = false
-//    override val xyz: Boolean = true
-//  }
-//
-//  //Cuckoo facts
-//  override def CuckooLikeToMakeABurrow: String = ???
-//  override def CuckoosInEngland: String = ???
-//
-//  //Robin facts
-//  override def RobinsInCirculation: String = ???
-//  override def lengthOfARobin: Int = ???
-//}
 
 
 
