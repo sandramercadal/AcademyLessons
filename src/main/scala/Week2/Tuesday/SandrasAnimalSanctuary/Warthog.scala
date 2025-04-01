@@ -9,7 +9,7 @@ class Warthog(name: String, age: Int, hasLongEars: Boolean, colourOfFur: String,
 
 
   override def aboutAnimal(): String = {
-    super.aboutAnimal()+ s"I'm a warthog. Do I have Four tusks?$hasFourTusks!"
+    super.aboutAnimal()+ s"I'm a warthog. Do I have Four tusks? Yes it's $hasFourTusks!"
   }
 }
 
@@ -17,7 +17,7 @@ class Warthog(name: String, age: Int, hasLongEars: Boolean, colourOfFur: String,
 //Create the new object of Warthog:
 object Warthog {
 
-  def createAnimal(name: String, age: Int, hasFourTusks: Boolean, hasLongEars: Boolean, colourOfFur: String):
+  def createAnimal(name: String, age: Int, hasLongEars: Boolean, colourOfFur: String, hasFourTusks: Boolean):
   Warthog =
     new Warthog(name, age, hasLongEars, colourOfFur,hasFourTusks)
 }

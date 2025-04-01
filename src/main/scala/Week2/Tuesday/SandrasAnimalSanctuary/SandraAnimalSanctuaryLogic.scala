@@ -13,7 +13,7 @@ object SandraAnimalSanctuaryLogic extends App{
   }
 
   /**List of all my animals in my sanctuary */
-  val sandraAnimalSanctuary: List[Animal]= List (robin, warthog, ladybird, ostrich)
+  val sandraAnimalSanctuary: List[Animal]= List (robin, warthog, ladybird, ostrich, bat)
 
 
   //def printBirdWhoflies(bird: AbleToFly): Unit = {
@@ -22,20 +22,19 @@ object SandraAnimalSanctuaryLogic extends App{
 
 
   /**LIST TO STORE MY ANIMALS THIS IS NOT AN OBJECT - Let's create some animals!
-*/
+use key word 'new'
+   */
   val robin = new Robin ("Elvis", 3, true, "white", true) //can fly
+  val warthog = new Warthog ("Pumbaa", 16, true, "black", true)
+  val ladybird = new Ladybird ("Dobby", 3, 3.5, 5)
+  val bat = new Bat ("Blake", 21, true, "black", true)
   val ostrich = new Bird ("Jenny", 5, false, "pink") //An Ostrich can't fly
-  val warthog = new Mammal ("Pumbaa", 16, true, "black")
-  val ladybird = new Insect ("Dobby", 3, 3.5)
-
-  //val penguin = Bird ("Percy, 2, false, "black")
-  //val bat = Mammal ("Mufasa, 21, true, "orange")
-
 
 printAboutAnimals(robin) //Elvis
 printAboutAnimals(warthog) //Pumbaa
 printAboutAnimals(ladybird) //Dobby
 printAboutAnimals(ostrich) //Jenny
+printAboutAnimals(bat) //Blake
 
 /**Test the trait */
 println(robin.canFly) //True - Robins can fly!

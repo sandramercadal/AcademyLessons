@@ -6,12 +6,16 @@ class Ladybird(
                 age: Int,
                 wingSpan: Double,
                 val hasSpots: Int)
-  extends Insect (name, age, wingSpan)  {
+  extends Insect (name, age, wingSpan) with AbleToFly  {
 
 
   override def aboutAnimal(): String = {
-    super.aboutAnimal()+ s"Hello I'm a Ladybug. I have $hasSpots spots!"
+    super.aboutAnimal()+ s" I'm a Ladybug. I have $hasSpots spots!" + fly() + "Nice to meet you!!"
   } //will print the val parameters
+
+  //add the abstract method from AbleToFly trait. Make it override
+  override def canFly: Boolean = true
+
 }
 
 

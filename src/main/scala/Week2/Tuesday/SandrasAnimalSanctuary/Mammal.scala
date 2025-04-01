@@ -8,7 +8,7 @@ class Mammal (
                val hasLongEars:
                Boolean,
                val colourOfFur: String)
-extends Animal (name, age) with AbleToFly {
+extends Animal (name, age)  {
   //Mammal overrides aboutAnimal from Animal
 
   //() empty so it can accept the properties
@@ -17,7 +17,7 @@ override def aboutAnimal(): String = {
   super.aboutAnimal() + s" I am a mammal, and I have $colourOfFur fur"
 }
 
-  override def canFly: Boolean = false
+
 }
 
 
