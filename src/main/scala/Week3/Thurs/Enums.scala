@@ -26,7 +26,7 @@ object Enums extends App {
   }
 
   println(BetterWeekday.values)
-  println(BetterWeekday.Sunday) //
+  println(BetterWeekday.Sunday) //Sun
 
   //Pattern matching example
   def matchWithEnum(weekdays: BetterWeekday.Value) = {  //takes a single parameter called weekdays, which is of the type BetterWeekday.Value.

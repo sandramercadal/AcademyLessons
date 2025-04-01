@@ -13,12 +13,12 @@ package Week2.Thurs.Burger
 abstract class Burger(
                        val doublePatty: Boolean,
                        val bunType: Burger.BunType, //1 choice
-                       val salad: List[Burger.Salad], //can choose many
+                       val salad: List[Burger.Salad], //can choose many. //salad: List [Burger.Salad] is nested type
                        val sauce: List[Burger.Sauce], //can choose many
                        val cheese: Burger.Cheese //1 choice
                      ) {
   //def makeItAMeal: Boolean // TODO: THINK ABOUT THIS LATER
-  //If else statement see the code along from poause day on Teams
+  //If else statement see the code along from pause day on Teams
 }
 
 object Burger {
@@ -27,7 +27,7 @@ object Burger {
 
   case object SeededBun extends BunType
 
-  case object LettuceBun extends BunType
+  case object Sesame extends BunType
 
   case object GlutenFree extends BunType
 

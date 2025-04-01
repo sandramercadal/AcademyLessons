@@ -19,7 +19,7 @@ object Dog extends App{
   }
 
   //Q5 5. Call each of your vals and methods.
-  val myDog = Dog("Ruby", 2, "Patterjack", true, true)
+  val myDog = Dog("Ruby", 2, "Patterjack", jumpsUp = true, likesToLick = true)
 
   //Call each of your vals and methods
 
@@ -29,5 +29,6 @@ object Dog extends App{
   println(Dog.myDog.jumpsUp)  //true
   println(Dog.myDog.likesToJumpUp)  //Don't jump up!!
   println(Dog.myDog.lickingBehaviour)  //Ruby wants to lick me
+
 
 }
