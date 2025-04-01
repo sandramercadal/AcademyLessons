@@ -9,13 +9,13 @@
 //a
 case class Person(name: String, age: Int, nationality: String, isStudent: Boolean)  //✅Correct Syntax for Case class
 //b
-//val firstPerson = new Person("Carlos", 23, "Spanish", true) //Incorrect syntax for case class.
-
+val firstPerson = new Person("Carlos", 23, "Spanish", true) //❌Incorrect syntax for case class.
 // Notice the "new" here, You don't need "new" here as built into case classes
 //println(firstPerson)
-val firstPerson = Person("Carlos", 23, "Spanish", true) //Correct syntax for case class.
+
+val firstPerson = Person("Carlos", 23, "Spanish", true) //✅ Correct syntax for case class.
 //c
-val secondPerson = Person("Carlos", 23, "Spanish", true) //Will run as does not have new
+val secondPerson = Person("Carlos", 23, "Spanish", true) //✅ Will run as does not have new
 println(secondPerson)
 
 //d
@@ -25,12 +25,10 @@ println(thirdPerson)
 //e
 class Animal(name: String, colour: String, pet: Boolean) //✅Correct Syntax for Case class
 
-//val cat = Animal("cat", "black", true) //❌This won't run as it doesn't have 'new' and that's needed when it is a class to
-//make a new object so cat won't be made. Remember classes need ‘new’ to give them the additional functionality that we
-// get built in with case classes.
+//val cat = Animal("cat", "black", true) //❌This won't run as it doesn't have 'new' and that's needed when it is a class to make a new object so cat won't be made. Remember classes need ‘new’ to give them the additional functionality.
 
-val dog = new Animal("dog", "white", true) //this will run as a regular class not case class has 'new'
-println (dog) //
+val dog = new Animal("dog", "white", true) //this will run as a regular class not case class as it has 'new'
+println (dog)
 
 
 // MVP Exercise 3
@@ -56,7 +54,7 @@ println(oneMoreChocolateMuffin)
 val finalChocolateMuffin = Muffin("chocolate", 2.50, "MercatorBakery")
 println(finalChocolateMuffin)
 
-chocolateMuffin == anotherChocolateMuffin  //✅True beacuse the (what is inside the brackets) is same.
+chocolateMuffin == anotherChocolateMuffin  //✅True because the (what is inside the brackets) is same.
 
 chocolateMuffin == oneMoreChocolateMuffin //❌Here in oneMoreMuffin, Chocolate has a caps and choclateMuffin does not
 //so false
@@ -68,6 +66,7 @@ chocolateMuffin == finalChocolateMuffin //❌//One has 2.50 the other 3.50
 case class Toy (name: String, color: String, needsBatteries: Boolean)
 
 case object ToyFactory //is a singleton object. The only instance of it in my program.
+
 //2. Create 3 instances of the case class.
 
 val doll = Toy ("Annabel", "White", needsBatteries = true)
@@ -82,8 +81,8 @@ val superTop = spinningTop.copy ("Super", "purple", needsBatteries = false)
 //4. Use the “.toString” method to print all parameters of the instance you have already
 //created for exercise 3.
 
-println(annabelDeluxe.needsBatteries.toString) //Both println the same of true but .toString explicitly calls this method on a boolean
-println(annabelDeluxe.needsBatteries)
+println(annabelDeluxe.needsBatteries.toString) //Both println the same of true but .toString explicitly calls this method on a boolean //true
+println(annabelDeluxe.needsBatteries) //true
 
 //5. Use the “.equals” method to compare case class instances you have already created as
 //part of the exercises so far.

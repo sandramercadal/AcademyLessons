@@ -3,7 +3,6 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 //Keep all our logic separate to the class
 //We want to run it so extends App
 
-
 object SandraAnimalSanctuaryLogic extends App{
 
   /** I create my function to print animal details */
