@@ -4,19 +4,21 @@ import Week3.Enums.Weekday.Value
 
 object Enums extends App {
 
-  //Finite sets of data.
+  //Useful to represent a fixed, Finite sets of data/sets of related things.
+  //make code more organised and type-safe since it restricts a variable to be one of the defined values.
 
-  // Enumeration (syntax is "extends Enumeration" and "value")
+  //SYNTAX is "extends Enumeration" & SYNTAX is "value"
+//singleton object
   object Weekday extends Enumeration {
     val Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday = Value
   }
 
-  println(Weekday.values)
-  println(Weekday.Monday)
+  println(Weekday.values) //Weekday.ValueSet(Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
+  println(Weekday.Monday) //Monday
 
   //Below is useful with acronyms
   object BetterWeekday extends Enumeration {
-    val Monday = Value("Mon")
+    val Monday = Value("Mon") //Each call to Value("...") creates a new enum value with a custom string representation. The internal values are assigned automatically (0, 1, 2, etc.), but the string representations are I've provided in parentheses
     val Tuesday = Value("Tue")
     val Wednesday = Value("Wed")
     val Thursday = Value("Thurs")
@@ -25,10 +27,11 @@ object Enums extends App {
     val Sunday = Value("Sun")
   }
 
-  println(BetterWeekday.values)
+  println(BetterWeekday.values) //BetterWeekday.ValueSet(Mon, Tue, Wed, Thurs, Fri, Sat, Sun)
   println(BetterWeekday.Sunday) //Sun
 
   //Pattern matching example
+  //Each call to Value() creates a new enumeration value and automatically assigns it a unique identifier. The string parameter you provide gives it a custom string representation when displayed.
   def matchWithEnum(weekdays: BetterWeekday.Value) = {  //takes a single parameter called weekdays, which is of the type BetterWeekday.Value.
                                                               // BetterWeekday is an enum that defines days of the week.
     weekdays match {
@@ -43,9 +46,10 @@ object Enums extends App {
   }
   matchWithEnum(BetterWeekday.Saturday) //Oh, it's Sat
 
-
   //We want an exhaustive match - all enums are assigned a match case.
   //We don't see an error message/warning if it isn't. (We could miss values)
+
+
 
   object ReorderedWeekday extends Enumeration {
     val Monday = Value(1)

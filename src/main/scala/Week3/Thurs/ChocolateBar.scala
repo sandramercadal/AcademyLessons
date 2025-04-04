@@ -27,8 +27,4 @@ object ChocolateBar extends App {
   println(getFilling(Snickers)) //nuts
   println(getFilling(DairyMilk)) //just chocolate
 
-
-
-
-
 }
