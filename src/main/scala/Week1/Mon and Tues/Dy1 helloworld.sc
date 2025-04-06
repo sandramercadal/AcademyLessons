@@ -1,10 +1,16 @@
-print("hello world")
+print("hello world") //hello world
 
 //How do we print each word on a separate line - Research
 
 //VAL = value that cannot be re-assigned / is immutable
 //e.g
-//val cake = 10 * 2
+val cakesRequired = 10 * 2
+
+val stringLength = "What is the length of this string?"
+
+println(stringLength.length) //34
+println("hello world".mkString("\n"))
+println("hello wonderful".toList.mkString("\n"))
 
 //VAR can be re-assigned
 
