@@ -35,6 +35,7 @@ if (numWatermelons >0 && numWatermelons <= 3) {
 } else {
   println(s"John cannot carry $numWatermelons watermelons")
 }
+//John needs a bag to carry 4 watermelons
 
 // MVP Task 4 - Create a value to store a boolean that indicates whether John has a bag with him or not.
 val hasBag: Boolean = false // Try out both true and false to make sure the if statement works as intended
@@ -49,6 +50,7 @@ if (numWatermelons <= 3 || numWatermelons <= 5 && hasBag) {
 } else {
   println(s"John cannot buy $numWatermelons watermelons")
 }
+//John cannot buy 4 watermelons
 
 // MVP Task 6
 //The store puts their prices in a foreign currency, so the conversion rate to £ means one
@@ -56,8 +58,9 @@ if (numWatermelons <= 3 || numWatermelons <= 5 && hasBag) {
 //purchase to 2 decimal places - which type is most appropriate here?
 //%2.2f is a formatting specifier that formats the resulting number as a floating-point number with 2 digits after the decimal point.
 //The 2 before the . specifies the minimum width of the integer part of the number.
-println(f"The total cost of the watermelons is £${numWatermelons * 1.397}%2.2f")
+println(f"The total cost of the watermelons is £${numWatermelons * 1.397}%2.2f") //The total cost of the watermelons is £5.59
 
+//The minimum width is 2 and the number of decimal places is 2.
 
 /** MY WATERMELON SKELETON
 val watermelontotal: Int = 6

@@ -45,7 +45,7 @@ println("I love scala")
 //3 play around, what is/isn't possible? Open question. Group discussion.
 //3 ** 4
 // power to - doesn't seem to work in Scala
-//Futher general investigation to continue
+//Further general investigation to continue
 
 /**Extension Q1 - Q6:
   1. “STRING” == “string”
@@ -66,7 +66,6 @@ val areYouEqual = "STRING" == "string"
 
 
 //Q2 Can you convert the string “one” to the int 1?
-//.toInt
 //This was asking if it is possible!
 //Not simply (we can't just use .toInt).
 // The compiler doesn't know that "one" is the same as 1.
@@ -79,16 +78,14 @@ val areYouEqual = "STRING" == "string"
 // The compiler doesn't know that "one" is the same as 1.
 // We would need to look at mapping to be able to do this, hold this thought.
 
-
 //Q4 Can you convert 1 to a string? Is the result as you would expect?
-val convertToString = 1.toString
-//Gives "1" as a string. Not one.
+val convertToString = 1.toString //Gives "1" as a string. Not one.
 
 //Q5  Convert a lowercase string to uppercase.
 val uppercase = "hello".toUpperCase
 
 //Q6
-//Convert on the first letter of a string to uppercase.
+//Convert the first letter of a string to uppercase.
 val onlyFirstLetter = "hello".capitalize
 
 

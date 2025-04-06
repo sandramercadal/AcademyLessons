@@ -1,6 +1,6 @@
 /**STORING VALUES
 
-VAL is safer more trustworthy code as it is immutabke and cannot be changed (var cn be and can be reassigned!)
+VAL is safer more trustworthy code as it is immutable and cannot be changed (var cn be and can be reassigned!)
 
  Susie went to the shops, she bought:
  * Melons - 50p x 5
@@ -18,7 +18,7 @@ val total = melons + apples + fizzyDrinks
 val mysterySolvingDog = "Scooby-doo"
 //Re-assign a val
 //mysterySolvingDog = "Scrappy-doo" //see the error - reassignment to val
-//Line above is Commented out so that the rest of the code will run0
+//Line above is Commented out so that the rest of the code will run
 //mysterySolvingDog = "Scrappy-doo"
 
 //Store a var
