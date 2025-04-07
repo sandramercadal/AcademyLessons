@@ -10,19 +10,69 @@ import scala.io.Codec
   //TIP: Must be given a unique name e.g squareOfAnInt
 
 def squareOfAnInt (number:Int): Int = number * number //: Int: indicates that the function will return an integer.
-squareOfAnInt(6)
-squareOfAnInt(64)
+squareOfAnInt(6) //36
+squareOfAnInt(64) //4096
 
 //Q2 COMPLETED Write a method to check if a number is odd. It should have an input parameter, Int and return type Boolean.
 
 def isOdd (number:Int): Boolean = number % 2 == 1
 //solution needs an input parameter
-isOdd(7)
-isOdd(2)
+isOdd(7) //T
+isOdd(2) //F
 
-//Q3 NOT COMPLETED
+//Q3
 // Use a For Comparison and the two methods I created above (squareOfAnInt & isOdd)
 // to write a method sumOfOddNumbers.
+
+//1.	Write a method to calculate the square of an Int. It should have an input parameter, Int and return type, Int.
+def newSquared (number: Int): Int = number * number
+newSquared(3) //calling to check it works
+
+//2.	Write a method to check if a number is odd. It should have an input parameter, Int and return type, Boolean.
+def isOdd(number: Int): Boolean  = number % 2 != 0
+isOdd(3) //calling to check it works
+
+//3.	Using a for comprehension and your methods from MVP Q1 and Q2, write a method that will filter the odd squared numbers from a List and return the sum of these odd squared numbers. It should have an input parameter, List[Int] and return type, Int.
+val numbers:List[Int] = List(1,2,3,4,5,6,7,8,9,10)
+
+def newSquared (number: Int): Int = number * number
+
+def isOdd(number: Int): Boolean  = number % 2 != 0
+
+def sumOfOddNumbers(numbers: List[Int]): Int = {
+  val oddSquares = for {
+    number <- numbers //iterate over each number in the list
+    squareValue = newSquared(number) //get square value of each number and store it in number. Need to use = as the newSquared method returns an Int.
+    if isOdd(squareValue) //use if guard, filter and keep only the odd squared values
+  } yield squareValue //collect all the odd squared values
+
+  oddSquares.sum //sum filtered odd squares by calling your val
+
+}
+
+sumOfOddNumbers(numbers) //165
+/**the sum of the odd squared numbers from the list List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) results in 165.
+ First, square each number:
+  (12 = 1)
+(22 = 4)
+(32 = 9)
+(42 = 16)
+(52 = 25)
+(62 = 36)
+(72 = 49)
+(82 = 64)
+(92 = 81)
+(102 = 100)
+List of squared values:
+  List(1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
+Next, filter only the odd squared values:
+
+  Odd values are: (1, 9, 25, 49, 81)
+Sum the odd squared values:
+
+  (1 + 9 + 25 + 49 + 81 = 165) : the sum of the odd squared numbers from 1 to 10 is indeed 165! */
+
+
 //TIP: For comparison doesn't work with Int.
 // For comparison is a lightweight notation for expression of sequence comprehension/simplified way of writing a function.
 //TYPES: Classic, Use operators or Use if guards.
@@ -37,15 +87,24 @@ isOdd(2)
 
 //APRILS CODE Q3
 val numbers:List[Int] = List(1,2,3,4,5,6,7,8,9,10)
+
+def newSquared (number: Int): Int = number * number
+newSquared(3) //calling to check it works
+
+//2.	Write a method to check if a number is odd. It should have an input parameter, Int and return type, Boolean.
+def isOdd(number: Int): Boolean  = number % 2 != 0
+isOdd(3) //calling to check it works
+
 def sumOfOddNumbers(numbers: List[Int]): Int = {
   val oddSquares = for {
     number <- numbers //iterate over the list
-    square = squareOfAnInt(number) //calculate square (each value). Need to use = as the newSquared method returns an Int.
+    square = newSquared(number) //calculate square (each value). Need to use = as the newSquared method returns an Int.
     if isOdd(square) //use an if guard, filter and keep only the odd values of square
   } yield square //collect all the odd squares
   oddSquares.sum //sum filtered odd squares by calling your val
 }
 sumOfOddNumbers(numbers)
+
 
 //Q4 COMPLETED Write a Grading system
 //Save each method as a Val, each method does one thing.

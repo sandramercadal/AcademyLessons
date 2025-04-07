@@ -19,8 +19,7 @@
 //CLASSIC/Simple CLASSIC example
 //need to wrap in methods so we can call them. Key word is 'for' (see below)
 
-for (numbers <- 1 to 10) yield numbers
-//Gives me a list of numbers from 1 to 10
+for (numbers <- 1 to 10) yield numbers //IndexedSeq[Int] = Vector(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 //The yield keyword is used to create a new collection from the results of the loop.
 
 //This example has a classic and a function in front of it
@@ -34,10 +33,10 @@ retrieveNumbers //Seq[Int] = Vector(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
 //use operators
 //Simple use of an OPERATOR example
-for (numbers <- 1 to 5) yield numbers * numbers
+for (numbers <- 1 to 5) yield numbers * numbers //IndexedSeq[Int] = Vector(1, 4, 9, 16, 25)
 
 //squaring it
-def squaredNumbers: Seq[Int] = for (number <- 1 to 5) yield number * number
+def squaredNumbers: Seq[Int] = for (number <- 1 to 5) yield number * number //Seq[Int] = Vector(1, 4, 9, 16, 25)
 squaredNumbers
 
  //if guards
@@ -50,6 +49,8 @@ def useIfGuard: Seq [Int] = for (number <-1 to 10 if number % 2 == 0 ) yield num
 useIfGuard
 //removing odd ones
 
+//IF GUARDS
+//If as in IfGuard works as an "extra filter" that allows you to check a condition after a pattern has already matched.
 
 
 //A STRING of animals made into a METHOD
@@ -57,7 +58,7 @@ useIfGuard
 val animals: List [String] = List ("Moose", "Peacock", "Dog", "Hamster", "Cat")
 
 //Convert a STRING to a METHOD
-def animalList (): List [String] = {
+def animalList (): List [String] = {    //() because animalList is a method that does something
   List ("Moose", "Peacock", "Dog", "Hamster", "Cat")
 }
 //VAl to call

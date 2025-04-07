@@ -10,7 +10,7 @@ val numberList: List [Int] = List (
 )
 
 //Q1a part II Make a Seq of the primary colours
-val primaryColours : Seq [String] = Seq (
+val primaryColours: Seq [String] = Seq (
     "blue",
     "yellow",
     "red"
@@ -91,8 +91,10 @@ animalMap("Dog").mkString(", ")// Approach 2 - simplified
 
 //1. Starting with a Seq(1-9), come up with 2 filters that, when used together, will return Seq(1,2,5,7).
 val nums = Seq(1,2,3,4,5,6,7,8,9)
-nums.filter(n => n % 3 !=0).filter(n => n % 4 != 0) // keeping numbers that are not divisible by 3.
-//This retains only those numbers from the previous filtered sequence that are not divisible by 4.
+nums.filter(n => n % 3 !=0).filter(n => n % 4 != 0) // filter n % 3 !=0 removes numbers from the sequence that are divisible by 3. SO keep only those numbers where the remainder when divided by 3 is not equal to 0
+// filter(n => n % 4 != 0) then filters the remaining numbers to remove those that are divisible by 4, using a similar condition.
+
+
 
 //2. The .head function returns the first element of a list, and the .tail function returns everything except the first element.
 // Use head and tail to get the 3rd element of a List.

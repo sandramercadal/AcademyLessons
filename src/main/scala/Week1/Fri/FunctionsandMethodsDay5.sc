@@ -32,11 +32,11 @@ val addition = (number: Int) => number +1
 //DEF starts with the words def and syntax changes I need to tell it what I want within my name
 // Named so can be reused.
 def addition (number:Int): Int = number +1
-def anotherAddition (number:Int): Int = number + 10
-//notice no = sign after you name your function
-
 
 //4 of 4 OVERRIDE METHOD
+//override def addition (number:Int): Int = number + 10
+//notice no = sign after you name your function
+
 // key word is "override" so start with "override".
 //When we say this is an "override method," it usually means this special instruction
 // takes the place of another one that was already there before. It’s like saying, "I've got a new, better way to do this!"
@@ -61,8 +61,8 @@ def aDifferentValue: Int = {
 //In the method aDifferentValue, the if statement checks the value of aValue. Since aValue is false, it will return the value 865 from the else clause.
 //However, the last line in the method, which is 42, becomes the actual return value of the method because in Scala, the last expression in a block is what gets returned.
 // So, if you call aDifferentValue, it will return 42 despite the if statement.
-aValue
-aDifferentValue
+aValue //false
+aDifferentValue //42
 
   //How to make a cup of coffee
 //TIP - If you have an empty parameter there's no need to use {} brackets
@@ -75,19 +75,22 @@ def makeACoffee: String = {
   "Add sugar or/and milk if required"
   "Stir"
   "Enjoy!" //this is green, recognised as the last one and we will only see 'Enjoy!" returned
+
 }
 makeACoffee //will return the last expression do "Enjoy!"
+
+
 
 //Now with a parameters. Methods start with Def. Name the parameter when calling the method.
 //can create your own parameters for functions, allowing you to pass different values when you call the function eg sugar and splashesOfMilk
 def makeATea(sugar:Int, splashesOfMilk: Int): String = {
   s"Add boiling water to your cup with a teabag, add $sugar spoons of sugar and $splashesOfMilk splashes of milk, stir and enjoy!"
 }
-makeATea(4, 6) //function call
-makeATea(sugar = 4, splashesOfMilk = 6)
+makeATea(4, 6) //function call of Int & Int
+makeATea(sugar = 4, splashesOfMilk = 6) //function call of Int & Int
 //Calling it with diff amounts of sugars and splashes of milk
 
-//If I wanted each line to be printed nad not just Enjoy! I could printl each:
+//If I wanted each line to be printed and not just say Enjoy! I could printl each:
 def makeACoffee: String = {
   println("Add coffee to boiling water")
   println("Add sugar or/and milk if required")
@@ -146,6 +149,7 @@ priceIncVat(59.90) //Double = 71.88
 //Where have I told it where input 1 and input 2 is?? //I ran it and put nothing in the getBIgVal ( , )
 //When run see how it returns a string as required
 
+//each potential return value from the method must be a string.
 def getBigVal (input1: Int, input2: Int): String = {
   if (input1 > input2){
     "first"
@@ -158,21 +162,21 @@ def getBigVal (input1: Int, input2: Int): String = {
   }
 }
 //run it
-getBigVal(6,4)
-getBigVal(2,4)
-getBigVal(4,4)
-getBigVal(50,100)
+getBigVal(6,4) // first
+getBigVal(2,4) //second
+getBigVal(4,4) //same
+getBigVal(50,100) //second
 
-//OR the way I coded it, I didn't seem to use {before the strings or after:
+//OR the way I coded it, I didn't seem to use " " before the strings or after:
 def getBigVal (input1: Int, input2: Int): String = {
   if (input1 > input2) "first"
   else if (input1 < input2) "second"
   else
     "equal"
 }
-getBigVal(3,7)
-getBigVal(6,4)
-getBigVal(100,200)
+getBigVal(3,7) //second
+getBigVal(6,4) //first
+getBigVal(100,200) //second
 
 //Task 2 - The other way round
 //METHOD WITH 2 x STRINGS THAT RETURNS A INT
@@ -206,6 +210,7 @@ nameLength("Mickey", "Mouse")  //6
 nameLength("Bigdonald", "Duck") //9
 nameLength("Mary", "Duck") //0
 
+
 //OR coded by colleague:
 //uses two vals
 def nameLength(firstName: String, surname: String): Int = {
@@ -217,9 +222,9 @@ def nameLength(firstName: String, surname: String): Int = {
   else if (firstNameLength< surnameLength) surnameLength
   else 0
 }
-nameLength("Peter", "Pan")
-nameLength("Mickey", "Mouse")
-nameLength("Bigdonald", "Duck")
+nameLength("Peter", "Pan") //5
+nameLength("Mickey", "Mouse") //6
+nameLength("Bigdonald", "Duck") //9
 
 
 /** Referenctial transparancy   */
