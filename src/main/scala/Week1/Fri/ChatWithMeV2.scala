@@ -1,6 +1,5 @@
 package Week1.Fri
 
-
 import scala.io.StdIn.readLine
 
 /**EXTENSION
@@ -11,43 +10,42 @@ import scala.io.StdIn.readLine
  specific inputs (this can be about anything you like; weather, films, sports…)
  */
 
+object ChatWithMeV2 extends App {
 
-object ChatWithMeV2 extends App{
+    private def greetUser(): Unit = {
+      val name: String = readLine("What's your name: ")
+      println(s"Hi, $name")
+    }
 
-  private def greetUser(): Unit = {
-    val name: String = readLine("What's your name: ")
-    println(s"Hi, $name")
-  }
+    private def startChat(): Unit = {
+      val choice: String = readLine("What do you want to talk about today : the weather, films or politics?"
+      ).toLowerCase
 
-  private def startChat(): Unit = {
-    val choice: String = readLine("What do you want to talk about today : the weather, films or politics?"
-    ).toLowerCase
+      if (choice == "weather")
+        println("It looks like a nice day to go for a walk outside")
+      else if (choice == "films")
+        println("You like movies, me too! I love ET" +
+          ", it's a classic!")
+      else if (choice == "politics")
+        println("I don't really like politics")
+      else
+        println("You didn't make a choice")
+    }
 
-    if (choice == "weather")
-      println("It looks like a nice day to go for a walk outside")
-    else if (choice == "films")
-      println("You like movies, me too! I love ET" +
-        ", it's a classic!")
-    else if (choice == "politics")
-      println("I don't really like politics")
-    else
-      println("You didn't make a choice")
-  }
-
-  private def makingConversation(): Unit = {
-    while (true) {
-      startChat()
-      val continue: String = readLine("Do you want to continue (yes/no): ").toLowerCase
-      if (continue != "yes") {
-        println("Bye!")
-        System.exit(0)
+    private def makingConversation(): Unit = {
+      while (true) {
+        startChat()
+        val continue: String = readLine("Do you want to continue (yes/no): ").toLowerCase
+        if (continue != "yes") {
+          println("Bye!")
+          System.exit(0)
+        }
       }
     }
-  }
-  greetUser()
+    greetUser()
 
-  makingConversation()
+    makingConversation()
+
 }
-
 
 
