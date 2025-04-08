@@ -359,7 +359,80 @@ object ThursMPV extends App {
   //  }
   //}
 
+//EXTENSION R E S E A R C H
+// * Run the method below and look at the output.
+// * What is happening here?
+// * Is there any way to get around this and make the below method work as expected?
+
+  //Pattern matching with the type _: List[T] doesn't match the actual type of the list. Instead, function checkListType is defined with a type parameter T and tries to match against the input list, you should be using a type test on the elements of the list.
+//In this code the type matching is not checking the actual type of the list correctly. Instead, you need to match the list against its elements to get the correct type.
+//Type erasure is a fundamental concept in how Scala handles generics at runtime. Let me explain both concepts:
+  //Type Erasure
+  //Type erasure refers to the process where generic type information is removed ("erased") during compilation. This means:
+  //
+  //At runtime, the JVM doesn't know if a collection was created as List[Int], List[String], or List[Double] - it just sees a List.
+  //Due to type erasure, you cannot reliably check if something is a List[String] vs List[Int] at runtime using pattern matching on the generic type parameter.
+  //
+  //This is why it doesn't work as expected
+
+def checkListType[T](list: List[T]): String = list match {
+  case _: List[Double] => "List of Doubles"
+  case _: List[String] => "List of Strings"
+  case _: List[Int] => "List of Ints"
+  case _=> "Unknown"
 }
+
+val numList: List[Int] = List(1, 2, 3)
+val doubleList: List[Double] = List(1.0, 2.0, 3.0)
+val stringList: List[String] = List("1", "2", "3")
+
+//checkListType(numList)
+//checkListType(doubleList)
+//checkListType(stringList)
+  println(checkListType(numList))      // List of Doubles
+  println(checkListType(doubleList))   // List of Doubles
+  println(checkListType(stringList))   // List of Doubles
+  /** "List of Doubles" is returned each time due to the current pattern matching. The type List[T] will always match as a List[Double] if the generic type T resolves to a Double.
+
+   In Scala, when you're using a generic function, the type information can be lost at runtime. This means that if you declare your function as def checkListType[T](list: List[T]), the type T is erased, and during runtime, the list can default to one of the narrower types.
+
+   To fix this issue, you need to change the approach. Instead of using pattern matching on the list type, you can directly match on the contents' type. Here is a corrected example using isInstanceOf to check the type of the list:
+   check the type of the list directly. This should give you the correct outputs for each case.*/
+
+//  def checkListType[T](list: List[T]): String = {
+//    if (list.isInstanceOf[List[Double]]) {
+//      "List of Doubles"
+//    } else if (list.isInstanceOf[List[String]]) {
+//      "List of Strings"
+//    } else if (list.isInstanceOf[List[Int]]) {
+//      "List of Ints"
+//    } else {
+//      "Unknown"
+//    }
+//  }
+//
+//  val numList2: List[Int] = List(1, 2, 3)
+//  val doubleList2: List[Double] = List(1.0, 2.0, 3.0)
+//  val stringList2: List[String] = List("1", "2", "3")
+//
+//  println(checkListType(numList2))      // Should print: "List of Ints"
+//  println(checkListType(doubleList2))   // Should print: "List of Doubles"
+//  println(checkListType(stringList2))   // Should print: "List of Strings"
+
+
+ //Possible solution
+// def checkListType[T](list: List[T]): String = {
+//   if (list.isEmpty) "Empty List"
+//   else list.head match {
+//     case _: Double => "List of Doubles"
+//     case _: String => "List of Strings"
+//     case _: Int => "List of Ints"
+//     case _ => "Unknown"
+//   }
+// }
+
+
+ }
 
 
 
