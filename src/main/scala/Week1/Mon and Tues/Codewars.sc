@@ -1,9 +1,7 @@
 /**Q1 you received a whatsup message from an unknown number. Could it be from that girl/boy with a foreign accent you met yesterday evening?
 
 Write a simple function to check if the string contains the word hallo in different languages.
-
   These are the languages of the possible people you met the night before:
-
   hello - english
 ciao - italian
 salut - french
@@ -11,11 +9,15 @@ hallo - german
 hola - spanish
 ahoj - czech republic
   czesc - polish */
+
 def containsGreeting(message: String): Boolean = {
   val greetings = List("hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc")
-  greetings.map(message.toLowerCase.contains).contains(true)
+  greetings.exists(message.toLowerCase.contains)
+  //OR greetings.exists(greeting => message.toLowerCase.contains(greeting))
+  //OR greetings.map(message.toLowerCase.contains).contains(true)
 }
-println(containsGreeting("hello"))
+println(containsGreeting("hello")) //true
+
 
 //Q2
  /**Create a function finalGrade, which calculates the final grade of a student depending on two parameters: an exam grade & number of completed projects.
@@ -69,3 +71,19 @@ println(finalGrade(20, 2))   // 0
 //case (e, p) if e > 75 && p >= 5 => 90
 //case (e, p) if e > 50 && p >= 2 => 75
 //case _                          => 0
+
+/**Q3 Write a function which converts the input string to uppercase.**/
+ def makeUpperCase(string: String): String = string.toUpperCase
+println(makeUpperCase("hello, sandra")) //HELLO, SANDRA
+println(makeUpperCase("hello")) //HELLO
+
+/**Q4 Is the string uppercase?
+ Create a method to see whether the string is ALL CAPS.
+
+ Examples (input -> output)
+ "c" -> False
+ "C" -> True
+ "hello I AM DONALD" -> False
+ "HELLO I AM DONALD" -> True
+ "ACSKLDFJSgSKLDFJSKLDFJ" -> False
+ "ACSKLDFJSGSKLDFJSKLDFJ" -> True **/
