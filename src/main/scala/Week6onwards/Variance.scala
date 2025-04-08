@@ -9,9 +9,7 @@ import com.sun.tools.javac.util.Pair
  * Contravariance (Syntax: Set [-T])
  * Invariance (Syntax: Set [T])
 
- By default, type parameters in Scala are invariant
-
- */
+ By default, type parameters in Scala are invariant */
 
 //1. Create an abstract Animal class with fields for their names and the food they eat. Create
 // some animals that extend this class.
@@ -65,70 +63,68 @@ object Variance extends App {
     //Create a new instance of solitary for Cat
     val solitaryCat: Solitary[Cat] = new Solitary[Cat] //T is cat
   }
-/** Try to assign Solitary Cat to Solitary
- * This won't compile because Solitary in invariant. Solitary[Cat] is not a subtype of Solitary[Animal] even though cat os a subtype of Animal.It would be like assigning a string to an a val  - val x:int
+/** Try to assign Solitary Cat to Solitary(class)
  * The invariant Solitary[T] class doesn't allow assignment from Solitary[Cat] to Solitary[Animal]
- * Solitary[Cat] and Solitary[Animal] are completely unrelated types*/
+ * //Q where is solitary Animal I didn't create this?
+ * Solitary[Cat] and Solitary[Animal] are completely unrelated types
 
-//val solitaryAnimal: Solitary[Animal] = solitaryCat //WILL NOT COMPILE
-//We have said Solitary is invariant in T so Solitary[Cat] and Solitary[Animal] are 2 completely different types.
+ *  This won't compile because Solitary in invariant [T]. Solitary[Cat] is not a subtype of Solitary[Animal] even though cat is a subtype of Animal.It would be like assigning a string to val x:int
+ * s*/
 
+//val solitaryAnimal: Solitary[Animal] = solitaryCat //WILL NOT COMPILE to add SolitaryCat to SolitaryAnimal
 
-  /** Add a covariant PAIR  */
+  /** Add a COVARIANT PAIR [+T] */
  //* 5. Now imagine some animals like to travel in Pairs, like Swans. Create a generic Pair class that is covariant in its type.
-  // *6. Create a val of a Pair of Swans (val swanPair: Pair [Swan]). Try to assign this val to a Pair
-  // *of Animals. Will this compile? Why or why not?
-  // *
 
-// // How to define a covariant Pair class
-  //class Pair[+T](val first: T, val second: T)
+/** How to define a covariant Pair class */
+  //class Pair[+T](val first: T, val second: T) //notice the val here
 
+/**We had this from before */
   //abstract class Animal {
   //    val name: String
   //    val food: String
   //  }
-  //Define Swan Case class (no need for 'new' with case class)
-  //like I did for the other animals
+  //Define Swan Case class (no need for 'new' with case class) like I did for the other animals
   case class Swan(name: String, food: String) extends Animal
 
 //Define a covariant Pair class using +T in it's definition
 //So if Swan is a subtype of Animal then Pair[Swan] is a subtype of pair[Animal]
-//Pair[+T] - Allows assignment of subtype to supertype (Swan to Animal)
-//Pair[+T] allows Pair[Swan] to be assigned to pair[Animal]
+//Pair[+T] - Allows assignment of subtype to supertype (Swan to Animal) so Pair[Swan] to be assigned to pair[Animal]
+
   class Pair[+T] (val animal1: T, val animal2: T)
+
+  // *6. Create a val of a Pair of Swans (val swanPair: Pair [Swan]). Try to assign this val to a Pair
+  // of Animals. Will this compile? Why or why not?
 
 //Create Pair of Swan instances
   val swanPair: Pair[Swan] = new Pair(Swan("Sydney", "grass"), Swan("Canberra", "Tadpoles"))
 
-//Assign a Pair of Swans to Pair of Animals, which will compile because of covariance
+//Assign a Pair of Swans to Pair of Animals, which will compile because of covariance [+T]
   val animalPair: Pair[Animal] = swanPair
   println(swanPair) //returns a memory address?
   print(animalPair)
   //println(s"Swan Pair: ${swanPair}")
   //println(s"Animal Pair: ${animalPair}")
 
-
-  /**7. Contravariance works in the opposite direction of inheritance.
+  /**7. Contravariance works in the opposite direction of inheritance. [-T]
 
    * Q7 Sometimes these animals need a person who can feed them. We’re not concerned what
     animals they can feed. Model a generic abstract Feeder class that is contravariant in its
     type and has a feedAnimal method (this can just return a simple print line).*/
-//using contravariance with -T, it means that if Animal is a supertype of Swan, then Feeder[Animal] is a subtype of Feeder[Swan].
+//using contravariance with -T, means that if Animal is a supertype of Swan, then Feeder[Animal] is a subtype of Feeder[Swan].
 //A Feeder[Animal] is a subtype of Feeder[Swan] - someone who can feed any animal can certainly feed swans
 
   //This class is bound to animal
   class Feeder[-T] {
-    def feedAnimal (animal: T): Unit = {
+    def feedAnimal (animal: T): Unit = { //why is Animal T here?
       println(s"Person feeding some animal")
     }
   }
 
   /**8. Create an Animal Feeder val that is a new Feeder[Animal]. Override the feedAnimal
-  *method, it should now return in interpolated string which includes the name of the animal
-    *fed and the food type within the print line.
-   *
-   * Now, try to assign this val to a Dog Feeder. Will
-  *this compile? Why or why not? */
+  method, it should now return in interpolated string which includes the name of the animal fed and the food type within the print line.
+
+   Now, try to assign this val to a Dog Feeder. Will this compile? Why or why not? */
 
     //Create an instance of Feeder[Animal] with an overridden feedAnimal method
     //Use string interpolation to include the animal's name/food
