@@ -4,12 +4,18 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 
 //Traits are something lots of things can have e.g. insect and bird can both fly also species
 
+//Boolean wrapper for cleaner code via case class
+case class HasRedBreast(value: Boolean)
+case class HasWings(value: Boolean)
+
 class Robin (name: String,
              age: Int,
-             hasWings: Boolean,
-             colourOfFeathers: String,
-             val hasRedBreast: Boolean)
-  extends Bird (name, age, hasWings, colourOfFeathers)  {
+             hasWings: HasWings, /**Using a case class**/
+             //hasWings: Boolean, //(unlabeled true values can be confusing - use a Case class.)
+             featherColour: String,
+             //val hasRedBreast: Boolean) //(unlabeled true values can be confusing - use a case class)
+             val hasRedBreast: HasRedBreast) /**Using a case class**/
+  extends Bird (name, age, hasWings, featherColour)  {
 
 
   //example override val (something new)
@@ -19,9 +25,7 @@ override def canFly: Boolean = true
 
   override def aboutAnimal(): String = {
     super.aboutAnimal()+
-      s"I'm actually a Robin, and I have a ${colourOfFeathers.toLowerCase} feathers." + (if (hasWings) "I can fly 🪰"  else "I can't fly")
-
-
+      s"I'm actually a Robin, and I have a ${featherColour.toLowerCase} feathers." + (if (hasWings.value) "I can fly 🪰"  else "I can't fly")
       }
   }
 
@@ -31,11 +35,10 @@ object Robin {
   def createAnimal (
                      name: String,
                      age: Int,
-                     hasWings: Boolean,
-                     colourOfFeathers: String,
-                     hasRedBreast: Boolean) :
-  Robin =
-    new Robin (name, age, hasWings, colourOfFeathers, hasRedBreast)
+                     hasWings: HasWings,
+                     featherColour: String,
+                     hasRedBreast: HasRedBreast) : Robin =
+    new Robin (name, age, hasWings, featherColour, hasRedBreast)
 }
 
 

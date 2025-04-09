@@ -91,10 +91,24 @@ println(makeUpperCase("hello")) //HELLO
 def isUpperCase(input: String): Boolean = {
   input == input.toUpperCase
 }
-//OR
+
+//OR with "forall"
 //def isUpperCase(input: String): Boolean = {
 // input.forall(_.isUpper)
 //}
 
-//println(isUpperCase("c")) //false
-println(isUpperCase("DONALD")) //true
+//Or with an If Statement
+//def isUpperCase(input: String): Boolean = {
+//  if (input == input.toUpperCase)
+//    return true
+//  else false
+//}
+
+
+println(isUpperCase("c")) //false
+//println(isUpperCase("DONALD")) //true
+//println(isUpperCase("DONALd")) //F
+
+/**Q4 **/
+def addition (p1: Int, p2: Int) = p1 + p2
+println(Int)

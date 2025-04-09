@@ -11,18 +11,17 @@ object SandraAnimalSanctuaryLogic extends App{
     println (animal.aboutAnimal())
   }
 
-  /**List of all my animals in my sanctuary */
-  val sandraAnimalSanctuary: List[Animal]= List (robin, warthog, ladybird, ostrich, bat)
-
-
   /**LIST TO STORE MY ANIMALS THIS IS NOT AN OBJECT - Let's create some animals!
-use key word 'new'
+   use key word 'new'
    */
-  val robin = new Robin ("Elvis", 3, true, "white", true) //can fly
+  val robin = new Robin ("Elvis", 3, HasWings(true), "white", HasRedBreast(true))//Robins can fly. Boolean wrappers here for (true)
   val warthog = new Warthog ("Pumbaa", 16, true, "black", true)
   val ladybird = new Ladybird ("Dobby", 3, 3.5, 5)
   val bat = new Bat ("Blake", 21, true, "black", true)
-  val ostrich = new Bird ("Jenny", 5, false, "pink") //An Ostrich can't fly
+  val ostrich = new Bird ("Jenny", 5, HasWings(false), "pink") //An Ostrich can't fly
+
+  /**List of all my animals in my sanctuary */
+  val sandraAnimalSanctuary: List[Animal]= List (robin, warthog, ladybird, ostrich, bat)
 
 printAboutAnimals(robin) //Elvis
 printAboutAnimals(warthog) //Pumbaa

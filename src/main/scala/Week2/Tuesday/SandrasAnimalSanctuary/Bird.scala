@@ -7,17 +7,17 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 
 class Bird (name: String,  //regular constructor parameter
             age: Int,    //regular constructor parameter
-            val hasWings: Boolean, //constructor parameter with val (creates public, immutable field)
-            val beakColour: String) //constructor parameter with val becomes a class property that persist after object creation
+            val hasWings: HasWings, //updated "HasWings" to match Robin case class
+            val featherColour: String) //constructor parameter with val becomes a class property that persist after object creation
   extends Animal(name, age) with AbleToFly {
   //could extend further with BirdTraits - Think about this later!
 
   //override def canFly: Boolean = false
-  override def canFly: Boolean = hasWings
+  override def canFly: Boolean = hasWings.value //Use value to access the boolean value
 
   //call super.aboutAnimal () to first call the parents class methods
   override def aboutAnimal(): String = {
-    super.aboutAnimal() + s"I'm a bird, and the colour of my feathers are $beakColour!"
+    super.aboutAnimal() + s"I'm a bird, and the colour of my beak is $featherColour!"
   }
 }
   //Need to describe a bird here and add trait canFly
@@ -30,19 +30,16 @@ class Bird (name: String,  //regular constructor parameter
 //   if (canFly) s"$name the bird can fly"
 //   else s" $name the bird cannot fly"
 // }
-
-
-
 object Bird {
 
   def createAnimal (
                      name: String,
                      age: Int,
-                     hasWings: Boolean,
-                     beakColour: String,
+                     hasWings: HasWings,
+                     featherColour: String,
                     canFly: Boolean = false) :
   Bird = {
-    new Bird(name, age, hasWings, beakColour)
+    new Bird(name, age, hasWings, featherColour)
   }
 }
 
