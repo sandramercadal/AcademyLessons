@@ -5,8 +5,7 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 class Mammal (
                name: String,
                age: Int,
-               val hasLongEars:
-               Boolean,
+               val hasLongEars: HasLongEars, //Not boolean as use case class to match Warthog
                val colourOfFur: String)
 extends Animal (name, age)  {
   //Mammal overrides aboutAnimal from Animal
@@ -22,8 +21,11 @@ override def aboutAnimal(): String = {
 //An instance of a Mammal (object) - use "new" keyword
  object Mammal {
 
-def createAnimal (name: String, age: Int, hasLongEars: Boolean,  colourOfFur: String) :
-Mammal = new Mammal(name, age, hasLongEars, colourOfFur)
+def createAnimal (name: String,
+                  age: Int,
+                  hasLongEars: HasLongEars,
+                  colourOfFur: String) : Mammal =
+  new Mammal(name, age, hasLongEars, colourOfFur)
  }
 
 
