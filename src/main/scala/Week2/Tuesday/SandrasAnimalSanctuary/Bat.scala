@@ -2,13 +2,20 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 
 //Bat extends Mammal.
 
+case class HasLongEars (value: Boolean)
+case class IsNocturnal (value: Boolean)
+
 //Carry over the logic from Animal and add in the new ones for Bat - isNocturnal & hasLongEars
-class Bat(name: String, age: Int, hasLongEars: Boolean, colourOfFur: String, val isNocturnal: Boolean)
+class Bat(name: String,
+          age: Int,
+          hasLongEars: HasLongEars,
+          colourOfFur: String,
+          val isNocturnal: IsNocturnal)
   extends Mammal (name, age, hasLongEars, colourOfFur) with AbleToFly {
 
   //use override instead of just def to extend via polymorphism
   override def aboutAnimal(): String = {
-    super.aboutAnimal()+ s" I'm a Bat, it's $isNocturnal I'm nocturnal. " + fly() + "Nice to meet you!!"
+    super.aboutAnimal()+ s" I'm a Bat, it's ${isNocturnal.value} I'm nocturnal. " + fly() + "Nice to meet you!!"
   } //will print the val parameters
 
   //add the abstract method from AbleToFly trait. Make it override
@@ -20,7 +27,11 @@ class Bat(name: String, age: Int, hasLongEars: Boolean, colourOfFur: String, val
 //Create the object and specify that an Owl is nocturnal:
 object Bat {
 
-  def createAnimal(name: String, age: Int, hasLongEars: Boolean, colourOfFur: String, isNocturnal: Boolean):
+  def createAnimal(name: String,
+                   age: Int,
+                   hasLongEars: HasLongEars,
+                   colourOfFur: String,
+                   isNocturnal: IsNocturnal):
   Bat =
     new Bat(name, age, hasLongEars, colourOfFur, isNocturnal)
 }
