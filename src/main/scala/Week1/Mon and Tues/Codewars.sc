@@ -87,3 +87,14 @@ println(makeUpperCase("hello")) //HELLO
  "HELLO I AM DONALD" -> True
  "ACSKLDFJSgSKLDFJSKLDFJ" -> False
  "ACSKLDFJSGSKLDFJSKLDFJ" -> True **/
+
+def isUpperCase(input: String): Boolean = {
+  input == input.toUpperCase
+}
+//OR
+//def isUpperCase(input: String): Boolean = {
+// input.forall(_.isUpper)
+//}
+
+//println(isUpperCase("c")) //false
+println(isUpperCase("DONALD")) //true
