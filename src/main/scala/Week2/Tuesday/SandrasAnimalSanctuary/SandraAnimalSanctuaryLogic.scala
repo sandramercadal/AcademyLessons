@@ -16,7 +16,7 @@ object SandraAnimalSanctuaryLogic extends App{
    */
   val robin = new Robin ("Elvis", 3, HasWings(true), "white", HasRedBreast(true))//Robins can fly. Boolean wrappers here for (true)
   val warthog = new Warthog ("Pumbaa", 16, true, "black", true)
-  val ladybird = new Ladybird ("Dobby", 3, 3.5, 5)
+  val ladybird = new Ladybird ("Dobby", 3, WingSpan(3.5), HasSpots(5))
   val bat = new Bat ("Blake", 21, true, "black", true)
   val ostrich = new Bird ("Jenny", 5, HasWings(false), "pink") //An Ostrich can't fly
 
