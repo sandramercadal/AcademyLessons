@@ -10,7 +10,7 @@ class Warthog(name: String,
               age: Int,
               hasLongEars: HasLongEars, //Not "boolean" as using case class now
               colourOfFur: String,
-              val hasFourTusks: HasFourTusks) //Not boolean as using case class
+              val hasFourTusks: HasFourTusks) //Not : boolean as using case class
   extends Mammal (name, age, hasLongEars, colourOfFur) {
 
 

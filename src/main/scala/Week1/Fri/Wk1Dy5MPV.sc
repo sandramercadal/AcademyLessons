@@ -4,7 +4,7 @@ import scala.io.Codec
  * Functions, Methods, & For comprehensions MPV
  */
 
-//Q1 COMPLETED Write a method to calculate the square of an Int. It should have an input parameter, Int and return type Int.
+//Q1 COMPLETED Write a method to calculate the square of an Int (Square an Int). It should have an input parameter, Int and return type Int.
 
 //Methods have 'def' in them or start with 'def'
   //TIP: Must be given a unique name e.g squareOfAnInt

@@ -109,6 +109,38 @@ println(isUpperCase("c")) //false
 //println(isUpperCase("DONALD")) //true
 //println(isUpperCase("DONALd")) //F
 
-/**Q4 **/
-def addition (p1: Int, p2: Int) = p1 + p2
-println(Int)
+/**Q4 You will need a rental car in order for you to get around in your vacation. Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+ Write a code that gives out the total amount for different days(d).**/
+//I was trying to reassign totalCOst val after declaring it as a val!
+//def cost(days: Int): Int = {
+//  val dailyCarRental = 40
+//  val totalCost = dailyCarRental * days
+//
+//  if (days >= 7) {
+//    totalCost = totalCost - 50
+//
+//  } else if (days >=3) {
+//    totalCost = totalCost - 20
+//  }
+//
+//  totalCost
+//}
+
+
+object Rental {
+
+  def cost(days: Int): Int = {
+    val dailyCarRental = 40
+    val initialCost = dailyCarRental * days
+
+    if (days >= 7) {
+      initialCost - 50
+
+    } else if (days >=3) {
+      initialCost - 20
+    }
+    else
+      initialCost
+  }
+}
+println(Rental.cost(7)) //230 (7 x 40 - 50 discount = 230)
