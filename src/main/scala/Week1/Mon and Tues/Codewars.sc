@@ -122,10 +122,8 @@ println(isUpperCase("c")) //false
 //  } else if (days >=3) {
 //    totalCost = totalCost - 20
 //  }
-//
 //  totalCost
 //}
-
 
 object Rental {
 
@@ -135,7 +133,6 @@ object Rental {
 
     if (days >= 7) {
       initialCost - 50
-
     } else if (days >=3) {
       initialCost - 20
     }
@@ -144,3 +141,7 @@ object Rental {
   }
 }
 println(Rental.cost(7)) //230 (7 x 40 - 50 discount = 230)
+
+/**Q5 Parse nice int from char problem - "How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+ Write a program that returns the girl's age (0-9) as an integer. Assume the test input string is always a valid string. For example, the test input may be "1 year old" o  **/
+

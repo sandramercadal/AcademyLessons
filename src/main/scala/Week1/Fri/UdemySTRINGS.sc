@@ -1,0 +1,1 @@
+println("The answer is \"yes\" so you can go ahead") //a word with "bbb" inside
