@@ -3,8 +3,7 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 //Ladybird extends Insect
 
 //using case classes for cleaner code - Boolean wrapper for hasSpots and wingSpan rather than just passing primitive types around.
-case class HasSpots (value: Int)
-case class WingSpan (value: Double)
+import Week2.Tuesday.SandrasAnimalSanctuary.{HasSpots}
 
 class Ladybird(
                 name: String,

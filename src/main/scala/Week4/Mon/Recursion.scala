@@ -2,6 +2,8 @@ package Week4.Mon
 
 import scala.annotation.tailrec
 
+
+/** RECURSION with enums and sealed case objects */
 object Recursion extends App {
 
   //Standard recursion
@@ -149,7 +151,23 @@ object Recursion extends App {
 
   //}
 
-
+//  def printAnimals(animals: List[String]): Unit = {
+//    if (animals.isEmpty) {
+//      println("No more animals to print.")
+//    } else {
+//      println(animals.head) // Print the first animal
+//      printAnimals(animals.tail) // Call the function recursively with the rest of the list
+//    }
+//  }
+//
+//  val animalList = List("Dog", "Cat", "Elephant", "Giraffe")
+//  printAnimals(animalList)
+//  In this example:
+//
+//    The printAnimals function checks if the list animals is empty.
+//    If it's not empty, it prints the first animal (animals.head), and then calls itself with the rest of the list (animals.tail).
+//    This process continues until the list is empty, at which point it prints a message saying there are no more animals to print.
+//    When you run this code with the list of animals, you'll see the names printed one by one.
 
 
 

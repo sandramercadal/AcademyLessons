@@ -3,8 +3,7 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 //Warthog extends Mammal
 //I took out the vals here before name, age etc but kept it in for new ones for a Warthog
 
-case class HasLongEars (value: Boolean)
-case class HasFourTusks (value: Boolean)
+import Week2.Tuesday.SandrasAnimalSanctuary.{HasFourTusks, HasLongEars}
 
 class Warthog(name: String,
               age: Int,

@@ -5,8 +5,7 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 //Traits are something lots of things can have e.g. insect and bird can both fly also species
 
 //Boolean wrapper for cleaner code via case class
-case class HasRedBreast(value: Boolean)
-case class HasWings(value: Boolean)
+import Week2.Tuesday.SandrasAnimalSanctuary.{HasRedBreast, HasWings}
 
 class Robin (name: String,
              age: Int,

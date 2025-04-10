@@ -2,8 +2,7 @@ package Week2.Tuesday.SandrasAnimalSanctuary
 
 //Bat extends Mammal.
 
-case class HasLongEars (value: Boolean)
-case class IsNocturnal (value: Boolean)
+import Week2.Tuesday.SandrasAnimalSanctuary.{IsNocturnal, HasLongEars}
 
 //Carry over the logic from Animal and add in the new ones for Bat - isNocturnal & hasLongEars
 class Bat(name: String,
