@@ -23,9 +23,9 @@ println(greeting()) //hi name!
 //  if (guests < 15) true
 //  else false
 /**To**/
-def partyAtHome(guests:Int): Boolean =
-  if (guests > 15) true else false
-println(partyAtHome(10)) //false as 10 guests are less than 15 which is the max!
+//def partyAtHome(guests:Int): Boolean =
+//  if (guests > 15) true else false
+//println(partyAtHome(10)) //false as 10 guests are less than 15 which is the max!
 
 //adding a tent
 def partyAtHomeAgain(guests:Int, tentAvailable: Boolean): Boolean =
@@ -37,7 +37,7 @@ println(partyAtHomeAgain(45, true)) //F
 println(partyAtHomeAgain(10, false)) //T
 
 
-/**Challenge 2 Pattern Match **/
+/**Challenge 2 If Statement  **/
 def competition (result: Int) : String = {
   if (result == 1) "gold"
   else if (result == 2) "silver"
@@ -46,7 +46,7 @@ def competition (result: Int) : String = {
 }
 println(competition(1)) //gold
 
-/** Now with Pattern matching */
+/** Now with Pattern matching - match & case syntax*/
 def competition2 (result: Int) : String = {
   result match { //matching against an Int not a string
     case 1 => "You won gold"
@@ -58,3 +58,40 @@ def competition2 (result: Int) : String = {
 println(competition2(1)) //You won gold
 println(competition2(7)) //Well done!
 println(competition2(3)) //bronze
+
+/**Your task is to create a function that does four basic mathematical operations.
+ The function should take three arguments - operation(string/char), value1(number), value2(number).
+ The function should return result of numbers after applying the chosen operation.
+ Examples(Operator, value1, value2) --> output
+ ('+', 4, 7) --> 11
+ ('-', 15, 18) --> -3
+ ('*', 5, 5) --> 25
+ ('/', 49, 7) --> 7
+ */
+//with string
+def basicOp(op: String, a: Int, b: Int): Int = {
+  op match {
+    case "+" => a + b
+    case "-" => a - b
+    case "*" => a * b
+    case "/" => a / b
+    case _ => throw new Error("Invalid operation")
+  }
+}
+
+println(basicOp("+", 4, 7))  // 11
+println(basicOp("-", 15, 18)) // -3
+println(basicOp("*", 5, 5))   // 25
+println(basicOp("/", 49, 7))   // 7
+println(basicOp("", 49, 7))   // Error
+
+//with Char
+def basicOp(op: Char, a: Int, b: Int): Int = {
+  op match {
+    case '+' => a + b
+    case '-' => a - b
+    case '*' => a * b
+    case '/' => a / b
+    case _ => throw new Error("Invalid operation")
+  }
+}
