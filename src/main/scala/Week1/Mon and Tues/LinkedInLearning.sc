@@ -1,5 +1,7 @@
 
 
+import javax.swing.plaf.multi.MultiLabelUI
+
 def lightSwitch(switchOn: Boolean): String = if (switchOn) "light on!" else "light off!"
 println(lightSwitch(true))//light on!
 println(lightSwitch(switchOn=false))//light off!
@@ -15,10 +17,10 @@ def greeting (name: String = "name") : String = s"hi $name!"
 println(greeting("sandra")) //hi sandra!
 println(greeting()) //hi name!
 
-/**FROM - I can have 15 ppl at home for a party.
+/**I can have 15 ppl at home for a party.
  * I can have 40 with a tent at home
  */
-//val guests: Int = ??
+//From This : val guests: Int = ??
 //val partyAtHome: Boolean =
 //  if (guests < 15) true
 //  else false
@@ -78,14 +80,13 @@ def basicOp(op: String, a: Int, b: Int): Int = {
     case _ => throw new Error("Invalid operation")
   }
 }
-
 println(basicOp("+", 4, 7))  // 11
 println(basicOp("-", 15, 18)) // -3
 println(basicOp("*", 5, 5))   // 25
 println(basicOp("/", 49, 7))   // 7
 println(basicOp("", 49, 7))   // Error
 
-//with Char
+//with Char and ' ' not " "
 def basicOp(op: Char, a: Int, b: Int): Int = {
   op match {
     case '+' => a + b
@@ -95,3 +96,102 @@ def basicOp(op: Char, a: Int, b: Int): Int = {
     case _ => throw new Error("Invalid operation")
   }
 }
+
+/** OPTIONS */
+//val middleName: Option[String] = None
+val middleName: Option[String] = Some("Jasmine Rose")
+println(middleName.getOrElse("").length) //12
+//val middleName: Option[Int] = None
+//val middleName: Option[String] = Some(2)
+
+//getOrElse is one of the ways to get the values Jasmine or 2
+
+/**MAP**/
+val middleName: Option[String] = Some("Muna")
+println(middleName.map(word => word.toUpperCase)) //Some(MUNA)
+
+val middleName: Option[String] = None
+println(middleName.map(word => word.toUpperCase)) //None
+
+/**FLAT MAP**/
+case class Rating(googleRating: Option[Int])
+case class Film(name: String, rating: Option[Rating])
+
+//first film
+val mulan = Film("Mulan", Some(Rating(Some(5))))
+
+println(mulan.name) //Mulan
+println(Option(mulan)) //Some(Film(Mulan,Some(Rating(Some(5)))))
+println(Option(mulan.rating.map(rating => rating.googleRating))) //Some(Some(Some(5)))
+// Using map (need to flatten afterwards)
+//Option[Option[Rating]] to Option[Rating] properly before applying the map.
+println(Option(mulan.rating).flatten.map(rating => rating.googleRating)) //Some(Some(5))
+
+// Using flatMap (more elegant)
+println(mulan.rating.flatMap(rating => rating.googleRating)) //Some(5)
+
+/**FOR COMP great to get out the value of options and computing them and chaining dependant steps**/
+
+//val averageRating = for {
+//  rating <- mulan.rating
+//  googleRating <- rating.googleRating
+//  netflixRating <- rating.netflixRating
+//  if googleRating > 3
+//  averageRating = (googleRating + netflixRating) / 2
+//} yield averageRating
+//println(averageRating) //2+ 3 /2 = Some(3)
+////If Mulan was a none rather than SOme, would return None.
+
+/** Challenge - Options
+ * Q1a  Create a val of type Option[Int]
+ * b Set it to a Some
+ * c Use map function to double it
+ * Set your Option to None
+ * run same map function again on the none
+
+ **/
+
+val number: Option[Int] = Some(5)
+println(number.map(n => n * 2)) //Option[Int] = Some(10)
+println(number.map(_ * 2)) //Option[Int] = Some(10) _ instead of arrow
+//Now our option Int is a None
+val number: Option[Int] = None
+//map over it
+println(number.map(_ * 2)) /None
+
+/**
+ Q2 - Write a case class TicketPrice that takes a standardTicketRPrice of type Int and a firstClassTicketPrice of type Option[Int]
+ b. WRite a function called getFirstClassTicketPrice that takes an Option TicketPrice and returns Option[Int]; implement it twice, first with flatMap and then with a for comprehension **/
+
+//Created an object to make it run on a separate worksheet
+import Week1.Thurs.TrainTicketsLinkedInLearn.Example.{TicketPrice, getFirstClassTicketPrice}
+
+object test extends App{
+
+//we need to create a ticket price
+val londonToParis = TicketPrice (100, Some(250))
+println(getFirstClassTicketPrice(Some(londonToParis))) //Some(250)
+//val londonToParis = TicketPrice (100, None) //Flatmap will return None
+object Example {
+  case class TicketPrice(standardTicketPrice: Int, firstClassTicketPrice: Option[Int])
+
+  //b
+  def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] =
+    ticketPrice.flatMap { ticketPrice =>
+      ticketPrice.firstClassTicketPrice
+    }
+}
+
+  //Now slightly shorter syntax
+  def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] =
+    ticketPrice.flatMap(_.firstClassTicketPrice)
+
+/**Now with For Comp see Train Ticket file**/
+
+}
+
+
+
+
+
+

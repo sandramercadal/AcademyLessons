@@ -22,20 +22,9 @@ println(containsGreeting("hello")) //true
 
 
 //Q2
-/** Create a function finalGrade, which calculates the final grade of a student depending on two parameters: an exam grade & number of completed projects.
+/**Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
  * This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
  * This function should return a number (final grade). There are four types of final grades:
- * 100, if a grade for the exam is more than 90 or if a number of completed projects more than 10.
- * 90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
- * 75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
- * 0, in other cases
- *
- * Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
- *
- * This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
- *
- * This function should return a number (final grade). There are four types of final grades:
- *
  * 100, if a grade for the exam is more than 90 or if a number of completed projects more than 10.
  * 90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
  * 75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
@@ -74,14 +63,13 @@ println(finalGrade(20, 2)) // 0
 //case (e, p) if e > 50 && p >= 2 => 75
 //case _                          => 0
 
-/** Q3 Write a function which converts the input string to uppercase.* */
+/** Q3 Write a function which converts the input string to uppercase**/
 def makeUpperCase(string: String): String = string.toUpperCase
 println(makeUpperCase("hello, sandra")) //HELLO, SANDRA
 println(makeUpperCase("hello")) //HELLO
 
 /** Q4 Is the string uppercase?
  * Create a method to see whether the string is ALL CAPS.
- *
  * Examples (input -> output)
  * "c" -> False
  * "C" -> True
@@ -105,8 +93,6 @@ def isUpperCase(input: String): Boolean = {
 //    return true
 //  else false
 //}
-
-
 println(isUpperCase("c")) //false
 //println(isUpperCase("DONALD")) //true
 //println(isUpperCase("DONALd")) //F
@@ -117,10 +103,8 @@ println(isUpperCase("c")) //false
 //def cost(days: Int): Int = {
 //  val dailyCarRental = 40
 //  val totalCost = dailyCarRental * days
-//
 //  if (days >= 7) {
 //    totalCost = totalCost - 50
-//
 //  } else if (days >=3) {
 //    totalCost = totalCost - 20
 //  }
@@ -142,7 +126,6 @@ object Rental {
       initialCost
   }
 }
-
 println(Rental.cost(7)) //230 (7 x 40 - 50 discount = 230)
 
 /** Q5 Parse nice int from char problem - "How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
@@ -176,7 +159,8 @@ println(Rental.cost(7)) //230 (7 x 40 - 50 discount = 230)
 //val language = countryLanguage
 // if
 
-def welcome(language: String): String = language.toLowerCase match {
+def welcome(language: String): String = language.toLowerCase
+match {
   case "english" => "Welcome"
   case "czech" => "Vitejte"
   case "danish" => "Velkomst"
@@ -200,10 +184,7 @@ println(welcome("dutch")) // Velkom
 println(welcome("Albanian")) // Welcome (default to English)
 
 
-/** SImple multiplication  */
-
-/**Beginner - Lost Without a Map Given an array of integers, return a new array with each value doubled.
-
+/** Q) Simple multiplication  */
+/**Beginner - Lost Without a Map - Given an array of integers, return a new array with each value doubled.
  For example:
-
  [1, 2, 3] --> [2, 4, 6]*/
