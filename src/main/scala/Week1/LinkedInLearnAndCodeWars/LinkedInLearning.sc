@@ -85,7 +85,7 @@ println(basicOp("/", 49, 7))   // 7
 println(basicOp("", 49, 7))   // Error
 
 //with Char and ' ' not " "
-def basicOp(op: Char, a: Int, b: Int): Int = {
+def basicOp2(op: Char, a: Int, b: Int): Int = {
   op match {
     case '+' => a + b
     case '-' => a - b
@@ -155,37 +155,128 @@ println(number.map(_ * 2)) //Option[Int] = Some(10) _ instead of arrow
 //Now our option Int is a None
 val number: Option[Int] = None
 //map over it
-println(number.map(_ * 2)) /None
+println(number.map(_ * 2)) //None
 
-/**
- Q2 - Write a case class TicketPrice that takes a standardTicketRPrice of type Int and a firstClassTicketPrice of type Option[Int]
- b. WRite a function called getFirstClassTicketPrice that takes an Option TicketPrice and returns Option[Int]; implement it twice, first with flatMap and then with a for comprehension **/
 
-//Created an object to make it run on a separate worksheet
+val myList= List(2,3,4)
+println(List)
+println(s"My list: $myList") //My list: List(2, 3, 4)
 
-object test extends App{
+// String list
+val stringList = List("apple", "banana", "cherry")
+println(stringList) //List(apple, banana, cherry)
 
-//we need to create a ticket price
-val londonToParis = TicketPrice (100, Some(250))
-println(getFirstClassTicketPrice(Some(londonToParis))) //Some(250)
-//val londonToParis = TicketPrice (100, None) //Flatmap will return None
-object Example {
-  case class TicketPrice(standardTicketPrice: Int, firstClassTicketPrice: Option[Int])
+// Mixed type list (requires specifying Any as the type)
+val mixedList: List[Any] = List(1, "two", 3.0, true)
+println(mixedList) //List(1, two, 3.0, true)
 
-  //b
-  def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] =
-    ticketPrice.flatMap { ticketPrice =>
-      ticketPrice.firstClassTicketPrice
-    }
-}
+// Define an empty list using List()
+val emptyList: List[Int] = List()
 
-  //Now slightly shorter syntax
-  def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] =
-    ticketPrice.flatMap(_.firstClassTicketPrice)
+// Define an empty list using Nil
+val emptyList2: List[Int] = Nil
 
-/**Now with For Comp see Train Ticket file**/
+// Create a list with elements including duplicates
+val ns = List(1, 2, 3, 4, 4, 4, 4, 4, 5)
 
-}
+// Prepend an element to the list using +:
+val res46 = 6 +: ns
+// Should result in List(6, 1, 2, 3, 4, 4, 4, 4, 4, 5)
+
+// Append an element to the list using :+
+val res47 = ns :+ 6
+// Should result in List(1, 2, 3, 4, 4, 4, 4, 4, 5, 6)
+
+// Concatenate two lists using ++
+val res48 = List(6, 5, 4) ++ ns
+// Should result in List(6, 5, 4, 1, 2, 3, 4, 4, 4, 4, 4, 5)
+
+// Remove duplicates using distinct
+val res49 = ns.distinct
+// Should result in List(1, 2, 3, 4, 5)
+
+val res49 = ns.length
+
+/** How the map function works on lists */
+val myNumbers = List(1, 2, 3)
+myNumbers.map(n => n * 2) //times each number by 2 = 2,4,6
+
+val disneyName = List("Moana", "Jasmine")
+println(disneyName) ////List(Moana, Jasmine)
+println (disneyName.map(disneyName => disneyName.toUpperCase)) //List(MOANA, JASMINE)
+//works the same as
+println (disneyName.map(_.toUpperCase)) //List(MOANA, JASMINE)
+
+/** How the Flatmap function works on lists - combo of mat and flatten*/
+
+// Define the initial list of integers
+val ns: List[Int] = List(1, 2, 3) //List(List(1, 1), List(2, 2), List(3, 3))
+
+// Map each element to a list of itself and itself, creating a nested list
+val res90: List[List[Int]] = ns.map(n => List(n, n))
+println(res90)  // List(List(1, 1), List(2, 2), List(3, 3))
+
+// Map followed by flatten to create a flat list
+val res91: List[Int] = ns.map(n => List(n, n)).flatten
+println(res91)  // List(1, 1, 2, 2, 3, 3)
+
+// FlatMap combines map and flatten in one operation
+val res92: List[Int] = ns.flatMap(n => List(n, n))
+println(res92)  // List(1, 1, 2, 2, 3, 3)
+
+// Define a list of Disney character names
+val names: List[String] = List("Moana", "Jasmine")
+println(names)  // List(Moana, Jasmine)
+
+// Map each name to a list containing original and uppercase version
+val res93: List[List[String]] = names.map(name => List(name, name.toUpperCase))
+println(res93)  // List(List(Moana, MOANA), List(Jasmine, JASMINE))
+
+// Map followed by flatten
+val res94: List[String] = names.map(name => List(name, name.toUpperCase)).flatten
+println(res94)  // List(Moana, MOANA, Jasmine, JASMINE)
+
+// FlatMap combines the operations
+val res95: List[String] = names.flatMap(name => List(name, name.toUpperCase))
+println(res95)  // List(Moana, MOANA, Jasmine, JASMINE)
+
+/** For COMP */
+//def combinations(xs: List[Int], ys: List[Int]): List[(Int, Int)] = {
+//  for {
+//    x <- xs
+//    y <- ys
+//  } yield (x, y)
+//}
+//
+//def takeNames(names: List[String]): List[String] = {
+//  for {
+//    name <- names
+//    if name.contains("a")
+//  } yield name
+//}
+//println(combinations(List(1, 2), List(3, 4))))
+//println(takeName(List("Sandra", "Dotty", "Pat")))) //should only see two names
+
+/**challenge
+ *Using List(1,1,2,2,3,3,4), get the head and tail
+ * Find all the unique values
+ * get the first 3 elements
+ * find the length of the list
+ * map over your list multiplying each number by itself
+ * FlatMap over the list to create three duplicates for each element
+ *
+ * Create case class called Destination which as 2 fields: a city, which is of type Strinf, and a journeyTime, which is of  type Int
+ * Create a list of destinations of your choice
+ *
+ * USe FOR COMP to filter to iterate through the list fo destinations and filter on shorterJourneyTime, yield the destination
+ */
+
+
+
+
+
+
+
 
 
 
