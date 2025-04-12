@@ -1,6 +1,4 @@
-package Week1.Thurs
-
-
+package Week1.LinkedInLearnAndCodeWars
 
 object TrainTicketsLinkedInLearn extends App{
 

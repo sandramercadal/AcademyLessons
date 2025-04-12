@@ -1,7 +1,5 @@
 
 
-import javax.swing.plaf.multi.MultiLabelUI
-
 def lightSwitch(switchOn: Boolean): String = if (switchOn) "light on!" else "light off!"
 println(lightSwitch(true))//light on!
 println(lightSwitch(switchOn=false))//light off!
@@ -164,7 +162,6 @@ println(number.map(_ * 2)) /None
  b. WRite a function called getFirstClassTicketPrice that takes an Option TicketPrice and returns Option[Int]; implement it twice, first with flatMap and then with a for comprehension **/
 
 //Created an object to make it run on a separate worksheet
-import Week1.Thurs.TrainTicketsLinkedInLearn.Example.{TicketPrice, getFirstClassTicketPrice}
 
 object test extends App{
 
