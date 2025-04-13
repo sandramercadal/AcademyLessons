@@ -2,8 +2,6 @@ package Week1.LinkedInLearnAndCodeWars
 
 object OptionsLinkedinLearn extends App{
 
-
-
   /** OPTIONS */
 
   //In Scala, an Option is a type that represents a value that might be present or might be absent. It's a way to handle the possibility of null values more safely. Instead of using null, which can lead to runtime errors if not handled properly, Option encapsulates the presence or absence of a value in a more controlled manner.
@@ -33,36 +31,68 @@ object OptionsLinkedinLearn extends App{
   //middleName is defined as an Option[String], meaning it can either hold a String (in this case "Jasmine Rose") or be None.
   //Some("Jasmine Rose") means that in this case, middleName contains a value ("Jasmine Rose").
   val middleName: Option[String] = Some("Jasmine Rose")
-  println(middleName.getOrElse("").length) //12
-  //val middleName: Option[Int] = None
+  println(middleName.getOrElse("").length) //12 if option is a none it will use the "" empty string
+
+  //val middleName: Option[Int] = None //An option can be an INT too
   //val middleName: Option[String] = Some(2)
 
   //getOrElse is one of the ways to get the values Jasmine or 2
 
   /**MAP**/
   val middleName2: Option[String] = Some("Muna")
-  println(middleName2.map(word => word.toUpperCase)) //Some(MUNA)
+  println(middleName2.map(word => word.toUpperCase)) //Some(MUNA) using map here
 
   //val middleName: Option[String] = None
   //println(middleName.map(word => word.toUpperCase)) //None
 
   //when you create a case class, you are defining a new type that can hold data. Case classes provide a simple way to create classes that are used primarily to hold data. They come with built-in methods like equals, hashCode, and toString, which makes them handy for working with collections or pattern matching.
-  /**FLAT MAP**/
+  /**FILM EAXMPLE -- FLAT MAP**/
   case class Rating(googleRating: Option[Int])
-  case class Film(name: String, rating: Option[Rating])
+  case class Film(name: String, rating: Option[Rating])  //Film can either have a rating or no rating.
 
   //first film
   val mulan = Film("Mulan", Some(Rating(Some(5))))
+//The first Some (around Rating(...)) indicates that the Film has a rating (as an instance of Rating).
+  //The second Some(5) indicates that this particular Rating has a defined googleRating value.
 
   println(mulan.name) //Mulan
+  println(mulan.rating) // Some(Rating(Some(5)))
+
+
   println(Option(mulan)) //Some(Film(Mulan,Some(Rating(Some(5)))))
+//Mulan is an instance of film
+  //So, when you call Option(mulan), it does the following:
+  //If mulan is null, Option(mulan) produces None.
+  //If mulan is not null (which it is in this case), Option(mulan) produces Some(mulan).
+  //This means that mulan has been successfully wrapped in an Option, and since mulan is not null, you get Some(mulan) as the result.
+//So it will show you the structure of the Film object wrapped within the Some option.
+
+  //output Some(Some(5)), indicating a nested Option.
   println(Option(mulan.rating.map(rating => rating.googleRating))) //Some(Some(Some(5)))
   // Using map (need to flatten afterwards)
+  //Here, mulan.rating is of type Option[Rating].
+  //The map function applies the transformation rating => rating.googleRating, which returns an Option[Int].
+  //Since mulan.rating is Some(Rating(Some(5))), the result of mulan.rating.map(rating => rating.googleRating) is Some(Some(5)).
+  //Wrapping this with Option(...) gives Some(Some(5)).
+
+//Also output Some(Some(5)), indicating a nested Option.
   //Option[Option[Rating]] to Option[Rating] properly before applying the map.
   println(Option(mulan.rating).flatten.map(rating => rating.googleRating)) //Some(Some(5))
+  //Here, Option(mulan.rating) is still Some(Rating(Some(5))).
+  //Using flatten on Some(Rating(Some(5))) flattens it to Some(Rating(Some(5))) because mulan.rating is already an Option.
+  //After flattening, the map function is applied. It will again transform Rating to googleRating (which is an Option).
+  //Thus, you end up with Some(Some(5)).
 
-  // Using flatMap (more elegant)
+  //This uses FlatMp which more elegant) to get actual googleRating and gives you the actual value directly, avoiding the unnecessary nesting of Option.
+//Outputs Some(5), which is a single Option containing the integer.
   println(mulan.rating.flatMap(rating => rating.googleRating)) //Some(5)
+//Here, mulan.rating.flatMap(rating => rating.googleRating) directly uses flatMap, which checks if mulan.rating is Some.
+  //If it is, it retrieves the rating (of type Rating), then it directly gets googleRating, which is of type Option[Int].
+  //Since googleRating itself is Some(5), you get the final output as Some(5) without any nested Option.
+  //Thus, the output is Some(5).
+
+
+
 
   /**FOR COMP great to get out the value of options and computing them and chaining dependant steps**/
 
@@ -142,6 +172,7 @@ object OptionsLinkedinLearn extends App{
   println (disneyName.map(disneyName => disneyName.toUpperCase)) //List(MOANA, JASMINE)
   //works the same as
   println (disneyName.map(_.toUpperCase)) //List(MOANA, JASMINE)
+
 
   /** How the Flatmap function works on lists - combo of mat and flatten*/
 
