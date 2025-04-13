@@ -16,9 +16,9 @@ println(product(2,2)) // 2* 2 = 4
 
   /**Chapter 2 challenge --Q2 Write a function called greeting which takes a parameter called Name, of type string and outputs a string, the parameter should have a default value so that an appropriate string is outputted if the function is called without a parameter
    */
-def greeting (name: String = "name") : String = s"hi $name!"
+def greeting (name: String = "Mary") : String = s"hi $name!"
 println(greeting("sandra")) //hi sandra!
-println(greeting()) //hi name!
+println(greeting()) //hi Mary! defaults to default set in string =
 
 /**I can have 15 ppl at home for a party.
  * I can have 40 with a tent at home
@@ -42,7 +42,7 @@ def partyAtHomeAgain(guests:Int, tentAvailable: Boolean): Boolean =
   if (guests <= 15) true //T if guests are up to 15 with no tent
   else if (tentAvailable && guests < 41) true
   else false
-println(partyAtHomeAgain(40, true)) //true
+println(partyAtHomeAgain(40, tentAvailable = true)) //true
 println(partyAtHomeAgain(45, true)) //F
 println(partyAtHomeAgain(10, false)) //T
 
@@ -63,6 +63,7 @@ def competition2 (result: Int) : String = {
     case 2 => "silver"
     case 3 => "bronze"
     case _ => "Well done!"
+    //case 4 || 5 => "XYZ" group cases with or
   }
 }
 println(competition2(1)) //You won gold
@@ -103,7 +104,20 @@ def basicOp2(op: Char, a: Int, b: Int): Int = {
     case '/' => a / b
     case _ => throw new Error("Invalid operation")
   }
+
+
+  case class Person (name: String, age: Int)
+val anne: Person = Person ("Anne", 25)
+  println(anne.name)
+  println(anne.age)
+
+def greeting(person: Person): String = s"hi ${person.name}"
+  println(greeting())
+
 }
+
+
+
 
 
 
