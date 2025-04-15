@@ -189,6 +189,76 @@ List(Swim, Cycle, Run).foreach { event =>
 }
 
 
+/** CASE CLASS CHALLENGE
+ *
+ * WRite a case class called Country, has two parameters: name which is a string and population which is an INT
+ * Write a function called Population which takes in a parameter of type country and outputs an int, this function should return the population of the given country.
+ **/
+
+case class Country (name: String, population: Int)
+def population(country: Country): Int =country.population
+
+
+/** ENNUM CHALLENGE
+ *WRite an enum called UnitedKingdom that takes the four countries of the UK
+ * Write an if statement which returns a string if the country is Scotland
+ * Write a function called WHereAmI which takes the enum UnitedKingdom and outputs a different string for each of its cases then implement this with pattern matching.
+ */
+
+//
+//enum UnitedKingdon
+//  case England
+//  case NorthernIreland
+//  case Scotland
+//  case Wales
+//
+//val country = England s("We're in England!")
+//If country == Scotland s("We're in Scotland!")
+//If country == Northern Ireland s("We're in Ireland!")
+//If country == Wales s("We're in Wales!")
+//
+object UnitedKingdom extends Enumeration {
+  val Scotland = Value ("We're in Scotland!")
+  val Ireland = Value("We're in Ireland!")
+  val Wales = Value("We're in Wales!")
+  val England = Value("We're in England!")
+}
+println(UnitedKingdom.values) //UnitedKingdom.ValueSet(We're in Scotland!, We're in Ireland!, We're in Wales!, We're in England!)
+println(UnitedKingdom.England.toString) //We're in England!
+
+/**Pattern match using the Ennum UnitedKingdom **/
+def whereAmI (country: UnitedKingdom.Value): String = {
+  country match {
+    case UnitedKingdom.Scotland => "You're in Scotland!"
+    case UnitedKingdom.Ireland => "You're in Ireland!"
+    case UnitedKingdom.Wales => "You're in Wales!"
+    case UnitedKingdom.England => "You're in England!"
+  }
+}
+
+val country = UnitedKingdom.Scotland
+//Using the If Statement
+if (country == UnitedKingdom.Scotland) {
+  println("You're in Scotland!")  ////You're in Scotland!
+}
+
+val country2 = UnitedKingdom.Ireland //You're in Ireland!
+if (country2 == UnitedKingdom.Scotland) {
+  println("You're in Scotland!")
+} else if (country2 == UnitedKingdom.Ireland) {
+  println("You're in Ireland!")
+} else if (country2 == UnitedKingdom.Wales) {
+  println("You're in Wales!")
+} else if (country2 == UnitedKingdom.England) {
+  println("You're in England!")
+} else {
+  println("Country not recognized!")
+}
+
+//Using the function with Pattern Matching
+println(whereAmI(country)) //You're in Scotland!
+
+
 
 
 

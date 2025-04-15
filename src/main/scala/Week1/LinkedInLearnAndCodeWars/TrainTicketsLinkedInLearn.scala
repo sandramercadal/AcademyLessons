@@ -12,7 +12,7 @@ case class TicketPrice(standardTicketPrice: Int, firstClassTicketPrice: Option[I
 //Service object with my ticket price models
 object TicketPrices {
 
-  //b using flatMap
+  /**b using flatMap **/
   //uses the flatMap method to extract the firstClassTicketPrice from the TicketPrice instance if it exists:
   def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] =
     ticketPrice.flatMap { ticketPrice => //checks if ticketPrice is defined (i.e., not None). If it is, it looks at the firstClassTicketPrice of that TicketPrice and returns it wrapped in an Option. If firstClassTicketPrice is None, that will be the result.
@@ -22,7 +22,7 @@ object TicketPrices {
   //def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] =
   //ticketPrice.flatMap(_.firstClassTicketPrice) //no =>
 
-  //Now WITH a FOR COMP
+  /**Now WITH a FOR COMP **/
   def getFirstClassTicketPrice2(ticketPrice: Option[TicketPrice]): Option[Int] = {
     for {
       t <- ticketPrice
@@ -33,7 +33,7 @@ object TicketPrices {
 }
 
 
-//// Main app that runs examples
+/** Main app that runs examples **/
 object TrainTicketsLinkedInLearn extends App {
 
 //Create test ticket instances

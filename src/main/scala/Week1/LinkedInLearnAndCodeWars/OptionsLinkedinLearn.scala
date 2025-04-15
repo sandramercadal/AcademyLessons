@@ -31,27 +31,28 @@ object OptionsLinkedinLearn extends App{
   //middleName is defined as an Option[String], meaning it can either hold a String (in this case "Jasmine Rose") or be None.
   //Some("Jasmine Rose") means that in this case, middleName contains a value ("Jasmine Rose").
   val middleName: Option[String] = Some("Jasmine Rose")
-  println(middleName.getOrElse("").length) //12 if option is a none it will use the "" empty string
+  println(middleName.getOrElse("").length) //12  - if option is a none it will use the "" empty string
 
   //val middleName: Option[Int] = None //An option can be an INT too
+  //println(middleName.getOrElse("").length) //should return 0 ?
   //val middleName: Option[String] = Some(2)
 
   //getOrElse is one of the ways to get the values Jasmine or 2
 
   /**MAP**/
   val middleName2: Option[String] = Some("Muna")
-  println(middleName2.map(word => word.toUpperCase)) //Some(MUNA) using map here
+  println(middleName2.map(word => word.toUpperCase)) //Some(MUNA)  - using map here
 
-  //val middleName: Option[String] = None
+  //val middleName: Option[String] = None //map will return none
   //println(middleName.map(word => word.toUpperCase)) //None
 
   //when you create a case class, you are defining a new type that can hold data. Case classes provide a simple way to create classes that are used primarily to hold data. They come with built-in methods like equals, hashCode, and toString, which makes them handy for working with collections or pattern matching.
-  /**FILM EAXMPLE -- FLAT MAP**/
+  /**FILM EXAMPLE -- FLAT MAP**/
   case class Rating(googleRating: Option[Int])
   case class Film(name: String, rating: Option[Rating])  //Film can either have a rating or no rating.
 
   //first film
-  val mulan = Film("Mulan", Some(Rating(Some(5))))
+  val mulan = Film("Mulan", Some(Rating(Some(5))))  //some is an option and rating also takes an option of 5
 //The first Some (around Rating(...)) indicates that the Film has a rating (as an instance of Rating).
   //The second Some(5) indicates that this particular Rating has a defined googleRating value.
 
@@ -83,7 +84,7 @@ object OptionsLinkedinLearn extends App{
   //After flattening, the map function is applied. It will again transform Rating to googleRating (which is an Option).
   //Thus, you end up with Some(Some(5)).
 
-  //This uses FlatMp which more elegant) to get actual googleRating and gives you the actual value directly, avoiding the unnecessary nesting of Option.
+  //This uses FlatMp which more elegant instead of map and falttend to get actual googleRating and gives you the actual value directly, avoiding the unnecessary nesting of Option.
 //Outputs Some(5), which is a single Option containing the integer.
   println(mulan.rating.flatMap(rating => rating.googleRating)) //Some(5)
 //Here, mulan.rating.flatMap(rating => rating.googleRating) directly uses flatMap, which checks if mulan.rating is Some.
@@ -94,7 +95,7 @@ object OptionsLinkedinLearn extends App{
 
 
 
-  /**FOR COMP great to get out the value of options and computing them and chaining dependant steps**/
+  /**FOR COMP great to get out the value inside of options and computing them and chaining dependant steps**/
 
   //val averageRating = for {
   //  rating <- mulan.rating
@@ -116,8 +117,9 @@ object OptionsLinkedinLearn extends App{
    **/
 
   val number: Option[Int] = Some(5)
-  println(number.map(n => n * 2)) //Option[Int] = Some(10)
+  println(number.map(n => n * 2)) //Option[Int] = Some(10)  - n can be anything!
   println(number.map(_ * 2)) //Option[Int] = Some(10) _ instead of arrow
+
   //Now our option Int is a None
   //val number: Option[Int] = None
   //map over it
