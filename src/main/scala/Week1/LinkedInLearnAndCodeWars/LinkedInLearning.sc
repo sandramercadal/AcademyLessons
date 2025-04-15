@@ -116,9 +116,77 @@ def greeting(person: Person): String = s"hi ${person.name}"
 
 }
 
+case class Person (name: String, age: Int)
+val anne: Person = Person ("Anne", 25)
+println(anne.name) //Anne
+println(anne.age) //25
+
+def greeting(person: Person): String = s"hi ${person.name}"
+println(greeting(anne)) //hi Anne
+
+val anne1: Person = Person("Anne", 25) // First Anne
+val anne2: Person = Person("Anne", 36) // Second Anne
+
+
+/** ENUMS */
+//Enums that take parameters
+
+//Scala 3:
+//enum Triathlon (val meters: Int):
+//case swim extends Triathlon (meters=400)
+//case cycle extends Triathlon (meters=5000)
+//case run extends Triathlon (meters=2500)
+//def howManyMeters (tri: Triathlon): Int = tri match {
+//  case swim @ Swim => swim.meters
+//  case cycle @ Cycle => cycle.meters
+//  case run @ Run => run.meters
+
+/**WITH SEALED TRAIT AND CASE OBJS **/
+
+sealed abstract class Triathlon(val meters: Int)
+case object Swim extends Triathlon(400)
+case object Cycle extends Triathlon(5000)
+case object Run extends Triathlon(2500)
+
+def howManyMeters(tri: Triathlon): Int = tri match {
+  case Swim => Swim.meters
+  case Cycle => Cycle.meters
+  case Run => Run.meters
+}
+// Print meters for each event
+println(s"Swimming: ${howManyMeters(Swim)} meters") //400
+println(s"Cycling: ${howManyMeters(Cycle)} meters")//5000
+println(s"Running: ${howManyMeters(Run)} meters")//2500
 
 
 
+object Triathlon extends Enumeration {
+  sealed abstract class TriathlonVal(val meters: Int) extends Val
+
+  val Swim = new TriathlonVal(400) {}
+  val Cycle = new TriathlonVal(5000) {}
+  val Run = new TriathlonVal(2500) {}
+
+  type Triathlon = TriathlonVal
+}
+
+import Triathlon._
+
+def howManyMeters(tri: Triathlon): Int = tri match {
+  case swim @ Swim => swim.meters
+  case cycle @ Cycle => cycle.meters
+  case run @ Run => run.meters
+}
+// Print each event individually
+println(s"Swimming: ${howManyMeters(Swim)} meters") //400
+println(s"Cycling: ${howManyMeters(Cycle)} meters") //5000
+println(s"Running: ${howManyMeters(Run)} meters") //2500
+
+
+// Another approach with more type safety
+List(Swim, Cycle, Run).foreach { event =>
+  println(s"${event}: ${howManyMeters(event)} meters")
+}
 
 
 
