@@ -25,8 +25,8 @@ object TicketPrices {
   /**Now WITH a FOR COMP **/
   def getFirstClassTicketPrice2(ticketPrice: Option[TicketPrice]): Option[Int] = {
     for {
-      t <- ticketPrice
-      firstClassPrice <- t.firstClassTicketPrice
+      t <- ticketPrice //flat map on ticket price
+      firstClassPrice <- t.firstClassTicketPrice //??
     } yield firstClassPrice
   }
 

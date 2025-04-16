@@ -1,5 +1,3 @@
-
-
 /** Q1 you received a whatsup message from an unknown number. Could it be from that girl/boy with a foreign accent you met yesterday evening?
  *
  * Write a simple function to check if the string contains the word hallo in different languages.
@@ -188,3 +186,41 @@ println(welcome("Albanian")) // Welcome (default to English)
 /**Beginner - Lost Without a Map - Given an array of integers, return a new array with each value doubled.
  For example:
  [1, 2, 3] --> [2, 4, 6]*/
+
+
+
+
+
+/** Q) Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
+ If no arguments are given, ball objects should instantiate with a "ball type" of "regular."
+ ball1 = new Ball();
+ ball2 = new Ball("super");
+ ball1.ballType     //=> "regular"
+ ball2.ballType     //=> "super" */
+class Ball(val ballType: String = "regular")
+
+val ball1 = new Ball()
+val ball2 = new Ball("super")
+
+println(ball1.ballType) //"regular"
+println(ball2.ballType) //"super"
+
+
+/**We need a function that can transform a string into a number. What ways of achieving this do you know?
+ Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+ Examples
+ "1234" --> 1234
+ "-7" --> -7 */
+def stringToNumber(string: String): Int = {
+  string.toInt
+}
+val num1 = stringToNumber("1234") //Int = 1234
+val num2 = stringToNumber("-7") //Int = -7
+
+
+
+//This works but doesnt pass the Codewars test:
+def stringToInt (input2: String): Int = {
+  input2.toInt
+}
+println(stringToInt("12345")) //12345
