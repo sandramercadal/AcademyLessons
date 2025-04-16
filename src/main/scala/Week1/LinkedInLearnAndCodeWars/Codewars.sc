@@ -1,5 +1,4 @@
 /** Q1 you received a whatsup message from an unknown number. Could it be from that girl/boy with a foreign accent you met yesterday evening?
- *
  * Write a simple function to check if the string contains the word hallo in different languages.
  * These are the languages of the possible people you met the night before:
  * hello - english
@@ -17,6 +16,7 @@ def containsGreeting(message: String): Boolean = {
   //OR greetings.map(message.toLowerCase.contains).contains(true)
 }
 println(containsGreeting("hello")) //true
+
 
 
 //Q2
@@ -224,3 +224,41 @@ def stringToInt (input2: String): Int = {
   input2.toInt
 }
 println(stringToInt("12345")) //12345
+
+/** Super Duper Easy ;
+Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
+ **/
+//def valueMultiplied (int: Int) :Int {
+//}
+
+/** Q) Remove all exclamation marks from the end of sentence. e.g.
+ "Hi!"     ---> "Hi"
+ "Hi!!!"   ---> "Hi"
+ "Hi"      ---> "Hi" */
+def remove(string: String): String = {
+  string.replaceAll("!+$", "")
+}
+println(remove("Hi!!!!")) //Hi
+//! represents the exclamation mark character that we want to find in the string.
+ // + means "one or more" of the preceding element. So, !+ signifies "one or more exclamation marks."
+//$ indicates the end of the string. This means we are looking for any series of exclamation marks that occur right at the end of the string.
+
+/** Q) Remove string spaces
+//Write a function that removes the spaces from the string, then return the resultant string e.g."8 j 8   mBliB8g  imjB8B8  jl  B" -> "8j8mBliB8gimjB8B8jlB"
+**/
+
+
+/**Two players - "black" and "white" are playing a game. The game consists of several rounds. If a player wins in a round, he is to move again during the next round. If a player loses a round, it's the other player who moves on the next round. Given whose turn it was on the previous round and whether he won, determine whose turn it is on the next round.
+ Input/Output
+ [input] string lastPlayer/$last_player
+ "black" or "white" - whose move it was during the previous round.
+ [input] boolean win/$win
+true if the player who made a move during the previous round won, false otherwise.
+ [output] a string
+ Return "white" if white is to move on the next round, and "black" otherwise. e.g.
+ For lastPlayer = "black" and win = false, the output should be "white".
+ For lastPlayer = "white" and win = true, the output should be "white".
+**/
+ def whoseMove(lastPlayer: String, win: Boolean): String = {
+  if (win) lastPlayer else if (lastPlayer == "black") "white" else "black"
+}
