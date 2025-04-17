@@ -330,3 +330,7 @@ def stringClean(string: String): String = {
 println(stringClean("1Mary12345")) //Mary
 //also
 // string.filterNot(_.isDigit)
+
+//Q - Palindrome detector eg madam, kayak, taco cats, step on no pets
+
+
