@@ -17,8 +17,6 @@ def containsGreeting(message: String): Boolean = {
 }
 println(containsGreeting("hello")) //true
 
-
-
 //Q2
 /**Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
  * This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
@@ -61,10 +59,12 @@ println(finalGrade(20, 2)) // 0
 //case (e, p) if e > 50 && p >= 2 => 75
 //case _                          => 0
 
+
 /** Q3 Write a function which converts the input string to uppercase**/
 def makeUpperCase(string: String): String = string.toUpperCase
 println(makeUpperCase("hello, sandra")) //HELLO, SANDRA
 println(makeUpperCase("hello")) //HELLO
+
 
 /** Q4 Is the string uppercase?
  * Create a method to see whether the string is ALL CAPS.
@@ -76,7 +76,7 @@ println(makeUpperCase("hello")) //HELLO
  * "ACSKLDFJSgSKLDFJSKLDFJ" -> False
  * "ACSKLDFJSGSKLDFJSKLDFJ" -> True * */
 
-def isUpperCase(input: String): Boolean = {
+def isUpperCase(input: String): Boolean = { //notice inout here
   input == input.toUpperCase
 }
 
@@ -94,6 +94,7 @@ def isUpperCase(input: String): Boolean = {
 println(isUpperCase("c")) //false
 //println(isUpperCase("DONALD")) //true
 //println(isUpperCase("DONALd")) //F
+
 
 /** Q4 You will need a rental car in order for you to get around in your vacation. Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
  * Write a code that gives out the total amount for different days(d).* */
@@ -130,7 +131,9 @@ println(Rental.cost(7)) //230 (7 x 40 - 50 discount = 230)
  * Write a program that returns the girl's age (0-9) as an integer. Assume the test input string is always a valid string. For example, the test input may be "1 year old" o  * */
 
 
-/** Q6 - Your start-up's BA has told marketing that your website has a large audience in Scandinavia and surrounding countries. Marketing thinks it would be great to welcome visitors to the site in their own language. Luckily you already use an API that detects the user's location, so this is an easy win.
+
+
+/** Q6 - welcome visitors to the site in their own language. Luckily you already use an API that detects the user's location, so this is an easy win.
  * Think of a way to store the languages as a database. The languages are listed below so you can copy and paste!
  * Write a 'welcome' function that takes a parameter 'language', with a type String, and returns a greeting - if you have it in your database. It should default to English if the language is not in the database, or in the event of an invalid input.
  * The Database : Please modify this as appropriate for your language.
@@ -218,12 +221,13 @@ val num1 = stringToNumber("1234") //Int = 1234
 val num2 = stringToNumber("-7") //Int = -7
 
 
-
 //This works but doesnt pass the Codewars test:
 def stringToInt (input2: String): Int = {
   input2.toInt
 }
 println(stringToInt("12345")) //12345
+
+
 
 /** Super Duper Easy ;
 Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
@@ -231,21 +235,46 @@ Make a function that returns the value multiplied by 50 and increased by 6. If t
 //def valueMultiplied (int: Int) :Int {
 //}
 
+
+
 /** Q) Remove all exclamation marks from the end of sentence. e.g.
  "Hi!"     ---> "Hi"
  "Hi!!!"   ---> "Hi"
  "Hi"      ---> "Hi" */
 def remove(string: String): String = {
-  string.replaceAll("!+$", "")
+  string.replaceAll("!+$", "") ///without the + may work also
 }
 println(remove("Hi!!!!")) //Hi
+println(remove("Hi")) //Hi
 //! represents the exclamation mark character that we want to find in the string.
  // + means "one or more" of the preceding element. So, !+ signifies "one or more exclamation marks."
 //$ indicates the end of the string. This means we are looking for any series of exclamation marks that occur right at the end of the string.
 
+
+//def remove(string: String): String = {
+//  if (string.endsWith("!")) {
+//    string // Keep the exclamation mark
+//  } else {
+//    string.replaceAll("!$", "")
+//  }
+}
+
+/**Remove ! from wherever it is "!Hi!"    ---> "Hi!" and add a single exclamation mark at the end**/
+def remove2(string: String): String = {
+  string.replaceAll("!", "") + "!"
+}
+println(remove2("!HI!!")) //HI!
+//("!", "") is "replace all occurrences of exclamation marks with nothing,"
+
 /** Q) Remove string spaces
 //Write a function that removes the spaces from the string, then return the resultant string e.g."8 j 8   mBliB8g  imjB8B8  jl  B" -> "8j8mBliB8gimjB8B8jlB"
 **/
+
+def removeStringSpace (string: String): String = {
+  string.replaceAll(" ", "")
+}
+println(removeStringSpace("8 j 8   mBliB8g  imjB8B8  jl  B"))//8j8mBliB8gimjB8B8jlB
+
 
 
 /**Two players - "black" and "white" are playing a game. The game consists of several rounds. If a player wins in a round, he is to move again during the next round. If a player loses a round, it's the other player who moves on the next round. Given whose turn it was on the previous round and whether he won, determine whose turn it is on the next round.
@@ -255,10 +284,34 @@ println(remove("Hi!!!!")) //Hi
  [input] boolean win/$win
 true if the player who made a move during the previous round won, false otherwise.
  [output] a string
- Return "white" if white is to move on the next round, and "black" otherwise. e.g.
- For lastPlayer = "black" and win = false, the output should be "white".
+ Return "white" if white is to move on the next round, and "black" otherwise. e.g. For lastPlayer = "black" and win = false, the output should be "white".
  For lastPlayer = "white" and win = true, the output should be "white".
 **/
- def whoseMove(lastPlayer: String, win: Boolean): String = {
+ def whoseMove1(lastPlayer: String, win: Boolean): String = {
   if (win) lastPlayer else if (lastPlayer == "black") "white" else "black"
 }
+
+def whoseMove(lastPlayer: String, win: Boolean): String = {
+  if (win) {
+    lastPlayer
+  } else {
+    if (lastPlayer == "black") "white" else "black"
+  }
+}
+//whoseMove takes two inputs: lastPlayer (a string that can be "black" or "white") and win (a boolean that indicates if the last player won).
+//If win is true (last player won), returns lastPlayer because the same player gets to play again.
+//If win is false (the last player lost), it checks who the last player was:
+//If lastPlayer "black", it returns "white" (meaning the white player gets to play next).
+//If lastPlayer "white", it returns "black" (meaning the black player gets to play next).
+println(whoseMove("black", false)) //white
+println(whoseMove("white", true))  //white
+println(whoseMove("white", false))  //Bl
+
+/**Set the alarm - Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+ The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+ employed | vacation
+ true     | true     => false
+ true     | false    => true
+ false    | true     => false
+ false    | false    => false **/
+
