@@ -315,3 +315,18 @@ println(whoseMove("white", false))  //Bl
  false    | true     => false
  false    | false    => false **/
 
+
+
+//Q - Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+def removeExclamationMarks(string: String): String = {
+  string.replaceAll("!", "")
+}
+println(removeExclamationMarks("Mary!")) //Mary
+
+//Q - remove all the numbers from a list of strings
+def stringClean(string: String): String = {
+  string.replaceAll("\\d", "")  // Regex \\d
+}
+println(stringClean("1Mary12345")) //Mary
+//also
+// string.filterNot(_.isDigit)
