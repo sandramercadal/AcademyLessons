@@ -61,7 +61,8 @@ println(finalGrade(20, 2)) // 0
 
 
 /** Q3 Write a function which converts the input string to uppercase**/
-def makeUpperCase(string: String): String = string.toUpperCase
+def makeUpperCase(string: String): String =
+  string.toUpperCase
 println(makeUpperCase("hello, sandra")) //HELLO, SANDRA
 println(makeUpperCase("hello")) //HELLO
 
@@ -76,7 +77,7 @@ println(makeUpperCase("hello")) //HELLO
  * "ACSKLDFJSgSKLDFJSKLDFJ" -> False
  * "ACSKLDFJSGSKLDFJSKLDFJ" -> True * */
 
-def isUpperCase(input: String): Boolean = { //notice inout here
+def isUpperCase(input: String): Boolean = { //notice input here
   input == input.toUpperCase
 }
 
@@ -97,7 +98,10 @@ println(isUpperCase("c")) //false
 
 
 /** Q4 You will need a rental car in order for you to get around in your vacation. Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
- * Write a code that gives out the total amount for different days(d).* */
+ * Write a code that gives out the total amount for different days(d).
+ * costs £40 to rent a car for the day
+ * If you rent for 7 days or more its -£50
+ * If you rent for 3 days or more its -£20* */
 //I was trying to reassign totalCOst val after declaring it as a val!
 //def cost(days: Int): Int = {
 //  val dailyCarRental = 40
@@ -221,7 +225,7 @@ val num1 = stringToNumber("1234") //Int = 1234
 val num2 = stringToNumber("-7") //Int = -7
 
 
-//This works but doesnt pass the Codewars test:
+//This works but doesnt pass the Codewars test (I called it input):
 def stringToInt (input2: String): Int = {
   input2.toInt
 }
@@ -232,9 +236,17 @@ println(stringToInt("12345")) //12345
 /** Super Duper Easy ;
 Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
  **/
-//def valueMultiplied (int: Int) :Int {
+//def valueMultipliedPlus6 (int: Int) :Int {
+//int = int x 50 + 6 else "error"
 //}
-
+def processValue(value: Any): Any = {
+  value match {
+    case number: Int => number * 50 + 6
+    case _: String => "Error"
+    case _ => "Error"  // Handle any other types
+  }
+}
+println(processValue(2))
 
 
 /** Q) Remove all exclamation marks from the end of sentence. e.g.
@@ -331,6 +343,38 @@ println(stringClean("1Mary12345")) //Mary
 //also
 // string.filterNot(_.isDigit)
 
-//Q - Palindrome detector eg madam, kayak, taco cats, step on no pets
+/**Q - Palindrome detector eg madam, kayak, taco cats, step on no pets */
+
+
+
+
+
+/** Debug Greeting - greet everyone as they come aboard. It is your job to fix the code and get the program working again!
+ E.g: Hello, Mr. Spock or Hello, Liutenant Uhura
+ From : def sayHello(name: String): String = "Hello" to */
+def sayHello(name: String): String = {
+  s"Hello, $name"
+}
+println(sayHello("Dr Spock")) // Hello, Dr Spock
+
+
+/** Check same case
+ * Write a function that will check if two given characters are the same case.
+ *
+ * If either of the characters is not a letter, return -1
+ * If both characters are the same case, return 1
+ * If both characters are letters, but not the same case, return 0
+ * Examples
+ * 'a' and 'g' returns 1
+ * 'A' and 'C' returns 1
+ * --If both uppercase or both lowercase return 1
+
+ * 'b' and 'G' returns 0
+ * 'B' and 'g' returns 0
+ * --If one uppercase or one lowercase return 0
+ *
+ * '0' and '?' returns -1
+ * --If anything else return 0*/
+
 
 

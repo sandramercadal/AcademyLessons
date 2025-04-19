@@ -1,23 +1,14 @@
-//def stringToInt (input2: String): Int = {
-//  input2.toInt
-//}
-//
-//println(stringToInt("12345"))
-//
-//def stringToNumber(string: String): Int = {
-//  string.toInt
-//}
-//
-//
-//val num1 = stringToNumber("1234")
-//val num2 = stringToNumber("-7")
+//Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
 
-//def removeStringSpace (string: String): String = {
-//  string.replaceAll(" ", "")
+//def valueMultipliedPlus6 (int: Int) :Int {
+// int x 50 + 6 else "error"
 //}
-//println(removeStringSpace("8 j 8   mBliB8g  imjB8B8  jl  B"))
 
-def stringClean(string: String): String = {
-  string.replaceAll("\\d", "")  // Regex \\d
-}
-println(stringClean("1Mary12345"))
+//def valueMultipliedPlus6(value: Any): Any = {
+//  value match {
+//    case i: Int => i * 50 + 6
+//    case _ => "Error"
+//  }
+//}
+//println(valueMultipliedPlus6(1))
+
