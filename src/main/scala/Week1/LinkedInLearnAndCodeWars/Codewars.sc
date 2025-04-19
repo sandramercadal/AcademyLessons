@@ -360,21 +360,44 @@ println(sayHello("Dr Spock")) // Hello, Dr Spock
 
 /** Check same case
  * Write a function that will check if two given characters are the same case.
- *
- * If either of the characters is not a letter, return -1
+ * If either of the characters is not a letter, return -1 :
+ '0' and '?' -- returns -1 --If either of them are not a letter
+
  * If both characters are the same case, return 1
- * If both characters are letters, but not the same case, return 0
- * Examples
  * 'a' and 'g' returns 1
- * 'A' and 'C' returns 1
- * --If both uppercase or both lowercase return 1
+ * * 'A' and 'C' returns 1 --both uppercase or both lowercase return 1
 
- * 'b' and 'G' returns 0
- * 'B' and 'g' returns 0
- * --If one uppercase or one lowercase return 0
- *
- * '0' and '?' returns -1
- * --If anything else return 0*/
+ * If both characters are letters, but not the same case, return 0 */
 
+def sameCase(a: Char, b: Char): Int = {
+  if ((a.isUpper && b.isUpper) || (a.isLower && b.isLower)) {
+    return 1
+  }
+
+
+
+}
+
+
+
+
+//
+//if ((a.isUpper && b.isLower) || (a.isLower && b.isUpper)) {
+//  return -1
+//  else 0
+def sameCase(a: Char, b: Char): Int = {
+
+  // Check if both characters are the same case
+  if ((a.isUpper && b.isUpper) || (a.isLower && b.isLower)) {
+    return 1
+  }
+  // Check if both characters are letters.
+  //If either are not, return -1
+  if (!a.isLetter || !b.isLetter) {
+    return -1
+  }
+  // Both characters are letters but not the same case
+  0
+}
 
 
