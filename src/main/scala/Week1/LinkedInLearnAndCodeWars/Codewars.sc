@@ -387,16 +387,16 @@ def sameCase(a: Char, b: Char): Int = {
 //  else 0
 def sameCase(a: Char, b: Char): Int = {
 
-  // Check if both characters are the same case
+  // Check if both characters are the same case = 1
   if ((a.isUpper && b.isUpper) || (a.isLower && b.isLower)) {
     return 1
   }
-  // Check if both characters are letters.
+  // Check if both characters are letters = -1
   //If either are not, return -1
   if (!a.isLetter || !b.isLetter) {
     return -1
   }
-  // Both characters are letters but not the same case
+  // Both characters are letters but not the same case =0
   0
 }
 
