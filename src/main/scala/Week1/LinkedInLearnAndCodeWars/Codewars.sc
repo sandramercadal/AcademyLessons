@@ -232,6 +232,10 @@ def stringToInt (input2: String): Int = {
 println(stringToInt("12345")) //12345
 
 
+def stringToNumber(string: String): Int= string.toInt
+println(stringToNumber("23"))
+
+
 
 /** Super Duper Easy ;
 Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
@@ -302,7 +306,7 @@ true if the player who made a move during the previous round won, false otherwis
  def whoseMove1(lastPlayer: String, win: Boolean): String = {
   if (win) lastPlayer else if (lastPlayer == "black") "white" else "black"
 }
-
+//or
 def whoseMove(lastPlayer: String, win: Boolean): String = {
   if (win) {
     lastPlayer
@@ -337,11 +341,13 @@ println(removeExclamationMarks("Mary!")) //Mary
 
 //Q - remove all the numbers from a list of strings
 def stringClean(string: String): String = {
-  string.replaceAll("\\d", "")  // Regex \\d
+  string.replaceAll("\\d", "")  // Regex \\d numbers 0-9?
 }
 println(stringClean("1Mary12345")) //Mary
 //also
 // string.filterNot(_.isDigit)
+
+
 
 /**Q - Palindrome detector eg madam, kayak, taco cats, step on no pets */
 

@@ -12,15 +12,19 @@
 //}
 //println(valueMultipliedPlus6(1))
 
-def sameCase(a: Char, b: Char): Int = {
-  if (!a.isLetter || !b.isLetter) {
-    return -1
-  }
-  else if ((a.isUpper && b.isUpper) || (a.isLower && b.isLower)) {
-    return 1
-  }
-  else {
-    return 0
-  }
-}
-println(sameCase('U', '9'))
+//def sameCase(a: Char, b: Char): Int = {
+//  if (!a.isLetter || !b.isLetter) {
+//    return -1
+//  }
+//  else if ((a.isUpper && b.isUpper) || (a.isLower && b.isLower)) {
+//    return 1
+//  }
+//  else {
+//    return 0
+//  }
+//}
+//println(sameCase('U', '9'))
+
+//def stringToNumber(string: String): Int= string.toInt
+//println(stringToNumber("23"))
+
