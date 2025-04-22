@@ -28,8 +28,11 @@
 //def stringToNumber(string: String): Int= string.toInt
 //println(stringToNumber("23"))
 
-def hoopCount(number: Int): String = {
-  if (number >= 10) s"Great, now move on to tricks"
-  else s"Keep at it until you get it"
+def peopleWithAgeDrink(age: Int): String = {
+  if (age < 14)"drink toddy"
+  else if (age < 18 )"drink coke"
+  else if (age < 21 )"drink beer"
+  else "drink whisky"
 }
-println(hoopCount(1))
+println(peopleWithAgeDrink(20))
+

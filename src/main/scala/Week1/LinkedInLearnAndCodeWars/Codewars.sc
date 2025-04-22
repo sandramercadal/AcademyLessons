@@ -387,3 +387,66 @@ def sameCase(a: Char, b: Char): Int = {
 }
 println(sameCase('U', '9'))
 
+
+/**READ the Q properly eg how to calculate the BMI, it says its weight x (height x2)!
+ *
+ * Write function bmi that calculates body mass index (bmi = weight / height2).
+ * if bmi <= 18.5 return "Underweight"
+ * if bmi <= 25.0 return "Normal"
+ * if bmi <= 30.0 return "Overweight"
+ * if bmi > 30 return "Obese"
+ */
+def bmi(weight: Int, height: Double): String = {
+  val bmiTotal = weight / (height * height)
+
+  if (bmiTotal <= 18.5) "Underweight"
+  else if (bmiTotal <= 25.0) "Normal"
+  else if (bmiTotal <= 30.0) "Overweight"
+  else "Obese"
+}
+
+println(bmi(50, 1.80)) //underweight
+println(bmi(60, 1.56)) //normal
+
+
+/**Q - Hula Hoop
+ * If Alex does 10 or more hoops => "Great, now move on to tricks"
+ * else "Keep at it until you get it"
+**/
+ def hoopCount(number: Int): String = {
+ if (number >= 10) s"Great, now move on to tricks"
+ else s"Keep at it until you get it"
+ }
+ println(hoopCount(1)) //Keep at it until you get it
+
+
+/** Q Simple multiplication - multiplying a given number by eight if it is an even number
+ and by nine otherwise**/
+
+def multiply(n: Int): Int = {
+  if (n % 2 == 0) {
+    n * 8
+  } else {
+    n * 9
+  }
+}
+println(multiply(2))
+
+/**Q What Kids drink toddy:
+ Teens drink coke, Young adults drink beer,Adults drink whisky.
+ Make a function that receive age, and return what they drink.
+ Rules:
+ Children under 14 old.
+ Teens under 18 old.
+ Young under 21 old.
+ Adults have 21 or more.
+ Examples: (Input --> Output*/
+
+def peopleWithAgeDrink(age: Int): String = {
+  if (age < 14)"drink toddy"
+  else if (age < 18 )"drink coke"
+  else if (age < 21 )"drink beer"
+  else "drink whisky"
+}
+println(peopleWithAgeDrink(20))
+
