@@ -11,9 +11,9 @@ sealed trait WeddingTheme {
   def churchCapacity: Int
 }
 
-object WeddingTheme {
+object WeddingPlan extends App {
 
-
+//Wedding themes
   case object GatsbyTheme extends WeddingTheme {
     val name = "Gatsby"
     val description = "1930's splendour, cocktails and glamour"
@@ -43,15 +43,28 @@ object WeddingTheme {
 
   val allThemes = List(GatsbyTheme, CountrysideTheme, BeachTheme)
 
-  def venuesWithChurch : List[WeddingTheme] = {
-    allThemes.filter(_.churchOnsite)
+//Logic
+    def venuesWithChurch: List[WeddingTheme] = {
+      allThemes.filter(_.churchOnsite)
+    }
+
+    // test method
+    println("Venues with church:")
+    venuesWithChurch.foreach(theme => println(s"- ${theme.name}")) //Venues with church - Gatsby- Quintessentially English Countryside chic
+
+
+
+
+
+
   }
 
 
 
 
 
-}
+
+
 
 
 

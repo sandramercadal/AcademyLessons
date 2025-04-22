@@ -36,16 +36,3 @@
 //}
 //println(peopleWithAgeDrink(20))
 
-def stringSum(a: String, b: String): String = {
-  ((if (a.isEmpty) 0 else a.toInt) + (if (b.isEmpty) 0 else b.toInt)).toString
-}
-println(stringSum("1", "2"))
-//or
-def stringSum2(a: String, b: String): String = {
-  // Parse both strings to integers, if they are empty default to 0
-  val num1 = if (a.isEmpty) 0 else a.toInt
-  val num2 = if (b.isEmpty) 0 else b.toInt
-  // Calculate sum and return as string
-  (num1 + num2).toString
-}
-println(stringSum2("1", "2"))

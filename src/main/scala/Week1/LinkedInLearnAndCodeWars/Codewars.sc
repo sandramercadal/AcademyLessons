@@ -466,6 +466,7 @@ def stringSum(a: String, b: String): String = {
   ((if (a.isEmpty) 0 else a.toInt) + (if (b.isEmpty) 0 else b.toInt)).toString
 }
 println(stringSum("1", "2"))  //3
+
 //or
 def stringSum2(a: String, b: String): String = {
   // Parse both strings to integers, if they are empty default to 0
