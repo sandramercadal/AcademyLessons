@@ -450,3 +450,28 @@ def peopleWithAgeDrink(age: Int): String = {
 }
 println(peopleWithAgeDrink(20))
 
+/** Q - Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
+ Example: (Input1, Input2 -->Output)
+ "4",  "5" --> "9"
+ "34", "5" --> "39"
+ "2", "" --> "2"
+ "-5", "3" --> "-2"
+ Notes: If either input is an empty string, consider it as zero.
+ Inputs and the expected output will never exceed the signed 32-bit integer limit (2^31 - 1)
+ **/
+
+//Both strings need to be converted to a numb to add them up!
+
+def stringSum(a: String, b: String): String = {
+  ((if (a.isEmpty) 0 else a.toInt) + (if (b.isEmpty) 0 else b.toInt)).toString
+}
+println(stringSum("1", "2"))  //3
+//or
+def stringSum2(a: String, b: String): String = {
+  // Parse both strings to integers, if they are empty default to 0
+  val num1 = if (a.isEmpty) 0 else a.toInt
+  val num2 = if (b.isEmpty) 0 else b.toInt
+  // Calculate sum and return as string
+  (num1 + num2).toString
+}
+println(stringSum2("1", "2")) //3

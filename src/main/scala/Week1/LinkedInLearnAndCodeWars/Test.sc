@@ -27,12 +27,25 @@
 
 //def stringToNumber(string: String): Int= string.toInt
 //println(stringToNumber("23"))
+//
+//def peopleWithAgeDrink(age: Int): String = {
+//  if (age < 14)"drink toddy"
+//  else if (age < 18 )"drink coke"
+//  else if (age < 21 )"drink beer"
+//  else "drink whisky"
+//}
+//println(peopleWithAgeDrink(20))
 
-def peopleWithAgeDrink(age: Int): String = {
-  if (age < 14)"drink toddy"
-  else if (age < 18 )"drink coke"
-  else if (age < 21 )"drink beer"
-  else "drink whisky"
+def stringSum(a: String, b: String): String = {
+  ((if (a.isEmpty) 0 else a.toInt) + (if (b.isEmpty) 0 else b.toInt)).toString
 }
-println(peopleWithAgeDrink(20))
-
+println(stringSum("1", "2"))
+//or
+def stringSum2(a: String, b: String): String = {
+  // Parse both strings to integers, if they are empty default to 0
+  val num1 = if (a.isEmpty) 0 else a.toInt
+  val num2 = if (b.isEmpty) 0 else b.toInt
+  // Calculate sum and return as string
+  (num1 + num2).toString
+}
+println(stringSum2("1", "2"))
