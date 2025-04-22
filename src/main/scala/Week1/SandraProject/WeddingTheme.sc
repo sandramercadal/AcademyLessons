@@ -1,3 +1,7 @@
+/** Wedding planning Project 👰🏽‍♀️⛪️🧁
+consolidates all lessons **/
+
+
 sealed trait WeddingTheme {
   def name: String
   def description: String
@@ -37,7 +41,7 @@ object WeddingTheme {
     val churchCapacity = 0
   }
 
-  val allThemes = List(GatsbyTheme, CountrysideTheme)
+  val allThemes = List(GatsbyTheme, CountrysideTheme, BeachTheme)
 
   def venuesWithChurch : List[WeddingTheme] = {
     allThemes.filter(_.churchOnsite)
