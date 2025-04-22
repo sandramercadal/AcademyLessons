@@ -28,3 +28,8 @@
 //def stringToNumber(string: String): Int= string.toInt
 //println(stringToNumber("23"))
 
+def hoopCount(number: Int): String = {
+  if (number >= 10) s"Great, now move on to tricks"
+  else s"Keep at it until you get it"
+}
+println(hoopCount(1))
