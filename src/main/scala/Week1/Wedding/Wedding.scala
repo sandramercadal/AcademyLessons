@@ -4,7 +4,7 @@ import java.util.Date
  * consolidates lessons * */
 
 
-object WeddingPlan extends App {
+object WeddingPlan extends App { //Wk 2
 
 
   //Planning some wedding themes
@@ -52,24 +52,21 @@ object WeddingPlan extends App {
 
   val allThemes = List(GatsbyTheme, CountrysideTheme, BeachTheme)
 
-
   /** List of venues with church onsite */
   def venuesWithChurch: List[WeddingTheme] = {
     allThemes.filter(_.churchOnsite)
   }
 
   //Filter a list of venues with church onsite
-  println("Venues with church:")
-  venuesWithChurch.foreach(theme => println(s"- ${theme.name}")) //Venues with church - Gatsby- Quintessentially English Countryside chic
+  println("Venues with church:")// Gatsby- Quintessentially English Countryside chic
+  venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
 
 
-
-  //Wedding case classes and other ones
   val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
 
   val bridesmaids: Seq[String] = Seq("Sarah", "Lisa", "Victoria") //Wk 1
 
-  val tableNames: Map[Int, String] = Map(
+  val tableNames: Map[Int, String] = Map( //Wk 1
     1 -> "Oxford Street",
     2 -> "Victoria",
     3 -> "Clapham Common",
@@ -83,13 +80,21 @@ object WeddingPlan extends App {
   )
 
   val filterForTableOxfordStreet: Map[Int, String] = tableNames.filter(num => num._1 == 1)
-println(filterForTableOxfordStreet) //
+println(filterForTableOxfordStreet) //HashMap(1 -> Oxford Street)
 
-  //We have more guests! add another table called "Angel" with a function
-  def addTable( )
+  //We have more guests! add another table number 11 called "Angel" with a def
+  //def addTable( )
 
 
+  //Write a for comprehension get ideas - Wk 1
+  //for yield for comprehension idea maybe what flowers each bridesmaid will have ?
 
+//write a chat with me on a separate page? it can be a q& A on gift registry
+
+//create an  object daysOfTheWeek { //grouping ??
+
+
+  //Wedding case classes
   case class Wedding(bride: Person, groom: Person, reception: Reception, guests: List[Guest])
 
   case class Venue(name: String, address: String, capacity: Int, costPerDay: Double, churchOnSite: Boolean)
@@ -97,9 +102,12 @@ println(filterForTableOxfordStreet) //
   case class Reception(venue: Venue, mealOption: List[String])
 
   //Person class of anyone involved
-  case class Person(name: String, email: String, phoneNumber: Option[String] = None)
+  case class Person(name: String, email: String, phoneNumber: Option[String] = None) //Wk 3
 
   case class Guest(person: Person, plusOne: Option[Guest] = None, dietaryRequirements: List[String] = List())
+
+  //add a regular class??
+
 
   //Instance of a bride and groom
   val bride: Person = Person("May Green", "May@me.com")
@@ -137,7 +145,7 @@ println(suzie)
   /** Venue hire rates (discount applies to hiring it for longer) */
   //Hire the venue for 1 day or for the extended weekend with a discount (3 nights)
 
-  def cost(days: Int): Int = { //Wk 2
+  def cost(days: Int): Int = { //Wk 1 & 2
     val dailyVenueHire = 3500
     val initialCost = dailyVenueHire * days
 
@@ -159,6 +167,26 @@ println(suzie)
 
 //Pattern match on what drinks to serve
 //Something about assigning people to a table and match to a table
+//Keyset one from udemy course?
+
+//something about adding tax to how much things cost eg flowers
+
+//Look at wk 3 Thursday
+
+//Ennums wk 3 Thursday
+
+//Either wk 3 Friday
+
+//Wk 4 recusrion
+
+//Wk 4 Hof
+//Wk 4 futures
+//Extra - variance swan exercise
+//Budget cost and tax  for budget of wedding
+
+
+
+
 
 
 
