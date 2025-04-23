@@ -195,9 +195,6 @@ println(welcome("Albanian")) // Welcome (default to English)
  [1, 2, 3] --> [2, 4, 6]*/
 
 
-
-
-
 /** Q) Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
  If no arguments are given, ball objects should instantiate with a "ball type" of "regular."
  ball1 = new Ball();
