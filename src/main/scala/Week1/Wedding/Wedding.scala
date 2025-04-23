@@ -1,4 +1,5 @@
-import java.util.Date
+//import WeddingPlan.photographySlots.{AtChurch, AtReception, BrideFamily, BrideGettingReady, CakeCutting, ConfettiThrow, GroomFamily, Speeches}
+//import java.util.Date
 
 /** Wedding planning Project 👰🏽‍♀️⛪️🧁
  * consolidates lessons * */
@@ -50,6 +51,7 @@ object WeddingPlan extends App { //Wk 2
     val churchCapacity = 0
   }
 
+  //Can I add a class here?
   val allThemes = List(GatsbyTheme, CountrysideTheme, BeachTheme)
 
   /** List of venues with church onsite */
@@ -58,8 +60,10 @@ object WeddingPlan extends App { //Wk 2
   }
 
   //Filter a list of venues with church onsite
-  println("Venues with church:")// Gatsby- Quintessentially English Countryside chic
+  println("Venues with church:") // Gatsby- Quintessentially English Countryside chic
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
+
+  // Add a helper method here to get colours accents or similar
 
 
   val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
@@ -80,18 +84,49 @@ object WeddingPlan extends App { //Wk 2
   )
 
   val filterForTableOxfordStreet: Map[Int, String] = tableNames.filter(num => num._1 == 1)
-println(filterForTableOxfordStreet) //HashMap(1 -> Oxford Street)
+  println(filterForTableOxfordStreet) //HashMap(1 -> Oxford Street)
 
   //We have more guests! add another table number 11 called "Angel" with a def
   //def addTable( )
+  //.copy + 1 ??
 
 
   //Write a for comprehension get ideas - Wk 1
   //for yield for comprehension idea maybe what flowers each bridesmaid will have ?
 
-//write a chat with me on a separate page? it can be a q& A on gift registry
 
-//create an  object daysOfTheWeek { //grouping ??
+
+  //write a chat with me on a separate page? it can be a q& A on gift registry
+
+
+
+
+
+  //Enum Wk 3
+  object PhotographySlots extends Enumeration {
+    val BrideGettingReady = Value(0)
+    val BrideFamily = Value(1)
+    val GroomFamily = Value(2)
+    val AtChurch = Value(3)
+    val ConfettiThrow = Value(4)
+    val AtReception = Value(5)
+    val Speeches = Value(6)
+    val CakeCutting = Value(7)
+  }
+
+  def photographyTime(slot: PhotographySlots.Value): Int = slot match {
+    case PhotographySlots.BrideGettingReady => 90
+    case PhotographySlots.BrideFamily => 30
+    case PhotographySlots.GroomFamily => 30
+    case PhotographySlots.AtChurch => 40
+    case PhotographySlots.ConfettiThrow => 15
+    case PhotographySlots.AtReception => 45
+    case PhotographySlots.Speeches => 90
+    case PhotographySlots.CakeCutting => 15
+  }
+
+
+
 
 
   //Wedding case classes
@@ -117,7 +152,7 @@ println(filterForTableOxfordStreet) //HashMap(1 -> Oxford Street)
   println(aboutBride)
   //Create some guests
   val bob = Guest(person = Person("Bob Turnbull", "bob@btinternet.com", Some("07790116679")), plusOne = Some(alice), dietaryRequirements = List())
-  val suzie = Guest(person = Person("Suzie Bart", "sb2340@yahoo.com", Some("079901161123")), plusOne = Some(tommy), dietaryRequirements = List ("Vegan"))
+  val suzie = Guest(person = Person("Suzie Bart", "sb2340@yahoo.com", Some("079901161123")), plusOne = Some(tommy), dietaryRequirements = List("Vegan"))
 
   //Create some plus One guests - we don't always need guest phone numbers.
 
@@ -125,9 +160,12 @@ println(filterForTableOxfordStreet) //HashMap(1 -> Oxford Street)
 
   val tommy = Guest(person = Person("Tommy Brown", "tommybrown@yahoo.com"), dietaryRequirements = List("None"))
 
-println(bob)
-println(tommy)
-println(suzie)
+  println(bob)
+  println(tommy)
+  println(suzie)
+
+  //can I get a list of all the guests??
+  //use local date for wedding date - maybe a countdown??
 
 
   /** Welcome visitors from Wales, England and Spain to the reception in language */
@@ -166,27 +204,54 @@ println(suzie)
 
 
 //Pattern match on what drinks to serve
+
 //Something about assigning people to a table and match to a table
+
 //Keyset one from udemy course?
 
 //something about adding tax to how much things cost eg flowers
 
-//Look at wk 3 Thursday
+//Look at wk 3 Thursday options/Pmatch /chocbar/ pizza
+//something about the hog roast may come xyz or not ??
 
 //Ennums wk 3 Thursday
 
 //Either wk 3 Friday
 
-//Wk 4 recusrion
+//Wk 4 recursion
 
 //Wk 4 Hof
 //Wk 4 futures
 //Extra - variance swan exercise
 //Budget cost and tax  for budget of wedding
 
+//flatMap
+//flatten
+//import javalocal time to give the date of something look at horoscope one!
+
+//def total budget
+
+//def confirmedGuests attenidng
 
 
+//total budget spent so far? remaining budget ??
 
+//Total invited and how many attending ??
+
+//Update attending list of guests have confimred
+
+//case none =>
+
+//add a trait maybe vendor trait extends person ?? then a case class wedding Vendor
+//photographer, florist, etc
+
+//create the venue of choice
+
+//create
+
+//wedding dress
+//cake choice with fillings
+//
 
 
 

@@ -14,7 +14,7 @@ object TicketPrices {
 
   /**b using flatMap **/
   //uses the flatMap method to extract the firstClassTicketPrice from the TicketPrice instance if it exists:
-  def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] =
+  def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] = //what is this line why option ticket price option int??
     ticketPrice.flatMap { ticketPrice => //checks if ticketPrice is defined (i.e., not None). If it is, it looks at the firstClassTicketPrice of that TicketPrice and returns it wrapped in an Option. If firstClassTicketPrice is None, that will be the result.
       ticketPrice.firstClassTicketPrice
     }

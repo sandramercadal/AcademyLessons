@@ -19,7 +19,7 @@ object ChocolateBar extends App {
   // called "Filling" that checks if the chocolate has a filling. If it does, it tells you what it is. If it doesn’t, it just says "just chocolate".
 //If there isn't one (when it is None), it returns the string "just chocolate".
 
-  //2 OBJECTS HERE (check against the way we build pizza or tran ticket one)
+  //2 OBJECTS HERE (check against the way we build pizza or train ticket one)
   object Snickers extends ChocolateBar(Some("nuts")) //Option(String)
 
   object DairyMilk extends ChocolateBar(None) //Option only no string
