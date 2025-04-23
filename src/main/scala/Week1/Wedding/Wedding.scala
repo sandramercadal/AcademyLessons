@@ -52,16 +52,34 @@ object WeddingPlan extends App {
     println("Venues with church:")
     venuesWithChurch.foreach(theme => println(s"- ${theme.name}")) //Venues with church - Gatsby- Quintessentially English Countryside chic
 
+  /** Venue hire */
+//Hire the venue for just the day or for the extended weekend (3 nights)
 
+  def cost(days: Int): Int = {
+    val dailyVenueHire = 3500
+    val initialCost = dailyVenueHire * days
 
-
-
-
+    if (days >= 3) {
+      initialCost - 250
+    } else if (days >= 1) {
+      initialCost - 100
+    }
+    else
+      initialCost
   }
 
+  println(cost(3)) //Hire it for 3 days
 
 
 
+
+
+}
+
+
+
+//Pattern match on what drinks to serve
+//Greet guest sin spanish welsh or eng
 
 
 

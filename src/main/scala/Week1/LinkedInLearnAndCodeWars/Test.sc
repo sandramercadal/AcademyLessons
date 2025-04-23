@@ -36,3 +36,17 @@
 //}
 //println(peopleWithAgeDrink(20))
 
+def cost(days: Int): Int = {
+  val dailyCarRental = 40
+  val initialCost = dailyCarRental * days
+
+  if (days >= 7) {
+    initialCost - 50
+  } else if (days >= 3) {
+    initialCost - 20
+  }
+  else
+    initialCost
+}
+
+println(cost(7))
