@@ -63,26 +63,50 @@ object WeddingPlan extends App {
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}")) //Venues with church - Gatsby- Quintessentially English Countryside chic
 
 
-  //Reception details
 
-  case class Venue(name: String, address: String, capacity: Int, costPerDay: Double)
+  //Wedding case classes and other ones
+  val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
+
+  val bridesmaids: Seq[String] = Seq("Sarah", "Lisa", "Victoria") //Wk 1
+
+  val tableNames: Map[Int, String] = Map(
+    1 -> "Oxford Street",
+    2 -> "Victoria",
+    3 -> "Clapham Common",
+    4 -> "Baker Street",
+    5 -> "Brixton",
+    6 -> "Westminster",
+    7 -> "Stockwell",
+    8 -> "London Bridge",
+    9 -> "Vauxhall",
+    10 -> "Westminster"
+  )
+
+  val filterForTableOxfordStreet: Map[Int, String] = tableNames.filter(num => num._1 == 1)
+println(filterForTableOxfordStreet) //
+
+  //We have more guests! add another table called "Angel" with a function
+  def addTable( )
+
+
+
+  case class Wedding(bride: Person, groom: Person, reception: Reception, guests: List[Guest])
+
+  case class Venue(name: String, address: String, capacity: Int, costPerDay: Double, churchOnSite: Boolean)
 
   case class Reception(venue: Venue, mealOption: List[String])
-
-
-
-
-  val bride: Person = Person("May Green", "May@me.com")
-  val groom: Person = Person("Tom Brown", "Tom@me.co.uk")
-
-  val aboutBride = s"The bride's name is ${bride.name} and her email is ${bride.email}"
-println(aboutBride)
 
   //Person class of anyone involved
   case class Person(name: String, email: String, phoneNumber: Option[String] = None)
 
   case class Guest(person: Person, plusOne: Option[Guest] = None, dietaryRequirements: List[String] = List())
 
+  //Instance of a bride and groom
+  val bride: Person = Person("May Green", "May@me.com")
+  val groom: Person = Person("Tom Brown", "Tom@me.co.uk")
+
+  val aboutBride = s"The bride's name is ${bride.name} and her email is ${bride.email}" //Wk 2
+  println(aboutBride)
   //Create some guests
   val bob = Guest(person = Person("Bob Turnbull", "bob@btinternet.com", Some("07790116679")), plusOne = Some(alice), dietaryRequirements = List())
   val suzie = Guest(person = Person("Suzie Bart", "sb2340@yahoo.com", Some("079901161123")), plusOne = Some(tommy), dietaryRequirements = List ("Vegan"))
@@ -98,7 +122,7 @@ println(tommy)
 println(suzie)
 
 
-  /** Welcome visitors from Wales, England and Spain to the reception by name */
+  /** Welcome visitors from Wales, England and Spain to the reception in language */
   def welcome(language: String): String = language.toLowerCase
   match {
     case "english" => "Welcome to the wedding of S & J"
@@ -110,10 +134,10 @@ println(suzie)
   println(welcome("welsh")) //Croeso
 
 
-  /** Venue hire rates (discount applies to  hiring it for longer) */
+  /** Venue hire rates (discount applies to hiring it for longer) */
   //Hire the venue for 1 day or for the extended weekend with a discount (3 nights)
 
-  def cost(days: Int): Int = {
+  def cost(days: Int): Int = { //Wk 2
     val dailyVenueHire = 3500
     val initialCost = dailyVenueHire * days
 
