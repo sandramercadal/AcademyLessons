@@ -102,7 +102,7 @@ object WeddingPlan extends App { //Wk 2
 
 
 
-  //Enum Wk 3
+  //Wk 3
   object PhotographySlots extends Enumeration {
     val BrideGettingReady = Value(0)
     val BrideFamily = Value(1)
@@ -115,7 +115,7 @@ object WeddingPlan extends App { //Wk 2
   }
 
   def photographyTime(slot: PhotographySlots.Value): Int = slot match {
-    case PhotographySlots.BrideGettingReady => 90
+    case PhotographySlots.BrideGettingReady => 90 //minutes
     case PhotographySlots.BrideFamily => 30
     case PhotographySlots.GroomFamily => 30
     case PhotographySlots.AtChurch => 40
@@ -125,6 +125,8 @@ object WeddingPlan extends App { //Wk 2
     case PhotographySlots.CakeCutting => 15
   }
 
+  println(photographyTime(PhotographySlots.AtChurch)) //40
+  println(s"Allocated time at Church is ${photographyTime(PhotographySlots.AtChurch)} minutes.") //Allocated time at Church is 40 minutes.
 
 
 
@@ -214,7 +216,6 @@ object WeddingPlan extends App { //Wk 2
 //Look at wk 3 Thursday options/Pmatch /chocbar/ pizza
 //something about the hog roast may come xyz or not ??
 
-//Ennums wk 3 Thursday
 
 //Either wk 3 Friday
 
