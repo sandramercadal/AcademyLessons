@@ -1,3 +1,5 @@
+import java.util.Date
+
 /** Wedding planning Project 👰🏽‍♀️⛪️🧁
  * consolidates lessons * */
 
@@ -69,21 +71,31 @@ object WeddingPlan extends App {
 
 
 
+
+  val bride: Person = Person("May Green", "May@me.com")
+  val groom: Person = Person("Tom Brown", "Tom@me.co.uk")
+
+  val aboutBride = s"The bride's name is ${bride.name} and her email is ${bride.email}"
+println(aboutBride)
+
   //Person class of anyone involved
   case class Person(name: String, email: String, phoneNumber: Option[String] = None)
 
   case class Guest(person: Person, plusOne: Option[Guest] = None, dietaryRequirements: List[String] = List())
 
-  val bride: Person = Person("May Green", "May@me.com")
-  val groom: Person = Person("Tom Brown", "Tom@me.co.uk")
-  //S interpolation printing something here
-
   //Create some guests
-  val bob = Guest(person = Person("Bob Turnbull", "bob@btinternet.com", Some("07790116679")), dietaryRequirements = List ("Vegan"))
+  val bob = Guest(person = Person("Bob Turnbull", "bob@btinternet.com", Some("07790116679")), plusOne = Some(alice), dietaryRequirements = List())
+  val suzie = Guest(person = Person("Suzie Bart", "sb2340@yahoo.com", Some("079901161123")), plusOne = Some(tommy), dietaryRequirements = List ("Vegan"))
 
+  //Create some plus One guests - we don't always need guest phone numbers.
 
+  val alice = Guest(person = Person("Alice Beswick", "alice@example.com"), dietaryRequirements = List("Veg"))
 
+  val tommy = Guest(person = Person("Tommy Brown", "tommybrown@yahoo.com"), dietaryRequirements = List("None"))
 
+println(bob)
+println(tommy)
+println(suzie)
 
 
   /** Welcome visitors from Wales, England and Spain to the reception by name */
