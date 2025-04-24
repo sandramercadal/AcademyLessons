@@ -1,5 +1,5 @@
-//import WeddingPlan.photographySlots.{AtChurch, AtReception, BrideFamily, BrideGettingReady, CakeCutting, ConfettiThrow, GroomFamily, Speeches}
-//import java.util.Date
+
+
 import scala.collection.mutable.Map
 /** Wedding planning Project 👰🏽‍♀️⛪️🧁
  * consolidates lessons * */
@@ -59,11 +59,11 @@ object WeddingPlan extends App { //Wk 2
     allThemes.filter(_.churchOnsite)
   }
 
-  //Filter a list of venues with church onsite
   println("Venues with church:") // Gatsby- Quintessentially English Countryside chic
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
 
   // Add a helper method here to get colours accents or similar
+
 
 
   val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
@@ -91,12 +91,12 @@ object WeddingPlan extends App { //Wk 2
   println(tableNames) //shows 11 table names now
 
 
-  //For comprehension - Wk 1
+
   val cakeFlavour = List("Profitterol Tower", "2 tier", "traditional 3 tier")
   val cakeTopper = List("Edible flowers", "Acrylic Butterflies", "Rice paper flowers")
   val cakeDecoration = List("Sprinkles", "Fresh fruit", "chocolate balls", "chocolate and cream")
 
-  val cakePlanning = for {
+  val cakePlanning = for { //for comp Wk 1
     style <- cakeFlavour
     topOfTheCake <- cakeTopper
     decoration <- cakeDecoration
@@ -105,10 +105,6 @@ object WeddingPlan extends App { //Wk 2
 println(cakePlanning(3)) //a combination
 println("Here are your top 3 wedding cakes ideas:")
   cakePlanning.take(3).foreach(println)
-
-
-
-
 
 
   //Wk 3
@@ -182,8 +178,8 @@ println("Here are your top 3 wedding cakes ideas:")
   /** Welcome visitors from Wales, England and Spain to the reception in language */
   def welcome(language: String): String = language.toLowerCase
   match {
-    case "english" => "Welcome to the wedding of S & J"
-    case "spanish" => "Bienvenido a la boda de S & J"
+    case "english" => "Welcome to the wedding of M & T"
+    case "spanish" => "Bienvenido a la boda de M & T"
     case "welsh" => "Croeso"
     case _ => "Welcome" // Default to English if not found
   }
@@ -213,28 +209,26 @@ println("Here are your top 3 wedding cakes ideas:")
 }
 
 
+//Either wk 3 Friday
+//Wk 4 recursion
+//Wk 4 Hof
+//Wk 4 futures
+//case none =>
+
+//something about adding tax to how much things cost eg flowers
 //write a chat with me on a separate page? it can be a q& A on gift registry
 
 // what flowers each bridesmaid will have ?
-
-//Pattern match on what drinks to serve
-
-//Something about assigning people to a table and match to a table
-
+//Pattern match on what drinks to serve or n//Something about assigning people to a table and match to a table
 //Keyset one from udemy course?
 
-//something about adding tax to how much things cost eg flowers
+
 
 //Look at wk 3 Thursday options/Pmatch /chocbar/ pizza
 //something about the hog roast may come xyz or not ??
 
 
-//Either wk 3 Friday
 
-//Wk 4 recursion
-
-//Wk 4 Hof
-//Wk 4 futures
 //Extra - variance swan exercise
 //Budget cost and tax  for budget of wedding
 
@@ -253,7 +247,7 @@ println("Here are your top 3 wedding cakes ideas:")
 
 //Update attending list of guests have confimred
 
-//case none =>
+
 
 //add a trait maybe vendor trait extends person ?? then a case class wedding Vendor
 //photographer, florist, etc
@@ -261,8 +255,10 @@ println("Here are your top 3 wedding cakes ideas:")
 //create the venue of choice
 
 //wedding dress
-//cake choice with fillings
-//ideas from claud
+//honeymoon destination
+//bridemaids dresses
+
+
 
 
 
