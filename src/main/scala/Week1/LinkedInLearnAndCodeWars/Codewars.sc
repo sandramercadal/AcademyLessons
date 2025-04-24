@@ -473,3 +473,59 @@ def stringSum2(a: String, b: String): String = {
   (num1 + num2).toString
 }
 println(stringSum2("1", "2")) //3
+
+/** Q - When provided with a number between 0-9, return it in words. Note that the input is guaranteed to be within the range of 0-9.
+ Input: 1  is Output: "One". */
+//Patten Matching
+def switchItUp(number: Int): String = {
+  number match {
+    case 0 => "Zero"
+    case 1 => "One"
+    case 2 => "Two"
+    case 3 => "Three"
+    case 4 => "Four"
+    case 5 => "Five"
+    case 6 => "Six"
+    case 7 => "Seven"
+    case 8 => "Eight"
+    case 9 => "Nine"
+  }
+}
+println(switchItUp(7))
+//OR
+def switchItUp(number: Int): String = {
+  val numberList = Map(
+    0 -> "Zero",
+    1 -> "One",
+    2 -> "Two",
+    3 -> "Three",
+    4 -> "Four",
+    5 -> "Five",
+    6 -> "Six",
+    7 -> "Seven",
+    8 -> "Eight",
+    9 -> "Nine")
+  numberList(number)
+}
+
+println(switchItUp(5)) //Five
+
+
+
+
+/** Convert boolean values to strings 'Yes' or 'No'. **/
+
+//Uses Pattern Matching
+  def boolToWord(boolean: Boolean): String = boolean match {
+    case true => "Yes"
+    case false => "No"
+  }
+println(boolToWord(true))//Yes
+
+//or
+def boolToWord(boolean: Boolean): String =
+  if (boolean) "Yes" else "No"
+}
+//or
+def boolToWord(boolean: Boolean) = if (boolean) "Yes" else "No"
+}

@@ -1,6 +1,6 @@
 //import WeddingPlan.photographySlots.{AtChurch, AtReception, BrideFamily, BrideGettingReady, CakeCutting, ConfettiThrow, GroomFamily, Speeches}
 //import java.util.Date
-
+import scala.collection.mutable.Map
 /** Wedding planning Project 👰🏽‍♀️⛪️🧁
  * consolidates lessons * */
 
@@ -70,7 +70,7 @@ object WeddingPlan extends App { //Wk 2
 
   val bridesmaids: Seq[String] = Seq("Sarah", "Lisa", "Victoria") //Wk 1
 
-  val tableNames: Map[Int, String] = Map( //Wk 1
+  val tableNames: Map[Int, String] = Map( //Wk 1 + mutable Map without making tableNames a var
     1 -> "Oxford Street",
     2 -> "Victoria",
     3 -> "Clapham Common",
@@ -87,16 +87,25 @@ object WeddingPlan extends App { //Wk 2
   println(filterForTableOxfordStreet) //HashMap(1 -> Oxford Street)
 
   //We have more guests! add another table number 11 called "Angel" with a def
-  //def addTable( )
-  //.copy + 1 ??
+  tableNames += (11 -> "Angel")
+  println(tableNames) //shows 11 table names now
 
 
-  //Write a for comprehension get ideas - Wk 1
-  //for yield for comprehension idea maybe what flowers each bridesmaid will have ?
+  //For comprehension - Wk 1
+  val cakeFlavour = List("Profitterol Tower", "2 tier", "traditional 3 tier")
+  val cakeTopper = List("Edible flowers", "Acrylic Butterflies", "Rice paper flowers")
+  val cakeDecoration = List("Sprinkles", "Fresh fruit", "chocolate balls", "chocolate and cream")
 
+  val cakePlanning = for {
+    style <- cakeFlavour
+    topOfTheCake <- cakeTopper
+    decoration <- cakeDecoration
+  } yield s"${style} with ${topOfTheCake} covered in ${decoration} for the wedding!"
 
+println(cakePlanning(3)) //a combination
+println("Here are your top 3 wedding cakes ideas:")
+  cakePlanning.take(3).foreach(println)
 
-  //write a chat with me on a separate page? it can be a q& A on gift registry
 
 
 
@@ -131,7 +140,7 @@ object WeddingPlan extends App { //Wk 2
 
 
 
-  //Wedding case classes
+  //Wedding case classes Wk 2
   case class Wedding(bride: Person, groom: Person, reception: Reception, guests: List[Guest])
 
   case class Venue(name: String, address: String, capacity: Int, costPerDay: Double, churchOnSite: Boolean)
@@ -204,6 +213,9 @@ object WeddingPlan extends App { //Wk 2
 }
 
 
+//write a chat with me on a separate page? it can be a q& A on gift registry
+
+// what flowers each bridesmaid will have ?
 
 //Pattern match on what drinks to serve
 
@@ -248,11 +260,9 @@ object WeddingPlan extends App { //Wk 2
 
 //create the venue of choice
 
-//create
-
 //wedding dress
 //cake choice with fillings
-//
+//ideas from claud
 
 
 
