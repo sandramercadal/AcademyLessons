@@ -1,6 +1,7 @@
 
 
 import scala.collection.mutable.Map
+
 /** Wedding planning Project 👰🏽‍♀️⛪️🧁
  * consolidates lessons * */
 
@@ -62,8 +63,9 @@ object WeddingPlan extends App { //Wk 2
   println("Venues with church:") // Gatsby- Quintessentially English Countryside chic
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
 
-  // Add a helper method here to get colours accents or similar
 
+
+  //Wk 3 Try Either
 
 
   val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
@@ -91,7 +93,6 @@ object WeddingPlan extends App { //Wk 2
   println(tableNames) //shows 11 table names now
 
 
-
   val cakeFlavour = List("Profitterol Tower", "2 tier", "traditional 3 tier")
   val cakeTopper = List("Edible flowers", "Acrylic Butterflies", "Rice paper flowers")
   val cakeDecoration = List("Sprinkles", "Fresh fruit", "chocolate balls", "chocolate and cream")
@@ -102,8 +103,8 @@ object WeddingPlan extends App { //Wk 2
     decoration <- cakeDecoration
   } yield s"${style} with ${topOfTheCake} covered in ${decoration} for the wedding!"
 
-println(cakePlanning(3)) //a combination
-println("Here are your top 3 wedding cakes ideas:")
+  println(cakePlanning(3)) //a combination
+  println("Here are your top 3 wedding cakes ideas:")
   cakePlanning.take(3).foreach(println)
 
 
@@ -132,8 +133,6 @@ println("Here are your top 3 wedding cakes ideas:")
 
   println(photographyTime(PhotographySlots.AtChurch)) //40
   println(s"Allocated time at Church is ${photographyTime(PhotographySlots.AtChurch)} minutes.") //Allocated time at Church is 40 minutes.
-
-
 
 
   //Wedding case classes Wk 2
@@ -197,7 +196,7 @@ println("Here are your top 3 wedding cakes ideas:")
     if (days >= 3) {
       initialCost - 250
     } else if (days >= 1) {
-      initialCost - 100
+      initialCost - 0
     }
     else
       initialCost
@@ -206,10 +205,35 @@ println("Here are your top 3 wedding cakes ideas:")
   println(cost(3)) //Hire it for 3 days this is not calculating properly
 
 
+  //Wk 3 Eithers
+
+  def bookVenue(venue: String): Either[String, String] = {
+    try {
+      if (venue == "The Plaza NYC") {
+        throw new Exception("Venue is not available to be be booked for wedding")
+      } else {
+        Right(s"$venue has been booked for the wedding!")
+      }
+    } catch {
+      case e: Exception =>
+        Left(e.getMessage)
+    }
+  }
+
+  val venue = "The Plaza NYC"
+
+  println(bookVenue(venue).fold(
+    error => s"Error: $error",
+    success => success
+  ))
+
+  println(bookVenue("The Plaza NYC"))
+
+
 }
 
 
-//Either wk 3 Friday
+// Add a helper method here to get colours scheme or similar?? and expand??
 //Wk 4 recursion
 //Wk 4 Hof
 //Wk 4 futures
@@ -218,15 +242,14 @@ println("Here are your top 3 wedding cakes ideas:")
 //something about adding tax to how much things cost eg flowers
 //write a chat with me on a separate page? it can be a q& A on gift registry
 
-// what flowers each bridesmaid will have ?
+
 //Pattern match on what drinks to serve or n//Something about assigning people to a table and match to a table
 //Keyset one from udemy course?
 
-
+//Add some actual venues
 
 //Look at wk 3 Thursday options/Pmatch /chocbar/ pizza
 //something about the hog roast may come xyz or not ??
-
 
 
 //Extra - variance swan exercise
@@ -248,15 +271,17 @@ println("Here are your top 3 wedding cakes ideas:")
 //Update attending list of guests have confimred
 
 
-
 //add a trait maybe vendor trait extends person ?? then a case class wedding Vendor
 //photographer, florist, etc
 
 //create the venue of choice
 
+//Ideas:
+
 //wedding dress
 //honeymoon destination
 //bridemaids dresses
+// what flowers each bridesmaid will have ?
 
 
 
