@@ -202,22 +202,21 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
   println(welcome("welsh")) //Croeso
 
 
-  /** Venue hire rates (discount applies to hiring it for longer) */
-  //Hire the venue for 1 day or for the extended weekend with a discount (3 nights)
-
+  /** Venue hire rates (discount applies to hiring it for 3 days) */
   def cost(days: Int): Int = { //Wk 1 & 2
     val dailyVenueHire = 3500
     val initialCost = dailyVenueHire * days
 
     if (days >= 3) {
-      initialCost - 250
+      initialCost - 450
     } else if (days >= 1) {
       initialCost - 0
     }
     else
       initialCost
   }
-  println(cost(3)) //Hire it for 3 days this is not calculating properly
+  println(cost(3))
+  println(cost(2))
 
 
   //Wk 3 Eithers
@@ -241,7 +240,6 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
     error => s"Error: $error",
     success => success
   ))
-
   println(bookVenue("The Plaza NYC"))
 
 
@@ -295,7 +293,6 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 //create the venue of choice
 
 //Ideas:
-
 //wedding dress
 //honeymoon destination
 //bridemaids dresses
