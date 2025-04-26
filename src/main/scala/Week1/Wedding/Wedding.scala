@@ -2,9 +2,8 @@
 
 import scala.collection.mutable.Map
 
-/** Wedding planning Project 👰🏽‍♀️⛪️🧁
+/** Wedding planning Project 👰🏽‍ ⛪️ 🧁
  * consolidates lessons * */
-
 
 object WeddingPlan extends App { //Wk 2
 
@@ -52,20 +51,14 @@ object WeddingPlan extends App { //Wk 2
     val churchCapacity = 0
   }
 
-  //Can I add a class here?
   val allThemes = List(GatsbyTheme, CountrysideTheme, BeachTheme)
 
-  /** List of venues with church onsite */
   def venuesWithChurch: List[WeddingTheme] = {
     allThemes.filter(_.churchOnsite)
   }
 
-  println("Venues with church:") // Gatsby- Quintessentially English Countryside chic
+  println("Venues with church:") // List of venues with church //Gatsby- Quintessentially English Countryside chic
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
-
-
-
-
 
 
   val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
@@ -84,13 +77,12 @@ object WeddingPlan extends App { //Wk 2
     9 -> "Vauxhall",
     10 -> "Westminster"
   )
-
   val filterForTableOxfordStreet: Map[Int, String] = tableNames.filter(num => num._1 == 1)
   println(filterForTableOxfordStreet) //HashMap(1 -> Oxford Street)
 
-  //We have more guests! add another table number 11 called "Angel" with a def
+  /**We have more guests! add another table number 11 called "Angel" **/
   tableNames += (11 -> "Angel")
-  println(tableNames) //shows 11 table names now
+  println(tableNames) //shows 11 table names now not 10
 
 
   val cakeFlavour = List("Profitterol Tower", "2 tier", "traditional 3 tier")
@@ -135,19 +127,17 @@ object WeddingPlan extends App { //Wk 2
   println(s"Allocated time at Church is ${photographyTime(PhotographySlots.AtChurch)} minutes.") //Allocated time at Church is 40 minutes.
 
 
-  //Wedding case classes Wk 2
+  //Wk 2
   case class Wedding(bride: Person, groom: Person, reception: Reception, guests: List[Guest])
 
   case class Venue(name: String, address: String, capacity: Int, costPerDay: Double, churchOnSite: Boolean)
 
   case class Reception(venue: Venue, mealOption: List[String])
 
-  //Person class of anyone involved
+  //Person class of anyone involved in wedding
   case class Person(name: String, email: String, phoneNumber: Option[String] = None) //Wk 3
 
   case class Guest(person: Person, plusOne: Option[Guest] = None, dietaryRequirements: List[String] = List())
-
-  //add a regular class??
 
 
   //Instance of a bride and groom
@@ -156,24 +146,21 @@ object WeddingPlan extends App { //Wk 2
 
   val aboutBride = s"The bride's name is ${bride.name} and her email is ${bride.email}" //Wk 2
   println(aboutBride)
+
   //Create some guests
   val bob = Guest(person = Person("Bob Turnbull", "bob@btinternet.com", Some("07790116679")), plusOne = Some(alice), dietaryRequirements = List())
   val suzie = Guest(person = Person("Suzie Bart", "sb2340@yahoo.com", Some("079901161123")), plusOne = Some(tommy), dietaryRequirements = List("Vegan"))
 
   //Create some plus One guests - we don't always need guest phone numbers.
-
   val alice = Guest(person = Person("Alice Beswick", "alice@example.com"), dietaryRequirements = List("Veg"))
 
   val tommy = Guest(person = Person("Tommy Brown", "tommybrown@yahoo.com"), dietaryRequirements = List("None"))
-
   println(bob)
   println(tommy)
   println(suzie)
 
-  //can I get a list of all the guests??
-  //use local date for wedding date - maybe a countdown??
 
-class WeddingPlanner(
+class WeddingPlanner( //Wk2
 val name: String,
 val company: String,
 val contactNumber: String,
@@ -185,7 +172,7 @@ println(s"The wedding planners name is ${weddingPlanner.name}.")
 println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 
 
- /** TODO FIX WEDDING DATE **/
+ /** TODO FIX WEDDING DATE & vanue of choice**/
 //val weddingDate = Wedding(("Mary", "Tom"), "2025-11-11", "Abbots Hall")
 //  println(s"The wedding is on ${weddingPlanner.date}")
 
@@ -199,7 +186,7 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 
 
 
-  /** Welcome visitors from Wales, England and Spain to the reception in language */
+  /** Welcome visitors from Wales, England and Spain to the reception in their language */
   def welcome(language: String): String = language.toLowerCase
   match {
     case "english" => "Welcome to the wedding of M & T"
@@ -207,7 +194,6 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
     case "welsh" => "Croeso"
     case _ => "Welcome" // Default to English if not found
   }
-
   println(welcome("welsh")) //Croeso
 
 
@@ -258,9 +244,10 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 
 
 // Add a helper method here to get colours scheme or similar?? and expand??
-//Wk 4 recursion -
+//Wk 4 recursion - tiers on wedding dress
 //Wk 4 Hof
 //Wk 4 futures  - wait welcome brude the groom
+
 //case none =>
 //import javalocal time to give the date of something look at horoscope one!
 
@@ -273,7 +260,6 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 //Pattern match on what drinks to serve or n//Something about assigning people to a table and match to a table
 //Keyset one from udemy course?
 
-//Add some actual venues
 
 //Look at wk 3 Thursday options/Pmatch /chocbar/ pizza
 //something about the hog roast may come xyz or not ??
@@ -284,17 +270,13 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 
 //flatMap
 //flatten
-//
 
 //def total budget
-
-//def confirmedGuests attenidng
-
-
 //total budget spent so far? remaining budget ??
 
+//def confirmedGuests attenidng
 //Total invited and how many attending ??
-
+//Total invited and how many attending ??
 //Update attending list of guests have confimred
 
 
@@ -310,7 +292,8 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 //bridemaids dresses
 // what flowers each bridesmaid will have ?
 
-
+//can I get a list of all the guests??
+//use local date for wedding date - maybe a countdown??
 
 
 
