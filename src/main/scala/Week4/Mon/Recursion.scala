@@ -151,17 +151,17 @@ object Recursion extends App {
 
   //}
 
-//  def printAnimals(animals: List[String]): Unit = {
-//    if (animals.isEmpty) {
-//      println("No more animals to print.")
-//    } else {
-//      println(animals.head) // Print the first animal
-//      printAnimals(animals.tail) // Call the function recursively with the rest of the list
-//    }
-//  }
-//
-//  val animalList = List("Dog", "Cat", "Elephant", "Giraffe")
-//  printAnimals(animalList)
+  def printAnimals(animals: List[String]): Unit = {
+    if (animals.isEmpty) {
+      println("No more animals to print.")
+    } else {
+      println(animals.head) // Print the first animal
+      printAnimals(animals.tail) // Call the function recursively with the rest of the list
+    }
+  }
+
+  val animalList = List("Dog", "Cat", "Elephant", "Giraffe")
+  printAnimals(animalList)
 //  In this example:
 //
 //    The printAnimals function checks if the list animals is empty.

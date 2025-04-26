@@ -243,6 +243,25 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
   println(bookVenue("The Plaza NYC"))
 
 
+
+  def tryWeddingDresses(dresses: List[String]): Unit = {
+    def TryADress(remainingDresses: List[String]): Unit = {
+      if (remainingDresses.isEmpty) {
+        println("There's no more dresses to try on! End of the fitting appointment.") //base case
+      } else {
+        println(s"Try on the dress: ${remainingDresses.head}") // Try on the first dress
+        TryADress(remainingDresses.tail) // Call the function recursively with the rest of the dresses
+      }
+    }
+
+    TryADress(dresses)
+  }
+
+  val dressList = List("Lace fitted dress with cape", "Long-sleeved with veil", "Sweetheart neckline with lace bolero", "Mermaid with floor length veil")
+  tryWeddingDresses(dressList)
+
+
+
 }
 
 //set a budget from 6000 for each thing. Flowers is 750. Can afford?? yes / no
