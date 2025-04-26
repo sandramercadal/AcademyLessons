@@ -54,8 +54,9 @@
 
 
 
-def boolToWord(boolean: Boolean): String = boolean match {
-  case true => "Yes"
-  case false => "No"
-}
-println(boolToWord(true)) //Yes
+//def boolToWord(boolean: Boolean): String = boolean match {
+//  case true => "Yes"
+//  case false => "No"
+//}
+//println(boolToWord(true)) //Yes
+

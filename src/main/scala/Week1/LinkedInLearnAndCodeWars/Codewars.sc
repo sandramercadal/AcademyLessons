@@ -529,3 +529,26 @@ def boolToWord(boolean: Boolean): String =
 //or
 def boolToWord(boolean: Boolean) = if (boolean) "Yes" else "No"
 }
+
+/** Q - Bob needs a fast way to calculate the volume of a rectangular cuboid with three values: the length, width and height of the cuboid.
+ Write a function to help Bob with this calculation. **/
+def cuboidVolume(length: Int, width: Int, height: Int): Int = length * width * height
+println(cuboidVolume(6,7,8))//336 6x7x8
+
+/** Q - Write a function that accepts a non-negative integer n and a string s as parameters, and returns a string of s repeated exactly n times. E.g.
+ 6, "I"     -> "IIIIII"
+ 5, "Hello" -> "HelloHelloHelloHelloHello" **/
+
+def repeatStr(times: Int, str: String): String = str * times
+println(repeatStr(6, "I")) //IIIIII
+
+
+/**Q Count the monkeys so if 10 = and array of --> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] **/
+def monkeyCount (n: Int): Array[Int] = {
+  (1 to n).toArray
+}
+val count = monkeyCount(5)
+println(count.mkString(", "))//1, 2, 3, 4, 5
+
+
+/** Q  Return the day e.g 1 returns "Sunday"  **/

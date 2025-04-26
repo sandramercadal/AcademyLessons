@@ -65,7 +65,7 @@ object WeddingPlan extends App { //Wk 2
 
 
 
-  //Wk 3 Try Either
+
 
 
   val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
@@ -173,6 +173,31 @@ object WeddingPlan extends App { //Wk 2
   //can I get a list of all the guests??
   //use local date for wedding date - maybe a countdown??
 
+class WeddingPlanner(
+val name: String,
+val company: String,
+val contactNumber: String,
+val chosenDesign: String,
+val weddingBudget: Double)
+
+ val weddingPlanner = new WeddingPlanner("Crimson Gretal", "JB & Co", "07778900900", "Tradional Elegance", 6000.0)
+println(s"The wedding planners name is ${weddingPlanner.name}.")
+println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
+
+
+ /** TODO FIX WEDDING DATE **/
+//val weddingDate = Wedding(("Mary", "Tom"), "2025-11-11", "Abbots Hall")
+//  println(s"The wedding is on ${weddingPlanner.date}")
+
+
+  ////Where do I specifythe budegt and planner s name etc?
+//val budget: Map[Wedding, Double] = Map ()
+
+
+
+
+
+
 
   /** Welcome visitors from Wales, England and Spain to the reception in language */
   def welcome(language: String): String = language.toLowerCase
@@ -201,7 +226,6 @@ object WeddingPlan extends App { //Wk 2
     else
       initialCost
   }
-
   println(cost(3)) //Hire it for 3 days this is not calculating properly
 
 
@@ -234,13 +258,16 @@ object WeddingPlan extends App { //Wk 2
 
 
 // Add a helper method here to get colours scheme or similar?? and expand??
-//Wk 4 recursion
+//Wk 4 recursion -
 //Wk 4 Hof
-//Wk 4 futures
+//Wk 4 futures  - wait welcome brude the groom
 //case none =>
+//import javalocal time to give the date of something look at horoscope one!
+
 
 //something about adding tax to how much things cost eg flowers
 //write a chat with me on a separate page? it can be a q& A on gift registry
+//contdown to the wedding date, built in method  simliamr thing for age
 
 
 //Pattern match on what drinks to serve or n//Something about assigning people to a table and match to a table
@@ -257,7 +284,7 @@ object WeddingPlan extends App { //Wk 2
 
 //flatMap
 //flatten
-//import javalocal time to give the date of something look at horoscope one!
+//
 
 //def total budget
 
