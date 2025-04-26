@@ -152,12 +152,17 @@ object WeddingPlan extends App { //Wk 2
   val suzie = Guest(person = Person("Suzie Bart", "sb2340@yahoo.com", Some("079901161123")), plusOne = Some(tommy), dietaryRequirements = List("Vegan"))
 
   //Create some plus One guests - we don't always need guest phone numbers.
-  val alice = Guest(person = Person("Alice Beswick", "alice@example.com"), dietaryRequirements = List("Veg"))
+  val alice = Guest(person = Person("Alice Beswick", "alice@example.com"), dietaryRequirements = List("Vegeterian"))
 
   val tommy = Guest(person = Person("Tommy Brown", "tommybrown@yahoo.com"), dietaryRequirements = List("None"))
   println(bob)
   println(tommy)
   println(suzie)
+
+  //Wk 4 TODO
+ // valVegeterianGuests = Guest.filter(guest => guest.dietaryRequirements.contains("Vegeterian"))
+//println("Vegeterian Guest names:")
+ //vegeterianGuests.foreacg(guest => println(guest.person.name)
 
 
 class WeddingPlanner( //Wk2
@@ -242,10 +247,13 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 
 }
 
+//set a budget from 6000 for each thing. Flowers is 750. Can afford?? yes / no
+
+//use getOrElse
 
 // Add a helper method here to get colours scheme or similar?? and expand??
 //Wk 4 recursion - tiers on wedding dress
-//Wk 4 Hof
+//Wk 4 Hof - write a tahnk you note
 //Wk 4 futures  - wait welcome brude the groom
 
 //case none =>
@@ -282,6 +290,7 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 
 //add a trait maybe vendor trait extends person ?? then a case class wedding Vendor
 //photographer, florist, etc
+//Tracking which budget items are over budget
 
 //create the venue of choice
 
@@ -291,6 +300,11 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 //honeymoon destination
 //bridemaids dresses
 // what flowers each bridesmaid will have ?
+//create invitations / send them
+//where people will sit
+//check who has RSVPS
+//Thankyou notes
+
 
 //can I get a list of all the guests??
 //use local date for wedding date - maybe a countdown??
