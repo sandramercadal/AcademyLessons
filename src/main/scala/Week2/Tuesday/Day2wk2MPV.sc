@@ -27,7 +27,7 @@ class Animal(name: String, colour: String, pet: Boolean) //✅Correct Syntax for
 
 //val cat = Animal("cat", "black", true) //❌This won't run as it doesn't have 'new' and that's needed when it is a class to make a new object so cat won't be made. Remember classes need ‘new’ to give them the additional functionality.
 
-val dog = new Animal("dog", "white", true) //this will run as a regular class not case class as it has 'new'
+val dog = new Animal("dog", "white", true) //✅will run as a regular class not case class as it has 'new'
 println (dog)
 
 
@@ -62,7 +62,7 @@ chocolateMuffin == finalChocolateMuffin //❌//One has 2.50 the other 3.50
 
 //DO EXTENSION HERE - CASE CLASS EXTENSION
 //1. Construct a case class that takes in a minimum of 3 parameters, each of a different type,
-//and a case object.
+//and a case object. (case class has a companion object)
 case class Toy (name: String, color: String, needsBatteries: Boolean)
 
 case object ToyFactory //is a singleton object. The only instance of it in my program.

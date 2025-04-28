@@ -255,6 +255,55 @@ Future {
 ////To do CALL IT & expand on it
 //val futureResult = simpleFutureExample()
 //  println(Await.result(futureResult, 2.seconds))
+//def main(args: Array[String]): Unit = {
+//  val entranceFuture = Future {
+//    // Simulate waiting for the bride and groom to enter
+//    Thread.sleep(2000)
+//    "Bride and Groom have entered!"
+//  }
+//
+//  // Wait and print the entrance announcement
+//  println(Await.result(entranceFuture, 3.seconds))
+//}
+////}
+//object WeddingMenu {
+//  def main(args: Array[String]): Unit = {
+//    val menuFuture = Future {
+//      // Simulate some delay in checking the menu
+//      Thread.sleep(1000)
+//      List("Chicken", "Vegetarian", "Fish", "Vegetable Salad")
+//    }
+//
+//    // Wait for the menu to be checked and print it
+//    val menu = Await.result(menuFuture, 2.seconds)
+//    println(s"Wedding Menu: ${menu.mkString(", ")}")
+//  }
+//}
+//   a Future that simulates checking the wedding menu. After briefly sleeping to mimic a delay, the menu items are returned as a list. We then wait for the Future to complete and print the wedding menu.
+//object WeddingPlanner {
+  //  def main(args: Array[String]): Unit = {
+  //    val weddingDate = Future {
+  //      // Simulate calculating a wedding date
+  //      Thread.sleep(2000) // Simulate some delay
+  //      "2024-06-15"
+  //    }
+  //
+  //    val weddingVenue = Future {
+  //      // Simulate finding a wedding venue
+  //      Thread.sleep(1000) // Simulate some delay
+  //      "Beach Resort"
+  //    }
+  //
+  //    val weddingDetails = for {
+  //      date <- weddingDate
+  //      venue <- weddingVenue
+  //    } yield s"Wedding Date: $date, Venue: $venue"
+  //
+  //    // Wait for the result and print it
+  //    println(Await.result(weddingDetails, 5.seconds))
+  //  }
+  //}
+
 
 
 
