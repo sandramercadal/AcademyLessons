@@ -9,16 +9,18 @@ import java.time.{LocalDate, Duration}
 
 object WeddingPlan extends App { //Wk 2
 
-  /** Countdown ⏱️ */
+  val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
+
+  /** Countdown to the day⏱️ */
   val weddingDate = LocalDate.of(2025, 08, 11)
   val today = LocalDate.now()
   val daysUntilWedding = java.time.temporal.ChronoUnit.DAYS.between(today, weddingDate)
 
-  println(s" The ccuntdown is on! There's $daysUntilWedding days until the wedding of Mary & Tom! 🎉")
+  println(s" The countdown is on! There's $daysUntilWedding days until the wedding of Mary & Tom! 🎉")
 
 
 
-  //Plan wedding themes 🏞️
+  //Plan wedding themes
   sealed trait WeddingTheme {
     def name: String
 
@@ -66,12 +68,11 @@ object WeddingPlan extends App { //Wk 2
   def venuesWithChurch: List[WeddingTheme] = {
     allThemes.filter(_.churchOnsite)
   }
-
   println("Venues with church:") // List of venues with church //Gatsby- Quintessentially English Countryside chic
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
 
 
-  val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
+
 
   val bridesmaids: Seq[String] = Seq("Sarah", "Lisa", "Victoria") //Wk 1
 
