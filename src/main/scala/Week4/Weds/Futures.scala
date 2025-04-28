@@ -31,7 +31,7 @@ object Futures extends App {
   //start by wrapping it in a future with {
   //then I put it to sleep using thread (everything works on a thread)
   val futureHelloWorld: Future[String] = Future {
-    Thread.sleep(2000) //pausing the thread for 2 seconds pause for as long as it needs
+    Thread.sleep(5000) //pausing the thread for 2 seconds pause for as long as it needs
     "Hello Future World!"
   }
 

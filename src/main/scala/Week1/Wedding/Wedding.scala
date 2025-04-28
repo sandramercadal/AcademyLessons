@@ -1,9 +1,10 @@
 
+/** Wedding planning Project 👰🏽‍ ⛪️ 🧁 consolidates lessons * */
 
 import scala.collection.mutable.Map
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
 
-/** Wedding planning Project 👰🏽‍ ⛪️ 🧁
- * consolidates lessons * */
 
 object WeddingPlan extends App { //Wk 2
 
@@ -241,6 +242,19 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
     success => success
   ))
   println(bookVenue("The Plaza NYC"))
+
+
+  //Wk 4
+
+  def brideAndGroomEntrance(): Future[String] = {
+Future {
+  Thread.sleep(2000)
+  "Please all stand and arise your glasses to the bride and groom!"
+}
+  }
+////To do CALL IT & expand on it
+//val futureResult = simpleFutureExample()
+//  println(Await.result(futureResult, 2.seconds))
 
 
 
