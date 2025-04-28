@@ -564,3 +564,10 @@ def whatDay(num: Int): String = {
     case _ => "Wrong, please enter a number between 1 and 7"
   }
 }
+
+/**Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.**/
+//def greet(name: String): String =
+//  if name == "Johnny" then
+//    "Hello, my love!"
+//  else
+//    s"Hello, $name!"
