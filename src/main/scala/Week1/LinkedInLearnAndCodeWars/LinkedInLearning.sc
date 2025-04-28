@@ -1,5 +1,5 @@
-val favouriteDessert = "bronwie" //inferred val is of type String = bronwie
-val favouriteDessert2 : String = "bronwie" //val stated as a String = bronwie
+val favouriteDessert = "brownie" //inferred val is of type String = brownie
+val favouriteDessert2 : String = "brownie" //val stated as a String = brownie
 //favouriteDessert /2 // This is a string so cant divide by a string
 
 def sum (n1: Int, n2: Int): Int = n1 +n2

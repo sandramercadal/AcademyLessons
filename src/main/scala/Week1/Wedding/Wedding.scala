@@ -1,15 +1,24 @@
 
 /** Wedding planning Project 👰🏽‍ ⛪️ 🧁 consolidates lessons * */
 
+
 import scala.collection.mutable.Map
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
-
+import java.time.{LocalDate, Duration}
 
 object WeddingPlan extends App { //Wk 2
 
+  /** Countdown ⏱️ */
+  val weddingDate = LocalDate.of(2025, 08, 11)
+  val today = LocalDate.now()
+  val daysUntilWedding = java.time.temporal.ChronoUnit.DAYS.between(today, weddingDate)
 
-  //Planning some wedding themes
+  println(s" The ccuntdown is on! There's $daysUntilWedding days until the wedding of Mary & Tom! 🎉")
+
+
+
+  //Plan wedding themes 🏞️
   sealed trait WeddingTheme {
     def name: String
 
@@ -81,7 +90,7 @@ object WeddingPlan extends App { //Wk 2
   val filterForTableOxfordStreet: Map[Int, String] = tableNames.filter(num => num._1 == 1)
   println(filterForTableOxfordStreet) //HashMap(1 -> Oxford Street)
 
-  /**We have more guests! add another table number 11 called "Angel" **/
+  /** We have more guests! add another table number 11 called "Angel" * */
   tableNames += (11 -> "Angel")
   println(tableNames) //shows 11 table names now not 10
 
@@ -131,15 +140,31 @@ object WeddingPlan extends App { //Wk 2
   //Wk 2
   case class Wedding(bride: Person, groom: Person, reception: Reception, guests: List[Guest])
 
+
   case class Venue(name: String, address: String, capacity: Int, costPerDay: Double, churchOnSite: Boolean)
 
-  case class Reception(venue: Venue, mealOption: List[String])
+  object Venue {
+    def createVenue(name: String, address: String, capacity: Int): Venue = {
+      Venue(name, address, capacity, 3500, true)
+    }
+  }
+
+  val firstChoiceVenue = Venue.createVenue("Abbots Hall", "123 Sidney Street, Ipswich", 310)
+  println(firstChoiceVenue)
+  val secondChoiceVenue = Venue.createVenue("Cranburg Castle", "6a Pine Street, Cambridge", 550)
+  println(secondChoiceVenue)
+
+
+  case class Reception(venue: Venue, mealOption: List[String]) //Wk 2
+  //object Reception {
+  //def Venue
+  // }
+
 
   //Person class of anyone involved in wedding
   case class Person(name: String, email: String, phoneNumber: Option[String] = None) //Wk 3
 
   case class Guest(person: Person, plusOne: Option[Guest] = None, dietaryRequirements: List[String] = List())
-
 
   //Instance of a bride and groom
   val bride: Person = Person("May Green", "May@me.com")
@@ -161,35 +186,30 @@ object WeddingPlan extends App { //Wk 2
   println(suzie)
 
   //Wk 4 TODO
- // valVegeterianGuests = Guest.filter(guest => guest.dietaryRequirements.contains("Vegeterian"))
-//println("Vegeterian Guest names:")
- //vegeterianGuests.foreacg(guest => println(guest.person.name)
+  //  val VegeterianGuests = Guest.filter(guest => guest.dietaryRequirements.contains("Vegeterian"))
+  //println("Vegeterian Guest names:")
+  // vegeterianGuests.foreach(guest => println(guest.person.name)
 
 
-class WeddingPlanner( //Wk2
-val name: String,
-val company: String,
-val contactNumber: String,
-val chosenDesign: String,
-val weddingBudget: Double)
+  class WeddingPlanner( //Wk2
+                        val name: String,
+                        val company: String,
+                        val contactNumber: String,
+                        val chosenDesign: String,
+                        val weddingBudget: Double)
 
- val weddingPlanner = new WeddingPlanner("Crimson Gretal", "JB & Co", "07778900900", "Tradional Elegance", 6000.0)
-println(s"The wedding planners name is ${weddingPlanner.name}.")
-println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
+  val weddingPlanner = new WeddingPlanner("Crimson Gretal", "JB & Co", "07778900900", "Tradional Elegance", 6000.0)
+  println(s"The wedding planners name is ${weddingPlanner.name}.")
+  println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 
 
- /** TODO FIX WEDDING DATE & vanue of choice**/
-//val weddingDate = Wedding(("Mary", "Tom"), "2025-11-11", "Abbots Hall")
-//  println(s"The wedding is on ${weddingPlanner.date}")
+  /** TODO FIX WEDDING DATE & vanue of choice* */
+  //val weddingDate = Wedding(("Mary", "Tom"), "2025-11-11", "Abbots Hall")
+  //  println(s"The wedding is on ${weddingPlanner.date}")
 
 
   ////Where do I specifythe budegt and planner s name etc?
-//val budget: Map[Wedding, Double] = Map ()
-
-
-
-
-
+  //val budget: Map[Wedding, Double] = Map ()
 
 
   /** Welcome visitors from Wales, England and Spain to the reception in their language */
@@ -200,6 +220,7 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
     case "welsh" => "Croeso"
     case _ => "Welcome" // Default to English if not found
   }
+
   println(welcome("welsh")) //Croeso
 
 
@@ -216,6 +237,7 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
     else
       initialCost
   }
+
   println(cost(3))
   println(cost(2))
 
@@ -247,40 +269,40 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
   //Wk 4
 
   def brideAndGroomEntrance(): Future[String] = {
-Future {
-  Thread.sleep(2000)
-  "Please all stand and arise your glasses to the bride and groom!"
-}
+    Future {
+      Thread.sleep(2000)
+      "Please all stand and arise your glasses to the bride and groom!"
+    }
   }
-////To do CALL IT & expand on it
-//val futureResult = simpleFutureExample()
-//  println(Await.result(futureResult, 2.seconds))
-//def main(args: Array[String]): Unit = {
-//  val entranceFuture = Future {
-//    // Simulate waiting for the bride and groom to enter
-//    Thread.sleep(2000)
-//    "Bride and Groom have entered!"
-//  }
-//
-//  // Wait and print the entrance announcement
-//  println(Await.result(entranceFuture, 3.seconds))
-//}
-////}
-//object WeddingMenu {
-//  def main(args: Array[String]): Unit = {
-//    val menuFuture = Future {
-//      // Simulate some delay in checking the menu
-//      Thread.sleep(1000)
-//      List("Chicken", "Vegetarian", "Fish", "Vegetable Salad")
-//    }
-//
-//    // Wait for the menu to be checked and print it
-//    val menu = Await.result(menuFuture, 2.seconds)
-//    println(s"Wedding Menu: ${menu.mkString(", ")}")
-//  }
-//}
-//   a Future that simulates checking the wedding menu. After briefly sleeping to mimic a delay, the menu items are returned as a list. We then wait for the Future to complete and print the wedding menu.
-//object WeddingPlanner {
+  ////To do CALL IT & expand on it
+  //val futureResult = simpleFutureExample()
+  //  println(Await.result(futureResult, 2.seconds))
+  //def main(args: Array[String]): Unit = {
+  //  val entranceFuture = Future {
+  //    // Simulate waiting for the bride and groom to enter
+  //    Thread.sleep(2000)
+  //    "Bride and Groom have entered!"
+  //  }
+  //
+  //  // Wait and print the entrance announcement
+  //  println(Await.result(entranceFuture, 3.seconds))
+  //}
+  ////}
+  //object WeddingMenu {
+  //  def main(args: Array[String]): Unit = {
+  //    val menuFuture = Future {
+  //      // Simulate some delay in checking the menu
+  //      Thread.sleep(1000)
+  //      List("Chicken", "Vegetarian", "Fish", "Vegetable Salad")
+  //    }
+  //
+  //    // Wait for the menu to be checked and print it
+  //    val menu = Await.result(menuFuture, 2.seconds)
+  //    println(s"Wedding Menu: ${menu.mkString(", ")}")
+  //  }
+  //}
+  //   a Future that simulates checking the wedding menu. After briefly sleeping to mimic a delay, the menu items are returned as a list. We then wait for the Future to complete and print the wedding menu.
+  //object WeddingPlanner {
   //  def main(args: Array[String]): Unit = {
   //    val weddingDate = Future {
   //      // Simulate calculating a wedding date
@@ -305,8 +327,6 @@ Future {
   //}
 
 
-
-
   def tryWeddingDresses(dresses: List[String]): Unit = {
     def TryADress(remainingDresses: List[String]): Unit = {
       if (remainingDresses.isEmpty) {
@@ -324,7 +344,6 @@ Future {
   tryWeddingDresses(dressList)
 
 
-
 }
 
 //set a budget from 6000 for each thing. Flowers is 750. Can afford?? yes / no
@@ -337,21 +356,16 @@ Future {
 //Wk 4 futures  - wait welcome brude the groom
 
 //case none =>
-//import javalocal time to give the date of something look at horoscope one!
-
 
 //something about adding tax to how much things cost eg flowers
 //write a chat with me on a separate page? it can be a q& A on gift registry
 //contdown to the wedding date, built in method  simliamr thing for age
 
-
 //Pattern match on what drinks to serve or n//Something about assigning people to a table and match to a table
 //Keyset one from udemy course?
 
-
 //Look at wk 3 Thursday options/Pmatch /chocbar/ pizza
 //something about the hog roast may come xyz or not ??
-
 
 //Extra - variance swan exercise
 //Budget cost and tax  for budget of wedding
@@ -372,7 +386,6 @@ Future {
 //photographer, florist, etc
 //Tracking which budget items are over budget
 
-//create the venue of choice
 
 //Ideas:
 //wedding dress
@@ -383,11 +396,7 @@ Future {
 //where people will sit
 //check who has RSVPS
 //Thankyou notes
-
-
 //can I get a list of all the guests??
-//use local date for wedding date - maybe a countdown??
-
 
 
 
