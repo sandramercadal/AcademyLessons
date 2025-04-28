@@ -249,7 +249,7 @@ println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
       if (remainingDresses.isEmpty) {
         println("There's no more dresses to try on! End of the fitting appointment.") //base case
       } else {
-        println(s"Try on the dress: ${remainingDresses.head}") // Try on the first dress
+        println(s"Try on the dress: ${remainingDresses.head}") // Try on first dress
         TryADress(remainingDresses.tail) // Call the function recursively with the rest of the dresses
       }
     }

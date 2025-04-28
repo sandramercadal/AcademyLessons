@@ -8,6 +8,9 @@ import scala.concurrent.{Await, Future}
 import scala.concurrent.duration.{Duration, FiniteDuration}
 import scala.util.{Failure, Random, Success}
 
+
+
+
 object Futures extends App {
 
   //What are futures?
@@ -35,14 +38,13 @@ object Futures extends App {
   //NOT LIKE THIS
   println("Standard print line: " + futureHelloWorld) //Future not complete. This is printing the futures itself rather than the value.
 
-  //1st Way to Print - use .foreach as a callback
+  /**1st Way to Print - use .foreach as a callback **/
   //Can use .foreach to execute a function once the future completes successfully.
   // It's like saying "when you finish this task, do this".
-
     futureHelloWorld.foreach(result => println(s"Using .foreach: $result")) //result is what we are storing it in temporarily. can call it anything.
   //Hello Future World!
 
-  //2nd Way to print - use onComplete (use this when we want to handle success and failure)
+  /**2nd Way to print - use onComplete (use this when we want to handle success and failure) **/
   //This method lets you handle both success and failure cases.
   // You can specify what happens when the future completes, whether it was successful or not.
   futureHelloWorld.onComplete {
@@ -56,7 +58,7 @@ object Futures extends App {
   //Using .foreach: Hello Future World!
 
 
-  //3rd way - using a wait time using Await.result
+  /**3rd way - using a wait time using Await.result **/
   //This method allows you to block the current thread until the future completes. It’s useful when you need the result immediately.
   val waitTime: FiniteDuration = Duration(5, TimeUnit.SECONDS) //Wait 5 seconds, if you don't receive the value in 5 seconds, time out.
   println("Using await: " + Await.result(futureHelloWorld, waitTime)) //collect it, print it after you have waited for the time stated.
@@ -203,6 +205,11 @@ object Futures extends App {
   combinedResult.foreach(println)
 
   Thread.sleep(3000) //set on later than the object above - This ensures the object thread doesn't finish before the future has completed
+
+
+
+
+
   }
 
 
