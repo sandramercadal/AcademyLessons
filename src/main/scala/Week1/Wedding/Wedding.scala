@@ -5,7 +5,11 @@
 import scala.collection.mutable.Map
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
+import scala.util.{Failure, Random, Success}
 import java.time.{LocalDate, Duration}
+import scala.concurrent.{Await, Future}
+import scala.concurrent.duration.{Duration, FiniteDuration}
+
 
 object WeddingPlan extends App { //Wk 2
 
@@ -268,66 +272,20 @@ object WeddingPlan extends App { //Wk 2
 
 
   //Wk 4
-
-  def brideAndGroomEntrance(): Future[String] = {
+  def brideAndGroomEntrance: Future[String] = {
     Future {
       Thread.sleep(2000)
-      "Please all stand and arise your glasses to the bride and groom!"
+      "Please all stand and raise your glasses to the bride and groom!"
     }
   }
-  ////To do CALL IT & expand on it
-  //val futureResult = simpleFutureExample()
-  //  println(Await.result(futureResult, 2.seconds))
-  //def main(args: Array[String]): Unit = {
-  //  val entranceFuture = Future {
-  //    // Simulate waiting for the bride and groom to enter
-  //    Thread.sleep(2000)
-  //    "Bride and Groom have entered!"
-  //  }
-  //
-  //  // Wait and print the entrance announcement
-  //  println(Await.result(entranceFuture, 3.seconds))
-  //}
-  ////}
-  //object WeddingMenu {
-  //  def main(args: Array[String]): Unit = {
-  //    val menuFuture = Future {
-  //      // Simulate some delay in checking the menu
-  //      Thread.sleep(1000)
-  //      List("Chicken", "Vegetarian", "Fish", "Vegetable Salad")
-  //    }
-  //
-  //    // Wait for the menu to be checked and print it
-  //    val menu = Await.result(menuFuture, 2.seconds)
-  //    println(s"Wedding Menu: ${menu.mkString(", ")}")
-  //  }
-  //}
-  //   a Future that simulates checking the wedding menu. After briefly sleeping to mimic a delay, the menu items are returned as a list. We then wait for the Future to complete and print the wedding menu.
-  //object WeddingPlanner {
-  //  def main(args: Array[String]): Unit = {
-  //    val weddingDate = Future {
-  //      // Simulate calculating a wedding date
-  //      Thread.sleep(2000) // Simulate some delay
-  //      "2024-06-15"
-  //    }
-  //
-  //    val weddingVenue = Future {
-  //      // Simulate finding a wedding venue
-  //      Thread.sleep(1000) // Simulate some delay
-  //      "Beach Resort"
-  //    }
-  //
-  //    val weddingDetails = for {
-  //      date <- weddingDate
-  //      venue <- weddingVenue
-  //    } yield s"Wedding Date: $date, Venue: $venue"
-  //
-  //    // Wait for the result and print it
-  //    println(Await.result(weddingDetails, 5.seconds))
-  //  }
-  //}
+  val Entrance = brideAndGroomEntrance
+  Entrance.onComplete{
+    case Success(result) => println(result)
+    case Failure (exception) => println(s"Failure with the brides and grooms entrance: ${exception.getMessage}")
+  }
+Thread.sleep(2000)
 
-
+//Wk 4
   def tryWeddingDresses(dresses: List[String]): Unit = {
     def TryADress(remainingDresses: List[String]): Unit = {
       if (remainingDresses.isEmpty) {

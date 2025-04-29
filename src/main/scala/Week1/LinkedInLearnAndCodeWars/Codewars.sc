@@ -135,8 +135,6 @@ println(Rental.cost(7)) //230 (7 x 40 - 50 discount = 230)
  * Write a program that returns the girl's age (0-9) as an integer. Assume the test input string is always a valid string. For example, the test input may be "1 year old" o  * */
 
 
-
-
 /** Q6 - welcome visitors to the site in their own language. Luckily you already use an API that detects the user's location, so this is an easy win.
  * Think of a way to store the languages as a database. The languages are listed below so you can copy and paste!
  * Write a 'welcome' function that takes a parameter 'language', with a type String, and returns a greeting - if you have it in your database. It should default to English if the language is not in the database, or in the event of an invalid input.
@@ -193,6 +191,9 @@ println(welcome("Albanian")) // Welcome (default to English)
 /**Beginner - Lost Without a Map - Given an array of integers, return a new array with each value doubled.
  For example:
  [1, 2, 3] --> [2, 4, 6]*/
+
+
+
 
 
 /** Q) Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
@@ -565,9 +566,20 @@ def whatDay(num: Int): String = {
   }
 }
 
-/**Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.**/
+/**Q Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.**/
 //def greet(name: String): String =
 //  if name == "Johnny" then
 //    "Hello, my love!"
 //  else
 //    s"Hello, $name!"
+
+
+/**Q Define a function that removes duplicates from an array of non negative numbers and returns it as a result.
+ The order of the sequence has to stay the same.
+ Examples:
+ Input -> Output
+ [1, 1, 2] -> [1, 2]
+ [1, 2, 1, 1, 3, 2] -> [1, 2, 3]**/
+def distinct(xs: Seq[Int]): Seq[Int] = xs.distinct
+// Example usage:
+println(distinct(Seq(1, 2, 2, 3)).mkString(", ")) // Output: 1, 2, 3
