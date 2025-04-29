@@ -15,6 +15,8 @@ object WeddingPlan extends App { //Wk 2
 
   val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
 
+  val bridesmaids: Seq[String] = Seq("Sarah", "Lisa", "Victoria") //Wk 1
+
   /** Countdown to the day⏱️ */
   val weddingDate = LocalDate.of(2025, 08, 11)
   val today = LocalDate.now()
@@ -76,10 +78,6 @@ object WeddingPlan extends App { //Wk 2
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
 
 
-
-
-  val bridesmaids: Seq[String] = Seq("Sarah", "Lisa", "Victoria") //Wk 1
-
   val tableNames: Map[Int, String] = Map( //Wk 1 + mutable Map without making tableNames a var
     1 -> "Oxford Street",
     2 -> "Victoria",
@@ -95,8 +93,8 @@ object WeddingPlan extends App { //Wk 2
   val filterForTableOxfordStreet: Map[Int, String] = tableNames.filter(num => num._1 == 1)
   println(filterForTableOxfordStreet) //HashMap(1 -> Oxford Street)
 
-  /** We have more guests! add another table number 11 called "Angel" * */
-  tableNames += (11 -> "Angel")
+  /** We have more guests! add another table number 11 called "Pimlico" * */
+  tableNames += (11 -> "Pimlico")
   println(tableNames) //shows 11 table names now not 10
 
 
@@ -271,7 +269,19 @@ object WeddingPlan extends App { //Wk 2
   println(bookVenue("The Plaza NYC"))
 
 
-  //Wk 4
+  //Wk 3
+//  val guestsInvited = 155
+//  val guestsAttending = Some(120)
+//  val guestsFinalCount = guestsAttending.getOrElse(guestsAttending)
+//  println(s"Food is orderd for $guestsFinalCount guests")
+
+  val firstChoiceFlowers: Option[String] = Some("Blush Roses")
+  //val firstChoiceFlowers: Option[String] = None
+  val bridesmaidFlowers = firstChoiceFlowers.getOrElse("Pink Sweet Pea")
+  println(s"The bridesmaids flowers are ${bridesmaidFlowers}")
+
+
+  //Wk 4 Future
   def brideAndGroomEntrance: Future[String] = {
     Future {
       Thread.sleep(2000)
@@ -285,7 +295,7 @@ object WeddingPlan extends App { //Wk 2
   }
 Thread.sleep(2000)
 
-//Wk 4
+//Wk 4 Recursion
   def tryWeddingDresses(dresses: List[String]): Unit = {
     def TryADress(remainingDresses: List[String]): Unit = {
       if (remainingDresses.isEmpty) {
@@ -295,7 +305,6 @@ Thread.sleep(2000)
         TryADress(remainingDresses.tail) // Call the function recursively with the rest of the dresses
       }
     }
-
     TryADress(dresses)
   }
 
@@ -303,20 +312,23 @@ Thread.sleep(2000)
   tryWeddingDresses(dressList)
 
 
+
+
 }
 
 //set a budget from 6000 for each thing. Flowers is 750. Can afford?? yes / no
+//something about adding tax to how much things cost eg flowers
 
 //use getOrElse
 
 // Add a helper method here to get colours scheme or similar?? and expand??
-//Wk 4 recursion - tiers on wedding dress
+
 //Wk 4 Hof - write a tahnk you note
-//Wk 4 futures  - wait welcome brude the groom
+
 
 //case none =>
 
-//something about adding tax to how much things cost eg flowers
+
 //write a chat with me on a separate page? it can be a q& A on gift registry
 //contdown to the wedding date, built in method  simliamr thing for age
 
