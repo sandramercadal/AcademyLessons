@@ -268,6 +268,14 @@ object WeddingPlan extends App { //Wk 2
   ))
   println(bookVenue("The Plaza NYC"))
 
+def DrinkChoices (age: Int): String = age match {
+  case a if age < 5 => "babychino"
+  case a if age >= 5 && a <9 => "Appletizer"
+  case a if age >= 9 && a <18 => "Shirley Temple Mocktail"
+  case _ => "Champagne or Dark and Stormy Cocktail"
+}
+println(s"We will serve the following for a guest aged 10: ${DrinkChoices(10)}")
+
 
   //Wk 3
 //  val guestsInvited = 155
@@ -319,7 +327,6 @@ Thread.sleep(2000)
 //set a budget from 6000 for each thing. Flowers is 750. Can afford?? yes / no
 //something about adding tax to how much things cost eg flowers
 
-//use getOrElse
 
 // Add a helper method here to get colours scheme or similar?? and expand??
 
@@ -332,7 +339,10 @@ Thread.sleep(2000)
 //write a chat with me on a separate page? it can be a q& A on gift registry
 //contdown to the wedding date, built in method  simliamr thing for age
 
-//Pattern match on what drinks to serve or n//Something about assigning people to a table and match to a table
+//Pattern match on what drinks to serve depening on age -youn SHirley Temple, Appletizer, Dark and STormy or  Champagne
+
+
+// or n//Something about assigning people to a table and match to a table
 //Keyset one from udemy course?
 
 //Look at wk 3 Thursday options/Pmatch /chocbar/ pizza
@@ -362,7 +372,7 @@ Thread.sleep(2000)
 //wedding dress
 //honeymoon destination
 //bridemaids dresses
-// what flowers each bridesmaid will have ?
+
 //create invitations / send them
 //where people will sit
 //check who has RSVPS

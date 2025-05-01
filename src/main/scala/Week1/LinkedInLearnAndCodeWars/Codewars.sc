@@ -289,6 +289,16 @@ def removeStringSpace (string: String): String = {
 }
 println(removeStringSpace("8 j 8   mBliB8g  imjB8B8  jl  B"))//8j8mBliB8gimjB8B8jlB
 
+/**Q - Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+ * "Hi!" --> "H!!"
+ * "!Hi! Hi!" --> "!H!! H!!"
+ * "aeiou" --> "!!!!!"
+ * "ABCDE" --> "!BCD!" */
+def replace(s: String): String = {
+  s.replaceAll("[aeiouAEIOU]", "!")
+}
+//Thought this would pass the test someone else did it but it didn't pass for me:
+def replace(s: String): String = s.replaceAll("[a,e,i,o,u,A,E,I,O,U]", "!")
 
 
 /**Two players - "black" and "white" are playing a game. The game consists of several rounds. If a player wins in a round, he is to move again during the next round. If a player loses a round, it's the other player who moves on the next round. Given whose turn it was on the previous round and whether he won, determine whose turn it is on the next round.
