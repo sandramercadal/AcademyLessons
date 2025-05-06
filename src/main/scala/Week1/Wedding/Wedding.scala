@@ -18,11 +18,11 @@ object WeddingPlan extends App { //Wk 2
   val bridesmaids: Seq[String] = Seq("Sarah", "Lisa", "Victoria") //Wk 1
 
   /** Countdown to the day⏱️ */
-  val weddingDate = LocalDate.of(2025, 08, 11)
+  val weddingDate = LocalDate.of(2025, 11, 11)
   val today = LocalDate.now()
   val daysUntilWedding = java.time.temporal.ChronoUnit.DAYS.between(today, weddingDate)
 
-  println(s" The countdown is on! There's $daysUntilWedding days until the wedding of Mary & Tom! 🎉")
+  println(s" The countdown is on to the 11th of November 2025! There's $daysUntilWedding days until the wedding of Mary & Tom! 🎉")
 
 
   //Plan wedding themes
@@ -175,21 +175,26 @@ object WeddingPlan extends App { //Wk 2
   println(aboutBride)
 
   //Create some guests
-  val bob = Guest(person = Person("Bob Turnbull", "bob@btinternet.com", Some("07790116679")), plusOne = Some(alice), dietaryRequirements = List())
-  val suzie = Guest(person = Person("Suzie Bart", "sb2340@yahoo.com", Some("079901161123")), plusOne = Some(tommy), dietaryRequirements = List("Vegan"))
+  val tod = Guest(person = Person("Tod Maine", "tod@btinternet.com", Some("07790116679")), plusOne = Some(annie), dietaryRequirements = List())
+  val sam = Guest(person = Person("Sam Heart", "sb2340@yahoo.com", Some("079901161123")), plusOne = Some(tim), dietaryRequirements = List("Vegan"))
 
   //Create some plus One guests - we don't always need guest phone numbers.
-  val alice = Guest(person = Person("Alice Beswick", "alice@example.com"), dietaryRequirements = List("Vegeterian"))
+  val annie = Guest(person = Person("Annie Plum", "a@example.com"), dietaryRequirements = List("Vegeterian"))
+  val tim = Guest(person = Person("Tim Bolt", "tb@yahoo.com"), dietaryRequirements = List("None"))
+  println(tod)
+  println(tim)
 
-  val tommy = Guest(person = Person("Tommy Brown", "tommybrown@yahoo.com"), dietaryRequirements = List("None"))
-  println(bob)
-  println(tommy)
-  println(suzie)
-
-  //Wk 4 TODO
+  val guests = List(tod, sam, annie, tim)
+  //Wk 4
   //  val VegeterianGuests = Guest.filter(guest => guest.dietaryRequirements.contains("Vegeterian"))
   //println("Vegeterian Guest names:")
   // vegeterianGuests.foreach(guest => println(guest.person.name)
+
+  val vegeterianGuests = for {
+    guests <- guests if guests.dietaryRequirements.contains ("Vegeterian")
+  }
+  yield guests
+println(s"The veg guests are: ${vegeterianGuests}")
 
 
   class WeddingPlanner( //Wk2
@@ -203,10 +208,6 @@ object WeddingPlan extends App { //Wk 2
   println(s"The wedding planners name is ${weddingPlanner.name}.")
   println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 
-
-  /** TODO FIX WEDDING DATE & vanue of choice* */
-  //val weddingDate = Wedding(("Mary", "Tom"), "2025-11-11", "Abbots Hall")
-  //  println(s"The wedding is on ${weddingPlanner.date}")
 
 
 
@@ -316,38 +317,36 @@ object WeddingPlan extends App { //Wk 2
   val weddingTotalBudget = 12000
   case class Vendors(name: String, itemCost: Int, itemBudget: Int)
   val vendors = List(
-    Vendors("Flowers", 750, 750),
+    Vendors("Flowers", 790, 750),
     Vendors("Catering", 3200, 3000),
-    Vendors("Venue", 5000, 5000),
+    Vendors("Venue", 7000, 7000),
     Vendors("Band", 1200, 1000),
-    Vendors("Crepe Truck", 1200, 1000)
+    Vendors("Crepe Truck", 900, 1000)
   )
 
   val totalCost = vendors.map(_.itemCost).sum
   val totalItemBudget = vendors.map(_.itemBudget).sum
 
-  //def budgetCheck(itemName: String): String = {
+  println(s"The vendor items total cost is £${totalCost}")
+  println(s"The budget for all the vendor items is £${totalItemBudget}")
 
-  //}
+  //something about adding tax to how much things cost eg flowers
+  //set a budget from 6000 for each thing. Flowers is 750. Can afford?? yes / no
+
+
+
 }
 
-//set a budget from 6000 for each thing. Flowers is 750. Can afford?? yes / no
-//something about adding tax to how much things cost eg flowers
 
 
-// Add a helper method here to get colours scheme or similar?? and expand??
+//Have a look through my cafe, Aprils Cafe and the lessosn what else havent I included //case none =>//flatMap, foreach, filter
+////flatten
+
 
 //Wk 4 Hof - write a tahnk you note
 
 
-//case none =>
-
-
 //write a chat with me on a separate page? it can be a q& A on gift registry
-//contdown to the wedding date, built in method  simliamr thing for age
-
-//Pattern match on what drinks to serve depening on age -youn SHirley Temple, Appletizer, Dark and STormy or  Champagne
-
 
 // or n//Something about assigning people to a table and match to a table
 //Keyset one from udemy course?
@@ -356,10 +355,9 @@ object WeddingPlan extends App { //Wk 2
 //something about the hog roast may come xyz or not ??
 
 //Extra - variance swan exercise
-//Budget cost and tax  for budget of wedding
 
-//flatMap
-//flatten
+
+
 
 //def total budget
 //total budget spent so far? remaining budget ??
