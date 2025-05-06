@@ -25,7 +25,6 @@ object WeddingPlan extends App { //Wk 2
   println(s" The countdown is on! There's $daysUntilWedding days until the wedding of Mary & Tom! 🎉")
 
 
-
   //Plan wedding themes
   sealed trait WeddingTheme {
     def name: String
@@ -40,7 +39,6 @@ object WeddingPlan extends App { //Wk 2
 
     def churchCapacity: Int
   }
-
 
   case object GatsbyTheme extends WeddingTheme {
     val name = "Gatsby"
@@ -74,6 +72,7 @@ object WeddingPlan extends App { //Wk 2
   def venuesWithChurch: List[WeddingTheme] = {
     allThemes.filter(_.churchOnsite)
   }
+
   println("Venues with church:") // List of venues with church //Gatsby- Quintessentially English Countryside chic
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
 
@@ -143,7 +142,6 @@ object WeddingPlan extends App { //Wk 2
   //Wk 2
   case class Wedding(bride: Person, groom: Person, reception: Reception, guests: List[Guest])
 
-
   case class Venue(name: String, address: String, capacity: Int, costPerDay: Double, churchOnSite: Boolean)
 
   object Venue {
@@ -211,9 +209,6 @@ object WeddingPlan extends App { //Wk 2
   //  println(s"The wedding is on ${weddingPlanner.date}")
 
 
-  ////Where do I specifythe budegt and planner s name etc?
-  //val budget: Map[Wedding, Double] = Map ()
-
 
   /** Welcome visitors from Wales, England and Spain to the reception in their language */
   def welcome(language: String): String = language.toLowerCase
@@ -223,7 +218,6 @@ object WeddingPlan extends App { //Wk 2
     case "welsh" => "Croeso"
     case _ => "Welcome" // Default to English if not found
   }
-
   println(welcome("welsh")) //Croeso
 
 
@@ -268,21 +262,17 @@ object WeddingPlan extends App { //Wk 2
   ))
   println(bookVenue("The Plaza NYC"))
 
-def DrinkChoices (age: Int): String = age match {
-  case a if age < 5 => "babychino"
-  case a if age >= 5 && a <9 => "Appletizer"
-  case a if age >= 9 && a <18 => "Shirley Temple Mocktail"
-  case _ => "Champagne or Dark and Stormy Cocktail"
-}
-println(s"We will serve the following for a guest aged 10: ${DrinkChoices(10)}")
+  def DrinkChoices(age: Int): String = age match {
+    case age if age < 5 => "babychino"
+    case age if age >= 5 && age < 9 => "Appletizer"
+    case age if age >= 9 && age < 18 => "Shirley Temple Mocktail"
+    case _ => "Champagne or Dark and Stormy Cocktail"
+  }
+
+  println(s"We will serve the following for a guest aged 10: ${DrinkChoices(10)}")
 
 
   //Wk 3
-//  val guestsInvited = 155
-//  val guestsAttending = Some(120)
-//  val guestsFinalCount = guestsAttending.getOrElse(guestsAttending)
-//  println(s"Food is orderd for $guestsFinalCount guests")
-
   val firstChoiceFlowers: Option[String] = Some("Blush Roses")
   //val firstChoiceFlowers: Option[String] = None
   val bridesmaidFlowers = firstChoiceFlowers.getOrElse("Pink Sweet Pea")
@@ -296,14 +286,15 @@ println(s"We will serve the following for a guest aged 10: ${DrinkChoices(10)}")
       "Please all stand and raise your glasses to the bride and groom!"
     }
   }
-  val Entrance = brideAndGroomEntrance
-  Entrance.onComplete{
-    case Success(result) => println(result)
-    case Failure (exception) => println(s"Failure with the brides and grooms entrance: ${exception.getMessage}")
-  }
-Thread.sleep(2000)
 
-//Wk 4 Recursion
+  val Entrance = brideAndGroomEntrance
+  Entrance.onComplete {
+    case Success(result) => println(result)
+    case Failure(exception) => println(s"Failure with the brides and grooms entrance: ${exception.getMessage}")
+  }
+  Thread.sleep(2000)
+
+  //Wk 4 Recursion
   def tryWeddingDresses(dresses: List[String]): Unit = {
     def TryADress(remainingDresses: List[String]): Unit = {
       if (remainingDresses.isEmpty) {
@@ -313,6 +304,7 @@ Thread.sleep(2000)
         TryADress(remainingDresses.tail) // Call the function recursively with the rest of the dresses
       }
     }
+
     TryADress(dresses)
   }
 
@@ -321,7 +313,22 @@ Thread.sleep(2000)
 
 
 
+  val weddingTotalBudget = 12000
+  case class Vendors(name: String, itemCost: Int, itemBudget: Int)
+  val vendors = List(
+    Vendors("Flowers", 750, 750),
+    Vendors("Catering", 3200, 3000),
+    Vendors("Venue", 5000, 5000),
+    Vendors("Band", 1200, 1000),
+    Vendors("Crepe Truck", 1200, 1000)
+  )
 
+  val totalCost = vendors.map(_.itemCost).sum
+  val totalItemBudget = vendors.map(_.itemBudget).sum
+
+  //def budgetCheck(itemName: String): String = {
+
+  //}
 }
 
 //set a budget from 6000 for each thing. Flowers is 750. Can afford?? yes / no
@@ -359,7 +366,6 @@ Thread.sleep(2000)
 
 //def confirmedGuests attenidng
 //Total invited and how many attending ??
-//Total invited and how many attending ??
 //Update attending list of guests have confimred
 
 
@@ -369,7 +375,6 @@ Thread.sleep(2000)
 
 
 //Ideas:
-//wedding dress
 //honeymoon destination
 //bridemaids dresses
 

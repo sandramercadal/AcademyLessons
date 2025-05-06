@@ -196,6 +196,8 @@ println(welcome("Albanian")) // Welcome (default to English)
 
 
 
+
+
 /** Q) Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
  If no arguments are given, ball objects should instantiate with a "ball type" of "regular."
  ball1 = new Ball();
@@ -259,7 +261,7 @@ def remove(string: String): String = {
   string.replaceAll("!+$", "") ///without the + may work also
 }
 println(remove("Hi!!!!")) //Hi
-println(remove("Hi")) //Hi
+println(remove("Hi"))//Hi
 //! represents the exclamation mark character that we want to find in the string.
  // + means "one or more" of the preceding element. So, !+ signifies "one or more exclamation marks."
 //$ indicates the end of the string. This means we are looking for any series of exclamation marks that occur right at the end of the string.
@@ -593,3 +595,23 @@ def whatDay(num: Int): String = {
 def distinct(xs: Seq[Int]): Seq[Int] = xs.distinct
 // Example usage:
 println(distinct(Seq(1, 2, 2, 3)).mkString(", ")) // Output: 1, 2, 3
+
+
+
+/** Q - In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'. */
+ def well(x: Seq[String]): String = {
+
+ val goodCount = x.count(_ == "good")
+ //count method is called on the collection x
+ //_ == "good": is a shorthand syntax for defining an anonymous function (also known as a lambda function). The underscore _ acts as a placeholder for each element in the collection as count iterates over it. So, _ == "good" means "check if the current element is equal to the string 'good'". For each element of x, if the element is "good", it will contribute to the count.
+
+ if (goodCount >= 3) {
+ "I smell a series!"
+ } else if (goodCount >= 1) {
+ "Publish!"
+ } else {
+ "Fail!"
+ }
+
+ }
+ println(well(Seq("good", "good", "good")))

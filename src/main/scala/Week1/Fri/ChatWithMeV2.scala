@@ -18,7 +18,7 @@ object ChatWithMeV2 extends App {
     }
 
     private def startChat(): Unit = {
-      val choice: String = readLine("What do you want to talk about today : the weather, films or politics?"
+      val choice: String = readLine("What do you want to talk about today : weather, films or politics?"
       ).toLowerCase
 
       if (choice == "weather")
