@@ -406,7 +406,7 @@ object ThursMPV extends App {
   /**
    In Scala, when you're using a generic function, the type information can be lost at runtime. This means that if you declare your function as def checkListType[T](list: List[T]), the type T is erased, and during runtime, the list can default to one of the narrower types.
 
-   To fix this issue, you need to change the approach. Instead of using pattern matching on the list type, you can directly match on the contents' type. Here is a corrected example using isInstanceOf to check the type of the list:
+   To fix this issue, you need to change the approach. Instead of using pattern matching on the list type, you can directly match on the contents' type. Here is  using isInstanceOf to check the type of the list:
    check the type of the list directly. This should give you the correct outputs for each case.*/
 def checkListType[T](list: List[T]): String = list match {
   case _: List[Double] => "List of Doubles"

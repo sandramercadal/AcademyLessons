@@ -102,10 +102,6 @@ val additionEquation = IntManipulator (a,b, subtraction)
    // if makeStringUpperCase
    // else
 
-
-
-
-
 val myString = "cOnVeRTMe"
 println (myString)
 }
