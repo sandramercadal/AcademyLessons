@@ -13,7 +13,7 @@ import scala.concurrent.duration.{Duration, FiniteDuration}
 
 object WeddingPlan extends App { //Wk 2
 
-  val saveTheDate: String = "Save the date for the wedding of Mary and Tom!" //Wk 1
+  val saveTheDate: String = "Save the date for the wedding of May and Tom!" //Wk 1
 
   val bridesmaids: Seq[String] = Seq("Sarah", "Lisa", "Victoria") //Wk 1
 
@@ -22,7 +22,7 @@ object WeddingPlan extends App { //Wk 2
   val today = LocalDate.now()
   val daysUntilWedding = java.time.temporal.ChronoUnit.DAYS.between(today, weddingDate)
 
-  println(s" The countdown is on to the 11th of November 2025! There's $daysUntilWedding days until the wedding of Mary & Tom! 🎉")
+  println(s" The countdown is on to the 11th of November 2025! There's $daysUntilWedding days until the wedding of May & Tom! 🎉")
 
 
   //Plan wedding themes
@@ -77,6 +77,7 @@ object WeddingPlan extends App { //Wk 2
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
 
 
+
   val tableNames: Map[Int, String] = Map( //Wk 1 + mutable Map without making tableNames a var
     1 -> "Oxford Street",
     2 -> "Victoria",
@@ -97,6 +98,7 @@ object WeddingPlan extends App { //Wk 2
   println(tableNames) //shows 11 table names now not 10
 
 
+
   val cakeFlavour = List("Profitterol Tower", "2 tier", "traditional 3 tier")
   val cakeTopper = List("Edible flowers", "Acrylic Butterflies", "Rice paper flowers")
   val cakeDecoration = List("Sprinkles", "Fresh fruit", "chocolate balls", "chocolate and cream")
@@ -110,6 +112,7 @@ object WeddingPlan extends App { //Wk 2
   println(cakePlanning(3)) //a combination
   println("Here are your top 3 wedding cakes ideas:")
   cakePlanning.take(3).foreach(println)
+
 
 
   //Wk 3
@@ -139,6 +142,7 @@ object WeddingPlan extends App { //Wk 2
   println(s"Allocated time at Church is ${photographyTime(PhotographySlots.AtChurch)} minutes.") //Allocated time at Church is 40 minutes.
 
 
+
   //Wk 2
   case class Wedding(bride: Person, groom: Person, reception: Reception, guests: List[Guest])
 
@@ -157,10 +161,6 @@ object WeddingPlan extends App { //Wk 2
 
 
   case class Reception(venue: Venue, mealOption: List[String]) //Wk 2
-  //object Reception {
-  //def Venue
-  // }
-
 
   //Person class of anyone involved in wedding
   case class Person(name: String, email: String, phoneNumber: Option[String] = None) //Wk 3
@@ -197,6 +197,7 @@ object WeddingPlan extends App { //Wk 2
 println(s"The veg guests are: ${vegeterianGuests}")
 
 
+
   class WeddingPlanner( //Wk2
                         val name: String,
                         val company: String,
@@ -204,7 +205,7 @@ println(s"The veg guests are: ${vegeterianGuests}")
                         val chosenDesign: String,
                         val weddingBudget: Double)
 
-  val weddingPlanner = new WeddingPlanner("Crimson Gretal", "JB & Co", "07778900900", "Tradional Elegance", 6000.0)
+  val weddingPlanner = new WeddingPlanner("Crimson Gretal", "JB & Co", "07778900900", "Tradional Elegance", 12000.0)
   println(s"The wedding planners name is ${weddingPlanner.name}.")
   println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
 
@@ -216,10 +217,11 @@ println(s"The veg guests are: ${vegeterianGuests}")
   match {
     case "english" => "Welcome to the wedding of M & T"
     case "spanish" => "Bienvenido a la boda de M & T"
-    case "welsh" => "Croeso"
+    case "welsh" => "Croeso i briodas Mary ac Tom"
     case _ => "Welcome" // Default to English if not found
   }
   println(welcome("welsh")) //Croeso
+
 
 
   /** Venue hire rates (discount applies to hiring it for 3 days) */
@@ -240,8 +242,8 @@ println(s"The veg guests are: ${vegeterianGuests}")
   println(cost(2))
 
 
-  //Wk 3 Eithers
 
+  //Wk 3 Eithers
   def bookVenue(venue: String): Either[String, String] = {
     try {
       if (venue == "The Plaza NYC") {
@@ -263,6 +265,8 @@ println(s"The veg guests are: ${vegeterianGuests}")
   ))
   println(bookVenue("The Plaza NYC"))
 
+
+
   def DrinkChoices(age: Int): String = age match {
     case age if age < 5 => "babychino"
     case age if age >= 5 && age < 9 => "Appletizer"
@@ -273,6 +277,7 @@ println(s"The veg guests are: ${vegeterianGuests}")
   println(s"We will serve the following for a guest aged 10: ${DrinkChoices(10)}")
 
 
+
   //Wk 3
   val firstChoiceFlowers: Option[String] = Some("Blush Roses")
   //val firstChoiceFlowers: Option[String] = None
@@ -280,11 +285,12 @@ println(s"The veg guests are: ${vegeterianGuests}")
   println(s"The bridesmaids flowers are ${bridesmaidFlowers}")
 
 
+
   //Wk 4 Future
   def brideAndGroomEntrance: Future[String] = {
     Future {
       Thread.sleep(2000)
-      "Please all stand and raise your glasses to the bride and groom!"
+      "Please all stand and raise your glasses to the bride and groom!🥂"
     }
   }
 
@@ -294,6 +300,8 @@ println(s"The veg guests are: ${vegeterianGuests}")
     case Failure(exception) => println(s"Failure with the brides and grooms entrance: ${exception.getMessage}")
   }
   Thread.sleep(2000)
+
+
 
   //Wk 4 Recursion
   def tryWeddingDresses(dresses: List[String]): Unit = {
@@ -339,7 +347,7 @@ println(s"The veg guests are: ${vegeterianGuests}")
 
 
 
-//Have a look through my cafe, Aprils Cafe and the lessosn what else havent I included //case none =>//flatMap, foreach, filter
+//Have a look through my cafe
 ////flatten
 
 
@@ -356,10 +364,6 @@ println(s"The veg guests are: ${vegeterianGuests}")
 
 //Extra - variance swan exercise
 
-
-
-
-//def total budget
 //total budget spent so far? remaining budget ??
 
 //def confirmedGuests attenidng
