@@ -13,6 +13,7 @@ import scala.concurrent.duration.{Duration, FiniteDuration}
 
 object WeddingPlan extends App { //Wk 2
 
+
   val saveTheDate: String = "Save the date for the wedding of May and Tom!" //Wk 1
 
   val bridesmaids: Seq[String] = Seq("Sarah", "Lisa", "Victoria") //Wk 1

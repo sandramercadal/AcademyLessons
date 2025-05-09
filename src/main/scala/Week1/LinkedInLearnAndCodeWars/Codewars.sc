@@ -615,3 +615,19 @@ println(distinct(Seq(1, 2, 2, 3)).mkString(", ")) // Output: 1, 2, 3
 
  }
  println(well(Seq("good", "good", "good")))
+
+
+/** Q  Create a function that takes an int as an argument and returns "Even" for even numbers or "Odd"**/
+
+def evenOrOdd(number: Int): String = {
+  if (number % 2 == 0) "Even"
+  else "Odd"
+}
+//OR
+def evenOrOdd(number: Int): String = {
+  number % 2 match {
+    case 0 => "Even"
+    case _ => "Odd"
+  }
+}
+println(evenOrOdd(2))
