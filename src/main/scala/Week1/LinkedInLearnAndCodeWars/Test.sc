@@ -17,3 +17,8 @@
 //}
 //println(booleanToString2(false))
 //
+def reverseLetter(str: String): String = {
+  str.filter(_.isLetter).reverse
+
+}
+println(reverseLetter("Sandra101"))

@@ -631,3 +631,12 @@ def evenOrOdd(number: Int): String = {
   }
 }
 println(evenOrOdd(2))
+
+/** Q Given a string str, reverse it and omit all non-alphabetic characters.
+E.g. For str = "krishan", the output should be "nahsirk".
+ For str = "ultr53o?n", the output should be "nortlu". **/
+def reverseLetter(str: String): String = {
+  str.filter(_.isLetter).reverse
+
+}
+println(reverseLetter("Sandra101"))
