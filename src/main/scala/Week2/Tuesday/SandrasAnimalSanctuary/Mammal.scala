@@ -16,7 +16,7 @@ override def aboutAnimal(): String = {
   super.aboutAnimal() + s" I am a mammal, and I have $colourOfFur fur"
 }
 }
-
+//super refers to the superclass (or parent class) of the current class. you are accessing members (methods or fields) of the parent class from the subclass. This is particularly useful when you want to override a method but also want to include the behavior of that method from the superclass.
 
 //An instance of a Mammal (object) - use "new" keyword
  object Mammal {

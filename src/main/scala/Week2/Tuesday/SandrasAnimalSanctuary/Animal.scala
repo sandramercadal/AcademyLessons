@@ -19,7 +19,7 @@ class Animal(val name: String, val age: Int) {
 }
 
 
-//Now create your COMPANION OBJECT, syntax is same name as class Animal so  "object Animal" plus function
+//Now create your COMPANION OBJECT, syntax is same name as class Animal so "object Animal" plus function
 /**Serves as a factory **/ //for creating instances of that class.
 //"new" is used to create a new object of a class.
 //We can access the private methods of class Animal now
@@ -28,5 +28,5 @@ object Animal {
     new Animal(name, age)
   }
 }
-//This is just like we did with Book from Library
+//just like Book from Library
 
