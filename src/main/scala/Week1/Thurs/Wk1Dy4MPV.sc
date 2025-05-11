@@ -105,7 +105,7 @@ val third = a.tail.tail.head
 /** RESEARCH APRILS CODE*/
 
 //1. What makes a Set different from a Seq? What should Set(1,2) == Set(2,1,1,1) return?
-//1. Answer: A Set only contains unique values, no duplicates. Will return true.
+//1. Answer: A Set only contains unique values, no duplicates. It overrides the dupes. Will return true.
 Set(1,2) == Set(2,1,1,1) //overrides duplicates so Set(2,1)
 
 //2. What do you think List(3,4) == Seq(3,4) will return? Why? What about List(5,6) == Set(5,6)?

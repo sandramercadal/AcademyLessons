@@ -55,8 +55,14 @@ val myColours: Map[Int, String] = Map(
   4 -> "green"
 )
 //use a rocket => and the previous myColours val we declared
-val filteredForColourBlue: Map[Int, String] = myColours.filter(num => num._1 == 3) //_1 is searching in key
-val filteredForColourBlueV2: Map[Int, String] = myColours.filter(num => num._2 == "blue") //_2 is searching in Value
+val filteredForColourBlue: Map[Int, String] = myColours.filter(num => num._1 == 3) //_1 is searching in key and gives Blue
+val filteredForColourBlueV2: Map[Int, String] = myColours.filter(num => num._2 == "blue") //_2 is searching in Value and gives Blue
+//num._1 refers to the first element of the tuple = the key
+//num._2 refers to the second element of the tuple = the value
+
+//In Scala, num => num is an example of a function that takes an input (in this case, num) and produces an output. This syntax is called a lambda expression or anonymous function. In your filter method, num represents each key-value pair in the myColours map.
+
+
 
 /** HOW DO WE ACCESS THE DATA?
  *
@@ -65,17 +71,18 @@ val filteredForColourBlueV2: Map[Int, String] = myColours.filter(num => num._2 =
  */
   //Int type is a primitive data type that represents a single integer value not a collection of integers
 // When you see Int in the code, it is not wrapped in [].
-val getSequenceData: Int = firstSeq(0) //gives the index position 1=0, 2=1, etc. Calling the seq firstSeq
+val getSequenceData: Int = firstSeq(0) //gives the index position of 1
+// 1=0, 2=1, etc. Calling the seq firstSeq created earlier
 //When you use firstSeq(0), it actually calls the apply method of the Seq class to retrieve the element at index 0. This is similar to a function call, where you're telling Scala to "apply" the method to retrieve a specific item.
 
 //another val
-val getSequence2Data: Int = firstSeq(2)
+val getSequence2Data: Int = firstSeq(2) //returns 3
 //These have different grammar, it is not wrapped in [].?
 
 //Head and Tail use firstSeq.head and firstSeq.tail
 val getSequenceHead: Int = firstSeq.head //index position 0 because 1=0
 //This one different grammar, maybe because you don't declare Int[Int]?
-val getSequenceTail: Seq[Int] = firstSeq.tail //Gives everything except head which the index position 0)
+val getSequenceTail: Seq[Int] = firstSeq.tail //List(2, 3, 4, 5) Gives everything except head which the index position 0
 
 //val getTooMuchData: Int = firstSeq (12)//we don't have any data in the 12th index position
 //errors out with IndexOutofbounds exception

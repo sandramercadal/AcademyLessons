@@ -16,9 +16,9 @@ object WeddingChat extends App {
     ).toLowerCase
 
     if (choice == "pink")
-      println("Your wedding flowers are Roses, beautiful!")
+      println("Your wedding flowers could be Roses, beautiful!")
     else if (choice == "purple")
-      println("Great choice! You should get Peonies for your wedding.")
+      println("Great choice! You could get Peonies for your wedding.")
     else if (choice == "yellow")
       println("How happy are you? Pop some Sunflowers in your bouquet.")
     else if (choice == "blue")
@@ -28,9 +28,9 @@ object WeddingChat extends App {
   }
 
   private def chooseTheme(): Unit = {
-    val choice: String = readLine("How fun! Now let's choose your wedding Theme! What is your spirit animal: Pantheress, Rabbit, Dolphin or Deer?").toLowerCase
+    val choice: String = readLine("Let's continue this is fun! Now let's choose your wedding Theme! What is your spirit animal: Pantheress, Rabbit, Dolphin or Deer?").toLowerCase
     if (choice == "pantheress")
-      println("So luxurious, Have a Great Gatsby themed wedding. Think: 1930's splendour, cocktails and glamour in a stately home. Front lawn for reception drinks and moat area for photographs")
+      println("So luxurious, have a Great Gatsby themed wedding. Think: 1930's splendour, cocktails and glamour in a stately home. Front lawn for reception drinks and moat area for photographs")
     else if (choice == "rabbit")
       println("You give a Quintessentially English Countryside vibe. Book a country house within acres of parkland, walk form church to venue down rolling hills and enjoy a big party in a stately country home.")
     else if (choice == "dolphin")
