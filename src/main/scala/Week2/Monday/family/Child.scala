@@ -1,12 +1,10 @@
 package Week2.Monday.family
 
 //Blueprint
-//Check your brackets
 //The class name you give it starts with a CAPS "class Child"
 //Add val to make it accessible "val forename"
 class Child (val forename: String) {
- // in (enter classparameters in brackets), in {curlies enter body of the class}.
- // All the logic goes in the body.
+
 
 val under18: Boolean = true
  def idPlease: String = "Can I see your ID?"

@@ -1,7 +1,5 @@
 package Week2.Monday.family
 
-//Keep all our logic separatly to the class
-//We want to run it so extends App
 
 object FamilyLogic extends App {
 

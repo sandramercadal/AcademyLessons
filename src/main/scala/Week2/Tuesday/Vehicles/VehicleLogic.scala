@@ -3,7 +3,11 @@
 //extends App so it runs
 package Week2.Tuesday.Vehicles
 
-object VehicleLogic extends App {
+object
+
+//this code organises diff types of vehicles using inheritance and traits, allowing for shared behavior (like driving) while also enabling specific characteristics (like electric charging) for different types of cars.
+
+VehicleLogic extends App {
 
   println("\n----Car-----\n")
   //Car is a Class
