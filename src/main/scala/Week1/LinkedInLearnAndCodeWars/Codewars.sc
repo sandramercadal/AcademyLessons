@@ -97,7 +97,7 @@ println(isUpperCase("c")) //false
 //println(isUpperCase("DONALd")) //F
 
 
-/** Q4 You will need a rental car in order for you to get around in your vacation. Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+/** Q5 You will need a rental car in order for you to get around in your vacation. Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
  * Write a code that gives out the total amount for different days(d).
  * costs £40 to rent a car for the day
  * If you rent for 7 days or more its -£50
@@ -131,11 +131,16 @@ object Rental {
 }
 println(Rental.cost(7)) //230 (7 x 40 - 50 discount = 230)
 
-/** Q5 Parse nice int from char problem - "How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+/** Q6 Parse nice int from char problem - "How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
  * Write a program that returns the girl's age (0-9) as an integer. Assume the test input string is always a valid string. For example, the test input may be "1 year old" o  * */
 
 
-/** Q6 - welcome visitors to the site in their own language. Luckily you already use an API that detects the user's location, so this is an easy win.
+
+
+
+
+
+/** Q7 - welcome visitors to the site in their own language. Luckily you already use an API that detects the user's location, so this is an easy win.
  * Think of a way to store the languages as a database. The languages are listed below so you can copy and paste!
  * Write a 'welcome' function that takes a parameter 'language', with a type String, and returns a greeting - if you have it in your database. It should default to English if the language is not in the database, or in the event of an invalid input.
  * The Database : Please modify this as appropriate for your language.
@@ -187,7 +192,7 @@ println(welcome("dutch")) // Velkom
 println(welcome("Albanian")) // Welcome (default to English)
 
 
-/** Q) Simple multiplication  */
+/** Q8) Simple multiplication  */
 /**Beginner - Lost Without a Map - Given an array of integers, return a new array with each value doubled.
  For example:
  [1, 2, 3] --> [2, 4, 6]*/
@@ -198,7 +203,7 @@ println(welcome("Albanian")) // Welcome (default to English)
 
 
 
-/** Q) Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
+/** Q9) Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
  If no arguments are given, ball objects should instantiate with a "ball type" of "regular."
  ball1 = new Ball();
  ball2 = new Ball("super");
@@ -213,7 +218,7 @@ println(ball1.ballType) //"regular"
 println(ball2.ballType) //"super"
 
 
-/**We need a function that can transform a string into a number. What ways of achieving this do you know?
+/**Q10 We need a function that can transform a string into a number. What ways of achieving this do you know?
  Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
  Examples
  "1234" --> 1234
@@ -237,7 +242,7 @@ println(stringToNumber("23"))
 
 
 
-/** Super Duper Easy ;
+/** Q11 Super Duper Easy ;
 Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
  **/
 //def valueMultipliedPlus6 (int: Int) :Int {
@@ -253,7 +258,7 @@ def processValue(value: Any): Any = {
 println(processValue(2))
 
 
-/** Q) Remove all exclamation marks from the end of sentence. e.g.
+/** Q12) Remove all exclamation marks from the end of sentence. e.g.
  "Hi!"     ---> "Hi"
  "Hi!!!"   ---> "Hi"
  "Hi"      ---> "Hi" */
@@ -275,14 +280,14 @@ println(remove("Hi"))//Hi
 //  }
 }
 
-/**Remove ! from wherever it is "!Hi!"    ---> "Hi!" and add a single exclamation mark at the end**/
+/**Q13) Remove ! from wherever it is "!Hi!"    ---> "Hi!" and add a single exclamation mark at the end**/
 def remove2(string: String): String = {
   string.replaceAll("!", "") + "!"
 }
 println(remove2("!HI!!")) //HI!
 //("!", "") is "replace all occurrences of exclamation marks with nothing,"
 
-/** Q) Remove string spaces
+/** Q14) Remove string spaces
 //Write a function that removes the spaces from the string, then return the resultant string e.g."8 j 8   mBliB8g  imjB8B8  jl  B" -> "8j8mBliB8gimjB8B8jlB"
 **/
 
@@ -291,7 +296,7 @@ def removeStringSpace (string: String): String = {
 }
 println(removeStringSpace("8 j 8   mBliB8g  imjB8B8  jl  B"))//8j8mBliB8gimjB8B8jlB
 
-/**Q - Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+/**Q15 - Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
  * "Hi!" --> "H!!"
  * "!Hi! Hi!" --> "!H!! H!!"
  * "aeiou" --> "!!!!!"
@@ -303,7 +308,7 @@ def replace(s: String): String = {
 def replace(s: String): String = s.replaceAll("[a,e,i,o,u,A,E,I,O,U]", "!")
 
 
-/**Two players - "black" and "white" are playing a game. The game consists of several rounds. If a player wins in a round, he is to move again during the next round. If a player loses a round, it's the other player who moves on the next round. Given whose turn it was on the previous round and whether he won, determine whose turn it is on the next round.
+/**Q16) Two players - "black" and "white" are playing a game. The game consists of several rounds. If a player wins in a round, he is to move again during the next round. If a player loses a round, it's the other player who moves on the next round. Given whose turn it was on the previous round and whether he won, determine whose turn it is on the next round.
  Input/Output
  [input] string lastPlayer/$last_player
  "black" or "white" - whose move it was during the previous round.
@@ -333,7 +338,7 @@ println(whoseMove("black", false)) //white
 println(whoseMove("white", true))  //white
 println(whoseMove("white", false))  //Bl
 
-/**Set the alarm - Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+/**Q17) Set the alarm - Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
  The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
  employed | vacation
  true     | true     => false
@@ -359,13 +364,13 @@ println(stringClean("1Mary12345")) //Mary
 
 
 
-/**Q - Palindrome detector eg madam, kayak, taco cats, step on no pets */
+/**Q18 - Palindrome detector eg madam, kayak, taco cats, step on no pets */
 
 
 
 
 
-/** Debug Greeting - greet everyone as they come aboard. It is your job to fix the code and get the program working again!
+/** Q19) Debug Greeting - greet everyone as they come aboard. It is your job to fix the code and get the program working again!
  E.g: Hello, Mr. Spock or Hello, Liutenant Uhura
  From : def sayHello(name: String): String = "Hello" to */
 def sayHello(name: String): String = {
@@ -398,7 +403,7 @@ def sameCase(a: Char, b: Char): Int = {
 println(sameCase('U', '9'))
 
 
-/**READ the Q properly eg how to calculate the BMI, it says its weight x (height x2)!
+/**Q20) READ the Q properly eg how to calculate the BMI, it says its weight x (height x2)!
  *
  * Write function bmi that calculates body mass index (bmi = weight / height2).
  * if bmi <= 18.5 return "Underweight"
@@ -419,7 +424,7 @@ println(bmi(50, 1.80)) //underweight
 println(bmi(60, 1.56)) //normal
 
 
-/**Q - Hula Hoop
+/**Q21 - Hula Hoop
  * If Alex does 10 or more hoops => "Great, now move on to tricks"
  * else "Keep at it until you get it"
 **/
@@ -430,7 +435,7 @@ println(bmi(60, 1.56)) //normal
  println(hoopCount(1)) //Keep at it until you get it
 
 
-/** Q Simple multiplication - multiplying a given number by eight if it is an even number
+/** Q22) Simple multiplication - multiplying a given number by eight if it is an even number
  and by nine otherwise**/
 
 def multiply(n: Int): Int = {
@@ -442,7 +447,7 @@ def multiply(n: Int): Int = {
 }
 println(multiply(2))
 
-/**Q What Kids drink toddy:
+/**Q23) What Kids drink toddy:
  Teens drink coke, Young adults drink beer,Adults drink whisky.
  Make a function that receive age, and return what they drink.
  Rules:
@@ -460,7 +465,7 @@ def peopleWithAgeDrink(age: Int): String = {
 }
 println(peopleWithAgeDrink(20))
 
-/** Q - Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
+/** Q24 - Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
  Example: (Input1, Input2 -->Output)
  "4",  "5" --> "9"
  "34", "5" --> "39"
@@ -487,7 +492,7 @@ def stringSum2(a: String, b: String): String = {
 }
 println(stringSum2("1", "2")) //3
 
-/** Q - When provided with a number between 0-9, return it in words. Note that the input is guaranteed to be within the range of 0-9.
+/** Q25 - When provided with a number between 0-9, return it in words. Note that the input is guaranteed to be within the range of 0-9.
  Input: 1  is Output: "One". */
 //Patten Matching
 def switchItUp(number: Int): String = {
@@ -526,7 +531,7 @@ println(switchItUp(5)) //Five
 
 
 
-/** Convert boolean values to strings 'Yes' or 'No'. **/
+/** Q26) Convert boolean values to strings 'Yes' or 'No'. **/
 
 //Uses Pattern Matching
   def boolToWord(boolean: Boolean): String = boolean match {
@@ -543,12 +548,12 @@ def boolToWord(boolean: Boolean): String =
 def boolToWord(boolean: Boolean) = if (boolean) "Yes" else "No"
 }
 
-/** Q - Bob needs a fast way to calculate the volume of a rectangular cuboid with three values: the length, width and height of the cuboid.
+/** Q27 - Bob needs a fast way to calculate the volume of a rectangular cuboid with three values: the length, width and height of the cuboid.
  Write a function to help Bob with this calculation. **/
 def cuboidVolume(length: Int, width: Int, height: Int): Int = length * width * height
 println(cuboidVolume(6,7,8))//336 6x7x8
 
-/** Q - Write a function that accepts a non-negative integer n and a string s as parameters, and returns a string of s repeated exactly n times. E.g.
+/** Q28 - Write a function that accepts a non-negative integer n and a string s as parameters, and returns a string of s repeated exactly n times. E.g.
  6, "I"     -> "IIIIII"
  5, "Hello" -> "HelloHelloHelloHelloHello" **/
 
@@ -556,7 +561,7 @@ def repeatStr(times: Int, str: String): String = str * times
 println(repeatStr(6, "I")) //IIIIII
 
 
-/**Q Count the monkeys so if 10 = and array of --> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] **/
+/**Q29 Count the monkeys so if 10 = and array of --> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] **/
 def monkeyCount (n: Int): Array[Int] = {
   (1 to n).toArray
 }
@@ -564,7 +569,7 @@ val count = monkeyCount(5)
 println(count.mkString(", "))//1, 2, 3, 4, 5
 
 
-/** Q  Return the day e.g 1 returns "Sunday"  **/
+/** Q30  Return the day e.g 1 returns "Sunday"  **/
 def whatDay(num: Int): String = {
   num match {
     case 1 => "Sunday"
@@ -578,7 +583,7 @@ def whatDay(num: Int): String = {
   }
 }
 
-/**Q Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.**/
+/**Q31 Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.**/
 //def greet(name: String): String =
 //  if name == "Johnny" then
 //    "Hello, my love!"
@@ -586,7 +591,7 @@ def whatDay(num: Int): String = {
 //    s"Hello, $name!"
 
 
-/**Q Define a function that removes duplicates from an array of non negative numbers and returns it as a result.
+/**Q32 Define a function that removes duplicates from an array of non negative numbers and returns it as a result.
  The order of the sequence has to stay the same.
  Examples:
  Input -> Output
@@ -598,7 +603,7 @@ println(distinct(Seq(1, 2, 2, 3)).mkString(", ")) // Output: 1, 2, 3
 
 
 
-/** Q - In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'. */
+/** Q33 - In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'. */
  def well(x: Seq[String]): String = {
 
  val goodCount = x.count(_ == "good")
@@ -617,7 +622,7 @@ println(distinct(Seq(1, 2, 2, 3)).mkString(", ")) // Output: 1, 2, 3
  println(well(Seq("good", "good", "good")))
 
 
-/** Q  Create a function that takes an int as an argument and returns "Even" for even numbers or "Odd"**/
+/** Q 34) Create a function that takes an int as an argument and returns "Even" for even numbers or "Odd"**/
 
 def evenOrOdd(number: Int): String = {
   if (number % 2 == 0) "Even"
@@ -632,7 +637,7 @@ def evenOrOdd(number: Int): String = {
 }
 println(evenOrOdd(2))
 
-/** Q Given a string str, reverse it and omit all non-alphabetic characters.
+/** Q35)  Given a string str, reverse it and omit all non-alphabetic characters.
 E.g. For str = "krishan", the output should be "nahsirk".
  For str = "ultr53o?n", the output should be "nortlu". **/
 def reverseLetter(str: String): String = {
@@ -641,7 +646,7 @@ def reverseLetter(str: String): String = {
 }
 println(reverseLetter("Sandra101"))
 
-/**Q - Refactored Greeting - The following code could use a bit of object-oriented artistry. While it's a simple method and works just fine as it is, in a larger system it's best to organize methods into classes/objects. (Or, at least, something similar depending on your language)
+/**Q 36)- Refactored Greeting - The following code could use a bit of object-oriented artistry. While it's a simple method and works just fine as it is, in a larger system it's best to organize methods into classes/objects. (Or, at least, something similar depending on your language)
  Refactor the following code so that it belongs to a Person class/object. Each Person instance will have a greet method. The Person instance should be instantiated with a name so that it no longer has to be passed into each greet method call.
  // TODO: This method needs to be called multiple times for the same person (my_name).
  // It would be nice if we didnt have to always pass in my_name every time we needed to great someone.
@@ -664,7 +669,46 @@ case class Person(name: String) {
 val joe = Person("Joe") //immutable instance. joe is of type person
 println(joe.greet("Kate")) //calls the greet method on joe passing 'kate' as the other name
 
-/** Q - Make a simple function called greet that returns the most-famous "hello world!".**/
+
+
+/** Q37) - Make a simple function called greet that returns the most-famous "hello world!".**/
 def greet: String = {
   "hello world!"
 }
+
+
+/** Q38) Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+ e.g. XO("ooxx") => true
+ XO("xooxx") => false
+ XO("ooxXm") => true
+ XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+ XO("zzoo") => false */
+
+def xo(str: String): Boolean = {
+  str.toLowerCase.count(_ == 'x') == str.toLowerCase.count(_ == 'o')
+}
+
+//Didn't submit this Kata, kata was not loading??
+
+/** Q39) Capitalization and Mutability
+ * "hello" --> "Hello"
+ * "Hello" --> "Hello" (the first letter was already capitalized)
+ * "a"     --> "A"
+ * from -> def capitaliseWord(word: String): String = word.toUpperCase */
+//not toUpperCase but capitalize
+def capitaliseWord(word: String): String = word.capitalize
+
+//Diff between capitalize and toUpperCase
+val str = "hello world"
+val capitalized = str.capitalize  // "Hello world"
+val upperCased = str.toUpperCase  // "HELLO WORLD"
+
+println(capitalized) // Output: Hello world
+println(upperCased)  // Output: HELLO WORLD
+
+/**Q40) */
+/**Q41) */
+/**Q42) */
+/**Q43) */
+/**Q44) */
+/**Q45) */
