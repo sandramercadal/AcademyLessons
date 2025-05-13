@@ -7,8 +7,8 @@
 //import org.scalatest.flatspec.AnyFlatSpec
 
   //Error catch
-  //We want to test edge cases. We want our tests to be able to fail but they still need to  compile.
-  //A test passes because we expect it to fail or hit our error catch. writting a failing test. The method inside is a fail. f
+  //We want to test edge cases. We want our tests to be able to fail but they still need to compile.
+  //A test passes because we expect it to fail or hit our error catch. Write a failing test. The method inside is a fail.
   //In Scala we test to fail
 
 package Wk2Wed

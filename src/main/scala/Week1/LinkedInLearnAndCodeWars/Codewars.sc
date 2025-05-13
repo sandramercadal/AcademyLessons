@@ -643,25 +643,28 @@ println(reverseLetter("Sandra101"))
 
 /**Q - Refactored Greeting - The following code could use a bit of object-oriented artistry. While it's a simple method and works just fine as it is, in a larger system it's best to organize methods into classes/objects. (Or, at least, something similar depending on your language)
  Refactor the following code so that it belongs to a Person class/object. Each Person instance will have a greet method. The Person instance should be instantiated with a name so that it no longer has to be passed into each greet method call.
- Here is how the final refactored code would be used:
+ // TODO: This method needs to be called multiple times for the same person (my_name).
+ // It would be nice if we didnt have to always pass in my_name every time we needed to great someone.
 
+ case class Person(name: String, age: Int)
+ val jack = Person("Jack", 25) // Providing both name and age
+ val jill = Person("Jill", 30) // Providing both name and age
+
+ Code would be used for:
  val joe = Person("Joe")
  joe.greet("Kate") // should return "Hello Kate, my name is Joe"
  joe.name          // should == "Joe" **/
 
-//case class Person(name: String, age: Int)
-//
-//val person1 = Person("Alice", 25)
-//val person2 = person1.copy(age = 26)
+case class Person(name: String) {
 
+  def greet(otherName: String): String = {
+    s"Hello $otherName, my name is $name"
+  }
+}
+val joe = Person("Joe") //immutable instance. joe is of type person
+println(joe.greet("Kate")) //calls the greet method on joe passing 'kate' as the other name
 
-//case class Person(name: String, age: Int)
-//
-//val person1 = Person("Jack", 25)
-//val person2 = Person("Jill", 25)
-
-
-case class Person(name: String, age: Int)
-
-val jack = Person("Jack", 25)  // Provide both name and age
-val jill = Person("Jill", 30)  // Provide both name and age
+/** Q - Make a simple function called greet that returns the most-famous "hello world!".**/
+def greet: String = {
+  "hello world!"
+}

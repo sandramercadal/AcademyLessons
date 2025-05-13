@@ -1,6 +1,6 @@
 package Wk2Wednesday
 
-/**
+
 import Week2.Weds.Username
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
@@ -16,12 +16,13 @@ class UsernameSpec extends AnyWordSpec with Matchers {
 
     "return true" when {
 
-      "the username is 8 characters long and all lowercase" in { //lowest level and has the word 'in'
+      "the username is 8 characters long and all lowercase" in {
+        val input = username.checkUsername("mercator")
         val expectedResult = true
         input shouldBe expectedResult
       }
 
-      "the username is more than 8 characters long and all lowercase" in { //lowest level and has the word 'in'
+      "the username is more than 8 characters long and all lowercase" in {
         val input = username.checkUsername("mercatordigital")
         val expectedResult = true
         input shouldBe expectedResult
@@ -48,10 +49,8 @@ class UsernameSpec extends AnyWordSpec with Matchers {
       "the username is entered as an empty string" in {
         val input = username.checkUsername("")
         val expectedResult = false
-        input shouldBe expectedResult     //It's passing the test because I am expecting it to fail
+        input shouldBe expectedResult
       }
     }
   }
 }
-
-*/

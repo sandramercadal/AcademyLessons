@@ -12,6 +12,19 @@ println(stringLength.length) //34
 println("hello world".mkString("\n"))
 println("hello wonderful".toList.mkString("\n"))
 
+
+//def greet: String = "hello world!".reverse
+//  .toCharArray()
+//  .reverse
+//  .mkString
+//  .reverse
+//  .toCharArray()
+//  .reverse
+//  .mkString
+//println(greet)
+
+
+
 //VAR can be re-assigned
 
 //INT - looking for whole numbers
