@@ -1,3 +1,14 @@
+val xs = List (1,2,3,4,5)
+val result = for (a <- xs) yield (a +1)
+println(result)
+println(xs)
+
+val xs2 = List(1, 2, 3, 4, 5) // Original list
+val result2 = xs2 :+ 6 // Appending 6 to the end of the list
+println(result2) // This prints List(1, 2, 3, 4, 5, 6)
+
+
+
 val favouriteDessert = "brownie" //inferred val is of type String = brownie
 val favouriteDessert2 : String = "brownie" //val stated as a String = brownie
 //favouriteDessert /2 // This is a string so cant divide by a string

@@ -23,11 +23,23 @@
 //}
 //println(reverseLetter("Sandra101"))
 
-case class Person(name: String) {
+//case class Person(name: String) {
+//
+//  def greet(otherName: String): String = {
+//    s"Hello $otherName, my name is $name"
+//  }
+//}
+//val joe = Person("Joe")
+//println(joe.greet("Kate"))
 
-  def greet(otherName: String): String = {
-    s"Hello $otherName, my name is $name"
-  }
+
+//def maps(xs: List[Int]): List[Int] =
+//  xs.map(_ * 2)
+
+object Kata {
+
+  def maps(xs: List[Int]): List[Int] = for {
+    x <- xs
+  } yield x * 2
 }
-val joe = Person("Joe")
-println(joe.greet("Kate"))
+println(Kata.maps(List(1, 2, 3)))

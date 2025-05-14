@@ -197,10 +197,28 @@ println(welcome("Albanian")) // Welcome (default to English)
  For example:
  [1, 2, 3] --> [2, 4, 6]*/
 
+def maps(xs: List[Int]): List[Int] = {
+  xs.map(numb => numb * 2)
+}
+
+println(maps(List(1, 2, 3)))
+//The map function is called on the list xs. It takes a function as an argument and applies that function to each element of the list.
+ //numb => numb * 2: This is an anonymous function (lambda expression):
+//  numb is a placeholder variable representing each element of the list as the map function iterates through it.
+//The expression numb * 2 defines what happens to each element. It takes the current element (represented by numb), multiplies it by 2, and returns the result.
+
+//OR
+object Kata {
+
+  def maps(xs: List[Int]): List[Int] = for {
+    x <- xs
+  } yield x * 2
+}
+println(Kata.maps(List(1, 2, 3)))
 
 
-
-
+  def maps(xs: List[Int]): List[Int] =
+    xs.map(_ * 2)
 
 
 /** Q9) Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
@@ -707,8 +725,18 @@ println(capitalized) // Output: Hello world
 println(upperCased)  // Output: HELLO WORLD
 
 /**Q40) */
+
+
 /**Q41) */
+
+
 /**Q42) */
+
+
 /**Q43) */
+
+
 /**Q44) */
+
+
 /**Q45) */
