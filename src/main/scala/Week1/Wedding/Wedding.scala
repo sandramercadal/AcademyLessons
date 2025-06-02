@@ -1,5 +1,5 @@
 
-/** Wedding planning Project 👰🏽‍ ⛪️ 🧁 consolidates lessons * */
+/** Wedding planning Project 👰🏽‍ ⛪️ 🧁 consolidates Cohort 2 Academy lessons * */
 
 
 import scala.collection.mutable.Map
