@@ -74,7 +74,7 @@ object WeddingPlan extends App { //Wk 2
     allThemes.filter(_.churchOnsite)
   }
 
-  println("Venues with church:") // List of venues with church //Gatsby- Quintessentially English Countryside chic
+  println("Venues with church:") // List of venues with church //Gatsby & Quintessentially English Countryside chic
   venuesWithChurch.foreach(theme => println(s"- ${theme.name}"))
 
 
@@ -139,7 +139,7 @@ object WeddingPlan extends App { //Wk 2
     case PhotographySlots.CakeCutting => 15
   }
 
-  println(photographyTime(PhotographySlots.AtChurch)) //40
+  println(photographyTime(PhotographySlots.AtChurch)) //40 (mins)
   println(s"Allocated time at Church is ${photographyTime(PhotographySlots.AtChurch)} minutes.") //Allocated time at Church is 40 minutes.
 
 
@@ -180,7 +180,7 @@ object WeddingPlan extends App { //Wk 2
   val sam = Guest(person = Person("Sam Heart", "sb2340@yahoo.com", Some("079901161123")), plusOne = Some(tim), dietaryRequirements = List("Vegan"))
 
   //Create some plus One guests - we don't always need guest phone numbers.
-  val annie = Guest(person = Person("Annie Plum", "a@example.com"), dietaryRequirements = List("Vegeterian"))
+  val annie = Guest(person = Person("Annie Plum", "annie@example.com"), dietaryRequirements = List("Vegeterian"))
   val tim = Guest(person = Person("Tim Bolt", "tb@yahoo.com"), dietaryRequirements = List("None"))
   println(tod)
   println(tim)
@@ -354,8 +354,6 @@ println(s"The veg guests are: ${vegeterianGuests}")
 
 //Wk 4 Hof - write a tahnk you note
 
-
-//write a chat with me on a separate page? it can be a q& A on gift registry
 
 // or n//Something about assigning people to a table and match to a table
 //Keyset one from udemy course?
