@@ -208,7 +208,7 @@ println(s"The veg guests are: ${vegeterianGuests}")
 
   val weddingPlanner = new WeddingPlanner("Crimson Gretal", "JB & Co", "07778900900", "Tradional Elegance", 12000.0)
   println(s"The wedding planners name is ${weddingPlanner.name}.")
-  println(s"The wedding budget is £${weddingPlanner.weddingBudget}.")
+  println(s"The wedding planners budget is £${weddingPlanner.weddingBudget}.")
 
 
 
@@ -216,9 +216,9 @@ println(s"The veg guests are: ${vegeterianGuests}")
   /** Welcome visitors from Wales, England and Spain to the reception in their language */
   def welcome(language: String): String = language.toLowerCase
   match {
-    case "english" => "Welcome to the wedding of M & T"
-    case "spanish" => "Bienvenido a la boda de M & T"
-    case "welsh" => "Croeso i briodas Mary ac Tom"
+    case "english" => "Welcome to the wedding of May & Tom"
+    case "spanish" => "Bienvenido a la boda de May & Tom"
+    case "welsh" => "Croeso i briodas May ac Tom"
     case _ => "Welcome" // Default to English if not found
   }
   println(welcome("welsh")) //Croeso
@@ -340,7 +340,7 @@ println(s"The veg guests are: ${vegeterianGuests}")
   println(s"The budget for all the vendor items is £${totalItemBudget}")
 
   //something about adding tax to how much things cost eg flowers
-  //set a budget from 6000 for each thing. Flowers is 750. Can afford?? yes / no
+  //say Flowers have a budget of £6000. Flowers cost 750. Can afford?? yes / no
 
 
 
