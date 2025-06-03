@@ -732,11 +732,22 @@ def reverseAndRemoveNonAlpha (string: String): String = {
 }
 println(reverseAndRemoveNonAlpha("krishan"))
 
-/**Q41) */
+/**Q41) Welcome to the city
+ * Create a method that takes as input a name, city, and state to welcome a person. Note that name will be an array consisting of one or more values that should be joined together with one space between each, and the length of the name array in test cases will vary.
+ * Eg: ['John', 'Smith'], 'Phoenix', 'Arizona' returns the string Hello, John Smith! Welcome to Phoenix, Arizona!
+ * or "Franklin", "Delano", "Roosevelt"), "Chicago", "Illinois", returns "Hello, Franklin Delano Roosevelt! Welcome to Chicago, Illinois!"),*/
+def sayHello(name: Seq[String], city: String, state: String): String = {
+  val fullName = name.mkString(" ") //combines all the names in the name sequence into a single string, separating them with a space using mkString(" ").
+  s"Hello, $fullName! Welcome to $city, $state!"
+}
+println(sayHello(Seq("Peter", "Brown", "Hound"), "Sing", "Aus")) //Hello, Peter Brown Hound! Welcome to Sing, Aus!
 
-
-/**Q42) */
-
+/**Q42) Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+ Eg. "This is an example!" ==> "sihT si na !elpmaxe" or "double  spaces" ==> "elbuod  secaps"*/
+def reverseWords(text: String): String = {
+  text.split(" ").map(_.reverse).mkString(" ")
+}
+println(reverseWords("World Hello")) //dlroW olleH
 
 /**Q43) */
 

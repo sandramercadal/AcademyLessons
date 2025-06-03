@@ -1,8 +1,4 @@
-def reverseAndRemoveNonAlpha (string: String): String = {
-  string.filter(_.isLetter).reverse
+def reverseWords(text: String): String = {
+  text.split(" ").map(_.reverse).mkString(" ")
 }
-
-
-println(reverseAndRemoveNonAlpha("krishan"))
-
-
+println(reverseWords("World Hello"))
