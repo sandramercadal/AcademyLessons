@@ -724,8 +724,13 @@ val upperCased = str.toUpperCase  // "HELLO WORLD"
 println(capitalized) // Output: Hello world
 println(upperCased)  // Output: HELLO WORLD
 
-/**Q40) */
+/**Q40) Reverse a string and remove all non-alphabetic characters eg "krishan", should be "nahsirk" and
+"ultr53o?n" should be "nortlu".*/
 
+def reverseAndRemoveNonAlpha (string: String): String = {
+  string.filter(_.isLetter).reverse
+}
+println(reverseAndRemoveNonAlpha("krishan"))
 
 /**Q41) */
 
