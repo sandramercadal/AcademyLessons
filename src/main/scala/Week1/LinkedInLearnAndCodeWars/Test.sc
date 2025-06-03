@@ -1,4 +1,4 @@
-def reverseWords(text: String): String = {
-  text.split(" ").map(_.reverse).mkString(" ")
+def reverseWords(str: String): String = {
+  str.split(" ").reverse.mkString(" ")
 }
 println(reverseWords("World Hello"))

@@ -748,9 +748,16 @@ def reverseWords(text: String): String = {
   text.split(" ").map(_.reverse).mkString(" ")
 }
 println(reverseWords("World Hello")) //dlroW olleH
+//Splitting the String: text.split(" "): This part takes the input string text and splits it into an array of substrings (words) based on spaces.
+//e.g. "This is an example!", will become an array: Array("This", "is", "an", "example!").
+//Mapping Over the Array: .map(_.reverse): This applies the reverse method to each word in the array. The _ is a placeholder that represents each element in the array as we iterate through it. So, each word in the array gets reversed. Using the earlier example: e.g. "This" becomes "sihT",
+//Joining the Reversed Words: .mkString(" "): After the mapping, you have an array of reversed words. The mkString(" ") method takes that array and joins the elements back into a single string, using a space as a separator.
 
-/**Q43) */
-
+/**Q43) Reverse words so "The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The" */
+def reverseWords(str: String): String = {
+  str.split(" ").reverse.mkString(" ")
+}
+println(reverseWords("World Hello")) //Hello World
 
 /**Q44) */
 
