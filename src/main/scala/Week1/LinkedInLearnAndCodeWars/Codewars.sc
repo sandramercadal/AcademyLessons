@@ -754,12 +754,14 @@ println(reverseWords("World Hello")) //dlroW olleH
 //Joining the Reversed Words: .mkString(" "): After the mapping, you have an array of reversed words. The mkString(" ") method takes that array and joins the elements back into a single string, using a space as a separator.
 
 /**Q43) Reverse words so "The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The" */
-def reverseWords(str: String): String = {
-  str.split(" ").reverse.mkString(" ")
+def reverseWords(string: String): String = {
+  string.split(" ").reverse.mkString(" ")
 }
 println(reverseWords("World Hello")) //Hello World
 
-/**Q44) */
-
-
+/**Q44) Write reverseList function that simply reverses lists.*/
+def reverseList(list: List[Int]): List[Int]  = {
+  list.reverse
+}
+//println(reverseList("monkey","Balloon"))
 /**Q45) */
