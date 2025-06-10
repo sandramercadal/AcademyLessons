@@ -763,5 +763,5 @@ println(reverseWords("World Hello")) //Hello World
 def reverseList(list: List[Int]): List[Int]  = {
   list.reverse
 }
-//println(reverseList("monkey","Balloon"))
+println(reverseList(List(1, 2, 3)))
 /**Q45) */
