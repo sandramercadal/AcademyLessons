@@ -12,4 +12,4 @@ var capital = Map("US" -> "Washington", "France" -> "Paris")
 capital += ("Japan" -> "Tokyo")
 println(capital("France"))
 
-
+/** alternatives to above default Map implementation is HashMap, TreeMap, Par, ParMap executes operations in parallel */
