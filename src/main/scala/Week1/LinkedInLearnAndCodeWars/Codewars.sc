@@ -46,7 +46,7 @@ def finalGrade(exam: Int, projects: Int): Int = {
   }
 }
 println(finalGrade(100, 12)) // 100
-println(finalGrade(99, 0)) // 100
+println(finalGrade(99, 0)) // 100 ?? they completed no special projects
 println(finalGrade(85, 5)) // 90
 println(finalGrade(55, 3)) // 75
 println(finalGrade(55, 0)) // 0
@@ -67,15 +67,11 @@ println(makeUpperCase("hello, sandra")) //HELLO, SANDRA
 println(makeUpperCase("hello")) //HELLO
 
 
-/** Q4 Is the string uppercase?
- * Create a method to see whether the string is ALL CAPS.
- * Examples (input -> output)
- * "c" -> False
- * "C" -> True
+/** Q4 Is the string uppercase? Create a method to see whether the string is ALL CAPS.
+ * "c" -> False, "C" -> True
  * "hello I AM DONALD" -> False
  * "HELLO I AM DONALD" -> True
- * "ACSKLDFJSgSKLDFJSKLDFJ" -> False
- * "ACSKLDFJSGSKLDFJSKLDFJ" -> True * */
+ * "ACSKLDFJSgSKLDFJSKLDFJ" -> False * */
 
 def isUpperCase(input: String): Boolean = { //notice input here
   input == input.toUpperCase
@@ -193,19 +189,15 @@ println(welcome("Albanian")) // Welcome (default to English)
 
 
 /** Q8) Simple multiplication  */
-/**Beginner - Lost Without a Map - Given an array of integers, return a new array with each value doubled.
- For example:
- [1, 2, 3] --> [2, 4, 6]*/
+/**Beginner - Lost Without a Map - Given an array of integers, return a new array with each value doubled. e.g: [1, 2, 3] --> [2, 4, 6]*/
 
 def maps(xs: List[Int]): List[Int] = {
   xs.map(numb => numb * 2)
 }
-
-println(maps(List(1, 2, 3)))
+println(maps(List(1, 2, 3))) //2,4,6
 //The map function is called on the list xs. It takes a function as an argument and applies that function to each element of the list.
  //numb => numb * 2: This is an anonymous function (lambda expression):
 //  numb is a placeholder variable representing each element of the list as the map function iterates through it.
-//The expression numb * 2 defines what happens to each element. It takes the current element (represented by numb), multiplies it by 2, and returns the result.
 
 //OR
 object Kata {

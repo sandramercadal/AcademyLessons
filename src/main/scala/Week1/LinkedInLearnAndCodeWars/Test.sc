@@ -1,4 +1,5 @@
-def reverseList(list: List[Int]): List[Int]  = {
-  list.reverse
+def maps(xs: List[Int]): List[Int] = {
+  xs.map(numb => numb * 2)
 }
-println(reverseList(List(1, 2, 3)))
+
+println(maps(List(1, 2, 3)))

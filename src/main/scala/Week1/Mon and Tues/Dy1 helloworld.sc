@@ -9,7 +9,7 @@ val cakesRequired = 10 * 2
 val stringLength = "What is the length of this string?"
 
 println(stringLength.length) //34
-println("hello world".mkString("\n"))
+println("hello world".mkString("\n")) //print spaces between letters
 println("hello wonderful".toList.mkString("\n"))
 
 
