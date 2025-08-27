@@ -14,8 +14,8 @@ object TicketPrices {
 
   /**b using flatMap **/
   //uses the flatMap method to extract the firstClassTicketPrice from the TicketPrice instance if it exists:
-  def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] = //what is this line why option ticket price option int??
-    ticketPrice.flatMap { ticketPrice => //checks if ticketPrice is defined (i.e., not None). If it is, it looks at the firstClassTicketPrice of that TicketPrice and returns it wrapped in an Option. If firstClassTicketPrice is None, that will be the result.
+  def getFirstClassTicketPrice(ticketPrice: Option[TicketPrice]): Option[Int] =
+    ticketPrice.flatMap { ticketPrice => //checks if ticketPrice is defined (i.e. not None). If it is, it looks at the firstClassTicketPrice of that TicketPrice and returns it wrapped in an Option. If firstClassTicketPrice is None, that will be the result.
       ticketPrice.firstClassTicketPrice
     }
   //Now slightly shorter syntax
@@ -29,7 +29,6 @@ object TicketPrices {
       firstClassPrice <- t.firstClassTicketPrice //??
     } yield firstClassPrice
   }
-
 }
 
 
@@ -49,11 +48,10 @@ object TrainTicketsLinkedInLearn extends App {
   println(TicketPrices.getFirstClassTicketPrice(Some(londonToParisEconomy))) // None
   println(TicketPrices.getFirstClassTicketPrice(None)) // None
 
-  // Test the for-comprehension version
+  // Test the for-comprehension version using the 2nd version getFirstClassTicketPrice2
   println(TicketPrices.getFirstClassTicketPrice2(Some(londonToParis))) // Some(250)
   println(TicketPrices.getFirstClassTicketPrice2(Some(londonToParisEconomy))) // None
   println(TicketPrices.getFirstClassTicketPrice2(None)) // None
-
 
 }
 

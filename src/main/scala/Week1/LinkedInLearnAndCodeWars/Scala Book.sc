@@ -1,3 +1,4 @@
+/** chapter 1  */
 def hello() = {
   println("Hello, World")
 }
@@ -13,3 +14,4 @@ capital += ("Japan" -> "Tokyo")
 println(capital("France"))
 
 /** alternatives to above default Map implementation is HashMap, TreeMap, Par, ParMap executes operations in parallel */
+
