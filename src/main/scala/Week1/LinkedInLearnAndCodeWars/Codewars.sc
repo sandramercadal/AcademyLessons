@@ -11,11 +11,12 @@
 
 def containsGreeting(message: String): Boolean = {
   val greetings = List("hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc")
-  greetings.exists(message.toLowerCase.contains)
+  greetings.exists(message.toLowerCase.contains) //see "message" from def line and greetings from the val name
   //OR greetings.exists(greeting => message.toLowerCase.contains(greeting))
   //OR greetings.map(message.toLowerCase.contains).contains(true)
 }
 println(containsGreeting("hello")) //true
+println(containsGreeting("gutten tag")) //false
 
 //Q2
 /**Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
@@ -31,6 +32,7 @@ println(containsGreeting("hello")) //true
  * 10, 15 --> 100
  * 85, 5 --> 90
  * 55, 3 --> 75
+ *
  * 55, 0 --> 0
  * 20, 2 --> 0 */
 
@@ -73,7 +75,7 @@ println(makeUpperCase("hello")) //HELLO
  * "HELLO I AM DONALD" -> True
  * "ACSKLDFJSgSKLDFJSKLDFJ" -> False * */
 
-def isUpperCase(input: String): Boolean = { //notice input here
+def isUpperCase(input: String): Boolean = { //notice 'input' here
   input == input.toUpperCase
 }
 
@@ -185,7 +187,7 @@ match {
   case _ => "Welcome" // Default to English if not found
 }
 println(welcome("dutch")) // Velkom
-println(welcome("Albanian")) // Welcome (default to English)
+println(welcome("Albanian")) // Welcome (default to English as not found)
 
 
 /** Q8) Simple multiplication  */
@@ -251,7 +253,6 @@ def stringToNumber(string: String): Int= string.toInt
 println(stringToNumber("23"))
 
 
-
 /** Q11 Super Duper Easy ;
 Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
  **/
@@ -265,7 +266,7 @@ def processValue(value: Any): Any = {
     case _ => "Error"  // Handle any other types
   }
 }
-println(processValue(2))
+println(processValue(2)) //// 2 x 50 + 6 =106
 
 
 /** Q12) Remove all exclamation marks from the end of sentence. e.g.
@@ -275,6 +276,7 @@ println(processValue(2))
 def remove(string: String): String = {
   string.replaceAll("!+$", "") ///without the + may work also
 }
+
 println(remove("Hi!!!!")) //Hi
 println(remove("Hi"))//Hi
 //! represents the exclamation mark character that we want to find in the string.
@@ -315,7 +317,8 @@ def replace(s: String): String = {
   s.replaceAll("[aeiouAEIOU]", "!")
 }
 //Thought this would pass the test someone else did it but it didn't pass for me:
-def replace(s: String): String = s.replaceAll("[a,e,i,o,u,A,E,I,O,U]", "!")
+def replace(s: String): String =
+  s.replaceAll("[a,e,i,o,u,A,E,I,O,U]", "!")
 
 
 /**Q16) Two players - "black" and "white" are playing a game. The game consists of several rounds. If a player wins in a round, he is to move again during the next round. If a player loses a round, it's the other player who moves on the next round. Given whose turn it was on the previous round and whether he won, determine whose turn it is on the next round.
@@ -358,13 +361,13 @@ println(whoseMove("white", false))  //Bl
 
 
 
-//Q - Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+//Q? - Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
 def removeExclamationMarks(string: String): String = {
   string.replaceAll("!", "")
 }
 println(removeExclamationMarks("Mary!")) //Mary
 
-//Q - remove all the numbers from a list of strings
+//Q? - remove all the numbers from a list of strings
 def stringClean(string: String): String = {
   string.replaceAll("\\d", "")  // Regex \\d numbers 0-9?
 }
@@ -374,7 +377,7 @@ println(stringClean("1Mary12345")) //Mary
 
 
 
-/**Q18 - Palindrome detector eg madam, kayak, taco cats, step on no pets */
+/**Q18 - Palindrome detector eg madam, kayak, taco cat, step on no pets */
 
 
 
@@ -389,7 +392,7 @@ def sayHello(name: String): String = {
 println(sayHello("Dr Spock")) // Hello, Dr Spock
 
 
-/** Check same case
+/** Q? Check same case
  * Write a function that will check if two given characters are the same case.
  * If either of the characters is not a letter, return -1 :
  '0' and '?' -- returns -1 --If either of them are not a letter
@@ -413,7 +416,7 @@ def sameCase(a: Char, b: Char): Int = {
 println(sameCase('U', '9'))
 
 
-/**Q20) READ the Q properly eg how to calculate the BMI, it says its weight x (height x2)!
+/**Q20) READ the Q properly eg how to calculate the BMI, it says weight x (height x2)!
  *
  * Write function bmi that calculates body mass index (bmi = weight / height2).
  * if bmi <= 18.5 return "Underweight"
@@ -592,6 +595,7 @@ def whatDay(num: Int): String = {
     case _ => "Wrong, please enter a number between 1 and 7"
   }
 }
+println(whatDay(7)) //Saturday
 
 /**Q31 Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.**/
 //def greet(name: String): String =
@@ -610,7 +614,6 @@ def whatDay(num: Int): String = {
 def distinct(xs: Seq[Int]): Seq[Int] = xs.distinct
 // Example usage:
 println(distinct(Seq(1, 2, 2, 3)).mkString(", ")) // Output: 1, 2, 3
-
 
 
 /** Q33 - In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'. */
