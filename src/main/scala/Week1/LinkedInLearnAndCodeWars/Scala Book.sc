@@ -1,5 +1,6 @@
 import scala.io.Codec.fallbackSystemCodec.name
 
+
 /** chapter 1  */
 def hello() = {
   println("Hello, World")
@@ -65,3 +66,11 @@ val nameHasUpperCase = name.exists(_.isUpper)
 //Either of the two less annoying alternatives work just as well
 //val x = new HashMap[Int, String]()
 //val x: Map[Int, String] = new HashMap()
+
+/** C H A P T E R   2  */
+def max(x: Int, y: Int): Int = {
+  if (x > y) x
+  else y
+}
+println(max(10, 11))//11 is greater than 10
+
