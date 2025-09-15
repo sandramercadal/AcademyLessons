@@ -74,4 +74,12 @@ def max(x: Int, y: Int): Int = {
 }
 println(max(10, 11))//11 is greater than 10
 
-/** Page 43 */
+/** Page 43 the structure of a function */
+def max (x: Int, y: Int): Int = { //x and y are parameters in parentheses and Int = is the functions result type
+if (x > y)
+  x
+else y
+}
+//Once defined you can call it by its nameprintln(max(3,5))
+
+
