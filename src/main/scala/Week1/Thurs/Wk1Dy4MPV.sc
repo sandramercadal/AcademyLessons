@@ -2,18 +2,12 @@
 
 //Q1a Make a List of the numbers from 1-5
 val numberList: List [Int] = List (
-  1,
-  2,
-  3,
-  4,
-  5
+  1, 2, 3, 4, 5
 )
 
 //Q1a part II Make a Seq of the primary colours
 val primaryColours: Seq [String] = Seq (
-    "blue",
-    "yellow",
-    "red"
+    "blue", "yellow", "red"
   )
 
 //Q1b Write a function to multiply all the values in your List by 3
@@ -21,13 +15,9 @@ val tripleList: List[Int] = numberList.map{
   number => number * 3}
 
 //Q1c Write a function that removes 'blue' from above primaryColours
-//blue seems to be the tail
-//remove with a tail function or removeLast?
-//USe filter or filter not??
-//val removeLast = primaryColours.init
 
 //APRIL'S CODE FOR Q1b
-primaryColours.filter( col => col != "Blue") //List(blue, yellow, red)
+primaryColours.filter( col => col != "blue") //List(yellow, red)
 //The term col in the lambda expression col => col != "Blue"
 
 
@@ -55,35 +45,41 @@ val animalMap: Map[String, String] = Map(
   "Olive" -> "fish",
   "Flossy" -> "cat"
 )
+/** In my code, the keys are names of pets (like "Rufus", "Honey") which are of type String.
+ The values are the types of animals (like "dog", "fish") also of type String.
+ animalMap maps each individual pet name to its type (one-to-one relationship).*/
+
 //APRILS ANSWER:
 //The keys are of type string (dog, cat, fish)
-//The values are of type List [String] so SPot, Marvin etc
+//The values are of type List [String] so Spot, Marvin etc
 val davidsPets: Map[String, List[String]] = Map(
-  "Dog" -> List("Spot", "Marvin"),
-  "Fish" -> List("Deborah"),
-  "Cat" -> List("Paul")
+  "Dog" ->                  List("Spot", "Marvin"),
+  "Fish" ->                 List("Deborah"),
+  "Cat" ->                  List("Paul")
 )
-//Q3 b) Write a function that returns a list of David's dogs.
-//needs to return Rufus and Honey from a MAP[String, String] therefore if the 2nd String matches to "dog" return the 1st string value of "Rufus" and "Honey"
+//A Map, where the keys are of type String ("Dog", "Fish", "Cat").
+//The values are of type List[String], (names of pets).
+/** the keys are types of animals (like "Dog", "Fish") which are also of type String.
+ The values are lists of pet names that belong to each type (e.g., the list for "Dog" contains "Spot" and "Marvin").
+ davidsPets maps each type of animal to all its pet names (one-to-many relationship).*/
 
-//ATTEMPTS
-//val filterNotList: Map[String] = animalMap.filterNot(string => string != "fish" || "cat")
-//val filteredDogNames: Map [String, String] = animalMap.filter( name, "dog") => dogNames )
-//val filteredAnimalMap: Map[String, String] = animalMap.filter( string => string = "dog")
-//val dogNames: Map [String] = animalMap.filter ( )
-//val filteredAnimals: Map[String, Int] = animalMap.filter(
-  //string => string._2 >= 2
-//)
-val filteredAnimalMap: Map[String, String] = animalMap.filter( string => string._2 == "dog")
+//Q3 b) Write a function that returns a list of David's dogs.
+
+val dogNames: List[String] = davidsPets.get("Dog").getOrElse(List())
+
+// Print the result
+println(dogNames.mkString(", ")) // Output: Spot, Marvin
+
+//val filteredAnimalMap: Map[String, String] = animalMap.filter( string => string._2 == "dog")
 //use .keys at end if you only want to see the key
 
 
 
-animalMap.filter(pet => pet._1 == "Dog").values.flatten.mkString(", ")//Approach 1
+//animalMap.filter(pet => pet._1 == "Dog").values.flatten.mkString(", ")//Approach 1
 //Use .values to get the List("Spot", "Marvin")
 //Use .flatten to get out the List
 //Use .mkString to make a string and (", ") does the formatting so , and space between.
-animalMap("Dog").mkString(", ")// Approach 2 - simplified
+//animalMap("Dog").mkString(", ")// Approach 2 - simplified
 
 
 
