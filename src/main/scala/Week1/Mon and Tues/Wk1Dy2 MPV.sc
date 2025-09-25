@@ -92,16 +92,19 @@ val onlyFirstLetter = "hello".capitalize
 /**
 Research:
   1. Make a val called "new" which is type string. Why doesn’t this compile?
+ name     It's type
+ val new: String    = "I am a new string!"
+ // new is a keyword - this means it is protected.
+ // Use backticks if calling a val a keyword is unavoidable. lots of keywords, just look them up.
 
 2. What do we need to do within our code to make it compile?
+ To fix this and make it compile, you need to choose a different name for the variable that is not a keyword. For example, you could name it newString instead:
 
- 3. Are there any other words that you cannot use?
+
 */
-    //Name you give it      Type
-            val new:       String = "I am a new string!"
-// new is a keyword - this means it is protected.
-// Use backticks if calling a val a keyword is unavoidable. lots of keywords, just look them up.
+val newString: String = "I am a new string!" //This will run
 
+/**3. Are there any other words that you cannot use?*/
 //other keywords include: object, if, abstract, class....
 //Keywords or Reserved words are the words in a language that are used for some internal process
 // or represent some predefined actions.
