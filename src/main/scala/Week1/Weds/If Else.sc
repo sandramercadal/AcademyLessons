@@ -25,7 +25,7 @@ if
   s"It is $weather, grab your sunglasses!"
 
 } else {
-  s"It isn't hot today its $weather"
+  s"It isn't hot today it's $weather"
 }
 
 // if true --> hits the first string inside the 'if'
@@ -137,6 +137,6 @@ if (ageRating >= 18) {
 } else if (ageRating >= 4) {
   s"Your $ageRating can see a film rated U"
 } else {
-  s"Your $ageRating which means you are too young  - sorry"
+  s"You're $ageRating which means you are too young  - sorry"
 }
 ////A double backslash should work in your string to get a single backslash e.g \\ - Question asked in class.
