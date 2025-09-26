@@ -64,49 +64,55 @@ val davidsPets: Map[String, List[String]] = Map(
  davidsPets maps each type of animal to all its pet names (one-to-many relationship).*/
 
 //Q3 b) Write a function that returns a list of David's dogs.
-
 val dogNames: List[String] = davidsPets.get("Dog").getOrElse(List())
-
 // Print the result
 println(dogNames.mkString(", ")) // Output: Spot, Marvin
 
-//val filteredAnimalMap: Map[String, String] = animalMap.filter( string => string._2 == "dog")
-//use .keys at end if you only want to see the key
+/**OR still using davidsPets to get a full list using a for loop function*/
+def printDavidsPets (pets: Map[String, List[String]]): Unit = {
+  for ((animalType, animalName) <- pets) {
+    println(s"$animalType: ${animalName.mkString(",")}")
+  }
+}
+printDavidsPets(davidsPets) //Dog: Spot,Marvin Fish: Deborah Cat: Paul
+
+ //val filteredAnimalMap: Map[String, String] = animalMap.filter( string => string._2 == "dog")
+ //use .keys at end if you only want to see the key
 
 
 
-//animalMap.filter(pet => pet._1 == "Dog").values.flatten.mkString(", ")//Approach 1
-//Use .values to get the List("Spot", "Marvin")
-//Use .flatten to get out the List
-//Use .mkString to make a string and (", ") does the formatting so , and space between.
-//animalMap("Dog").mkString(", ")// Approach 2 - simplified
+ //animalMap.filter(pet => pet._1 == "Dog").values.flatten.mkString(", ")//Approach 1
+ //Use .values to get the List("Spot", "Marvin")
+ //Use .flatten to get out the List
+ //Use .mkString to make a string and (", ") does the formatting so , and space between.
+ //animalMap("Dog").mkString(", ")// Approach 2 - simplified
 
 
 
-/** EXTENSION APRILS CODE*/
+ /** EXTENSION APRILS CODE*/
 
-//1. Starting with a Seq(1-9), come up with 2 filters that, when used together, will return Seq(1,2,5,7).
-val nums = Seq(1,2,3,4,5,6,7,8,9)
-nums.filter(n => n % 3 !=0).filter(n => n % 4 != 0) // filter n % 3 !=0 removes numbers from the sequence that are divisible by 3. SO keep only those numbers where the remainder when divided by 3 is not equal to 0
-// filter(n => n % 4 != 0) then filters the remaining numbers to remove those that are divisible by 4, using a similar condition.
-
-
-
-//2. The .head function returns the first element of a list, and the .tail function returns everything except the first element.
-// Use head and tail to get the 3rd element of a List.
-val a = List(1,2,3,4,5)
-val third = a.tail.tail.head
+ //1. Starting with a Seq(1-9), come up with 2 filters that, when used together, will return Seq(1,2,5,7).
+ val nums = Seq(1,2,3,4,5,6,7,8,9)
+ nums.filter(n => n % 3 !=0).filter(n => n % 4 != 0) // filter n % 3 !=0 removes numbers from the sequence that are divisible by 3. SO keep only those numbers where the remainder when divided by 3 is not equal to 0
+ // filter(n => n % 4 != 0) then filters the remaining numbers to remove those that are divisible by 4, using a similar condition.
 
 
-/** RESEARCH APRILS CODE*/
 
-//1. What makes a Set different from a Seq? What should Set(1,2) == Set(2,1,1,1) return?
-//1. Answer: A Set only contains unique values, no duplicates. It overrides the dupes. Will return true.
-Set(1,2) == Set(2,1,1,1) //overrides duplicates so Set(2,1)
+ //2. The .head function returns the first element of a list, and the .tail function returns everything except the first element.
+ // Use head and tail to get the 3rd element of a List.
+ val a = List(1,2,3,4,5)
+ val third = a.tail.tail.head
 
-//2. What do you think List(3,4) == Seq(3,4) will return? Why? What about List(5,6) == Set(5,6)?
-//2. Answer:
-List(3,4) == Seq(3,4)
-// Will return true, since scala checks the elements against each other, and they are comparable data types.
-List(5,6) == Set(5,6)
-// Will return false, since these data types store data in different ways (ordered vs unordered).
+
+ /** RESEARCH APRILS CODE*/
+
+ //1. What makes a Set different from a Seq? What should Set(1,2) == Set(2,1,1,1) return?
+ //1. Answer: A Set only contains unique values, no duplicates. It overrides the dupes. Will return true.
+ Set(1,2) == Set(2,1,1,1) //overrides duplicates so Set(2,1)
+
+ //2. What do you think List(3,4) == Seq(3,4) will return? Why? What about List(5,6) == Set(5,6)?
+ //2. Answer:
+ List(3,4) == Seq(3,4)
+ // Will return true, since scala checks the elements against each other, and they are comparable data types.
+ List(5,6) == Set(5,6)
+ // Will return false, since these data types store data in different ways (ordered vs unordered).
