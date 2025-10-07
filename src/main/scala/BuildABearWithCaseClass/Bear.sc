@@ -1,13 +1,13 @@
 /** Case Classes & Pattern Matching **/
 
-// Data containers with syperpowers
+// Data containers with superpowers
 // 1. no need for 'new'
 // 2. Immutable by default so all fields are 'val' unless specified
 // 3. Automatic .copy method
-//pm replaces long if-else statements
+// Pattern matching replaces long if-else statements
 
 
- // Alternative code: Standalone case class - perfectly valid
+ /** Alternative code: Standalone case class - perfectly valid */
  case class TeddyBear(name: String, color: String)
  val bear = TeddyBear("Fluffy", "brown")
 
@@ -20,41 +20,69 @@ case class PandaBear (
                       furColour: String,
                       outfit: String,
                       hasBamboo: Boolean,
-                      accessories: List[String]
+                      accessories: List[(String,Double)] //Each tuple has one string and one price. Can have many accessories!
                      ) extends Bear
 
 case class PaddingtonBear (
                        name: String,
                        furColour: String,
                        outfit: String,
-                       accessories: List[String]
+                       accessories: List[(String,Double)]
                      ) extends Bear
 
 case class UnicornBear (
                        name: String,
                        furColour: String,
                        outfit: String,
-                       accessories: List[String]
+                       accessories: List[(String,Double)],
+                       hasBeatingHeart: Boolean
                      ) extends Bear
 
 case class RainbowBear (
                        name: String,
                        furColour: String,
                        outfit: String,
-                       hasHeart: Boolean,
-                       colours: List[String]
+                       hasBeatingHeart: Boolean,
+                       colours: List[(String,Double)]
                      ) extends Bear
 
 case class TeddyBear (
                          name: String,
                          furColour: String,
                          outfit: String,
-                         accessories: List[String]
+                         accessories: List[(String,Double)]
                        ) extends Bear
 
 //Something for no bear selected yet
 
-/** PM with a tuple */
+
+val RainbowTeddyBear = RainbowBear("Crimson", "Rainbow", "PJ's", hasBeatingHeart = true, List(("bedhat", 2.99), ("pillow", 1.99), ("slippers", 3.00)))
+
+/** Pattern match on a list of tuples */
+val accessories: List[(String,Double)] = List (
+  ("crown", 4.99),
+  ("bed hat", 2.99),
+  ("pillow", 1.99),
+  ("slippers", 3.00),
+  ("glasses", 2.99),
+  ("tiara", 1.99),
+  ("scarf", 3.00)
+)
+
+//match on accessories chosen for the RainbowTeddyBear:
+def rainbowTeddyBearAccessories (accessories: List[(String, Double)]): String = accessories match {
+  case List () =>
+    "No accessories chosen for your bear"
+
+  //case List ()
+
+
+}
+rainbowTeddyBearAccessories(List()) //No accessories chosen
+
+
+// WORK I N   P R O G R E S S //
+//Use
 
 /** PM with Some and None (Option) */
 
@@ -62,7 +90,8 @@ case class TeddyBear (
 
 /** PM on a sequence */
 
-/** PM using for */
+/** Pattern match using for expression and no val */
+
 
 
 
