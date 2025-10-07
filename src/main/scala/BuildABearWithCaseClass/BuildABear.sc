@@ -5,7 +5,7 @@
 
  /** Alternative code: Standalone case class - perfectly valid */
  case class TeddyBear(name: String, color: String)
- val bear = TeddyBear("Fluffy", "brown")
+ val aBear = TeddyBear("Fluffy", "brown")
 
 
 //Sealed trait adds type safety, could have started with abstract class
@@ -105,7 +105,15 @@ println(bearAccessories(PandaTeddyBear.name, PandaTeddyBear.accessories))
 // Match on what accessories each bear has and give list the bear name??
 
 
-/** PM with If guards */
+/** Pattern match with an 'If' guard
+
+ * Each item in my list is a tuple (String, Double) and (accessory1, price1) extracts each pair from the list.*/
+val bearName = "Crimson"
+for {
+  (accessory1, price1) <- accessories
+  if price1 > 2.99
+}
+println(s"$bearName has a special accessory: $accessory1 £$price1")
 
 /** PM on a sequence */
 
