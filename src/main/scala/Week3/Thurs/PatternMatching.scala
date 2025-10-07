@@ -153,8 +153,5 @@ object PatternMatching extends App {
   //Make a chocolate bar case class with an optional filling.
   //Write a method to return the filling of the chocolate bar, which if empty, will give a default.
   //Demonstrate this working by making some chocolate objects.
-
-
-
 }
 

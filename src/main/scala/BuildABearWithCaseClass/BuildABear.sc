@@ -53,12 +53,20 @@ case class TeddyBear (
 
 
 val RainbowTeddyBear = RainbowBear(
-  "Dolly",
+  "Crimson",
   "Rainbow",
   "PJ's",
   hasBeatingHeart = true,
   List(("bed hat", 2.99), ("pillow", 1.99), ("slippers", 3.00))
 )
+
+val PandaTeddyBear = PandaBear (
+  "Ted",
+  "black",
+  "winter coat",
+  hasBamboo= true,
+  List(("scarf", 3.00)
+))
 
 /** Pattern match on list of tuples */
 val accessories: List[(String,Double)] = List (
@@ -71,30 +79,30 @@ val accessories: List[(String,Double)] = List (
   ("scarf", 3.00)
 )
 
-//match on 3x accessories for the RainbowTeddyBear:
-def rainbowTeddyBearAccessories (accessories: List[(String, Double)]): String = accessories match {
-  case List () =>
-    "No accessories chosen for your bear"
+//match on accessories for any bear:
+def bearAccessories (bearName: String, accessories: List[(String, Double)]): String = accessories match {
+  case Nil =>
+    s"No accessories chosen for your $bearName"
 
   case List ((accessory1, price1)) =>
-    s"You have a bear with 1 accessory: $accessory1 £$price1"
+    s"For $bearName you have a bear with 1 accessory: $accessory1 £$price1"
 
   case List ((accessory1, price1), (accessory2, price2)) =>
-    s"You have a bear with 2 accessories: $accessory1 £$price1 and $accessory2 £$price2"
+    s"For $bearName you have a bear with 2 accessories: $accessory1 £$price1 and $accessory2 £$price2"
 
   case List((accessory1, price1), (accessory2, price2), (accessory3, price3)) =>
-    s"Your bear has 3 accessories: $accessory1 £$price1, $accessory2 £$price2 and $accessory3 (£$price3)"
+    s"For $bearName you have a bear with 3 accessories: $accessory1 £$price1, $accessory2 £$price2 and $accessory3 (£$price3)"
 
   case _ =>
-    s"Your bear has ${accessories.length} accessories"
+    s"Your $bearName has ${accessories.length} accessories"
 }
-println(rainbowTeddyBearAccessories(RainbowTeddyBear.accessories))
+println(bearAccessories(RainbowTeddyBear.name, RainbowTeddyBear.accessories))
+println(bearAccessories(PandaTeddyBear.name, PandaTeddyBear.accessories))
 
-
-// WORK I N   P R O G R E S S //
+// W O R K       I N    P R O G R E S S //
 
 /** Pattern match with Some and None (Option) */
-// Match on what accessories each bear has and give the name of the bear??
+// Match on what accessories each bear has and give list the bear name??
 
 
 /** PM with If guards */

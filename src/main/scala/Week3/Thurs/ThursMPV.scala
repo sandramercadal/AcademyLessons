@@ -127,7 +127,7 @@ object ThursMPV extends App {
                             dateOfBirth: LocalDate, //import LocalDate here and in dateOfDeath
                             occupation: Option[String],
                             lastCountryLivedIn: String,
-                            dateOfDeath: Option[LocalDate],//whether they are alice or deceased, if exists calculates age as years between birth and death otherwise year between birth and current date
+                            dateOfDeath: Option[LocalDate],//whether they are alive or deceased, if exists calculates age as years between birth and death otherwise year between birth and current date
                            )
 
     case class Person(fullName: String,
