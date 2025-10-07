@@ -6,7 +6,11 @@ import Week2.Monday.family.Adult //using my adult from family that I previously 
 
 //Val properties are immutable
 //Book is inheriting from 2 traits
-class Book(val title: String, val author:Adult) extends ReadingFormat with Genre {
+class Book(
+            val title: String,
+            val author:Adult
+          ) extends ReadingFormat with Genre {
+
   def read: String = "Enjoy reading!"
 }
 //def read is a simple string message when called

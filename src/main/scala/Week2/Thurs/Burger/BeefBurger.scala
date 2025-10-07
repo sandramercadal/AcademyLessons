@@ -23,3 +23,9 @@ object BeefBurger {
 
   case object WellDone extends Doneness
 }
+
+/** Alternative code - have the same case class but with a val and 'new'
+ * case class BeefBurger(override val doublePatty: Boolean, override val bunType: Burger.TypeOfBun) extends Burger(doublePatty, bunType) {
+ * val beefBurger1 = new BeefBurger(true, Burger.SeededBun) with Ketchup with Mayo
+ * }
+ * */

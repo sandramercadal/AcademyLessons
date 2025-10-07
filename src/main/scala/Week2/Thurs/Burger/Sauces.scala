@@ -18,8 +18,8 @@ trait ketchup extends Sauces {
 
   //you can do all the same with pickles being true
 }
-trait May extends Sauces{
-val aglrlic: Boolena = false
+trait Mayo extends Sauces{
+val garlic: Boolean = false
 }
 trait Relish extends Sauces
 trait Mustard extends Sauces

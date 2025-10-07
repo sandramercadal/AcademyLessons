@@ -65,3 +65,16 @@ object Burger {
   case object NoCheese extends Cheese
 
 }
+
+/** alternative code:
+ * e.g.
+ * abstract class Burger (val doublePatty: Boolean, val bunType: Burger.TypeOfBun) {
+ * }
+
+ * object Burger {
+ * sealed trait TypeOfBun
+ * case object GlutenFree extends TypeOfBun
+ * case object SeededBun extends TypeOfBun
+ * }
+ *
+ */

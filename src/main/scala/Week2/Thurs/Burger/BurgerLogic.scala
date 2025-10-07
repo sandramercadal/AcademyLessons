@@ -45,16 +45,26 @@ import Week2.Thurs.Burger.Burger._
     println(chickenBurger.grilledOrFried(ChickenBurger.Grilled))
     println(chickenBurger.grilledOrFried(ChickenBurger.Fried))
 
-    //val beefBurger = BeefBurger(
-      //doublePatty = false,
-      //bunType = SeededBun,
-      //salad = List(Lettuce, Tomato),
-      //sauce = List(HotSauce),
-      //cheese = ExtraCheese,
-      //howDoYouWantItCooked = Medium
-    //)
-    //println("\n---Beef---")
-    //println(beefBurger.howDoYouWantItCooked)
+//    val beefBurger = BeefBurger(
+//      doublePatty = false,
+//      bunType = SeededBun,
+//      salad = List(Lettuce, Tomato),
+//      sauce = List(HotSauce),
+//      cheese = ExtraCheese,
+//      //howDoYouWantItCooked = Medium
+//    )
+//    println("\n---Beef---")
+//    //println(beefBurger.howDoYouWantItCooked)
 
   }
-
+ /** Alternative code
+  *
+  * object BurgerLogic extends App {
+  * val veggieBurger1 = new VeggieBurger(true, Burger.SeededBun) with Ketchup with Mayo {
+  * override val spicy: Boolean = false
+  * }
+  *
+  * println(veggieBurger1.spicy)
+  * println(veggieBurger1.bunType)
+  * println(veggieBurger1.garlic)
+  * }*/

@@ -1,5 +1,16 @@
 package Week2
 
+/** CLASSES AND COMPANION OBJECTS
+ * 1. The companion object must have the exact same name as the class and be defined in the same file so Scala knows they're companions.
+ * 2. Companion object provides an apply method, which acts as a factory. This creates instances without using "new"
+ * 3. Static-like Functionality - they provide class-level functionality that doesn't belong to any particular instance
+ *      -val maxAge = 20  // Available to all dogs
+ *      def validateAge(age: Int): Boolean = age > 0 && age <= maxAge
+ *      }
+ *  4. Can create multiple factory methods for different construction scenarios like a puppy is also a dog
+ *  5. Companion objects can access the private members of the class and vice versa 
+ * */
+
 //Q1 Create a class to build your dogs (starts with caps)
 class Dog (val name: String, val age: Int, val breed: String, val jumpsUp: Boolean, val likesToLick: Boolean) {
 
@@ -29,6 +40,4 @@ object Dog extends App{
   println(Dog.myDog.jumpsUp)  //true
   println(Dog.myDog.likesToJumpUp)  //Don't jump up!!
   println(Dog.myDog.lickingBehaviour)  //Ruby wants to lick me
-
-
 }
