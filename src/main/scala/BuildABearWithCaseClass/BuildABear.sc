@@ -104,7 +104,6 @@ def bearAccessories (bearName: String, accessories: List[(String, Double)]): Str
     s"Your $bearName has ${accessories.length} accessories"
 }
 println(bearAccessories(RainbowTeddyBear.name, RainbowTeddyBear.accessories))
-println(bearAccessories(PandaTeddyBear.name, PandaTeddyBear.accessories))
 println(bearAccessories(PaddingtonTeddyBear.name, PaddingtonTeddyBear.accessories))
 
 val bearGang = List(RainbowBear, PandaTeddyBear, PaddingtonBear)
@@ -113,11 +112,15 @@ val bearGang = List(RainbowBear, PandaTeddyBear, PaddingtonBear)
  //Each item in my list is a tuple (String, Double) & (accessory1, price1) extracts each pair from list.
 val bearName = "Crimson"
 for {
-  (accessory1, price1) <- accessories
+  (accessory1, price1) <- RainbowTeddyBear.accessories
   if price1 > 2.99
 } {
 println(s"$bearName has a special accessory: $accessory1 £$price1")
 }
+
+//Now Check all the bears not just Crimson
+
+
 
 // W O R K       I N    P R O G R E S S //
 //how to print all the bears? Put then in allBears??
@@ -128,8 +131,7 @@ println(s"$bearName has a special accessory: $accessory1 £$price1")
 
 /** Pattern match using for expression and no val */
 
-//PM using a helper method of some sort??
-
+/**PM using a helper method of some sort??*/
 
 //match on a sequence pattern case List (0, _,_) => println "Foo")
 //match on a tuple case (a,b,c) => println ("matched")
