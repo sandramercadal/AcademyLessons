@@ -121,11 +121,8 @@ println(s"$bearName has a special accessory: $accessory1 £$price1")
 //For Crimson you have a bear with 3 accessories: bed hat £2.99, pillow £1.99 and slippers (£3.0)
 //For Paddington you have a bear with 2 accessories: suitcase £5.99 and hat £2.99
 
-
-// W O R K   I N    P R O G R E S S //
-
 /** PM on a sequence using ::  to split list into two parts*/
-// Match on first bear in the list
+// Match on at least one bear in a list plus bears after the first bear
 def describeFirstBear(bears: List[Bear]): String = bears match {
   case Nil =>
     "There are no bears at this teddy bears picnic"
@@ -134,6 +131,12 @@ def describeFirstBear(bears: List[Bear]): String = bears match {
     s"The first bear has arrived to the teddy bears picnic, there are ${tail.length} more bears joining!"
 }
 println(describeFirstBear(bearGang))
+
+// W O R K   I N    P R O G R E S S //
+
+
+
+
 /** Pattern match with Some and None (Option) */
 
 /** Pattern match using for expression and no val */
