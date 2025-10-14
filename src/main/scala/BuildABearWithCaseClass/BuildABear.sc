@@ -49,7 +49,7 @@ case class TeddyBear (
                          accessories: List[(String,Double)]
                        ) extends Bear
 
-//Something for when no bear selected yet ??
+//Add something for when no bear selected yet ??
 
 
 val RainbowTeddyBear = RainbowBear(
@@ -106,7 +106,7 @@ def bearAccessories (bearName: String, accessories: List[(String, Double)]): Str
 println(bearAccessories(RainbowTeddyBear.name, RainbowTeddyBear.accessories))
 println(bearAccessories(PaddingtonTeddyBear.name, PaddingtonTeddyBear.accessories))
 
-val bearGang = List(RainbowBear, PandaTeddyBear, PaddingtonBear)
+val bearGang: List[Bear]= List(RainbowTeddyBear, PandaTeddyBear, PaddingtonTeddyBear)
 
 /** Pattern match with an 'If' guard */
  //Each item in my list is a tuple (String, Double) & (accessory1, price1) extracts each pair from list.
@@ -118,15 +118,22 @@ for {
 println(s"$bearName has a special accessory: $accessory1 £$price1")
 }
 
-//Now Check all the bears not just Crimson
+//For Crimson you have a bear with 3 accessories: bed hat £2.99, pillow £1.99 and slippers (£3.0)
+//For Paddington you have a bear with 2 accessories: suitcase £5.99 and hat £2.99
 
 
+// W O R K   I N    P R O G R E S S //
 
-// W O R K       I N    P R O G R E S S //
-//how to print all the bears? Put then in allBears??
-// Match on what accessories each bear has and give a list of all the bear names??
-/** PM on a sequence */
+/** PM on a sequence using ::  to split list into two parts*/
+// Match on first bear in the list
+def describeFirstBear(bears: List[Bear]): String = bears match {
+  case Nil =>
+    "There are no bears at this teddy bears picnic"
 
+  case head :: tail =>
+    s"The first bear has arrived to the teddy bears picnic, there are ${tail.length} more bears joining!"
+}
+println(describeFirstBear(bearGang))
 /** Pattern match with Some and None (Option) */
 
 /** Pattern match using for expression and no val */
